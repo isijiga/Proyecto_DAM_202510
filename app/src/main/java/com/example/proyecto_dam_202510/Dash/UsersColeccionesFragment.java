@@ -1,6 +1,9 @@
 package com.example.proyecto_dam_202510.Dash;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -9,12 +12,9 @@ import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
 import com.example.proyecto_dam_202510.R;
 import com.example.proyecto_dam_202510.data.pojo.Coleccion;
+import com.example.proyecto_dam_202510.data.pojo.UsersColecciones;
 import com.example.proyecto_dam_202510.data.viewdata.Coleccion_vm;
 import com.example.proyecto_dam_202510.data.viewdata.UserColecciones_vm;
 
@@ -23,26 +23,26 @@ import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link MisColeccionesFragment#newInstance} factory method to
+ * Use the {@link UsersColeccionesFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class MisColeccionesFragment extends Fragment {
+public class UsersColeccionesFragment extends Fragment {
 
-    private Coleccion_vm coleccionVm ;
+
     private UserColecciones_vm userColeccionVm;
-    private MisColeccionesAdapter adapter;
-    private List<Coleccion> listaColecciones = new ArrayList<>();
+    private UserColeccionesAdapter adapter;
+    private List<UsersColecciones> listaColecciones = new ArrayList<>();
     private RecyclerView recyclerView;
 
 
 
-    public MisColeccionesFragment() {
+    public UsersColeccionesFragment() {
 
     }
 
     // TODO: Rename and change types and number of parameters
-    public static MisColeccionesFragment newInstance(String param1, String param2) {
-        MisColeccionesFragment fragment = new MisColeccionesFragment();
+    public static UsersColeccionesFragment newInstance(String param1, String param2) {
+        UsersColeccionesFragment fragment = new UsersColeccionesFragment();
         Bundle args = new Bundle();
         return fragment;
     }
@@ -51,24 +51,24 @@ public class MisColeccionesFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        coleccionVm = new Coleccion_vm();
+        userColeccionVm = new UserColecciones_vm();
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_mis_colecciones, container, false);
+        return inflater.inflate(R.layout.fragment_users_colecciones, container, false);
     }
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        recyclerView = view.findViewById(R.id.recyclerViewMisColecciones);
+        recyclerView = view.findViewById(R.id.recyclerViewUsersColecciones);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        adapter = new MisColeccionesAdapter();
+        adapter = new UserColeccionesAdapter();
         recyclerView.setAdapter(adapter);
-        coleccionVm.getColecciones().observe(this, new Observer<List<Coleccion>>() {
+        userColeccionVm.getUsersColecciones().observe(this, new Observer<List<UsersColecciones>>() {
             @Override
-            public void onChanged(List<Coleccion> coleccions) {
+            public void onChanged(List<UsersColecciones> coleccions) {
                 adapter.setDatos(coleccions);
             }
         });

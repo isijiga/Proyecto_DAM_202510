@@ -7,13 +7,13 @@
     tools:context=".Dash.MisColeccionesFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewMisColecciones"
+        android:id="@+id/recyclerViewUsersColecciones"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="4dp"
         android:clipToPadding="false"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/coleccion_layout" />
+        tools:listitem="@layout/userscoleccion_layout" />
 
 
 </FrameLayout>
