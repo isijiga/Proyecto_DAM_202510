@@ -10,6 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.navigation.NavController;
+import androidx.navigation.NavOptions;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -67,7 +68,6 @@ public class UsersColeccionesFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-
         binding.recyclerViewUsersColecciones.setLayoutManager(new LinearLayoutManager(getContext()));
         adapter = new UserColeccionesAdapter();
         binding.recyclerViewUsersColecciones.setAdapter(adapter);
@@ -83,6 +83,22 @@ public class UsersColeccionesFragment extends Fragment {
             public void onClick(View v) {
                 NavController navController = Navigation.findNavController(v);
                 navController.navigate(R.id.gestionColeccionFragment);
+            }
+        });
+        adapter.setOnItemClickListener(new UserColeccionesAdapter.onItemClickListener() {
+            @Override
+            public void onItemClick(UsersColecciones userColeccion) {
+
+                UsersColecciones item = userColeccion;
+                Bundle bundle = new Bundle();
+                bundle.putString("nombre", item.getNombreColeccion());
+                bundle.putInt("id", item.getProgreso());
+                bundle.putString("idColeccion", item.getColeccion().getId());
+
+                NavController navController = Navigation.findNavController(view);
+                navController.navigate(R.id.action_nav_userColecciones_to_detalleColeccionFragment, bundle);
+
+
             }
         });
 

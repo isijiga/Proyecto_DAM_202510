@@ -38,6 +38,9 @@
         <action
             android:id="@+id/action_nav_userColecciones_to_gestionColeccionFragment"
             app:destination="@id/gestionColeccionFragment" />
+        <action
+            android:id="@+id/action_nav_userColecciones_to_detalleColeccionFragment"
+            app:destination="@id/detalleColeccionFragment" />
     </fragment>
     <fragment
         android:id="@+id/nav_mis_colecciones"
@@ -51,4 +54,18 @@
         android:name="com.example.proyecto_dam_202510.Dash.GestionColeccionFragment"
         android:label="fragment_gestion_coleccion"
         tools:layout="@layout/fragment_gestion_coleccion" />
+    <fragment
+        android:id="@+id/detalleColeccionFragment"
+        android:name="com.example.proyecto_dam_202510.Dash.DetalleColeccionFragment"
+        android:label="fragment_detalle_coleccion"
+        tools:layout="@layout/fragment_detalle_coleccion" >
+        <action
+            android:id="@+id/action_detalleColeccionFragment_to_anadirCromoFragment"
+            app:destination="@id/anadirCromoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/anadirCromoFragment"
+        android:name="com.example.proyecto_dam_202510.Dash.AnadirCromoFragment"
+        android:label="fragment_anadir_cromo"
+        tools:layout="@layout/fragment_anadir_cromo" />
 </navigation>

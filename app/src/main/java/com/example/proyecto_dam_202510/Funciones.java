@@ -1,5 +1,7 @@
 package com.example.proyecto_dam_202510;
 
+import static android.content.ContentValues.TAG;
+
 import android.content.Context;
 import android.util.Log;
 
@@ -7,6 +9,7 @@ import androidx.annotation.NonNull;
 
 import com.example.proyecto_dam_202510.data.pojo.Coleccion;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.Timestamp;
@@ -85,15 +88,22 @@ public class Funciones {
        cromo.put("valor", valor);
        cromo.put("imagen", imagen);
 
-       db.collection("colecciones").document(idColeccion)
-               .collection("cromos").document(idCromo)
-               .set(cromo)
-               .addOnSuccessListener(aVoid -> {
-                   Log.d("ColacTrade", "Carta agregada: " + idCromo);
+               db.collection("colecciones").document(idColeccion)
+               .collection("cromos")
+               .add(cromo)
+               .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                   @Override
+                   public void onSuccess(DocumentReference documentReference) {
+                       Log.d("trade", "DocumentSnapshot written with ID: " + documentReference.getId());
+                   }
                })
-               .addOnFailureListener(e -> {
-                   Log.e("ColacTrade", "Error al agregar carta: " + idCromo, e);
+               .addOnFailureListener(new OnFailureListener() {
+                   @Override
+                   public void onFailure(@NonNull Exception e) {
+                       Log.w("trade", "Error adding document", e);
+                   }
                });
+
    }
 
     public static void añadirColeccion(Coleccion coleccion) {

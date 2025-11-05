@@ -1,6 +1,7 @@
 package com.example.proyecto_dam_202510.Dash;
 
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,6 +15,14 @@ import java.util.List;
 public class UserColeccionesAdapter extends RecyclerView.Adapter<UserColeccionesAdapter.MiViewHolder> {
 
     private List<UsersColecciones> listaColecciones = new ArrayList<>();
+    private onItemClickListener listener;
+    public interface onItemClickListener{
+        void onItemClick(UsersColecciones userColeccion);
+    }
+    public void setOnItemClickListener(onItemClickListener listener) {
+        this.listener = listener;
+    }
+
 
 
     @NonNull
@@ -45,13 +54,22 @@ public class UserColeccionesAdapter extends RecyclerView.Adapter<UserColecciones
         notifyDataSetChanged();
     }
 
-        public static class MiViewHolder extends RecyclerView.ViewHolder {
+        public class MiViewHolder extends RecyclerView.ViewHolder {
 
         private UserscoleccionLayoutBinding binding;
 
         public MiViewHolder(@NonNull UserscoleccionLayoutBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
+
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    listener.onItemClick(listaColecciones.get(getBindingAdapterPosition()));
+                }
+            });
 
         }
 

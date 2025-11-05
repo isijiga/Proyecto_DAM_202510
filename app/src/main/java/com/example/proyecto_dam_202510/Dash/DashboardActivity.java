@@ -41,7 +41,8 @@ private UserColecciones_vm usercoleccionVm ;
 
     BottomNavigationView bottomNav = findViewById(R.id.toolbar);
 
-    NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
+    NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().
+            findFragmentById(R.id.nav_host_fragment);
     NavController navController = navHostFragment.getNavController();
     NavigationUI.setupWithNavController(bottomNav, navController);
         Button btn = findViewById(R.id.button);
