@@ -3,7 +3,7 @@
     <item
         android:id="@+id/nav_userColecciones"
         android:icon="@android:drawable/ic_menu_gallery"
-        android:title="Mis Colecciones" />
+        android:title="Colecciones" />
 
     <item
         android:id="@+id/nav_intercambio"

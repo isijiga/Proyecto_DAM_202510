@@ -1,23 +1,17 @@
 package com.example.proyecto_dam_202510.Dash;
 
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.proyecto_dam_202510.R;
 import com.example.proyecto_dam_202510.data.pojo.Coleccion;
 import com.example.proyecto_dam_202510.data.pojo.UsersColecciones;
-import com.google.firebase.firestore.auth.User;
-
+import com.example.proyecto_dam_202510.databinding.UserscoleccionLayoutBinding;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserColeccionesAdapter extends  RecyclerView.Adapter<UserColeccionesAdapter.MiViewHolder>{
+public class UserColeccionesAdapter extends RecyclerView.Adapter<UserColeccionesAdapter.MiViewHolder> {
 
     private List<UsersColecciones> listaColecciones = new ArrayList<>();
 
@@ -25,22 +19,20 @@ public class UserColeccionesAdapter extends  RecyclerView.Adapter<UserColeccione
     @NonNull
     @Override
     public UserColeccionesAdapter.MiViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.userscoleccion_layout, parent, false);
-        return new MiViewHolder(view);
+
+        UserscoleccionLayoutBinding binding = UserscoleccionLayoutBinding.inflate(
+                LayoutInflater.from(parent.getContext()),
+                parent,
+                false
+        );
+        return new MiViewHolder(binding);
     }
 
     @Override
     public void onBindViewHolder(@NonNull UserColeccionesAdapter.MiViewHolder holder, int position) {
-    UsersColecciones itemActual = listaColecciones.get(position);
-    holder.tv_coleccion_titulo.setText(itemActual.getNombreColeccion());
-    holder.tv_coleccion_subtitulo.setText(itemActual.getProgreso()+"");
-    holder.tv_coleccion_estado.setText(itemActual.getInicioColeccion()+"");
-
-
-
-
-    }
+        UsersColecciones itemActual = listaColecciones.get(position);
+        holder.bind(itemActual);
+            }
 
     @Override
     public int getItemCount() {
@@ -50,30 +42,28 @@ public class UserColeccionesAdapter extends  RecyclerView.Adapter<UserColeccione
     public void setDatos(List<UsersColecciones> coleccions) {
         this.listaColecciones = coleccions;
 
+        notifyDataSetChanged();
     }
 
-    public static class MiViewHolder extends RecyclerView.ViewHolder{
-        private TextView tv_coleccion_titulo;
-        private TextView tv_coleccion_subtitulo;
-        private TextView tv_coleccion_estado;
-        private ImageView iv_coleccion_imagen;
+        public static class MiViewHolder extends RecyclerView.ViewHolder {
 
+        private UserscoleccionLayoutBinding binding;
 
-        public MiViewHolder(@NonNull View itemView) {
-            super(itemView);
-            tv_coleccion_titulo = itemView.findViewById(R.id.tv_coleccion_titulo);
-            tv_coleccion_subtitulo = itemView.findViewById(R.id.tv_coleccion_subtitulo);
-            tv_coleccion_estado = itemView.findViewById(R.id.tv_coleccion_estado);
-            iv_coleccion_imagen = itemView.findViewById(R.id.iv_coleccion_imagen);
-        }
-        public void bind (Coleccion coleccion){
-            tv_coleccion_titulo.setText(coleccion.getNombre());
-            tv_coleccion_subtitulo.setText(coleccion.getId());
-            tv_coleccion_estado.setText(String.valueOf(coleccion.getTotalCartas()));
-            iv_coleccion_imagen.setImageResource(0);
-
+        public MiViewHolder(@NonNull UserscoleccionLayoutBinding binding) {
+            super(binding.getRoot());
+            this.binding = binding;
 
         }
+
+        public void bind(UsersColecciones item) {
+
+            binding.tvColeccionTitulo.setText(item.getNombreColeccion());
+            binding.tvColeccionSubtitulo.setText(String.valueOf(item.getProgreso()));
+            binding.tvColeccionEstado.setText(String.valueOf(item.getInicioColeccion()));
+
+            binding.ivColeccionImagen.setImageResource(0);
+        }
+
+
     }
-
 }

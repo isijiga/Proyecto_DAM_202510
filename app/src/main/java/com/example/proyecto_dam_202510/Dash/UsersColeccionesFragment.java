@@ -9,6 +9,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,6 +19,7 @@ import com.example.proyecto_dam_202510.data.pojo.Coleccion;
 import com.example.proyecto_dam_202510.data.pojo.UsersColecciones;
 import com.example.proyecto_dam_202510.data.viewdata.Coleccion_vm;
 import com.example.proyecto_dam_202510.data.viewdata.UserColecciones_vm;
+import com.example.proyecto_dam_202510.databinding.FragmentUsersColeccionesBinding;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,8 +35,8 @@ public class UsersColeccionesFragment extends Fragment {
     private UserColecciones_vm userColeccionVm;
     private UserColeccionesAdapter adapter;
     private List<UsersColecciones> listaColecciones = new ArrayList<>();
-    private RecyclerView recyclerView;
 
+    private FragmentUsersColeccionesBinding binding;
 
 
     public UsersColeccionesFragment() {
@@ -56,22 +59,33 @@ public class UsersColeccionesFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_users_colecciones, container, false);
+        binding = FragmentUsersColeccionesBinding.inflate(inflater, container, false);
+
+        return binding.getRoot();
     }
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        recyclerView = view.findViewById(R.id.recyclerViewUsersColecciones);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        binding.recyclerViewUsersColecciones.setLayoutManager(new LinearLayoutManager(getContext()));
         adapter = new UserColeccionesAdapter();
-        recyclerView.setAdapter(adapter);
-        userColeccionVm.getUsersColecciones().observe(this, new Observer<List<UsersColecciones>>() {
+        binding.recyclerViewUsersColecciones.setAdapter(adapter);
+        userColeccionVm.getUsersColecciones().observe(getViewLifecycleOwner(), new Observer<List<UsersColecciones>>() {
             @Override
             public void onChanged(List<UsersColecciones> coleccions) {
                 adapter.setDatos(coleccions);
             }
         });
+
+        binding.btAgregarColeccion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavController navController = Navigation.findNavController(v);
+                navController.navigate(R.id.gestionColeccionFragment);
+            }
+        });
+
     }
 
 

@@ -5,15 +5,7 @@
     android:id="@+id/navigation"
     app:startDestination="@id/nav_userColecciones">
 
-    <fragment
-        android:id="@+id/nav_mis_colecciones"
-        android:name="com.example.proyecto_dam_202510.Dash.MisColeccionesFragment"
-        android:label="fragment_mis_colecciones"
-        tools:layout="@layout/fragment_mis_colecciones" >
-        <action
-            android:id="@+id/action_misColeccionesFragment_to_intercambioFragment"
-            app:destination="@id/nav_intercambio" />
-    </fragment>
+
     <fragment
         android:id="@+id/nav_intercambio"
         android:name="com.example.proyecto_dam_202510.Dash.IntercambioFragment"
@@ -42,8 +34,21 @@
         android:name="com.example.proyecto_dam_202510.Dash.UsersColeccionesFragment"
         android:label="UsersColeccionesFragment"
         tools:layout="@layout/userscoleccion_layout">
+
         <action
-            android:id="@+id/action_usersColeccionesFragment_to_nav_mis_colecciones"
-            app:destination="@id/nav_mis_colecciones" />
+            android:id="@+id/action_nav_userColecciones_to_gestionColeccionFragment"
+            app:destination="@id/gestionColeccionFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/nav_mis_colecciones"
+        android:name="com.example.proyecto_dam_202510.Dash.MisColeccionesFragment"
+        android:label="fragment_mis_colecciones"
+        tools:layout="@layout/fragment_mis_colecciones" >
+
+    </fragment>
+    <fragment
+        android:id="@+id/gestionColeccionFragment"
+        android:name="com.example.proyecto_dam_202510.Dash.GestionColeccionFragment"
+        android:label="fragment_gestion_coleccion"
+        tools:layout="@layout/fragment_gestion_coleccion" />
 </navigation>

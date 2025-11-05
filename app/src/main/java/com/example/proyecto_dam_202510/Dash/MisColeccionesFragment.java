@@ -6,41 +6,41 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 
+import com.example.proyecto_dam_202510.Funciones;
 import com.example.proyecto_dam_202510.R;
 import com.example.proyecto_dam_202510.data.pojo.Coleccion;
 import com.example.proyecto_dam_202510.data.viewdata.Coleccion_vm;
 import com.example.proyecto_dam_202510.data.viewdata.UserColecciones_vm;
+import com.example.proyecto_dam_202510.databinding.FragmentMisColeccionesBinding;
 
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link MisColeccionesFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class MisColeccionesFragment extends Fragment {
 
-    private Coleccion_vm coleccionVm ;
-    private UserColecciones_vm userColeccionVm;
+    private Coleccion_vm coleccionVm;
     private MisColeccionesAdapter adapter;
     private List<Coleccion> listaColecciones = new ArrayList<>();
-    private RecyclerView recyclerView;
 
 
 
-    public MisColeccionesFragment() {
+    private FragmentMisColeccionesBinding binding;
 
-    }
 
-    // TODO: Rename and change types and number of parameters
+
     public static MisColeccionesFragment newInstance(String param1, String param2) {
         MisColeccionesFragment fragment = new MisColeccionesFragment();
         Bundle args = new Bundle();
@@ -50,29 +50,45 @@ public class MisColeccionesFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         coleccionVm = new Coleccion_vm();
+
     }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_mis_colecciones, container, false);
+
+        binding = FragmentMisColeccionesBinding.inflate(inflater, container, false);
+        return binding.getRoot();
     }
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        recyclerView = view.findViewById(R.id.recyclerViewMisColecciones);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
         adapter = new MisColeccionesAdapter();
-        recyclerView.setAdapter(adapter);
-        coleccionVm.getColecciones().observe(this, new Observer<List<Coleccion>>() {
+        binding.recyclerViewMisColecciones.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        binding.recyclerViewMisColecciones.setAdapter(adapter);
+        coleccionVm.getColecciones().observe(getViewLifecycleOwner(), new Observer<List<Coleccion>>() {
             @Override
             public void onChanged(List<Coleccion> coleccions) {
                 adapter.setDatos(coleccions);
             }
         });
+        adapter.setOnItemClickListener(new MisColeccionesAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(Coleccion coleccion) {
+                Funciones.añadirColeccion(coleccion);
+                NavController navController = Navigation.findNavController(view);
+                navController.navigate(R.id.nav_userColecciones);
+
+
+            }
+        });
     }
+
 
 
 }

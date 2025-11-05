@@ -3,7 +3,14 @@ package com.example.proyecto_dam_202510;
 import android.content.Context;
 import android.util.Log;
 
+import androidx.annotation.NonNull;
+
+import com.example.proyecto_dam_202510.data.pojo.Coleccion;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.Timestamp;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -89,4 +96,28 @@ public class Funciones {
                });
    }
 
+    public static void añadirColeccion(Coleccion coleccion) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+        FirebaseUser user = mAuth.getCurrentUser();
+        DocumentReference refUsuario = db.collection("users").document(user.getUid());
+        DocumentReference refColeccion = db.collection("colecciones").document(coleccion.getId());
+
+        Map<String, Object> coleccionMap = new HashMap<>();
+        coleccionMap.put("user", refUsuario);
+        coleccionMap.put("nombreColeccion", coleccion.getNombre());
+        coleccionMap.put("progreso", 0);
+        coleccionMap.put("inicioColeccion", Timestamp.now());
+        coleccionMap.put("coleccion", refColeccion);
+
+        db.collection("users_colecciones").add(coleccionMap)
+                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                    @Override
+                    public void onSuccess(DocumentReference documentReference) {
+                        Log.d("ColacTrade", "Coleccion añadida correctamente");
+                    }
+                });
+
+
+    }
 }
