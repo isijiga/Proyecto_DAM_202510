@@ -30,7 +30,8 @@ public class Coleccion_vm extends ViewModel {
 
     private void cargaColecciones() {
 
-        coleccionListener = db.collection("colecciones").addSnapshotListener((dato, error) -> {
+        coleccionListener = db.collection("colecciones")
+                .addSnapshotListener((dato, error) -> {
 
             List<Coleccion> listaTemporal = new ArrayList<>();
             for (QueryDocumentSnapshot document : dato) {

@@ -12,7 +12,7 @@ public class UsersColecciones {
     private Date inicioColeccion;
     private String nombreColeccion;
     private int progreso;
-    private DocumentReference usuario;
+    private DocumentReference user;
 
     @Exclude
     private String id;
@@ -53,12 +53,12 @@ public class UsersColecciones {
         this.nombreColeccion = nombreColeccion;
     }
 
-    public DocumentReference getUsuario() {
-        return usuario;
+    public DocumentReference getUser() {
+        return user;
     }
 
-    public void setUsuario(DocumentReference usuario) {
-        this.usuario = usuario;
+    public void setUsuario(DocumentReference user) {
+        this.user = user;
     }
 
     public void setId(String id) {

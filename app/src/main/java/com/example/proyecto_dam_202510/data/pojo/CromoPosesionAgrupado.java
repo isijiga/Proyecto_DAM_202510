@@ -1,17 +1,48 @@
 package com.example.proyecto_dam_202510.data.pojo;
 
+import java.util.Date;
 import java.util.List;
 
-public class Cromo {
+public class CromoPosesionAgrupado {
 
     private String id;
+    private int repetida;
     private String imagen;
     private String nombre;
     private String numero;
     private List<String> tipo;
     private int valor;
 
-    public Cromo() {
+    public CromoPosesionAgrupado(Date fechaAdquisicion, String id, String imagen, String nombre, String numero, int repetida, List<String> tipo, int valor) {
+        this.fechaAdquisicion = fechaAdquisicion;
+        this.id = id;
+        this.imagen = imagen;
+        this.nombre = nombre;
+        this.numero = numero;
+        this.repetida = repetida;
+        this.tipo = tipo;
+        this.valor = valor;
+    }
+
+    private Date fechaAdquisicion;
+
+    public Date getFechaAdquisicion() {
+        return fechaAdquisicion;
+    }
+
+    public void setFechaAdquisicion(Date fechaAdquisicion) {
+        this.fechaAdquisicion = fechaAdquisicion;
+    }
+
+    public int getRepetida() {
+        return repetida;
+    }
+
+    public void setRepetida(int repetida) {
+        this.repetida = repetida;
+    }
+
+    public CromoPosesionAgrupado() {
     }
 
     public String getId() {

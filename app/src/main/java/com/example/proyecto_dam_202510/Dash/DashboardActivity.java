@@ -3,9 +3,11 @@ package com.example.proyecto_dam_202510.Dash;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.navigation.NavController;
@@ -19,6 +21,7 @@ import com.example.proyecto_dam_202510.data.pojo.UsersColecciones;
 import com.example.proyecto_dam_202510.data.viewdata.Coleccion_vm;
 import com.example.proyecto_dam_202510.data.viewdata.UserColecciones_vm;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -45,7 +48,14 @@ private UserColecciones_vm usercoleccionVm ;
             findFragmentById(R.id.nav_host_fragment);
     NavController navController = navHostFragment.getNavController();
     NavigationUI.setupWithNavController(bottomNav, navController);
-        Button btn = findViewById(R.id.button);
+    bottomNav.setOnItemReselectedListener(new NavigationBarView.OnItemReselectedListener() {
+           @Override
+           public void onNavigationItemReselected(@NonNull MenuItem item) {
+                navController.popBackStack(item.getItemId(),false);
+
+               }
+           });
+            Button btn = findViewById(R.id.button);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -5,6 +5,8 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -53,6 +55,8 @@ FragmentAnadirCromoBinding binding;
         user = mAuth.getCurrentUser();
         db = FirebaseFirestore.getInstance();
 
+
+
     }
 
     @Override
@@ -65,7 +69,8 @@ FragmentAnadirCromoBinding binding;
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        String idColeccion = getArguments().getString("coleccion");
+
+        coleccionId = getArguments().getString("coleccion");
         binding.btnAnadir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,12 +78,17 @@ FragmentAnadirCromoBinding binding;
                 String nombre = binding.etNombre.getText().toString();
                 String equipo = binding.etEquipo.getText().toString();
                 String valor = binding.actvNumeroCarta.getText().toString();
-
                 String numero = binding.actvNumeroCarta.getText().toString();
                 String userid = user.getUid();
-                coleccionId = idColeccion;
 
-               Funciones.agregarCromo(coleccionId,numero,nombre,0,null,0,null);
+
+               Funciones.agregarCromo(coleccionId,numero,nombre,0+"",null,0,null);
+               Funciones.agregarCromoPosesion(coleccionId,numero,nombre,0+"",null,0,null);
+
+               NavController navController = Navigation.findNavController(v);
+               navController.popBackStack();
+               navController.navigate(R.id.nav_userColecciones);
+
             }
         });
 

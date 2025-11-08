@@ -16,10 +16,13 @@ import com.google.firebase.Timestamp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.HashMap;
 import java.util.Map;
+
 
 public class Funciones {
 
@@ -74,7 +77,7 @@ public class Funciones {
            String idColeccion,
            String idCromo,
            String nombre,
-           int numero,
+           String numero,
            String tipo,
            double valor,
            String imagen) {
@@ -90,22 +93,53 @@ public class Funciones {
 
                db.collection("colecciones").document(idColeccion)
                .collection("cromos")
-               .add(cromo)
-               .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+               .document(idCromo).set(cromo)
+               .addOnSuccessListener(new OnSuccessListener<Void>() {
                    @Override
-                   public void onSuccess(DocumentReference documentReference) {
-                       Log.d("trade", "DocumentSnapshot written with ID: " + documentReference.getId());
-                   }
-               })
-               .addOnFailureListener(new OnFailureListener() {
-                   @Override
-                   public void onFailure(@NonNull Exception e) {
-                       Log.w("trade", "Error adding document", e);
+                   public void onSuccess(Void unused) {
+                  Log.d("ColacTrade", "DocumentSnapshot written with ID: " + numero) ;
                    }
                });
 
    }
 
+    public static void agregarCromoPosesion(
+            String idColeccion,
+            String idCromo,
+            String nombre,
+            String numero,
+            String tipo,
+            double valor,
+            String imagen) {
+
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+        FirebaseUser user = mAuth.getCurrentUser();
+        Map<String, Object> cromo = new HashMap<>();
+
+        cromo.put("nombre", nombre);
+        cromo.put("numero", idCromo);
+        cromo.put("tipo", tipo);
+        cromo.put("valor", valor);
+        cromo.put("imagen", imagen);
+
+        db.collection("users_colecciones").document(user.getUid()+idColeccion)
+                .collection("cromosPosesion")
+                .add(cromo)
+                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                    @Override
+                    public void onSuccess(DocumentReference documentReference) {
+                        Log.d("trade", "DocumentSnapshot written with ID: " + documentReference.getId());
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w("trade", "Error adding document", e);
+                    }
+                });
+
+    }
     public static void añadirColeccion(Coleccion coleccion) {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
@@ -114,20 +148,25 @@ public class Funciones {
         DocumentReference refColeccion = db.collection("colecciones").document(coleccion.getId());
 
         Map<String, Object> coleccionMap = new HashMap<>();
+
         coleccionMap.put("user", refUsuario);
         coleccionMap.put("nombreColeccion", coleccion.getNombre());
         coleccionMap.put("progreso", 0);
         coleccionMap.put("inicioColeccion", Timestamp.now());
         coleccionMap.put("coleccion", refColeccion);
 
-        db.collection("users_colecciones").add(coleccionMap)
-                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+
+
+        db.collection("users_colecciones").document(refUsuario.getId()+coleccion.getNombre()).set(coleccionMap)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
-                    public void onSuccess(DocumentReference documentReference) {
-                        Log.d("ColacTrade", "Coleccion añadida correctamente");
+                    public void onSuccess(Void unused) {
+                        Log.d("ColacTrade", "Documento creado/actualizado con ID: " + coleccion.getNombre());
                     }
                 });
 
 
     }
+
+
 }

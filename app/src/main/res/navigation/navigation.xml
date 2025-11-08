@@ -32,15 +32,15 @@
     <fragment
         android:id="@+id/nav_userColecciones"
         android:name="com.example.proyecto_dam_202510.Dash.UsersColeccionesFragment"
-        android:label="UsersColeccionesFragment"
+        android:label="fragment_users_colecciones"
         tools:layout="@layout/userscoleccion_layout">
 
         <action
             android:id="@+id/action_nav_userColecciones_to_gestionColeccionFragment"
             app:destination="@id/gestionColeccionFragment" />
         <action
-            android:id="@+id/action_nav_userColecciones_to_detalleColeccionFragment"
-            app:destination="@id/detalleColeccionFragment" />
+            android:id="@+id/action_nav_userColecciones_to_nav_mis_colecciones"
+            app:destination="@id/nav_mis_colecciones" />
     </fragment>
     <fragment
         android:id="@+id/nav_mis_colecciones"
@@ -48,6 +48,9 @@
         android:label="fragment_mis_colecciones"
         tools:layout="@layout/fragment_mis_colecciones" >
 
+        <action
+            android:id="@+id/action_nav_mis_colecciones_to_detalleColeccionFragment"
+            app:destination="@id/detalleColeccionFragment" />
     </fragment>
     <fragment
         android:id="@+id/gestionColeccionFragment"
@@ -60,12 +63,21 @@
         android:label="fragment_detalle_coleccion"
         tools:layout="@layout/fragment_detalle_coleccion" >
         <action
-            android:id="@+id/action_detalleColeccionFragment_to_anadirCromoFragment"
-            app:destination="@id/anadirCromoFragment" />
+            android:id="@+id/action_detalleColeccionFragment_to_buscarCromoFragment"
+            app:destination="@id/buscarCromoFragment" />
     </fragment>
     <fragment
         android:id="@+id/anadirCromoFragment"
         android:name="com.example.proyecto_dam_202510.Dash.AnadirCromoFragment"
         android:label="fragment_anadir_cromo"
         tools:layout="@layout/fragment_anadir_cromo" />
+    <fragment
+        android:id="@+id/buscarCromoFragment"
+        android:name="com.example.proyecto_dam_202510.Dash.BuscarCromoFragment"
+        android:label="fragment_buscar_cromo"
+        tools:layout="@layout/fragment_buscar_cromo" >
+        <action
+            android:id="@+id/action_buscarCromoFragment_to_anadirCromoFragment"
+            app:destination="@id/anadirCromoFragment" />
+    </fragment>
 </navigation>
