@@ -12,6 +12,25 @@ public class UsersColecciones {
     private Date inicioColeccion;
     private String nombreColeccion;
     private int progreso;
+    private int totalCromos;
+    private String imagen;
+
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
+
+    public int getTotalCromos() {
+        return totalCromos;
+    }
+
+    public void setTotalCromos(int totalCromos) {
+        this.totalCromos = totalCromos;
+    }
+
     private DocumentReference user;
 
     @Exclude

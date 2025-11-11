@@ -1,9 +1,11 @@
 package com.example.proyecto_dam_202510.data.pojo;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 
-public class CromoPosesionAgrupado {
+public class CromoPosesionAgrupadoIntercambio {
 
     private String id;
     private int repetida;
@@ -12,10 +14,37 @@ public class CromoPosesionAgrupado {
     private String numero;
     private List<String> tipo;
     private int valor;
-    private String fechaAdquisicion;
+    private List<String> usuarioPoseedor;
+
+    public List<String> getUsuarioPoseedor() {
+        return usuarioPoseedor;
+    }
+
+    public void setUsuarioPoseedor(List<String> usuarioPoseedor) {
+        this.usuarioPoseedor = usuarioPoseedor;
+    }
 
 
-    public CromoPosesionAgrupado(String fechaAdquisicion, String id, String imagen, String nombre, String numero, int repetida, List<String> tipo, int valor) {
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        CromoPosesionAgrupadoIntercambio that = (CromoPosesionAgrupadoIntercambio) o;
+        return Objects.equals(nombre, that.nombre) && Objects.equals(numero, that.numero);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nombre, numero);
+    }
+
+
+
+
+
+    public CromoPosesionAgrupadoIntercambio(Date fechaAdquisicion, String id, String imagen, String nombre, String numero, int repetida, List<String> tipo, int valor,String usuarioPoseedor) {
+
         this.fechaAdquisicion = fechaAdquisicion;
         this.id = id;
         this.imagen = imagen;
@@ -26,13 +55,13 @@ public class CromoPosesionAgrupado {
         this.valor = valor;
     }
 
+    private Date fechaAdquisicion;
 
-
-    public String getFechaAdquisicion() {
+    public Date getFechaAdquisicion() {
         return fechaAdquisicion;
     }
 
-    public void setFechaAdquisicion(String fechaAdquisicion) {
+    public void setFechaAdquisicion(Date fechaAdquisicion) {
         this.fechaAdquisicion = fechaAdquisicion;
     }
 
@@ -44,7 +73,8 @@ public class CromoPosesionAgrupado {
         this.repetida = repetida;
     }
 
-    public CromoPosesionAgrupado() {
+    public CromoPosesionAgrupadoIntercambio() {
+        usuarioPoseedor = new ArrayList<>();
     }
 
     public String getId() {
@@ -94,6 +124,4 @@ public class CromoPosesionAgrupado {
     public void setValor(int valor) {
         this.valor = valor;
     }
-
-
 }

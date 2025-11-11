@@ -13,13 +13,13 @@ public class CromoPosesion {
     private List<String> tipo;
     private int valor;
     private int repetida;
-    private Date fechaAdquisicion;
+    private String fechaAdquisicion;
 
-    public Date getFechaAdquisicion() {
+    public String getFechaAdquisicion() {
         return fechaAdquisicion;
     }
 
-    public void setFechaAdquisicion(Date fechaAdquisicion) {
+    public void setFechaAdquisicion(String fechaAdquisicion) {
         this.fechaAdquisicion = fechaAdquisicion;
     }
 

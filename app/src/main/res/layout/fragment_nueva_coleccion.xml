@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    tools:context=".Dash.CrearColeccionFragment">
+    tools:context=".Dash.Fragments.CrearColeccionFragment">
 
     <!-- 2. Tu ConstraintLayout original va DENTRO del ScrollView -->
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -1,4 +1,4 @@
-package com.example.proyecto_dam_202510.Dash;
+package com.example.proyecto_dam_202510.Dash.Fragments;
 
 import android.os.Bundle;
 
@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,16 +15,15 @@ import android.view.ViewGroup;
 import com.example.proyecto_dam_202510.Funciones;
 import com.example.proyecto_dam_202510.R;
 import com.example.proyecto_dam_202510.databinding.FragmentAnadirCromoBinding;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.Firebase;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.chrono.ChronoLocalDate;
+import java.util.Date;
 
 
 public class AnadirCromoFragment extends Fragment {
@@ -75,6 +73,7 @@ FragmentAnadirCromoBinding binding;
             @Override
             public void onClick(View v) {
 
+
                 String nombre = binding.etNombre.getText().toString();
                 String equipo = binding.etEquipo.getText().toString();
                 String valor = binding.actvNumeroCarta.getText().toString();
@@ -83,7 +82,8 @@ FragmentAnadirCromoBinding binding;
 
 
                Funciones.agregarCromo(coleccionId,numero,nombre,0+"",null,0,null);
-               Funciones.agregarCromoPosesion(coleccionId,numero,nombre,0+"",null,0,null);
+               Funciones.agregarCromoPosesion(coleccionId,numero,nombre,0+"",null,0,null,
+                       Funciones.ahora());
 
                NavController navController = Navigation.findNavController(v);
                navController.popBackStack();

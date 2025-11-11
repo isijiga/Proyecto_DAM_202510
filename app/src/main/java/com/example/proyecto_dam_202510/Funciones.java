@@ -20,6 +20,9 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -110,7 +113,8 @@ public class Funciones {
             String numero,
             String tipo,
             double valor,
-            String imagen) {
+            String imagen,
+            String fechaAdquisicion ) {
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
@@ -122,6 +126,7 @@ public class Funciones {
         cromo.put("tipo", tipo);
         cromo.put("valor", valor);
         cromo.put("imagen", imagen);
+        cromo.put("fechaAdquisicion", fechaAdquisicion);
 
         db.collection("users_colecciones").document(user.getUid()+idColeccion)
                 .collection("cromosPosesion")
@@ -154,6 +159,10 @@ public class Funciones {
         coleccionMap.put("progreso", 0);
         coleccionMap.put("inicioColeccion", Timestamp.now());
         coleccionMap.put("coleccion", refColeccion);
+        coleccionMap.put("totalCromos", coleccion.getTotalCartas());
+        coleccionMap.put("imagen", coleccion.getImagenPortada());
+
+
 
 
 
@@ -169,4 +178,10 @@ public class Funciones {
     }
 
 
+    public static String ahora() {
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/YY HH:mm");
+        Date date = new Date();
+       return dateFormat.format(date) ;
+
+    }
 }

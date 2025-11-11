@@ -1,5 +1,7 @@
 package com.example.proyecto_dam_202510.data.viewdata;
 
+import android.util.Log;
+
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
@@ -11,6 +13,7 @@ import com.google.firebase.firestore.ListenerRegistration;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -51,6 +54,7 @@ public class CromoPosesion_vm extends ViewModel {
                 listaTemporal.add(cromo);
             }
            //listaCromoPosesionLiveData.setValue(listaTemporal);
+
             Map<CromoPosesion,Integer> mapConteo = new HashMap<>();
             for(CromoPosesion carta : listaTemporal ){
                 CromoPosesion idCarta = carta;
@@ -69,11 +73,18 @@ public class CromoPosesion_vm extends ViewModel {
                     String numero = name.getNumero();
                     List<String> tipo = name.getTipo();
                     int valor = name.getValor();
+                    String fechaAdquisicion = name.getFechaAdquisicion();
 
-                    listaAgrupada.add(new CromoPosesionAgrupado(null,id,imagen,nombre,numero,count,tipo,valor));
-
-
+            listaAgrupada.add(new CromoPosesionAgrupado(fechaAdquisicion,id,imagen,nombre,numero,count,tipo,valor));
                 }
+
+                            listaAgrupada.sort((cromo1, cromo2) -> {
+                                return cromo1.getNumero().compareTo(cromo2.getNumero());
+                            });
+
+                  Log.d("cromos", "cargaCromosPosesion: "+listaAgrupada.size());
+                db.collection("users_colecciones").
+                        document(userColeccion).update("progreso",listaAgrupada.size());
 
                 listaCromoPosesionAgrupadoLiveData.setValue(listaAgrupada);
 

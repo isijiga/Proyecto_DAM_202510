@@ -55,18 +55,7 @@ private UserColecciones_vm usercoleccionVm ;
 
                }
            });
-            Button btn = findViewById(R.id.button);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                mAuth.signOut();
-
-                Intent inten = new Intent(getApplicationContext(), MainActivity.class);
-                inten.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                startActivity(inten);
-                finish();
-            }});
 
 /*para pruebas userColeccioens*/
     usercoleccionVm.getUsersColecciones().observe(this, new Observer<List<UsersColecciones>>() {

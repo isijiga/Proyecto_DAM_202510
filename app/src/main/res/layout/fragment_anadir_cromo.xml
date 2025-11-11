@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#7CB342"
-    tools:context=".Dash.DetalleColeccionFragment">
+    tools:context=".Dash.Fragments.DetalleColeccionFragment">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_numero_carta"

@@ -44,16 +44,14 @@ public class UserColecciones_vm extends ViewModel {
         uid = user.getUid();
         userRef = db.collection("users").document(uid);
 
-        userscoleccionesListener = db.collection("users_colecciones").whereEqualTo("user", userRef) .addSnapshotListener((dato, error) -> {
+        userscoleccionesListener = db.collection("users_colecciones")
+                .whereEqualTo("user", userRef) .addSnapshotListener((dato, error) -> {
 
             List<UsersColecciones> listaTemporal = new ArrayList<>();
             for (QueryDocumentSnapshot document : dato) {
                 UsersColecciones usercoleccion = (UsersColecciones) document.toObject(UsersColecciones.class);
                 usercoleccion.setId(document.getId());
                 colecRef = document.getDocumentReference("coleccion");
-
-
-
 
             listaTemporal.add(usercoleccion);
             }

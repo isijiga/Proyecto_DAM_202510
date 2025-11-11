@@ -1,8 +1,11 @@
-package com.example.proyecto_dam_202510.Dash;
+package com.example.proyecto_dam_202510.Dash.Adapters;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
+
+import com.example.proyecto_dam_202510.Dash.Fragments.CrearColeccionFragment;
+import com.example.proyecto_dam_202510.Dash.Fragments.MisColeccionesFragment;
 
 public class GestionColeccionAdapter extends FragmentStateAdapter {
     public GestionColeccionAdapter(@NonNull Fragment fragment) {

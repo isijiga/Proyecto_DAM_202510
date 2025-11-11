@@ -1,16 +1,15 @@
-package com.example.proyecto_dam_202510.Dash;
+package com.example.proyecto_dam_202510.Dash.Adapters;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.proyecto_dam_202510.data.pojo.Coleccion;
 import com.example.proyecto_dam_202510.databinding.ColeccionLayoutBinding;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -72,7 +71,8 @@ public class MisColeccionesAdapter extends  RecyclerView.Adapter<MisColeccionesA
             binding.tvColeccionTitulo.setText(coleccion.getNombre());
             binding.tvColeccionSubtitulo.setText(coleccion.getId());
             binding.tvColeccionEstado.setText(String.valueOf(coleccion.getTotalCartas()));
-            binding.ivColeccionImagen.setImageResource(0);
+            Picasso.get().load(coleccion.getImagenPortada()).fit().into(binding.ivColeccionImagen);
+
 
 
         }

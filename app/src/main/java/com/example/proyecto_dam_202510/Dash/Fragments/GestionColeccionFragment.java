@@ -1,4 +1,4 @@
-package com.example.proyecto_dam_202510.Dash;
+package com.example.proyecto_dam_202510.Dash.Fragments;
 
 import android.os.Bundle;
 
@@ -10,8 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.proyecto_dam_202510.Dash.Adapters.GestionColeccionAdapter;
 import com.example.proyecto_dam_202510.databinding.FragmentGestionColeccionBinding;
-import com.example.proyecto_dam_202510.databinding.FragmentNuevaColeccionBinding;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 

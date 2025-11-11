@@ -1,4 +1,4 @@
-package com.example.proyecto_dam_202510.Dash;
+package com.example.proyecto_dam_202510.Dash.Adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.proyecto_dam_202510.data.pojo.CromoPosesion;
 import com.example.proyecto_dam_202510.data.pojo.CromoPosesionAgrupado;
 import com.example.proyecto_dam_202510.databinding.CromoposesionLayoutBinding;
+import com.squareup.picasso.Picasso;
 
 
 import java.util.ArrayList;
@@ -83,9 +84,9 @@ public class CromosPosesionAdapter extends RecyclerView.Adapter<CromosPosesionAd
 
             binding.tvCromoTitulo.setText(item.getNombre());
             binding.tvCartaSubtitulo.setText(String.valueOf(item.getNumero()));
-            binding.tvCartaEstado.setText(String.valueOf(item.getId()));
+            binding.tvCartaEstado.setText(String.valueOf(item.getFechaAdquisicion()));
+            Picasso.get().load(item.getImagen()).fit().into(binding.ivCromoImagen);
 
-            binding.ivCromoImagen.setImageResource(0);
         }
 
 

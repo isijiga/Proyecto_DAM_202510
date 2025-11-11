@@ -1,4 +1,4 @@
-package com.example.proyecto_dam_202510.Dash;
+package com.example.proyecto_dam_202510.Dash.Fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,22 +10,21 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.navigation.NavController;
-import androidx.navigation.NavOptions;
 import androidx.navigation.Navigation;
-import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.proyecto_dam_202510.Dash.Adapters.UserColeccionesAdapter;
 import com.example.proyecto_dam_202510.R;
-import com.example.proyecto_dam_202510.data.pojo.Coleccion;
 import com.example.proyecto_dam_202510.data.pojo.UsersColecciones;
-import com.example.proyecto_dam_202510.data.viewdata.Coleccion_vm;
 import com.example.proyecto_dam_202510.data.viewdata.UserColecciones_vm;
 import com.example.proyecto_dam_202510.databinding.FragmentUsersColeccionesBinding;
 import com.google.firebase.firestore.DocumentReference;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -37,7 +36,7 @@ public class UsersColeccionesFragment extends Fragment {
 
     private UserColecciones_vm userColeccionVm;
     private UserColeccionesAdapter adapter;
-    private List<UsersColecciones> listaColecciones = new ArrayList<>();
+
 
     private FragmentUsersColeccionesBinding binding;
 
@@ -72,7 +71,9 @@ public class UsersColeccionesFragment extends Fragment {
 
         binding.recyclerViewUsersColecciones.setLayoutManager(new LinearLayoutManager(getContext()));
         adapter = new UserColeccionesAdapter();
+
         binding.recyclerViewUsersColecciones.setAdapter(adapter);
+
         userColeccionVm.getUsersColecciones().observe(getViewLifecycleOwner(), new Observer<List<UsersColecciones>>() {
             @Override
             public void onChanged(List<UsersColecciones> coleccions) {
@@ -93,10 +94,15 @@ public class UsersColeccionesFragment extends Fragment {
                 DocumentReference doc = userColeccion.getUser();
                 UsersColecciones item = userColeccion;
                 Bundle bundle = new Bundle();
+                SimpleDateFormat formatoSalida = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+                String fechaFormateada = formatoSalida.format(item.getInicioColeccion());
+                bundle.putString("fechaAlta", fechaFormateada);
                 bundle.putString("nombre", item.getNombreColeccion());
-                bundle.putInt("id", item.getProgreso());
+                bundle.putInt("progress", item.getProgreso());
+                bundle.putInt("totalCartas",item.getTotalCromos());
                 bundle.putString("idColeccion", item.getColeccion().getId());
                 bundle.putString("idUsuario", doc.getId());
+                bundle.putString("imagen", item.getImagen());
 
 
                 NavController navController = Navigation.findNavController(view);

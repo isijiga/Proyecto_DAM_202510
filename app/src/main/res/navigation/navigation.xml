@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/nav_intercambio"
-        android:name="com.example.proyecto_dam_202510.Dash.IntercambioFragment"
+        android:name="com.example.proyecto_dam_202510.Dash.Fragments.IntercambioFragment"
         android:label="fragment_intercambio"
         tools:layout="@layout/fragment_intercambio" >
         <action
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/nav_perfil"
-        android:name="com.example.proyecto_dam_202510.Dash.PerfilFragment"
+        android:name="com.example.proyecto_dam_202510.Dash.Fragments.PerfilFragment"
         android:label="fragment_perfil"
         tools:layout="@layout/fragment_perfil" >
         <action
@@ -26,12 +26,12 @@
     </fragment>
     <fragment
         android:id="@+id/nav_configuracion"
-        android:name="com.example.proyecto_dam_202510.Dash.ConfigFragment"
+        android:name="com.example.proyecto_dam_202510.Dash.Fragments.ConfigFragment"
         android:label="fragment_config"
         tools:layout="@layout/fragment_config" />
     <fragment
         android:id="@+id/nav_userColecciones"
-        android:name="com.example.proyecto_dam_202510.Dash.UsersColeccionesFragment"
+        android:name="com.example.proyecto_dam_202510.Dash.Fragments.UsersColeccionesFragment"
         android:label="fragment_users_colecciones"
         tools:layout="@layout/userscoleccion_layout">
 
@@ -44,40 +44,49 @@
     </fragment>
     <fragment
         android:id="@+id/nav_mis_colecciones"
-        android:name="com.example.proyecto_dam_202510.Dash.MisColeccionesFragment"
+        android:name="com.example.proyecto_dam_202510.Dash.Fragments.MisColeccionesFragment"
         android:label="fragment_mis_colecciones"
         tools:layout="@layout/fragment_mis_colecciones" >
 
         <action
             android:id="@+id/action_nav_mis_colecciones_to_detalleColeccionFragment"
-            app:destination="@id/detalleColeccionFragment" />
+            app:destination="@id/detalleColeccionFragment"
+            app:enterAnim="@android:anim/accelerate_decelerate_interpolator" />
     </fragment>
     <fragment
         android:id="@+id/gestionColeccionFragment"
-        android:name="com.example.proyecto_dam_202510.Dash.GestionColeccionFragment"
+        android:name="com.example.proyecto_dam_202510.Dash.Fragments.GestionColeccionFragment"
         android:label="fragment_gestion_coleccion"
         tools:layout="@layout/fragment_gestion_coleccion" />
     <fragment
         android:id="@+id/detalleColeccionFragment"
-        android:name="com.example.proyecto_dam_202510.Dash.DetalleColeccionFragment"
+        android:name="com.example.proyecto_dam_202510.Dash.Fragments.DetalleColeccionFragment"
         android:label="fragment_detalle_coleccion"
         tools:layout="@layout/fragment_detalle_coleccion" >
         <action
             android:id="@+id/action_detalleColeccionFragment_to_buscarCromoFragment"
             app:destination="@id/buscarCromoFragment" />
+        <action
+            android:id="@+id/action_detalleColeccionFragment_to_detalleCromoPosesionFragment"
+            app:destination="@id/detalleCromoPosesionFragment" />
     </fragment>
     <fragment
         android:id="@+id/anadirCromoFragment"
-        android:name="com.example.proyecto_dam_202510.Dash.AnadirCromoFragment"
+        android:name="com.example.proyecto_dam_202510.Dash.Fragments.AnadirCromoFragment"
         android:label="fragment_anadir_cromo"
         tools:layout="@layout/fragment_anadir_cromo" />
     <fragment
         android:id="@+id/buscarCromoFragment"
-        android:name="com.example.proyecto_dam_202510.Dash.BuscarCromoFragment"
+        android:name="com.example.proyecto_dam_202510.Dash.Fragments.BuscarCromoFragment"
         android:label="fragment_buscar_cromo"
         tools:layout="@layout/fragment_buscar_cromo" >
         <action
             android:id="@+id/action_buscarCromoFragment_to_anadirCromoFragment"
             app:destination="@id/anadirCromoFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/detalleCromoPosesionFragment"
+        android:name="com.example.proyecto_dam_202510.Dash.Fragments.DetalleCromoPosesionFragment"
+        android:label="fragment_detalle_cromo_posesion"
+        tools:layout="@layout/fragment_detalle_cromo_posesion" />
 </navigation>

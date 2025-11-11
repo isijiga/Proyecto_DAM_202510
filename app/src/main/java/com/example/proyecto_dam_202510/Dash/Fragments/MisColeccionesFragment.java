@@ -1,4 +1,4 @@
-package com.example.proyecto_dam_202510.Dash;
+package com.example.proyecto_dam_202510.Dash.Fragments;
 
 import android.os.Bundle;
 
@@ -8,21 +8,17 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
-import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 
+import com.example.proyecto_dam_202510.Dash.Adapters.MisColeccionesAdapter;
 import com.example.proyecto_dam_202510.Funciones;
 import com.example.proyecto_dam_202510.R;
 import com.example.proyecto_dam_202510.data.pojo.Coleccion;
 import com.example.proyecto_dam_202510.data.viewdata.Coleccion_vm;
-import com.example.proyecto_dam_202510.data.viewdata.UserColecciones_vm;
 import com.example.proyecto_dam_202510.databinding.FragmentMisColeccionesBinding;
 
 import java.util.ArrayList;

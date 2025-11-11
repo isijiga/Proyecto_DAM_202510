@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Dash.GestionColeccionFragment"> <com.google.android.material.tabs.TabLayout
+    tools:context=".Dash.Fragments.GestionColeccionFragment"> <com.google.android.material.tabs.TabLayout
     android:id="@+id/tabLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"

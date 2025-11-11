@@ -1,5 +1,6 @@
-package com.example.proyecto_dam_202510.Dash;
+package com.example.proyecto_dam_202510.Dash.Adapters;
 
+import android.app.appsearch.PackageIdentifier;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,10 +9,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.proyecto_dam_202510.data.pojo.Cromo;
-import com.example.proyecto_dam_202510.data.pojo.UsersColecciones;
 import com.example.proyecto_dam_202510.databinding.CromoLayoutBinding;
-import com.example.proyecto_dam_202510.databinding.FragmentBuscarCromoBinding;
-import com.example.proyecto_dam_202510.databinding.UserscoleccionLayoutBinding;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -81,8 +80,8 @@ public class CromosAdapter extends RecyclerView.Adapter<CromosAdapter.MiViewHold
             binding.tvCromoTitulo.setText(item.getNombre());
             binding.tvCartaSubtitulo.setText(String.valueOf(item.getNumero()));
             binding.tvCartaEstado.setText(String.valueOf(item.getId()));
+            Picasso.get().load(item.getImagen()).fit().into(binding.ivCromoImagen);
 
-            binding.ivCromoImagen.setImageResource(0);
         }
 
 

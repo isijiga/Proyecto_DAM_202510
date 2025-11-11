@@ -1,4 +1,4 @@
-package com.example.proyecto_dam_202510.Dash;
+package com.example.proyecto_dam_202510.Dash.Fragments;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -14,7 +14,7 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import com.example.proyecto_dam_202510.Dash.CromosAdapter;
+import com.example.proyecto_dam_202510.Dash.Adapters.CromosAdapter;
 import com.example.proyecto_dam_202510.Funciones;
 import com.example.proyecto_dam_202510.R;
 import com.example.proyecto_dam_202510.data.pojo.Cromo;
@@ -73,7 +73,7 @@ public class BuscarCromoFragment extends Fragment {
             public void onItemClick(Cromo cromo) {
                 Log.d("Cromo", cromo.getNombre());
                 Funciones.agregarCromoPosesion(idColeccion,cromo.getId(),cromo.getNombre(),cromo.getNumero(),
-                        null,cromo.getValor(),cromo.getImagen());
+                        null,cromo.getValor(),cromo.getImagen(),Funciones.ahora());
 
             }
 
