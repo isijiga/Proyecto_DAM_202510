@@ -5,172 +5,129 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#7CB342"
+    android:background="#8BC34A"
     tools:context=".Dash.Fragments.DetalleColeccionFragment">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_numero_carta"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
-        android:layout_width="0dp"
+    <!-- Título -->
+    <TextView
+        android:id="@+id/tv_titulo"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:hint="Nº Carta"
-        android:textColorHint="@android:color/white"
-        app:boxStrokeWidth="0dp"
-        app:boxStrokeWidthFocused="0dp"
-        app:endIconMode="clear_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="Añade tu carta"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:fontFamily="sans-serif-medium"
+        android:layout_marginTop="24dp"
         app:layout_constraintTop_toTopOf="parent"
-        app:startIconTint="@android:color/white">
-
-        <AutoCompleteTextView
-            android:id="@+id/actv_numero_carta"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            android:textColor="@android:color/black" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_nombre"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:hint="Nombre"
-        android:textColorHint="@android:color/white"
-        app:boxStrokeWidth="0dp"
-        app:boxStrokeWidthFocused="0dp"
-        app:endIconMode="clear_text"
-        app:layout_constraintEnd_toStartOf="@+id/til_equipo"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/til_numero_carta">
+        app:layout_constraintEnd_toEndOf="parent" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_nombre"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textCapWords"
-            android:textColor="@android:color/black" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_equipo"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:hint="Equipo"
-        android:textColorHint="@android:color/white"
-        app:boxStrokeWidth="0dp"
-        app:boxStrokeWidthFocused="0dp"
-        app:endIconMode="clear_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/til_nombre"
-        app:layout_constraintTop_toBottomOf="@+id/til_numero_carta">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_equipo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textCapWords"
-            android:textColor="@android:color/black" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_valor"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:hint="Valor"
-        android:textColorHint="@android:color/white"
-        app:boxStrokeWidth="0dp"
-        app:boxStrokeWidthFocused="0dp"
-        app:layout_constraintEnd_toEndOf="@+id/til_nombre"
-        app:layout_constraintStart_toStartOf="@+id/til_nombre"
-        app:layout_constraintTop_toBottomOf="@+id/til_nombre">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_valor"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="numberDecimal"
-            android:textColor="@android:color/black" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_repetida"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+    <!-- Logo -->
+    <ImageView
+        android:id="@+id/iv_logo"
         android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/logo"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintTop_toBottomOf="@id/tv_titulo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <EditText
+        android:id="@+id/et_numero_carta"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginHorizontal="24dp"
+        android:hint="Nº Carta"
+        android:background="@color/white"
+        android:padding="12dp"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/darker_gray"
+        app:layout_constraintTop_toBottomOf="@id/iv_logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <EditText
+        android:id="@+id/et_nombre"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:hint="Repetida"
-        android:textColorHint="@android:color/white"
-        app:boxBackgroundColor="#AED581"
-        app:boxStrokeWidth="0dp"
-        app:boxStrokeWidthFocused="0dp"
-        app:layout_constraintStart_toStartOf="@+id/til_equipo"
-        app:layout_constraintTop_toBottomOf="@+id/til_equipo">
+        android:layout_marginHorizontal="24dp"
+        android:hint="Nombre"
+        android:background="@color/white"
+        android:padding="12dp"
+        android:inputType="textCapWords"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/darker_gray"
+        app:layout_constraintTop_toBottomOf="@id/et_numero_carta"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_repetida"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:text="1"
-            android:textColor="@android:color/black" />
+    <!-- Equipo -->
 
-    </com.google.android.material.textfield.TextInputLayout>
 
-    <ImageButton
+    <!-- CheckBox -->
+    <CheckBox
+        android:id="@+id/check_transferible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Transferible"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@id/et_nombre"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Imagen de previsualización -->
+    <ImageView
         android:id="@+id/ib_foto_preview"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
         android:layout_marginTop="16dp"
-        android:background="?attr/selectableItemBackgroundBorderless"
-        android:contentDescription="Vista previa de la foto"
+        android:background="@color/white"
         android:scaleType="centerCrop"
-        app:layout_constraintStart_toStartOf="@+id/til_valor"
-        app:layout_constraintTop_toBottomOf="@+id/til_valor"
-        app:tint="@android:color/white" />
+        android:contentDescription="Foto de la carta"
+        app:layout_constraintTop_toBottomOf="@id/check_transferible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- Botones -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_foto"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="24dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="24dp"
         android:text="+ Foto"
+        android:textAllCaps="false"
         android:textColor="@android:color/white"
-        app:backgroundTint="#00897B"
+        app:backgroundTint="#00796B"
         app:cornerRadius="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btn_anadir"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btn_anadir" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_anadir"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
         android:text="+ Añadir"
+        android:textAllCaps="false"
         android:textColor="@android:color/white"
-        app:backgroundTint="#00897B"
+        app:backgroundTint="#00796B"
         app:cornerRadius="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btn_foto" />
+
+        app:layout_constraintStart_toEndOf="@id/btn_foto"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

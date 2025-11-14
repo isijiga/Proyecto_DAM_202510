@@ -1,5 +1,7 @@
 package com.example.proyecto_dam_202510.data.viewdata;
 
+import android.util.Log;
+
 import androidx.annotation.Nullable;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
@@ -72,56 +74,51 @@ public void setUsuariosColecciones(List<String> listaUsuariosColecciones) {
 
                         totalCromosSistema = value.size();
 
-                        // --- 1. CREA EL MAPA DE AGRUPACIÓN AQUÍ DENTRO ---
-                        // Clave: String (nombre+numero), Valor: el objeto cromo que acumula datos
+
                         Map<String, CromoPosesionAgrupadoIntercambio> mapaAgrupacion = new HashMap<>();
 
-                        // --- 2. UN SOLO BUCLE PARA PROCESAR TODO ---
                         for (QueryDocumentSnapshot document : value) {
+
                             String userPosesion = document.getReference().getParent().getParent().getId();
-
-                            // Convierte el documento al POJO
                             CromoPosesionAgrupadoIntercambio cromoActual = document.toObject(CromoPosesionAgrupadoIntercambio.class);
-
-                            // --- 3. CREA LA CLAVE ÚNICA (como en tu 'equals') ---
+                            String cromoPosesionId = document.getId();
                             String claveCromo = cromoActual.getNombre() + cromoActual.getNumero();
 
                             if (mapaAgrupacion.containsKey(claveCromo)) {
-                                // --- SI YA LO TENEMOS EN EL MAPA ---
                                 CromoPosesionAgrupadoIntercambio cromoExistente = mapaAgrupacion.get(claveCromo);
 
-                                // 1. Añade el NUEVO poseedor a la lista del cromo EXISTENTE
+                                /*desnormalizo y añado para luego poder buscar facilmete*/
+                                String coleccionIndex = userPosesion.substring(28,userPosesion.length());
+                                String usuario = userPosesion.substring(0, 28);
 
-
-                                cromoExistente.getUsuarioPoseedor().add(userPosesion.substring(0, 28));
-
-                                // 2. Incrementa su contador
+                                cromoExistente.getUsuarioPoseedor().add(usuario);
+                                cromoExistente.setColeccionId(coleccionIndex);
                                 cromoExistente.setRepetida(cromoExistente.getRepetida() + 1);
 
+                                /*aplicar el tipo dependiendo de las cartas repetidas. lo idel es usar percentiles*/
+                                Funciones.actualizarCarta(coleccionIndex,cromoExistente.getNumero(),cromoExistente.getRepetida(),cromoPosesionId);
+
+
+
+
                             } else {
-                                // --- SI ES LA PRIMERA VEZ QUE VEMOS ESTE CROMO ---
 
-                                // 1. Limpia la lista de poseedores (puede tener datos basura del 'toObject')
                                 cromoActual.getUsuarioPoseedor().clear();
-
-                                // 2. Añade el *primer* poseedor
-                                //convierno la ref por el correo
-
-
-                                cromoActual.getUsuarioPoseedor().add(userPosesion.substring(0, 28));
-
-                                // 3. Establece el contador en 1
+                                /*desnormalizo y añado para luego poder buscar facilmete*/
+                                String coleccionIndex = userPosesion.substring(28,userPosesion.length());
+                                String usuario = userPosesion.substring(0, 28);
+                                cromoActual.getUsuarioPoseedor().add(usuario);
+                                cromoActual.setColeccionId(coleccionIndex);
                                 cromoActual.setRepetida(1);
 
-                                // 4. Añade el cromo (como VALOR) al mapa
+                                Funciones.actualizarCarta(coleccionIndex,cromoActual.getNumero(),cromoActual.getRepetida(),cromoPosesionId);
                                 mapaAgrupacion.put(claveCromo, cromoActual);
+
                             }
+
                         }
 
-                        // --- 4. PREPARA LA LISTA FINAL ---
                         List<CromoPosesionAgrupadoIntercambio> listaFinal = new ArrayList<>(mapaAgrupacion.values());
-
-                        // --- 5. ACTUALIZA EL LIVEDATA ---
                         cromoPosesionAgrupadoList.setValue(listaFinal);
 
                     }

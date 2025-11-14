@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,6 +18,7 @@ import com.example.proyecto_dam_202510.Dash.DashboardActivity;
 import com.example.proyecto_dam_202510.MainActivity;
 import com.example.proyecto_dam_202510.R;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.Firebase;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginFragment extends Fragment implements Auth.AuthListener {
@@ -35,6 +37,7 @@ public class LoginFragment extends Fragment implements Auth.AuthListener {
         super.onViewCreated(view, savedInstanceState);
         firebaseAuth = new Auth(FirebaseAuth.getInstance());
         TextView tvRegistro = view.findViewById(R.id.tv_registrar);
+        TextView tvRecordar = view.findViewById(R.id.tv_recordar_contrasena);
         TextInputEditText mail = view.findViewById(R.id.et_usuario);
         TextInputEditText pass = view.findViewById(R.id.et_contrasena);
         Button btnAceptar = view.findViewById(R.id.btn_aceptar);
@@ -57,6 +60,14 @@ public class LoginFragment extends Fragment implements Auth.AuthListener {
                 ma.registroUsuario();
             }
         });
+
+        tvRecordar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               ma.recordarContraseña();
+            }
+        });
+
     }
 
     @Override

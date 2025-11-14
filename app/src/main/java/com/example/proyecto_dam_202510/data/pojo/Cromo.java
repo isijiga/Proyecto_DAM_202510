@@ -8,7 +8,7 @@ public class Cromo {
     private String imagen;
     private String nombre;
     private String numero;
-    private List<String> tipo;
+    private String tipo;
     private int valor;
 
     public Cromo() {
@@ -46,11 +46,11 @@ public class Cromo {
         this.numero = numero;
     }
 
-    public List<String> getTipo() {
+    public String getTipo() {
         return tipo;
     }
 
-    public void setTipo(List<String> tipo) {
+    public void setTipo(String tipo) {
         this.tipo = tipo;
     }
 

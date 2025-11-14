@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="white">#FFFFFFFF</color>
+
     <color name="back">#F39E15</color>
     <color name="text">#000000</color>
     <color name="back2">#A246B7</color>

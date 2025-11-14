@@ -3,12 +3,15 @@ package com.example.proyecto_dam_202510.Dash.Fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.proyecto_dam_202510.R;
+import com.example.proyecto_dam_202510.data.viewdata.Estadisticas_vm;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,7 +28,7 @@ public class ConfigFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
+    private Estadisticas_vm estadisticas_vm;
     public ConfigFragment() {
         // Required empty public constructor
     }
@@ -51,16 +54,42 @@ public class ConfigFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+        estadisticas_vm = new Estadisticas_vm();
+        estadisticas_vm.cargarEstadisticas();
+
+
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        estadisticas_vm.getCountUsuarios().observe(getViewLifecycleOwner(), new Observer<Long>() {
+            @Override
+            public void onChanged(Long aLong) {
+                Log.d("Estadisticas", "onSuccess: "+aLong);
+            }
+
+        });
+        estadisticas_vm.getCountUsers_Colecciones().observe(getViewLifecycleOwner(), new Observer<Long>() {
+            @Override
+            public void onChanged(Long aLong) {
+                Log.d("Estadisticas", "onSuccess: "+aLong);
+            }
+
+        });
+        estadisticas_vm.getCountColecciones().observe(getViewLifecycleOwner(), new Observer<Long>() {
+            @Override
+            public void onChanged(Long aLong) {
+                Log.d("Estadisticas", "onSuccess: "+aLong);
+            }
+
+        });
+
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_config, container, false);
+
     }
 }

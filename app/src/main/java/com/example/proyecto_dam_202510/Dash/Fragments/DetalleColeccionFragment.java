@@ -1,9 +1,11 @@
 package com.example.proyecto_dam_202510.Dash.Fragments;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.navigation.NavController;
@@ -14,8 +16,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.proyecto_dam_202510.Dash.Adapters.CromosPosesionAdapter;
+import com.example.proyecto_dam_202510.Funciones;
 import com.example.proyecto_dam_202510.R;
 import com.example.proyecto_dam_202510.data.pojo.CromoPosesionAgrupado;
 import com.example.proyecto_dam_202510.data.viewdata.CromoPosesion_vm;
@@ -87,11 +91,7 @@ public class DetalleColeccionFragment extends Fragment {
                 adapter.setDatos(cromoPosesions);;
             }
         });
-
-
-
-
-        binding.tvColeccionTitulo.setText(nombre);
+ binding.tvColeccionTitulo.setText(nombre);
         binding.tvColeccionProgreso.setProgress(progress);
         binding.tvColeccionProgreso.setMax(totalCartas);
        /*aqui la foto de portada..*/
@@ -131,13 +131,38 @@ public class DetalleColeccionFragment extends Fragment {
                  bundle.putString("numero", cromoPosesionAgrupado.getNumero());
                  bundle.putInt("valor", cromoPosesionAgrupado.getValor());
                  bundle.putString("id", cromoPosesionAgrupado.getId());
+                 bundle.putString("coleccion", cromoPosesionAgrupado.getColeccionId());
+                 bundle.putInt("repetida", cromoPosesionAgrupado.getRepetida());
+                bundle.putString("fechaAdquisicion", cromoPosesionAgrupado.getFechaAdquisicion());
+                bundle.putString("tipo",cromoPosesionAgrupado.getTipo());
 
                 NavController navController = Navigation.findNavController(view);
 
                 navController.navigate(R.id.detalleCromoPosesionFragment,bundle );
+ }
+        });
 
-
-
+        adapter.setBorrarListener(new CromosPosesionAdapter.borrarListener() {
+            @Override
+            public void borrar(CromoPosesionAgrupado CromoPosesionAgrupado) {
+                AlertDialog.Builder builder= new AlertDialog.Builder(requireContext());
+                builder.setTitle("Atención: Eliminar Cromo");
+                builder.setMessage("¿Seguro que desea eliminar el cromo?");
+                builder.setPositiveButton("Eliminar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //Toast.makeText (requireContext(),"Me borrastes",Toast.LENGTH_LONG).show();
+                        Funciones.borrarCarta(CromoPosesionAgrupado.getId(),CromoPosesionAgrupado.getColeccionId(),requireContext());
+                    }
+                });
+                builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+                AlertDialog dialog = builder.create();
+                dialog.show();
             }
         });
     }

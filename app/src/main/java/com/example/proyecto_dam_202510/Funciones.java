@@ -3,9 +3,13 @@ package com.example.proyecto_dam_202510;
 import static android.content.ContentValues.TAG;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import com.example.proyecto_dam_202510.data.pojo.Coleccion;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -19,7 +23,11 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
+import java.io.ByteArrayOutputStream;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -28,7 +36,10 @@ import java.util.Map;
 
 
 public class Funciones {
-
+    public interface OnUploadCallback {
+        void onSuccess(String imageUrl); // Notifica con la URL
+        void onFailure(Exception e);     // Notifica si hay error
+    }
     /*Crear usuario*/
     public static void crearUsuario(FirebaseUser user, Context context, FirebaseFirestore db) {
 
@@ -93,6 +104,8 @@ public class Funciones {
        cromo.put("tipo", tipo);
        cromo.put("valor", valor);
        cromo.put("imagen", imagen);
+       cromo.put("repetida", 0);
+       cromo.put("id", idCromo) ;
 
                db.collection("colecciones").document(idColeccion)
                .collection("cromos")
@@ -114,15 +127,17 @@ public class Funciones {
             String tipo,
             double valor,
             String imagen,
-            String fechaAdquisicion ) {
+            String fechaAdquisicion
+            ) {
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
         Map<String, Object> cromo = new HashMap<>();
 
+        cromo.put("coleccionId",idColeccion);
         cromo.put("nombre", nombre);
-        cromo.put("numero", idCromo);
+        cromo.put("numero", numero);
         cromo.put("tipo", tipo);
         cromo.put("valor", valor);
         cromo.put("imagen", imagen);
@@ -177,6 +192,26 @@ public class Funciones {
 
     }
 
+    public static void borrarCarta(String documento, String coleccion,Context contexto){
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+        FirebaseUser user = mAuth.getCurrentUser();
+
+        db.collection("users_colecciones").document(user.getUid()+coleccion)
+                .collection("cromosPosesion").document(documento).delete()
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+                        Toast.makeText(contexto, "Carta borrada", Toast.LENGTH_LONG).show();
+                    }
+                });
+
+
+
+
+
+
+    }
 
     public static String ahora() {
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/YY HH:mm");
@@ -184,4 +219,42 @@ public class Funciones {
        return dateFormat.format(date) ;
 
     }
+
+    public static void actualizarCarta(String coleccionIndex, String numero, int repetida,String cromoColeccionId) {
+       String tipo;
+
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+        FirebaseUser user = mAuth.getCurrentUser();
+       FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+
+        if (repetida == 1) {
+            tipo = "Único";
+        } else if (repetida >= 2 && repetida <= 5) {
+            tipo = "Muy raro";
+        } else if (repetida >= 6 && repetida <= 10) {
+            tipo = "Raro";
+        } else if (repetida >= 11 && repetida <= 25) {
+            tipo = "Poco común";
+        } else {
+            tipo = "Común";
+        }
+
+       db.collection("colecciones")
+                .document(coleccionIndex)
+                .collection("cromos")
+                .document(numero)
+                .update("tipo",tipo);
+
+        db.collection("users_colecciones")
+                .document(user.getUid()+coleccionIndex)
+                .collection("cromosPosesion")
+                .document(cromoColeccionId)
+                .update("tipo",tipo);
+    }
+
+
+
+
+
 }

@@ -10,12 +10,25 @@ public class CromoPosesionAgrupado {
     private String imagen;
     private String nombre;
     private String numero;
-    private List<String> tipo;
+    private String tipo;
     private int valor;
     private String fechaAdquisicion;
+    private String coleccionId;
+
+    public String getColeccionId() {
+        return coleccionId;
+    }
+
+    public void setColeccionId(String coleccionId) {
+        this.coleccionId = coleccionId;
+    }
 
 
-    public CromoPosesionAgrupado(String fechaAdquisicion, String id, String imagen, String nombre, String numero, int repetida, List<String> tipo, int valor) {
+
+    public CromoPosesionAgrupado(String fechaAdquisicion,
+                                 String id, String imagen,
+                                 String nombre, String numero, int repetida,
+                                 String tipo, int valor,String coleccionId) {
         this.fechaAdquisicion = fechaAdquisicion;
         this.id = id;
         this.imagen = imagen;
@@ -24,6 +37,7 @@ public class CromoPosesionAgrupado {
         this.repetida = repetida;
         this.tipo = tipo;
         this.valor = valor;
+        this.coleccionId = coleccionId;
     }
 
 
@@ -79,11 +93,11 @@ public class CromoPosesionAgrupado {
         this.numero = numero;
     }
 
-    public List<String> getTipo() {
+    public String getTipo() {
         return tipo;
     }
 
-    public void setTipo(List<String> tipo) {
+    public void setTipo(String tipo) {
         this.tipo = tipo;
     }
 

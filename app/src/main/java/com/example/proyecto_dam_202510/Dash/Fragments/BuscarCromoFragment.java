@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -74,6 +75,11 @@ public class BuscarCromoFragment extends Fragment {
                 Log.d("Cromo", cromo.getNombre());
                 Funciones.agregarCromoPosesion(idColeccion,cromo.getId(),cromo.getNombre(),cromo.getNumero(),
                         null,cromo.getValor(),cromo.getImagen(),Funciones.ahora());
+
+                NavController navController = Navigation.findNavController(view);
+                navController.popBackStack();
+                navController.navigate(R.id.nav_userColecciones);
+                Toast.makeText(requireContext(),"Carta añadida a coleccion!", Toast.LENGTH_LONG).show();
 
             }
 

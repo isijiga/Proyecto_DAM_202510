@@ -22,17 +22,20 @@ public class IntercambioAdapter extends RecyclerView.Adapter<IntercambioAdapter.
 
 
     public static class CromoViewHolder extends RecyclerView.ViewHolder {
-
+        TextView tv_numero;
         TextView tvNombre;
         TextView tvConteo;
         TextView tvOwners;
+        TextView tvColeccion;
 
         public CromoViewHolder(@NonNull View itemView) {
             super(itemView);
-
+            tv_numero= itemView.findViewById(R.id.tv_numero);
             tvNombre = itemView.findViewById(R.id.tv_nombre);
             tvConteo = itemView.findViewById(R.id.tv_conteo);
             tvOwners = itemView.findViewById(R.id.tv_owners);
+            tvColeccion = itemView.findViewById(R.id.tv_coleccion);
+
         }
     }
 
@@ -50,9 +53,9 @@ public class IntercambioAdapter extends RecyclerView.Adapter<IntercambioAdapter.
     public void onBindViewHolder(@NonNull CromoViewHolder holder, int position) {
 
         CromoPosesionAgrupadoIntercambio cromo = listaCromos.get(position);
+        holder.tv_numero.setText(cromo.getNumero()+" - ");
         holder.tvNombre.setText(cromo.getNombre());
-
-
+        holder.tvColeccion.setText("Colección: " + cromo.getColeccionId());
         holder.tvConteo.setText("Repetidos: " + cromo.getRepetida());
 
 

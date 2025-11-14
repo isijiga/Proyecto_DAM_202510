@@ -71,11 +71,16 @@ public class CromoPosesion_vm extends ViewModel {
                     String imagen = name.getImagen();
                     String nombre = name.getNombre();
                     String numero = name.getNumero();
-                    List<String> tipo = name.getTipo();
+                    String tipo = name.getTipo();
                     int valor = name.getValor();
                     String fechaAdquisicion = name.getFechaAdquisicion();
+                    String coleccionId = name.getColeccionId();
 
-            listaAgrupada.add(new CromoPosesionAgrupado(fechaAdquisicion,id,imagen,nombre,numero,count,tipo,valor));
+
+
+
+            listaAgrupada.add(new CromoPosesionAgrupado(
+                    fechaAdquisicion,id,imagen,nombre,numero,count,tipo,valor,coleccionId));
                 }
 
                             listaAgrupada.sort((cromo1, cromo2) -> {

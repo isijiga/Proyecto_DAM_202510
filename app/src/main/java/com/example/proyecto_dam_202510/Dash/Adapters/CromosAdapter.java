@@ -78,7 +78,7 @@ public class CromosAdapter extends RecyclerView.Adapter<CromosAdapter.MiViewHold
         public void bind(Cromo item) {
 
             binding.tvCromoTitulo.setText(item.getNombre());
-            binding.tvCartaSubtitulo.setText(String.valueOf(item.getNumero()));
+            binding.tvCartaSubtitulo.setText(String.valueOf(item.getTipo()));
             binding.tvCartaEstado.setText(String.valueOf(item.getId()));
             Picasso.get().load(item.getImagen()).fit().into(binding.ivCromoImagen);
 

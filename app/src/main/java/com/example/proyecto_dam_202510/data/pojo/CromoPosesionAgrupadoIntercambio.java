@@ -12,9 +12,29 @@ public class CromoPosesionAgrupadoIntercambio {
     private String imagen;
     private String nombre;
     private String numero;
-    private List<String> tipo;
+    private String tipo;
     private int valor;
+    private String coleccionId;
+
+    public String getColeccionId() {
+        return coleccionId;
+    }
+
+    public void setColeccionId(String coleccionId) {
+        this.coleccionId = coleccionId;
+    }
+
+    public String getFechaAdquisicion() {
+        return fechaAdquisicion;
+    }
+
+    public void setFechaAdquisicion(String fechaAdquisicion) {
+        this.fechaAdquisicion = fechaAdquisicion;
+    }
+
+    private String fechaAdquisicion;
     private List<String> usuarioPoseedor;
+
 
     public List<String> getUsuarioPoseedor() {
         return usuarioPoseedor;
@@ -43,7 +63,9 @@ public class CromoPosesionAgrupadoIntercambio {
 
 
 
-    public CromoPosesionAgrupadoIntercambio(Date fechaAdquisicion, String id, String imagen, String nombre, String numero, int repetida, List<String> tipo, int valor,String usuarioPoseedor) {
+    public CromoPosesionAgrupadoIntercambio(String fechaAdquisicion,
+                                            String id, String imagen, String nombre,
+                                            String numero, int repetida, String tipo, int valor,String usuarioPoseedor) {
 
         this.fechaAdquisicion = fechaAdquisicion;
         this.id = id;
@@ -53,17 +75,10 @@ public class CromoPosesionAgrupadoIntercambio {
         this.repetida = repetida;
         this.tipo = tipo;
         this.valor = valor;
+
     }
 
-    private Date fechaAdquisicion;
 
-    public Date getFechaAdquisicion() {
-        return fechaAdquisicion;
-    }
-
-    public void setFechaAdquisicion(Date fechaAdquisicion) {
-        this.fechaAdquisicion = fechaAdquisicion;
-    }
 
     public int getRepetida() {
         return repetida;
@@ -109,11 +124,11 @@ public class CromoPosesionAgrupadoIntercambio {
         this.numero = numero;
     }
 
-    public List<String> getTipo() {
+    public String getTipo() {
         return tipo;
     }
 
-    public void setTipo(List<String> tipo) {
+    public void setTipo(String tipo) {
         this.tipo = tipo;
     }
 

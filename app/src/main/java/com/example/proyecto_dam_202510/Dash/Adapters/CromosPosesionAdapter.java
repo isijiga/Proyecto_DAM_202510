@@ -21,11 +21,19 @@ public class CromosPosesionAdapter extends RecyclerView.Adapter<CromosPosesionAd
     private List<CromoPosesion> listaCromosPosesion = new ArrayList<>();
     private List<CromoPosesionAgrupado> listaCromosPosesionAgrupado = new ArrayList<>();
     private onItemClickListener listener;
-
+    private borrarListener borrarListener;
 
     public interface onItemClickListener{
         void onItemClick(CromoPosesionAgrupado CromoPosesionAgrupado);
     }
+    public interface borrarListener{
+        void borrar(CromoPosesionAgrupado CromoPosesionAgrupado);
+    }
+
+    public void setBorrarListener(borrarListener listener) {
+        this.borrarListener = listener;
+    }
+
     public void setOnItemClickListener(onItemClickListener listener) {
         this.listener = listener;
     }
@@ -69,6 +77,13 @@ public class CromosPosesionAdapter extends RecyclerView.Adapter<CromosPosesionAd
             super(binding.getRoot());
             this.binding = binding;
 
+            itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                   borrarListener.borrar(listaCromosPosesionAgrupado.get(getBindingAdapterPosition()));
+                    return true;
+                }
+            });
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -85,7 +100,10 @@ public class CromosPosesionAdapter extends RecyclerView.Adapter<CromosPosesionAd
             binding.tvCromoTitulo.setText(item.getNombre());
             binding.tvCartaSubtitulo.setText(String.valueOf(item.getNumero()));
             binding.tvCartaEstado.setText(String.valueOf(item.getFechaAdquisicion()));
-            Picasso.get().load(item.getImagen()).fit().into(binding.ivCromoImagen);
+            binding.tvCantidadRepetidas.setText(String.valueOf(item.getRepetida()));
+            Picasso.get().load(item.getImagen()).into(binding.ivCromoImagen);
+
+
 
         }
 

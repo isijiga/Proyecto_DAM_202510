@@ -10,10 +10,20 @@ public class CromoPosesion {
     private String imagen;
     private String nombre;
     private String numero;
-    private List<String> tipo;
+    private String tipo;
     private int valor;
     private int repetida;
     private String fechaAdquisicion;
+    private String coleccionId;
+    public String getColeccionId() {
+        return coleccionId;
+    }
+
+    public void setColeccionId(String coleccionId) {
+        this.coleccionId = coleccionId;
+    }
+
+
 
     public String getFechaAdquisicion() {
         return fechaAdquisicion;
@@ -28,12 +38,12 @@ public class CromoPosesion {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         CromoPosesion that = (CromoPosesion) o;
-        return Objects.equals(numero, that.numero);
+        return Objects.equals(id, that.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(numero);
+        return Objects.hashCode(id);
     }
 
     public int getRepetida() {
@@ -79,11 +89,11 @@ public class CromoPosesion {
         this.numero = numero;
     }
 
-    public List<String> getTipo() {
+    public String getTipo() {
         return tipo;
     }
 
-    public void setTipo(List<String> tipo) {
+    public void setTipo(String tipo) {
         this.tipo = tipo;
     }
 
@@ -94,4 +104,6 @@ public class CromoPosesion {
     public void setValor(int valor) {
         this.valor = valor;
     }
+
+
 }

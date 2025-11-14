@@ -7,6 +7,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.proyecto_dam_202510.Dash.DashboardActivity;
+import com.example.proyecto_dam_202510.login.RecordarContrasenaFragment;
 import com.example.proyecto_dam_202510.login.LoginFragment;
 import com.example.proyecto_dam_202510.login.RegistroFragment;
 import com.google.firebase.auth.FirebaseAuth;
@@ -30,8 +31,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void checkEstado() {
+
+
         if(mAuth.getCurrentUser() != null){
-            Toast.makeText(this,"User "+mAuth.getCurrentUser().getEmail() +"conectado",Toast.LENGTH_LONG).show();
+            String[] nombre = mAuth.getCurrentUser().getEmail().split("@");
+            Toast.makeText(this,"Hola de nuevo "+nombre[0] ,Toast.LENGTH_LONG).show();
             navegarDash();
         }
         else{
@@ -62,6 +66,14 @@ public class MainActivity extends AppCompatActivity {
                     .addToBackStack(null)
                     .commit();
 
+
+    }
+
+    public void recordarContraseña() {
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragmentContainerView, new RecordarContrasenaFragment())
+                .addToBackStack(null)
+                .commit();
 
     }
 }

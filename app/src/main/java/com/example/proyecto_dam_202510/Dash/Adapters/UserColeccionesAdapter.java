@@ -110,6 +110,7 @@ public class UserColeccionesAdapter extends RecyclerView.Adapter<UserColecciones
             binding.tvColeccionProgreso.setProgress(item.getProgreso());
 
 
+
         }
 
 
