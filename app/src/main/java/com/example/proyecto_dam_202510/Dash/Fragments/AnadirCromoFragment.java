@@ -102,6 +102,7 @@ public class AnadirCromoFragment extends Fragment {
 
         binding.btnAnadir.setOnClickListener(v -> {
             String nombre = binding.etNombre.getText().toString();
+            String numero = binding.etNumeroCarta.getText().toString();
             binding.btnAnadir.setEnabled(false);
 
             if (imageBitmap != null) {
@@ -109,8 +110,8 @@ public class AnadirCromoFragment extends Fragment {
                     @Override
                     public void onSuccess(String imageUrl) {
                         Log.d("AnadirCromo", "Foto subida, URL: " + imageUrl);
-                        Funciones.agregarCromo(coleccionId, nombre, nombre, 0 + "", null, 0, imageUrl);
-                        Funciones.agregarCromoPosesion(coleccionId, nombre, nombre, 0 + "", null, 0, imageUrl, Funciones.ahora());
+                        Funciones.agregarCromo(coleccionId, nombre, nombre, numero + "", null, 0, imageUrl);
+                        Funciones.agregarCromoPosesion(coleccionId, nombre, nombre, numero + "", null, 0, imageUrl, Funciones.ahora());
                         Toast.makeText(requireContext(), "Cromo Añadida a la coleccion!", Toast.LENGTH_LONG).show();
                         NavController navController = Navigation.findNavController(requireView());
                         navController.popBackStack();
@@ -127,8 +128,8 @@ public class AnadirCromoFragment extends Fragment {
 
             } else {
                 Log.d("AnadirCromo", "No se tomó foto, guardando sin imagen.");
-                Funciones.agregarCromo(coleccionId, nombre, nombre, 0 + "", null, 0, null);
-                Funciones.agregarCromoPosesion(coleccionId, nombre, nombre, 0 + "", null, 0, null, Funciones.ahora());
+                Funciones.agregarCromo(coleccionId, nombre, nombre, numero, null, 0, null);
+                Funciones.agregarCromoPosesion(coleccionId, nombre, nombre, numero , null, 0, null, Funciones.ahora());
                 NavController navController = Navigation.findNavController(requireView());
                 navController.popBackStack();
                 navController.navigate(R.id.nav_userColecciones);
@@ -141,6 +142,14 @@ public class AnadirCromoFragment extends Fragment {
                 cameraLauncher.launch(intent);
             } else {
                 requestPermissionLauncher.launch(Manifest.permission.CAMERA);
+            }
+        });
+        binding.btnAtrasManual.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                NavController navController = Navigation.findNavController(v);
+                navController.popBackStack();
             }
         });
     }

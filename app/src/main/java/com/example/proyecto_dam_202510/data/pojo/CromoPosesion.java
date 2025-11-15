@@ -38,12 +38,12 @@ public class CromoPosesion {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         CromoPosesion that = (CromoPosesion) o;
-        return Objects.equals(id, that.id);
+        return Objects.equals(imagen, that.imagen);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(id);
+        return Objects.hashCode(imagen);
     }
 
     public int getRepetida() {

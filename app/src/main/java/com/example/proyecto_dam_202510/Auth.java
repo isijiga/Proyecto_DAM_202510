@@ -71,7 +71,7 @@ public class Auth  extends AppCompatActivity {
 
     }
 
-    public void signin(String mail, String pass,AuthListener listener){
+    public void signin(String mail, String pass,AuthListener listener,Context context ){
         mAuth.signInWithEmailAndPassword(mail,pass)
                 .addOnCompleteListener(                this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -84,10 +84,10 @@ public class Auth  extends AppCompatActivity {
                        }
 
                    }
+
                    else {
+                       Toast.makeText(context,"Contraseña Incorrecta",Toast.LENGTH_LONG).show();
                        Log.w(TAG, "signIn:Fallo", task.getException());
-
-
 
                     }
                 }});

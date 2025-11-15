@@ -64,6 +64,7 @@ public class GestionColeccionFragment extends Fragment {
                     public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
                    if (position==0){
                        tab.setText("Crear Coleccion");
+
                    }else{
                        tab.setText("Buscar Coleccion");
                    }

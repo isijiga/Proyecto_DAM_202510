@@ -96,7 +96,7 @@ public void setUsuariosColecciones(List<String> listaUsuariosColecciones) {
                                 cromoExistente.setRepetida(cromoExistente.getRepetida() + 1);
 
                                 /*aplicar el tipo dependiendo de las cartas repetidas. lo idel es usar percentiles*/
-                                Funciones.actualizarCarta(coleccionIndex,cromoExistente.getNumero(),cromoExistente.getRepetida(),cromoPosesionId);
+                                Funciones.actualizarCarta(coleccionIndex,cromoExistente.getNumero(),cromoExistente.getNombre(),cromoExistente.getRepetida(),cromoPosesionId);
 
 
 
@@ -111,7 +111,7 @@ public void setUsuariosColecciones(List<String> listaUsuariosColecciones) {
                                 cromoActual.setColeccionId(coleccionIndex);
                                 cromoActual.setRepetida(1);
 
-                                Funciones.actualizarCarta(coleccionIndex,cromoActual.getNumero(),cromoActual.getRepetida(),cromoPosesionId);
+                                Funciones.actualizarCarta(coleccionIndex,cromoActual.getNumero(),cromoActual.getNombre(),cromoActual.getRepetida(),cromoPosesionId);
                                 mapaAgrupacion.put(claveCromo, cromoActual);
 
                             }

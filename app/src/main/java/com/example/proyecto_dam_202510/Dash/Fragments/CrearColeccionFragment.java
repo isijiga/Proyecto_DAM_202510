@@ -11,6 +11,7 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.example.proyecto_dam_202510.Funciones;
 import com.example.proyecto_dam_202510.R;
@@ -18,6 +19,7 @@ import com.example.proyecto_dam_202510.databinding.FragmentNuevaColeccionBinding
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.squareup.picasso.Picasso;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -73,12 +75,12 @@ public class CrearColeccionFragment extends Fragment {
                 String num = binding.etNumeroCromos.getText().toString();
                 float costeInput = binding.sliderCosteSobre.getValues().get(0);
                 int cartas = Math.round(binding.sliderCartasSobre.getValues().get(0));
-                String coste = String.valueOf(costeInput);
+                String imagen ="https://firebasestorage.googleapis.com/v0/b/colectrade-app.firebasestorage.app/o/error.jpg?alt=media&token=631d18e6-8870-4451-86c0-7d9c9f92aa0f";
 
                 String userId = user.getUid();
                 //Log.d("crear","Nombre: "+nombre+" Anno: "+anno+" Num: "+num+" Coste: "+coste+" Cartas: "+cartas);
 
-                Funciones.crearColeccion(nombre,nombre,Integer.parseInt(num),cartas,null,userId);
+                Funciones.crearColeccion(nombre,nombre,Integer.parseInt(num),cartas,costeInput,imagen,userId);
                 limpiarFormulario();
                 NavController navController = Navigation.findNavController(v);
                 navController.navigate(R.id.nav_userColecciones);

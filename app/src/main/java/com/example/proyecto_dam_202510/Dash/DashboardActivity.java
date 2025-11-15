@@ -8,9 +8,11 @@ import android.view.View;
 import android.widget.Button;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.navigation.NavController;
+import androidx.navigation.NavDestination;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.NavigationUI;
 
@@ -56,6 +58,19 @@ private UserColecciones_vm usercoleccionVm ;
                }
            });
 
+    navController.addOnDestinationChangedListener(new NavController.OnDestinationChangedListener() {
+        @Override
+        public void onDestinationChanged(@NonNull NavController navController, @NonNull NavDestination navDestination, @Nullable Bundle bundle) {
+            if(navDestination.getId() == R.id.detalleCromoPosesionFragment){
+                bottomNav.setVisibility(View.GONE);
+            }
+            else if(navDestination.getId() == R.id.anadirCromoFragment){
+                bottomNav.setVisibility(View.GONE);}
+            else{
+                bottomNav.setVisibility(View.VISIBLE);
+            }
+        }
+    });
 
 /*para pruebas userColeccioens*/
     usercoleccionVm.getUsersColecciones().observe(this, new Observer<List<UsersColecciones>>() {

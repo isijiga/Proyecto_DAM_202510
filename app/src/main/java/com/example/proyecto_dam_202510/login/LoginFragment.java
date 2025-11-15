@@ -48,7 +48,7 @@ public class LoginFragment extends Fragment implements Auth.AuthListener {
             @Override
             public void onClick(View v) {
 
-                firebaseAuth.signin(mail.getText().toString(),pass.getText().toString(),LoginFragment.this);
+                firebaseAuth.signin(mail.getText().toString(),pass.getText().toString(),LoginFragment.this,requireContext());
 
 
             }

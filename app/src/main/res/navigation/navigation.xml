@@ -3,7 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/nav_userColecciones">
+    app:startDestination="@id/nav_userColecciones"
+    app:enterAnim="@anim/slide_fade_in_right"
+    app:exitAnim="@anim/slide_fade_out_left"
+
+    >
 
 
     <fragment
@@ -41,6 +45,15 @@
         <action
             android:id="@+id/action_nav_userColecciones_to_nav_mis_colecciones"
             app:destination="@id/nav_mis_colecciones" />
+        <action
+            android:id="@+id/action_nav_userColecciones_to_detalleColeccionFragment"
+            app:destination="@id/detalleColeccionFragment"
+            app:enterAnim="@anim/slide_fade_in_right"
+            app:exitAnim="@anim/slide_fade_out_left"
+            app:popEnterAnim="@anim/slide_fade_in_left"
+            app:popExitAnim="@anim/slide_fade_out_right"
+
+            />
     </fragment>
     <fragment
         android:id="@+id/nav_mis_colecciones"
@@ -51,7 +64,10 @@
         <action
             android:id="@+id/action_nav_mis_colecciones_to_detalleColeccionFragment"
             app:destination="@id/detalleColeccionFragment"
-            app:enterAnim="@android:anim/accelerate_decelerate_interpolator" />
+            app:enterAnim="@anim/slide_fade_in_right"
+            app:exitAnim="@anim/slide_fade_out_left"
+            app:popEnterAnim="@anim/slide_fade_in_left"
+            app:popExitAnim="@anim/slide_fade_out_right"/>
     </fragment>
     <fragment
         android:id="@+id/gestionColeccionFragment"
@@ -68,7 +84,12 @@
             app:destination="@id/buscarCromoFragment" />
         <action
             android:id="@+id/action_detalleColeccionFragment_to_detalleCromoPosesionFragment"
-            app:destination="@id/detalleCromoPosesionFragment" />
+            app:destination="@id/detalleCromoPosesionFragment"
+            app:enterAnim="@anim/slide_fade_in_right"
+            app:exitAnim="@anim/slide_fade_out_left"
+            app:popEnterAnim="@anim/slide_fade_in_left"
+            app:popExitAnim="@anim/slide_fade_out_right"
+            />
     </fragment>
     <fragment
         android:id="@+id/anadirCromoFragment"

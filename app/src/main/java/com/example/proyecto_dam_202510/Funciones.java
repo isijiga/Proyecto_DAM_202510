@@ -64,6 +64,7 @@ public class Funciones {
             String nombre,
             int totalCartas,
             int cartasPorSobre,
+            double coste,
             String imagenPortada,
             String usuarioCreador) {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -73,6 +74,7 @@ public class Funciones {
         coleccion.put("nombre", nombre);
         coleccion.put("totalCartas", totalCartas);
         coleccion.put("cartasPorSobre", cartasPorSobre);
+        coleccion.put("coste",coste);
         coleccion.put("imagenPortada", imagenPortada);
         coleccion.put("usuarioCreador", refUsuario);
 
@@ -109,7 +111,7 @@ public class Funciones {
 
                db.collection("colecciones").document(idColeccion)
                .collection("cromos")
-               .document(idCromo).set(cromo)
+               .document(numero+nombre).set(cromo)
                .addOnSuccessListener(new OnSuccessListener<Void>() {
                    @Override
                    public void onSuccess(Void unused) {
@@ -220,13 +222,13 @@ public class Funciones {
 
     }
 
-    public static void actualizarCarta(String coleccionIndex, String numero, int repetida,String cromoColeccionId) {
+    public static void actualizarCarta(String coleccionIndex, String numero,String nombre, int repetida,String cromoColeccionId) {
        String tipo;
 
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
        FirebaseFirestore db = FirebaseFirestore.getInstance();
-
+    String documento = numero+nombre;
 
         if (repetida == 1) {
             tipo = "Único";
@@ -243,7 +245,7 @@ public class Funciones {
        db.collection("colecciones")
                 .document(coleccionIndex)
                 .collection("cromos")
-                .document(numero)
+                .document(documento)
                 .update("tipo",tipo);
 
         db.collection("users_colecciones")

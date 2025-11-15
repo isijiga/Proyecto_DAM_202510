@@ -106,7 +106,8 @@ public class UsersColeccionesFragment extends Fragment {
 
 
                 NavController navController = Navigation.findNavController(view);
-                navController.navigate(R.id.detalleColeccionFragment, bundle);
+                navController.navigate(R.id.action_nav_userColecciones_to_detalleColeccionFragment, bundle);
+
 
 
             }

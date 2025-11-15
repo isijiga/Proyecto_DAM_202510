@@ -138,7 +138,7 @@ public class DetalleColeccionFragment extends Fragment {
 
                 NavController navController = Navigation.findNavController(view);
 
-                navController.navigate(R.id.detalleCromoPosesionFragment,bundle );
+                navController.navigate(R.id.action_detalleColeccionFragment_to_detalleCromoPosesionFragment,bundle );
  }
         });
 
