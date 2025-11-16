@@ -17,10 +17,10 @@ public class GestionColeccionAdapter extends FragmentStateAdapter {
     public Fragment createFragment(int position) {
         switch (position) {
             case 0:
-                return new CrearColeccionFragment();
-            case 1:
                 return new MisColeccionesFragment();
-        }
+
+            case 1:
+                return new CrearColeccionFragment();        }
         return null;
     }
 

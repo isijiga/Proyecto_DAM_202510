@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Guia.GuiaPantalla6Fragment"
+    android:background="@drawable/fondo_degradado">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/pantalla6"
+        android:scaleType="fitXY"
+
+        />
+
+    <TextView
+        android:id="@+id/texto_guia"
+        style="@style/Guia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+
+
+
+        android:text="En esta sección, puedes visualizar las cartas repetidas de otros usuarios y
+         buscar esa carta específica que te falta. Una vez que encuentres un posible intercambio,
+          utiliza el ID de Usuario para contactar por correo"
+        />
+
+</FrameLayout>

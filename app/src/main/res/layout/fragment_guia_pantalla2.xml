@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Guia.GuiaPantalla2Fragment"
+    android:background="@drawable/fondo_degradado">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/pantalla1_1"
+        android:scaleType="fitXY"
+
+        />
+
+    <TextView
+        android:id="@+id/texto_guia"
+        style="@style/Guia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+
+
+
+        android:text="Aquí puedes ver rápidamente
+        todas las colecciones que tienes asignadas,
+        su estado actual y las cartas que contiene.
+         Toca una colección para gestionarla o añadir nuevos elementos."
+        />
+
+</FrameLayout>

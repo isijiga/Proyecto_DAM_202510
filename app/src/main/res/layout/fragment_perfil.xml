@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
+    android:background="@drawable/fondo_degradado"
     tools:context=".Dash.Fragments.PerfilFragment">
 
     <ImageView
@@ -25,9 +26,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="correo"
-        android:textSize="22sp"
-        android:textColor="@color/back2"
-        android:textStyle="bold"
+        android:textColor="@color/back"
+        android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/logo" />
@@ -48,7 +48,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Cambiar Contraseña"
-        style="?attr/materialButtonOutlinedStyle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvUserEmail" />

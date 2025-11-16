@@ -63,10 +63,10 @@ public class GestionColeccionFragment extends Fragment {
                     @Override
                     public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
                    if (position==0){
-                       tab.setText("Crear Coleccion");
+                       tab.setText("BUSCAR");
 
                    }else{
-                       tab.setText("Buscar Coleccion");
+                       tab.setText("CREAR");
                    }
                     }
                 }).attach();

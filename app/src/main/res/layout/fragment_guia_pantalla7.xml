@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Guia.GuiaPantalla7Fragment"
+    android:background="@drawable/fondo_degradado">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/pantalla7"
+        android:scaleType="fitXY"
+
+        />
+
+    <TextView
+        android:id="@+id/texto_guia"
+        style="@style/Guia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+
+
+
+        android:text="Esta sección te ofrece datos
+        de la aplicación, como el número total de usuarios
+         registrados y el coste total de las cartas en el sistema.
+         Además, encontrarás otras métricas interesantes sobre la actividad
+          de la comunidad."
+        />
+
+</FrameLayout>

@@ -2,13 +2,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/nav_userColecciones"
-        android:icon="@android:drawable/ic_menu_gallery"
+        android:icon="@drawable/house"
         android:title="Colecciones" />
 
     <item
         android:id="@+id/nav_intercambio"
 
-        android:icon="@android:drawable/stat_notify_sync"
+        android:icon="@drawable/handshake"
         android:title="Intercambio" />
 
 
@@ -16,11 +16,11 @@
     <item
         android:id="@+id/nav_configuracion"
 
-        android:icon="@android:drawable/ic_menu_manage"
-        android:title="Configuración" />
+        android:icon="@drawable/stats"
+        android:title="Estadisticas" />
     <item
         android:id="@+id/nav_perfil"
 
-        android:icon="@drawable/common_full_open_on_phone"
+        android:icon="@drawable/perfil"
         android:title="Perfil" />
 </menu>

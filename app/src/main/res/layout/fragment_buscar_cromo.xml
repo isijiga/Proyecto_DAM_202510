@@ -6,14 +6,29 @@
     tools:context=".Dash.Fragments.BuscarCromoFragment"
     android:orientation="vertical">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Selecciona Cromo"
+        android:textColor="@color/white"
+        android:textSize="28dp"
+        android:textAlignment="center"
+        android:padding="5dp"
 
+
+
+
+        >
+
+        </TextView>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+         />
 
-    <!-- Botón "añadir carta" agregado en la parte inferior -->
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnAnadirCarta"
         android:layout_width="match_parent"

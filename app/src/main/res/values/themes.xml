@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.Proyecto_DAM_202510" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="materialButtonStyle">@style/Botones</item>
     </style>
     <style name="Theme.Proyecto_DAM_202510" parent="Base.Theme.Proyecto_DAM_202510">
 
@@ -12,9 +12,28 @@
         <item name="colorSurface">@color/back2</item>
         <item name="colorOnSurface">@color/white</item>
         <item name="android:colorBackground">@color/back5</item>
+    <item name="fontFamily">@font/gaegu_regular</item>
 
+    <item name="android:letterSpacing">0.01</item>
     </style>
     <style name="App.Custom.Indicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
         <item name="android:color">@color/back2</item>
     </style>
+    <style name="Botones" parent="ShapeAppearanceOverlay.Material3.Button">
+        <item name="fontFamily">@font/gaegu_bold </item>
+        <item name="cornerRadius">12dp</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:backgroundTint">@color/white</item>
+        <item name="android:textColor">@color/back3</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:paddingStart">24dp</item>
+        <item name="android:paddingEnd">24dp</item>
+
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+
+
+
+
+    ></style>
 </resources>
