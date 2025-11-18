@@ -21,44 +21,23 @@ import com.example.proyecto_dam_202510.databinding.FragmentPerfilBinding;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+
 /**
- * A simple {@link Fragment} subclass.
- * Use the {@link PerfilFragment#newInstance} factory method to
- * create an instance of this fragment.
+ * Clase-Fragmento que visaliza la seccion de Perfil de usuario desde donde se puede resetear la contraseña
+ * y Cerrar Sesion
  */
 public class PerfilFragment extends Fragment {
-
     private FirebaseAuth mAuth;
     private FirebaseUser user;
-    FragmentPerfilBinding binding;
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
+    private FragmentPerfilBinding binding;
     public PerfilFragment() {
-        // Required empty public constructor
+
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment PerfilFragment.
-     */
-    // TODO: Rename and change types and number of parameters
+
     public static PerfilFragment newInstance(String param1, String param2) {
         PerfilFragment fragment = new PerfilFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
     }
@@ -68,19 +47,14 @@ public class PerfilFragment extends Fragment {
         mAuth = FirebaseAuth.getInstance();
         user = mAuth.getCurrentUser();
         super.onCreate(savedInstanceState);
-
-
-
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         binding = FragmentPerfilBinding.inflate(inflater, container, false);
         return binding.getRoot();
-
-
     }
 
     @Override
@@ -88,11 +62,13 @@ public class PerfilFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         binding.tvUserEmail.setText(user.getEmail());
-
+/**
+ * Boton para cerrar sesion. Se crea un AlertDialog para confirmar la accion.
+ */
         binding.btnCerrarSesion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder =  new AlertDialog.Builder(requireContext());
+                AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
                 builder.setTitle("Atención: Cerrar Sesión");
                 builder.setMessage("¿Estas seguro?");
                 builder.setPositiveButton("Si", (dialog, which) -> {
@@ -112,13 +88,15 @@ public class PerfilFragment extends Fragment {
                 dialog.show();
 
 
-
-            }});
-
+            }
+        });
+/**
+ * Boton para resetear la contraseña. Se crea un AlertDialog para confirmar la accion.
+ */
         binding.btnResetPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder= new AlertDialog.Builder(requireContext());
+                AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
                 builder.setTitle("Atención: Va a solicitar un nueva contraseña");
                 builder.setMessage("¿Estas seguro?");
                 builder.setPositiveButton("Si", (dialog, which) -> {
@@ -126,7 +104,8 @@ public class PerfilFragment extends Fragment {
                             .addOnCompleteListener(task -> {
                                 if (task.isSuccessful()) {
                                     Toast.makeText(requireContext(), "Se ha enviado un correo para restablecer la contraseña", Toast.LENGTH_LONG).show();
-                                };
+                                }
+                                ;
                             });
 
                 });

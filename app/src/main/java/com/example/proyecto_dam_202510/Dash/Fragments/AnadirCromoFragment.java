@@ -31,40 +31,53 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import java.io.ByteArrayOutputStream;
 
+/**
+ * Fragmento que muestra el alta de Carta en una colección. Tiene la particularidad
+ * de poder tomar una foto de la carta y guardarla en la base de datos. Esta carta estara accesible a todos
+ * los usuarios de la app.
+ * Para poder realizar la foto, Android solicita permisos de la camara. Es necesario tener los
+ * permisos concedidos para poder acceder al servicio.
+ */
 public class AnadirCromoFragment extends Fragment {
 
-
-
+    /**
+     * Interfaz que maneja el resultado de la subida de la foto.
+     */
     private interface OnUploadCallback {
         void onSuccess(String imageUrl);
         void onFailure(Exception e);
     }
 
-
+    /**
+     * Launcher para capturar la imagen.
+     */
     private ActivityResultLauncher<Intent> cameraLauncher;
+    /**
+     * Launcher para solicitar permisos de la camara.
+     */
     private ActivityResultLauncher<String> requestPermissionLauncher;
-
-    FragmentAnadirCromoBinding binding;
+    private FragmentAnadirCromoBinding binding;
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
     private FirebaseUser user;
     private FirebaseStorage storage;
-    String coleccionId;
-    Bitmap imageBitmap;
+    private String coleccionId;
+    private Bitmap imageBitmap;
 
-    public AnadirCromoFragment() { }
+    public AnadirCromoFragment() {
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
         mAuth = FirebaseAuth.getInstance();
         user = mAuth.getCurrentUser();
         db = FirebaseFirestore.getInstance();
         storage = FirebaseStorage.getInstance();
 
-
+/**
+ * Launcher para capturar la imagen. Para poder tomar la foto es necesario tener los permisos concedidos.
+ */
         cameraLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(),
                 o -> {
                     if (o.getResultCode() == Activity.RESULT_OK && o.getData() != null) {
@@ -74,7 +87,6 @@ public class AnadirCromoFragment extends Fragment {
                         Toast.makeText(requireContext(), "Foto capturada", Toast.LENGTH_SHORT).show();
                     }
                 });
-
 
         requestPermissionLauncher = registerForActivityResult(
                 new ActivityResultContracts.RequestPermission(),
@@ -106,7 +118,7 @@ public class AnadirCromoFragment extends Fragment {
             binding.btnAnadir.setEnabled(false);
 
             if (imageBitmap != null) {
-                   subirfoto(imageBitmap, new OnUploadCallback() {
+                subirfoto(imageBitmap, new OnUploadCallback() {
                     @Override
                     public void onSuccess(String imageUrl) {
                         Log.d("AnadirCromo", "Foto subida, URL: " + imageUrl);
@@ -129,7 +141,7 @@ public class AnadirCromoFragment extends Fragment {
             } else {
                 Log.d("AnadirCromo", "No se tomó foto, guardando sin imagen.");
                 Funciones.agregarCromo(coleccionId, nombre, nombre, numero, null, 0, null);
-                Funciones.agregarCromoPosesion(coleccionId, nombre, nombre, numero , null, 0, null, Funciones.ahora());
+                Funciones.agregarCromoPosesion(coleccionId, nombre, nombre, numero, null, 0, null, Funciones.ahora());
                 NavController navController = Navigation.findNavController(requireView());
                 navController.popBackStack();
                 navController.navigate(R.id.nav_userColecciones);
@@ -154,11 +166,15 @@ public class AnadirCromoFragment extends Fragment {
         });
     }
 
+    /**
+     * Este metodo sube la foto a Firebase Storage y devuelve la URL de la imagen. Ya que Firebase
+     * trabaja de manera asincrona, es necesario utilizar el callback onSuccess, en caso contrario llama al callback onFailure. El callback
+     * se encarga de notificar al fragmento que se ha completado la tarea.
+     * @param imageBitmap imagen tomada de la camara del usuario. Se reducirá a un 50% de su tamaño original.
+     * @param callback interfaz que maneja el resultado de la subida de la foto.
+     */
 
-
-
-        private void subirfoto(Bitmap imageBitmap, OnUploadCallback callback) {
-
+    private void subirfoto(Bitmap imageBitmap, OnUploadCallback callback) {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         imageBitmap.compress(Bitmap.CompressFormat.JPEG, 50, baos); // 80% calidad
         byte[] data = baos.toByteArray();

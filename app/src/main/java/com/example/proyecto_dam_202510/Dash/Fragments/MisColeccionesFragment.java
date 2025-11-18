@@ -1,7 +1,6 @@
 package com.example.proyecto_dam_202510.Dash.Fragments;
 
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -9,32 +8,26 @@ import androidx.lifecycle.Observer;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.example.proyecto_dam_202510.Dash.Adapters.MisColeccionesAdapter;
 import com.example.proyecto_dam_202510.Funciones;
 import com.example.proyecto_dam_202510.R;
 import com.example.proyecto_dam_202510.data.pojo.Coleccion;
 import com.example.proyecto_dam_202510.data.viewdata.Coleccion_vm;
 import com.example.proyecto_dam_202510.databinding.FragmentMisColeccionesBinding;
-
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ * Fragmento que muestra las colecciones creadas por el usuario logueado.
+ */
 public class MisColeccionesFragment extends Fragment {
 
     private Coleccion_vm coleccionVm;
     private MisColeccionesAdapter adapter;
-    private List<Coleccion> listaColecciones = new ArrayList<>();
-
-
-
     private FragmentMisColeccionesBinding binding;
-
 
 
     public static MisColeccionesFragment newInstance(String param1, String param2) {
@@ -61,11 +54,8 @@ public class MisColeccionesFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-
         adapter = new MisColeccionesAdapter();
         binding.recyclerViewMisColecciones.setLayoutManager(new LinearLayoutManager(getContext()));
-
         binding.recyclerViewMisColecciones.setAdapter(adapter);
         coleccionVm.getColecciones().observe(getViewLifecycleOwner(), new Observer<List<Coleccion>>() {
             @Override
@@ -79,12 +69,7 @@ public class MisColeccionesFragment extends Fragment {
                 Funciones.añadirColeccion(coleccion);
                 NavController navController = Navigation.findNavController(view);
                 navController.navigate(R.id.nav_userColecciones);
-
-
             }
         });
     }
-
-
-
 }

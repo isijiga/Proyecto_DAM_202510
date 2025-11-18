@@ -20,14 +20,19 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 
-public class Auth  extends AppCompatActivity {
-
+/**
+ * @author Isidoro Jiménez García
+ * Clase encargada de gestionar la autenticación de usuarios en la aplicación.
+ * Todas las operaciones relacionadas con FirebaseFirestore son asíncronas,
+ * y se utiliza el metodo {@code onComplete} para manejar las respuestas de la base de datos.
+ *
+ */
+public class Auth extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
     public Auth(FirebaseAuth mAuth) {
         this.mAuth = mAuth;
         this.db = FirebaseFirestore.getInstance();
-
     }
 
     @Override
@@ -39,59 +44,64 @@ public class Auth  extends AppCompatActivity {
 
     @Override
     protected void onStart() {
-                     super.onStart();
-                     FirebaseUser currentUser = mAuth.getCurrentUser();
-                     if (currentUser != null) {
-                         reload();
-                     }
+        super.onStart();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if (currentUser != null) {
+            reload();
+        }
 
     }
-    public void createAccount(String mail, String pass, Context context ){
-        mAuth.createUserWithEmailAndPassword(mail,pass)
+
+    /**
+     *
+     * Este metodo es el encargado de recibir los datos del usuario y pasarlo por el metodo crearUsuario de {@link Funciones}.
+     *
+     * @param mail Correo del usuario
+     * @param pass Contraseña del usuario
+     * @param context Contexto de la aplicación para lanzar Toast
+     */
+    public void crearCuenta(String mail, String pass, Context context) {
+        mAuth.createUserWithEmailAndPassword(mail, pass)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
+                        if (task.isSuccessful()) {
                             Log.d(TAG, "UsuarioCreado!");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            Funciones.crearUsuario(user,context,db);
-
-
-                        }
-                        else {
+                            Funciones.crearUsuario(user, context, db);
+                        } else {
                             Log.w(TAG, "Fallo al crear el usuario", task.getException());
-                            Toast.makeText(context, "Fallo al crear el usuario :"+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(context, "Fallo al crear el usuario :" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+    }
+
+    /**
+     * Metodo para loguear al usuario en el sistema.
+     * @param mail correo electronico utilizado en la pantalla de Registro
+     * @param pass pass facilitada por el usuario
+     * @param listener escuchador de eventos de autenticación para notificar al Fragment registrado de los resultados.
+     * @param context se pasa como parametro el contexto de la aplicación para lanzar Toast
+     */
+    public void signin(String mail, String pass, AuthListener listener, Context context) {
+        mAuth.signInWithEmailAndPassword(mail, pass)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            Log.d(TAG, "signIn:Correcto");
+                            if (listener != null) {
+                                listener.onAuthSuccess();
+                            }
+
+                        } else {
+                            Toast.makeText(context, "Contraseña Incorrecta", Toast.LENGTH_LONG).show();
+                            Log.w(TAG, "signIn:Fallo", task.getException());
 
                         }
                     }
                 });
-
-
-
-
-    }
-
-    public void signin(String mail, String pass,AuthListener listener,Context context ){
-        mAuth.signInWithEmailAndPassword(mail,pass)
-                .addOnCompleteListener(                this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                   if(task.isSuccessful()){
-                       Log.d(TAG, "signIn:Correcto");
-                       FirebaseUser user = mAuth.getCurrentUser();
-                       if (listener != null) {
-                           listener.onAuthSuccess();
-                       }
-
-                   }
-
-                   else {
-                       Toast.makeText(context,"Contraseña Incorrecta",Toast.LENGTH_LONG).show();
-                       Log.w(TAG, "signIn:Fallo", task.getException());
-
-                    }
-                }});
-
 
 
     }
@@ -99,6 +109,7 @@ public class Auth  extends AppCompatActivity {
 
     public interface AuthListener {
         void onAuthSuccess();
+
         void onAuthFailure(String errorMessage);
     }
 

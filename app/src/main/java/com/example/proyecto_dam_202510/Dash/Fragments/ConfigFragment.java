@@ -26,20 +26,17 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
+
 /**
- * A simple {@link Fragment} subclass.
- * Use the {@link ConfigFragment#newInstance} factory method to
- * create an instance of this fragment.
+ * Fragmento que muestra la seccion de Estadistica de la aplicacion. Se crean 4 visuales con unformación general
+ * de la aplicación.
  */
 public class ConfigFragment extends Fragment {
-
-
-    FragmentConfigBinding binding;
-
-
+    private FragmentConfigBinding binding;
     private Estadisticas_vm estadisticas_vm;
     private Intercambio_vm intercambio_vm;
-    List<CromoPosesionAgrupadoIntercambio> cromoPosesionAgrupadoList;
+    private List<CromoPosesionAgrupadoIntercambio> cromoPosesionAgrupadoList;
+
     public ConfigFragment() {
 
     }
@@ -47,7 +44,6 @@ public class ConfigFragment extends Fragment {
     public static ConfigFragment newInstance(String param1, String param2) {
         ConfigFragment fragment = new ConfigFragment();
         Bundle args = new Bundle();
-
         fragment.setArguments(args);
         return fragment;
     }
@@ -60,16 +56,14 @@ public class ConfigFragment extends Fragment {
         estadisticas_vm.cargarEstadisticas();
         cromoPosesionAgrupadoList = new ArrayList<>();
 
-
-
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-               binding= FragmentConfigBinding.inflate(inflater,container,false);
-                // Inflate the layout for this fragment
+        binding = FragmentConfigBinding.inflate(inflater, container, false);
+        // Inflate the layout for this fragment
 
 
         return binding.getRoot();
@@ -83,12 +77,8 @@ public class ConfigFragment extends Fragment {
             @Override
             public void onChanged(List<CromoPosesionAgrupadoIntercambio> cromoPosesionAgrupadoIntercambios) {
                 cromoPosesionAgrupadoList.addAll(cromoPosesionAgrupadoIntercambios);
-
                 cromoPosesionAgrupadoList.sort(Comparator.comparing(CromoPosesionAgrupadoIntercambio::getRepetida).reversed());
-
-                    binding.tvMasRepetida.setText(cromoPosesionAgrupadoList.get(0).getNombre()+" - " +cromoPosesionAgrupadoList.get(0).getRepetida());
-
-
+                binding.tvMasRepetida.setText(cromoPosesionAgrupadoList.get(0).getNombre() + " - " + cromoPosesionAgrupadoList.get(0).getRepetida());
             }
         });
 
@@ -96,23 +86,22 @@ public class ConfigFragment extends Fragment {
         estadisticas_vm.getPrecioPorCarta().observe(getViewLifecycleOwner(), new Observer<Double>() {
             @Override
             public void onChanged(Double aDouble) {
-               binding.tvTotalPrecio.setText(String.format("%.2f €",aDouble));
+                binding.tvTotalPrecio.setText(String.format("%.2f €", aDouble));
             }
         });
 
         estadisticas_vm.getCountUsuarios().observe(getViewLifecycleOwner(), new Observer<Long>() {
             @Override
             public void onChanged(Long aLong) {
-                binding.tvTotalUsuarios.setText(String.format("%d",aLong));
+                binding.tvTotalUsuarios.setText(String.format("%d", aLong));
             }
         });
         estadisticas_vm.getCountCromosPosesion().observe(getViewLifecycleOwner(), new Observer<Long>() {
             @Override
             public void onChanged(Long aLong) {
-                binding.tvTotalCromos.setText(String.format("%d",aLong));
+                binding.tvTotalCromos.setText(String.format("%d", aLong));
             }
         });
-
 
 
     }

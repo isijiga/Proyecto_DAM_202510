@@ -18,17 +18,20 @@ import com.example.proyecto_dam_202510.databinding.FragmentDetalleCromoPosesionB
 import com.squareup.picasso.Picasso;
 
 
+/**
+ * Fragmento que muestra el detalle de una carta.
+ */
 public class DetalleCromoPosesionFragment extends Fragment {
- FragmentDetalleCromoPosesionBinding binding;
- String nombre;
- String imagen;
- String numero;
- int valor;
- String id;
- String coleccion;
- int repetida;
- String fechaAdquisicion;
- String tipo;
+    private FragmentDetalleCromoPosesionBinding binding;
+    private String nombre;
+    private String imagen;
+    private String numero;
+    private int valor;
+    private String id;
+    private String coleccion;
+    private int repetida;
+    private String fechaAdquisicion;
+    private String tipo;
 
 
     public DetalleCromoPosesionFragment() {
@@ -58,13 +61,12 @@ public class DetalleCromoPosesionFragment extends Fragment {
         tipo = getArguments().getString("tipo");
 
 
-
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-       binding = FragmentDetalleCromoPosesionBinding.inflate(inflater, container, false);
+        binding = FragmentDetalleCromoPosesionBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
 
@@ -75,9 +77,8 @@ public class DetalleCromoPosesionFragment extends Fragment {
         binding.tvNombre.setText(nombre);
         binding.tvColeccion.setText(coleccion);
         binding.tvFechaAdquisision.setText(fechaAdquisicion);
-        binding.tvRepetidas.setText(repetida+" Repetida");
+        binding.tvRepetidas.setText(repetida + " Repetida");
         binding.tvTipo.setText(tipo);
-
         binding.btnAtrasManual.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -86,5 +87,5 @@ public class DetalleCromoPosesionFragment extends Fragment {
                 navController.popBackStack();
             }
         });
-            }
+    }
 }

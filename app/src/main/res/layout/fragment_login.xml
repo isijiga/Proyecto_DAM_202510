@@ -107,15 +107,16 @@
             style="@style/Botones"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+
+            android:paddingStart="14dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="10dp"
             android:text="Aceptar"
-            app:layout_constraintTop_toBottomOf="@id/tv_registrar"
+
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="24dp"
-            android:paddingStart="24dp"
-            android:paddingEnd="24dp"
-            android:paddingTop="20dp"
-            android:paddingBottom="12dp"
-            />
+            app:layout_constraintTop_toBottomOf="@id/tv_registrar" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

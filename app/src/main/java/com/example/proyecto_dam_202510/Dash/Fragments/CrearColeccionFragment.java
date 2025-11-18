@@ -22,26 +22,21 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.squareup.picasso.Picasso;
 
 /**
- * A simple {@link Fragment} subclass.
- * Use the {@link CrearColeccionFragment#newInstance} factory method to
- * create an instance of this fragment.
+ * Fragmento que muestra el alta de una nueva colección. Esta colección será visible a todos los usuarios
+ * de la comunidad.
  */
 public class CrearColeccionFragment extends Fragment {
 
    private FragmentNuevaColeccionBinding binding;
    private FirebaseAuth mAuth;
-   private FirebaseFirestore db;
    private FirebaseUser user;
 
-
     public CrearColeccionFragment() {
-
     }
 
     public static CrearColeccionFragment newInstance(String param1, String param2) {
         CrearColeccionFragment fragment = new CrearColeccionFragment();
         Bundle args = new Bundle();
-
         fragment.setArguments(args);
         return fragment;
     }
@@ -51,8 +46,6 @@ public class CrearColeccionFragment extends Fragment {
         super.onCreate(savedInstanceState);
         mAuth = FirebaseAuth.getInstance();
         user = mAuth.getCurrentUser();
-
-
     }
 
     @Override
@@ -75,6 +68,9 @@ public class CrearColeccionFragment extends Fragment {
                 String num = binding.etNumeroCromos.getText().toString();
                 float costeInput = binding.sliderCosteSobre.getValues().get(0);
                 int cartas = Math.round(binding.sliderCartasSobre.getValues().get(0));
+                /**
+                 * imagen de muestra y de error.
+                 */
                 String imagen ="https://firebasestorage.googleapis.com/v0/b/colectrade-app.firebasestorage.app/o/error.jpg?alt=media&token=631d18e6-8870-4451-86c0-7d9c9f92aa0f";
 
                 String userId = user.getUid();
@@ -84,12 +80,13 @@ public class CrearColeccionFragment extends Fragment {
                 limpiarFormulario();
                 NavController navController = Navigation.findNavController(v);
                 navController.navigate(R.id.nav_userColecciones);
-
             }
-
-
         });
     }
+
+    /**
+     * Limpia el formulario de creación de colección.
+     */
     private void limpiarFormulario() {
         binding.etNombreColeccion.setText("");
         binding.etAO.setText("");

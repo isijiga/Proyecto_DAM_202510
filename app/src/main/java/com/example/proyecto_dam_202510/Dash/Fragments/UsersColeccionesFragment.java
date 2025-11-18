@@ -21,31 +21,22 @@ import com.example.proyecto_dam_202510.databinding.FragmentUsersColeccionesBindi
 import com.google.firebase.firestore.DocumentReference;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
+
 /**
- * A simple {@link Fragment} subclass.
- * Use the {@link UsersColeccionesFragment#newInstance} factory method to
- * create an instance of this fragment.
+ * Fragmento principal de la app, muestra las colecciones que un usuario logueado posee.
+ * Posee un recycledView al que se le configura un Adapter para mostrar las colecciones.
  */
 public class UsersColeccionesFragment extends Fragment {
-
-
     private UserColecciones_vm userColeccionVm;
     private UserColeccionesAdapter adapter;
-
-
     private FragmentUsersColeccionesBinding binding;
 
-
     public UsersColeccionesFragment() {
-
     }
 
-    // TODO: Rename and change types and number of parameters
     public static UsersColeccionesFragment newInstance(String param1, String param2) {
         UsersColeccionesFragment fragment = new UsersColeccionesFragment();
         Bundle args = new Bundle();
@@ -55,25 +46,27 @@ public class UsersColeccionesFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         userColeccionVm = new UserColecciones_vm();
     }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentUsersColeccionesBinding.inflate(inflater, container, false);
-
         return binding.getRoot();
     }
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
         binding.recyclerViewUsersColecciones.setLayoutManager(new LinearLayoutManager(getContext()));
         adapter = new UserColeccionesAdapter();
 
         binding.recyclerViewUsersColecciones.setAdapter(adapter);
 
+        /**
+         * gracias a este observador, detectará posibles modificaciones en la bd, y ante el cual actualizará la lista.
+         */
         userColeccionVm.getUsersColecciones().observe(getViewLifecycleOwner(), new Observer<List<UsersColecciones>>() {
             @Override
             public void onChanged(List<UsersColecciones> coleccions) {
@@ -99,7 +92,7 @@ public class UsersColeccionesFragment extends Fragment {
                 bundle.putString("fechaAlta", fechaFormateada);
                 bundle.putString("nombre", item.getNombreColeccion());
                 bundle.putInt("progress", item.getProgreso());
-                bundle.putInt("totalCartas",item.getTotalCromos());
+                bundle.putInt("totalCartas", item.getTotalCromos());
                 bundle.putString("idColeccion", item.getColeccion().getId());
                 bundle.putString("idUsuario", doc.getId());
                 bundle.putString("imagen", item.getImagen());
@@ -107,7 +100,6 @@ public class UsersColeccionesFragment extends Fragment {
 
                 NavController navController = Navigation.findNavController(view);
                 navController.navigate(R.id.action_nav_userColecciones_to_detalleColeccionFragment, bundle);
-
 
 
             }

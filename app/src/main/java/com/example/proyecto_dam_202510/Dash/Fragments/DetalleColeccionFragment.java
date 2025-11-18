@@ -30,6 +30,10 @@ import java.util.List;
 import java.util.Locale;
 
 
+/**
+ * Fragmento que muestra el detalle de una colección.
+ */
+
 public class DetalleColeccionFragment extends Fragment {
 
     private FragmentDetalleColeccionBinding binding;
@@ -64,7 +68,7 @@ public class DetalleColeccionFragment extends Fragment {
         progress = getArguments().getInt("progress");
         imagen = getArguments().getString("imagen");
         fechaAlta = getArguments().getString("fechaAlta");
-        cromoPosesion_vm = new CromoPosesion_vm(idUsuario+idColeccion);
+        cromoPosesion_vm = new CromoPosesion_vm(idUsuario + idColeccion);
         totalCartas = getArguments().getInt("totalCartas");
     }
 
@@ -78,7 +82,7 @@ public class DetalleColeccionFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        adapter =new CromosPosesionAdapter();
+        adapter = new CromosPosesionAdapter();
         binding.rvDetalleItems.setAdapter(new CromosPosesionAdapter());
         binding.rvDetalleItems.setLayoutManager(new LinearLayoutManager(getContext()));
         binding.rvDetalleItems.setHasFixedSize(true);
@@ -86,20 +90,22 @@ public class DetalleColeccionFragment extends Fragment {
 
         cromoPosesion_vm.getListaCromoPosesionAgrupado()
                 .observe(getViewLifecycleOwner(), new Observer<List<CromoPosesionAgrupado>>() {
-            @Override
-            public void onChanged(List<CromoPosesionAgrupado> cromoPosesions) {
-                adapter.setDatos(cromoPosesions);;
-            }
-        });
- binding.tvColeccionTitulo.setText(nombre);
+                    @Override
+                    public void onChanged(List<CromoPosesionAgrupado> cromoPosesions) {
+                        adapter.setDatos(cromoPosesions);
+                        ;
+                    }
+                });
+        binding.tvColeccionTitulo.setText(nombre);
         binding.tvColeccionProgreso.setProgress(progress);
         binding.tvColeccionProgreso.setMax(totalCartas);
-       /*aqui la foto de portada..*/
+
+        /*aqui la foto de portada..*/
         Picasso.get().load(imagen)
                 .fit()
                 .into(binding.ivPortada);
         binding.tvSubhead.setText(fechaAlta);
-        binding.tvProgress.setText(String.format(Locale.getDefault(), "%.2f%%",  (progress * 100.0) / totalCartas));
+        binding.tvProgress.setText(String.format(Locale.getDefault(), "%.2f%%", (progress * 100.0) / totalCartas));
 
 
         binding.btnAtrasManual.setOnClickListener(new View.OnClickListener() {
@@ -107,7 +113,7 @@ public class DetalleColeccionFragment extends Fragment {
             public void onClick(View v) {
 
                 NavController navController = Navigation.findNavController(v);
-                 navController.popBackStack();
+                navController.popBackStack();
             }
         });
 
@@ -118,41 +124,41 @@ public class DetalleColeccionFragment extends Fragment {
                 bundle.putString("coleccion", idColeccion);
 
                 NavController navController = Navigation.findNavController(view);
-                navController.navigate(R.id.action_detalleColeccionFragment_to_buscarCromoFragment,bundle );
+                navController.navigate(R.id.action_detalleColeccionFragment_to_buscarCromoFragment, bundle);
             }
         });
         adapter.setOnItemClickListener(new CromosPosesionAdapter.onItemClickListener() {
             @Override
             public void onItemClick(CromoPosesionAgrupado cromoPosesionAgrupado) {
-                Log.d("Cromo", cromoPosesionAgrupado.getNombre()+" "+cromoPosesionAgrupado.getRepetida());
+                Log.d("Cromo", cromoPosesionAgrupado.getNombre() + " " + cromoPosesionAgrupado.getRepetida());
                 Bundle bundle = new Bundle();
                 bundle.putString("nombre", cromoPosesionAgrupado.getNombre());
                 bundle.putString("imagen", cromoPosesionAgrupado.getImagen());
-                 bundle.putString("numero", cromoPosesionAgrupado.getNumero());
-                 bundle.putInt("valor", cromoPosesionAgrupado.getValor());
-                 bundle.putString("id", cromoPosesionAgrupado.getId());
-                 bundle.putString("coleccion", cromoPosesionAgrupado.getColeccionId());
-                 bundle.putInt("repetida", cromoPosesionAgrupado.getRepetida());
+                bundle.putString("numero", cromoPosesionAgrupado.getNumero());
+                bundle.putInt("valor", cromoPosesionAgrupado.getValor());
+                bundle.putString("id", cromoPosesionAgrupado.getId());
+                bundle.putString("coleccion", cromoPosesionAgrupado.getColeccionId());
+                bundle.putInt("repetida", cromoPosesionAgrupado.getRepetida());
                 bundle.putString("fechaAdquisicion", cromoPosesionAgrupado.getFechaAdquisicion());
-                bundle.putString("tipo",cromoPosesionAgrupado.getTipo());
+                bundle.putString("tipo", cromoPosesionAgrupado.getTipo());
 
                 NavController navController = Navigation.findNavController(view);
 
-                navController.navigate(R.id.action_detalleColeccionFragment_to_detalleCromoPosesionFragment,bundle );
- }
+                navController.navigate(R.id.action_detalleColeccionFragment_to_detalleCromoPosesionFragment, bundle);
+            }
         });
 
         adapter.setBorrarListener(new CromosPosesionAdapter.borrarListener() {
             @Override
             public void borrar(CromoPosesionAgrupado CromoPosesionAgrupado) {
-                AlertDialog.Builder builder= new AlertDialog.Builder(requireContext());
+                AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
                 builder.setTitle("Atención: Eliminar Cromo");
                 builder.setMessage("¿Seguro que desea eliminar el cromo?");
                 builder.setPositiveButton("Eliminar", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         //Toast.makeText (requireContext(),"Me borrastes",Toast.LENGTH_LONG).show();
-                        Funciones.borrarCarta(CromoPosesionAgrupado.getId(),CromoPosesionAgrupado.getColeccionId(),requireContext());
+                        Funciones.borrarCarta(CromoPosesionAgrupado.getId(), CromoPosesionAgrupado.getColeccionId(), requireContext());
                     }
                 });
                 builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {

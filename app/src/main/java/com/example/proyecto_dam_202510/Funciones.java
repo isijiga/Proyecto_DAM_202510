@@ -1,33 +1,17 @@
 package com.example.proyecto_dam_202510;
 
-import static android.content.ContentValues.TAG;
-
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.util.Log;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-
 import com.example.proyecto_dam_202510.data.pojo.Coleccion;
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.Timestamp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QuerySnapshot;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
-
-import java.io.ByteArrayOutputStream;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -35,30 +19,44 @@ import java.util.HashMap;
 import java.util.Map;
 
 
+/**
+ * @author Isidoro Jiménez García
+ * Clase  que se encarga haacer de intermediario con la grabación de Firebase. De esta manera está centralizado todas
+ * las operaciones de escritura en esta clase.
+ */
 public class Funciones {
-    public interface OnUploadCallback {
-        void onSuccess(String imageUrl); // Notifica con la URL
-        void onFailure(Exception e);     // Notifica si hay error
-    }
-    /*Crear usuario*/
-    public static void crearUsuario(FirebaseUser user, Context context, FirebaseFirestore db) {
 
+    /**
+     * Metodo para crear usuario en la coleccion /users de Firebase.
+     *
+     * @param user    FirebaseUser con el email del usuario.
+     * @param context Contexto de la aplicación para lanzar Toast.
+     * @param db      Instancia de FirebaseFirestore para establecer la conexion con la base de datos.
+     */
+    public static void crearUsuario(FirebaseUser user, Context context, FirebaseFirestore db) {
         Map<String, Object> userNew = new HashMap<>();
         userNew.put("username", user.getEmail());
         userNew.put("fechaCreacion", Timestamp.now());
-
-
         db.collection("users").document(user.getUid()).set(userNew)
                 .addOnSuccessListener(aVoid -> {
-                    Log.d("ColacTrade","Usuario creado: " + user.getEmail());
-
+                    Log.d("ColacTrade", "Usuario creado: " + user.getEmail());
                 })
                 .addOnFailureListener(e -> {
-                    Log.e("ColacTrade","Error al crear usuario: " + e.getMessage());
+                    Log.e("ColacTrade", "Error al crear usuario: " + e.getMessage());
                 });
     }
 
-    /*Crear colección referenciando al usuario*/
+    /**
+     * Este metodo es el encargado de crear la coleccion dentro de la bd.
+     *
+     * @param idColeccion id unico de la coleccion
+     * @param nombre nombre de la coleccion
+     * @param totalCartas El numero total de cartas para efectos estadisticos.
+     * @param cartasPorSobre El numero de cartas por sobre para calcular el valor todal.
+     * @param coste Coste del sobre para calcular el precio / unitario.
+     * @param imagenPortada Imagen de portada de la coleccion.
+     * @param usuarioCreador Referencia a la ruta del user creador.
+     */
     public static void crearColeccion(
             String idColeccion,
             String nombre,
@@ -70,11 +68,10 @@ public class Funciones {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         DocumentReference refUsuario = db.collection("users").document(usuarioCreador);
         Map<String, Object> coleccion = new HashMap<>();
-
         coleccion.put("nombre", nombre);
         coleccion.put("totalCartas", totalCartas);
         coleccion.put("cartasPorSobre", cartasPorSobre);
-        coleccion.put("coste",coste);
+        coleccion.put("coste", coste);
         coleccion.put("imagenPortada", imagenPortada);
         coleccion.put("usuarioCreador", refUsuario);
 
@@ -88,39 +85,59 @@ public class Funciones {
                 });
     }
 
-   /*Crear colección carta  dentro del documento de la colección*/
-   public static void agregarCromo(
-           String idColeccion,
-           String idCromo,
-           String nombre,
-           String numero,
-           String tipo,
-           double valor,
-           String imagen) {
+    /**
+     * Metodo para añadir un cromo de una coleccion especifica a la base de datos.
+     * @param idColeccion id unico de la coleccion
+     * @param idCromo   id unico del cromo
+     * @param nombre    nombre del cromo
+     * @param numero numero del cromo, siendo por defecto el nº de cromo seguido de los 3 primeros caracteres
+     *              del equipo en caso de que no tengan numeros consecutivos.
+     * @param tipo el tipo de cromo siendo las posibilidaddes:  "Único", "Muy raro", "Raro", "Poco común", "Común".
+     * @param valor el valor del cromo en euros.
+     * @param imagen Ruta de Firestore de la imagen del cromo Jpg .
+     */
+    public static void agregarCromo(
+            String idColeccion,
+            String idCromo,
+            String nombre,
+            String numero,
+            String tipo,
+            double valor,
+            String imagen) {
 
-       FirebaseFirestore db = FirebaseFirestore.getInstance();
-       Map<String, Object> cromo = new HashMap<>();
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        Map<String, Object> cromo = new HashMap<>();
 
-       cromo.put("nombre", nombre);
-       cromo.put("numero", numero);
-       cromo.put("tipo", tipo);
-       cromo.put("valor", valor);
-       cromo.put("imagen", imagen);
-       cromo.put("repetida", 0);
-       cromo.put("id", idCromo) ;
+        cromo.put("nombre", nombre);
+        cromo.put("numero", numero);
+        cromo.put("tipo", tipo);
+        cromo.put("valor", valor);
+        cromo.put("imagen", imagen);
+        cromo.put("repetida", 0);
+        cromo.put("id", idCromo);
 
-               db.collection("colecciones").document(idColeccion)
-               .collection("cromos")
-               .document(numero+nombre).set(cromo)
-               .addOnSuccessListener(new OnSuccessListener<Void>() {
-                   @Override
-                   public void onSuccess(Void unused) {
-                  Log.d("ColacTrade", "DocumentSnapshot written with ID: " + numero) ;
-                   }
-               });
+        db.collection("colecciones").document(idColeccion)
+                .collection("cromos")
+                .document(numero + nombre).set(cromo)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+                        Log.d("ColecTrade", "Escritura correcta con id...: " + numero);
+                    }
+                });
+    }
 
-   }
-
+    /**
+     * Metodo para añadir un cromo especifico de una coleccion especifica a la coleccion users_colecciones.
+     * @param idColeccion id unico de la coleccion
+     * @param idCromo id unico del cromo
+     * @param nombre nombre del cromo
+     * @param numero numero del cromo
+     * @param tipo tipo del cromo
+     * @param valor valor del cromo
+     * @param imagen ruta de la imagen del cromo
+     * @param fechaAdquisicion fecha de adquisicion del cromo
+     */
     public static void agregarCromoPosesion(
             String idColeccion,
             String idCromo,
@@ -130,14 +147,14 @@ public class Funciones {
             double valor,
             String imagen,
             String fechaAdquisicion
-            ) {
+    ) {
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
         Map<String, Object> cromo = new HashMap<>();
 
-        cromo.put("coleccionId",idColeccion);
+        cromo.put("coleccionId", idColeccion);
         cromo.put("nombre", nombre);
         cromo.put("numero", numero);
         cromo.put("tipo", tipo);
@@ -145,32 +162,35 @@ public class Funciones {
         cromo.put("imagen", imagen);
         cromo.put("fechaAdquisicion", fechaAdquisicion);
 
-        db.collection("users_colecciones").document(user.getUid()+idColeccion)
+        db.collection("users_colecciones").document(user.getUid() + idColeccion)
                 .collection("cromosPosesion")
                 .add(cromo)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
-                        Log.d("trade", "DocumentSnapshot written with ID: " + documentReference.getId());
+                        Log.d("ColecTrade", "Escritura correcta con  ID: " + documentReference.getId());
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Log.w("trade", "Error adding document", e);
+                        Log.w("ColecTrade", "Error al añadir el documento", e);
                     }
                 });
-
     }
+
+    /**
+     * Metodo para añadir una coleccion a users_colecciones, el user será el id del usuario en sistema.
+     * @param coleccion es el id de la coleccion que se va a añadir.
+     *
+     */
     public static void añadirColeccion(Coleccion coleccion) {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
         DocumentReference refUsuario = db.collection("users").document(user.getUid());
         DocumentReference refColeccion = db.collection("colecciones").document(coleccion.getId());
-
         Map<String, Object> coleccionMap = new HashMap<>();
-
         coleccionMap.put("user", refUsuario);
         coleccionMap.put("nombreColeccion", coleccion.getNombre());
         coleccionMap.put("progreso", 0);
@@ -180,26 +200,29 @@ public class Funciones {
         coleccionMap.put("imagen", coleccion.getImagenPortada());
 
 
-
-
-
-        db.collection("users_colecciones").document(refUsuario.getId()+coleccion.getNombre()).set(coleccionMap)
+        db.collection("users_colecciones").document(refUsuario.getId() + coleccion.getNombre()).set(coleccionMap)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
-                        Log.d("ColacTrade", "Documento creado/actualizado con ID: " + coleccion.getNombre());
+                        Log.d("ColecTrade", "Documento creado/actualizado con ID: " + coleccion.getNombre());
                     }
                 });
 
 
     }
 
-    public static void borrarCarta(String documento, String coleccion,Context contexto){
+    /**
+     * Metodo para borrar un cromo de la base de datos.
+     * @param documento id unico del cromo
+     * @param coleccion is de la coleccion
+     * @param contexto  recibimos el contexto para mostrar pantalla Toast.
+     */
+    public static void borrarCarta(String documento, String coleccion, Context contexto) {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
 
-        db.collection("users_colecciones").document(user.getUid()+coleccion)
+        db.collection("users_colecciones").document(user.getUid() + coleccion)
                 .collection("cromosPosesion").document(documento).delete()
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
@@ -209,27 +232,32 @@ public class Funciones {
                 });
 
 
-
-
-
-
     }
 
+    /**
+     * Metodo para obtener la fecha actual en formato especifico (dd/MM/YY HH:mm).
+     * @return fecha y hora  actual en formato String.
+     */
     public static String ahora() {
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/YY HH:mm");
         Date date = new Date();
-       return dateFormat.format(date) ;
-
+        return dateFormat.format(date);
     }
 
-    public static void actualizarCarta(String coleccionIndex, String numero,String nombre, int repetida,String cromoColeccionId) {
-       String tipo;
-
+    /**
+     * Metodo para actualizar el tipo de un cromo en la base de datos.
+     * @param coleccionIndex id de la coleccion
+     * @param numero numero del cromo
+     * @param nombre nombre del cromo
+     * @param repetida numero de veces que se repite el cromo
+     * @param cromoColeccionId id del cromo en la coleccion.
+     */
+    public static void actualizarCarta(String coleccionIndex, String numero, String nombre, int repetida, String cromoColeccionId) {
+        String tipo;
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
-       FirebaseFirestore db = FirebaseFirestore.getInstance();
-    String documento = numero+nombre;
-
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        String documento = numero + nombre;
         if (repetida == 1) {
             tipo = "Único";
         } else if (repetida >= 2 && repetida <= 5) {
@@ -241,22 +269,21 @@ public class Funciones {
         } else {
             tipo = "Común";
         }
-
-       db.collection("colecciones")
+/**
+ * actualizamos tanto en coleccion, como en users_colecciones
+ */
+        db.collection("colecciones")
                 .document(coleccionIndex)
                 .collection("cromos")
                 .document(documento)
-                .update("tipo",tipo);
+                .update("tipo", tipo);
 
         db.collection("users_colecciones")
-                .document(user.getUid()+coleccionIndex)
+                .document(user.getUid() + coleccionIndex)
                 .collection("cromosPosesion")
                 .document(cromoColeccionId)
-                .update("tipo",tipo);
+                .update("tipo", tipo);
     }
-
-
-
 
 
 }
