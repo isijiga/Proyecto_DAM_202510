@@ -1,25 +1,21 @@
 package com.example.proyecto_dam_202510.Dash.Adapters;
 
-
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.proyecto_dam_202510.data.pojo.CromoPosesionAgrupadoIntercambio;
 import com.example.proyecto_dam_202510.R; // Importa tu R
-
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Adaptador para confeccionar la lista de cromo para intercambiar. Recibe una lista de cromos y se lo pasa al Fragment.
+ */
 public class IntercambioAdapter extends RecyclerView.Adapter<IntercambioAdapter.CromoViewHolder> {
-
-
     private List<CromoPosesionAgrupadoIntercambio> listaCromos = new ArrayList<>();
-
 
     public static class CromoViewHolder extends RecyclerView.ViewHolder {
         TextView tv_numero;
@@ -30,7 +26,7 @@ public class IntercambioAdapter extends RecyclerView.Adapter<IntercambioAdapter.
 
         public CromoViewHolder(@NonNull View itemView) {
             super(itemView);
-            tv_numero= itemView.findViewById(R.id.tv_numero);
+            tv_numero = itemView.findViewById(R.id.tv_numero);
             tvNombre = itemView.findViewById(R.id.tv_nombre);
             tvConteo = itemView.findViewById(R.id.tv_conteo);
             tvOwners = itemView.findViewById(R.id.tv_owners);
@@ -53,7 +49,7 @@ public class IntercambioAdapter extends RecyclerView.Adapter<IntercambioAdapter.
     public void onBindViewHolder(@NonNull CromoViewHolder holder, int position) {
 
         CromoPosesionAgrupadoIntercambio cromo = listaCromos.get(position);
-        holder.tv_numero.setText(cromo.getNumero()+" - ");
+        holder.tv_numero.setText(cromo.getNumero() + " - ");
         holder.tvNombre.setText(cromo.getNombre());
         holder.tvColeccion.setText("Colección: " + cromo.getColeccionId());
         holder.tvConteo.setText("Repetidos: " + cromo.getRepetida());
@@ -66,15 +62,14 @@ public class IntercambioAdapter extends RecyclerView.Adapter<IntercambioAdapter.
         }
     }
 
-    // 5. getItemCount (Devuelve el tamaño de la lista)
+
     @Override
     public int getItemCount() {
         return listaCromos.size();
     }
 
-    // 6. Método para actualizar la lista desde el LiveData
     public void setCromos(List<CromoPosesionAgrupadoIntercambio> nuevaLista) {
         this.listaCromos = nuevaLista;
-        notifyDataSetChanged(); // Notifica al adaptador que los datos cambiaron
+        notifyDataSetChanged();
     }
 }

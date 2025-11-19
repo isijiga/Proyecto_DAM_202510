@@ -1,9 +1,13 @@
 package com.example.proyecto_dam_202510.data.pojo;
 
-import java.util.Date;
-import java.util.List;
 import java.util.Objects;
 
+
+/**
+ * Clase POJO de un CromoPosesion donde se indica la estructura de una instancia de un Cromo en posesion.
+ * A diferencia de la clase Cromo, se establecen más caracteristicas como el numero de veces que se repite.
+ * Se podría utilizar como una clase hija de Cromo.
+ */
 public class CromoPosesion {
 
     private String id;
@@ -15,6 +19,7 @@ public class CromoPosesion {
     private int repetida;
     private String fechaAdquisicion;
     private String coleccionId;
+
     public String getColeccionId() {
         return coleccionId;
     }
@@ -22,7 +27,6 @@ public class CromoPosesion {
     public void setColeccionId(String coleccionId) {
         this.coleccionId = coleccionId;
     }
-
 
 
     public String getFechaAdquisicion() {
@@ -33,6 +37,12 @@ public class CromoPosesion {
         this.fechaAdquisicion = fechaAdquisicion;
     }
 
+    /**
+     * Metodo para comparar dos cromos en posesion. La idea es que cuando dos instancias comparte
+     * la misma imagen se referencia como "iguales".
+     * @param o objeto a comparar
+     * @return true si son iguales
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -40,6 +50,7 @@ public class CromoPosesion {
         CromoPosesion that = (CromoPosesion) o;
         return Objects.equals(imagen, that.imagen);
     }
+
 
     @Override
     public int hashCode() {

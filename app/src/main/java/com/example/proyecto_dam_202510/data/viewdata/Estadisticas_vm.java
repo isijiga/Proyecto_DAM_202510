@@ -1,18 +1,11 @@
 package com.example.proyecto_dam_202510.data.viewdata;
 
 import static com.google.firebase.firestore.AggregateField.sum;
-
-import android.util.Log;
-
-import androidx.annotation.NonNull;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
-
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
-import com.google.firebase.Firebase;
 import com.google.firebase.firestore.AggregateQuery;
 import com.google.firebase.firestore.AggregateQuerySnapshot;
 import com.google.firebase.firestore.AggregateSource;
@@ -20,8 +13,13 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.List;
 
-public class Estadisticas_vm extends ViewModel {
+/**
+ * Clase que sirve para obtener de la base de datos los datos globales de la applicación para la pantalla de estadistica
+ * Esta clase cuando contacta con la base de datos lo hace por la clase especial de Firebase AggregateQuery. El motivo es eficiencia
+ * y el coste de procesamiento es menor que si se hace por get().
+ */
 
+public class Estadisticas_vm extends ViewModel {
 
     private FirebaseFirestore db;
     private MutableLiveData<Long> countColecciones = new MutableLiveData<>(0L);
@@ -35,12 +33,15 @@ public class Estadisticas_vm extends ViewModel {
     public MutableLiveData<Long> getCountCromosPosesion() {
         return countCromosPosesion;
     }
+
     public MutableLiveData<Long> getSum_cartasPorSobre() {
         return sum_cartasPorSobre;
     }
+
     public MutableLiveData<Double> getPrecioPorCarta() {
         return precioPorCarta;
     }
+
     public MutableLiveData<Double> getSumPrecio() {
         return sumPrecio;
     }
@@ -58,8 +59,9 @@ public class Estadisticas_vm extends ViewModel {
     }
 
 
-    public void cargarEstadisticas(){
+    public void cargarEstadisticas() {
         db = FirebaseFirestore.getInstance();
+        /**/
         AggregateQuery conteo_Users = db.collection("users").
                 count();
         AggregateQuery conteo_Coleccioens = db.collection("colecciones").
@@ -72,12 +74,14 @@ public class Estadisticas_vm extends ViewModel {
         AggregateQuery suma_cartasPorSobre = db.collection("colecciones").aggregate(sum("cartasPorSobre"));
         Task<AggregateQuerySnapshot> tareaSumaCartasPorSobre = suma_cartasPorSobre.get(AggregateSource.SERVER);
 
-
         AggregateQuery count_cromosPosesion = db.collectionGroup("cromosPosesion").count();
         Task<AggregateQuerySnapshot> tareaCountCromosPosesion = count_cromosPosesion.get(AggregateSource.SERVER);
 
-
-        Tasks.whenAllSuccess(tareaSumaPrecio,tareaSumaCartasPorSobre,tareaCountCromosPosesion).addOnSuccessListener(new OnSuccessListener<List<Object>>() {
+        /**
+         * para que no se solapen las tareas y lleguen unas antes que otras (provoca errores al dividir) se hace uso de Tasks.whenAllSuccess
+         * espera a que todas las tareas terminen y ejecuta el metodo onSuccess.
+         */
+        Tasks.whenAllSuccess(tareaSumaPrecio, tareaSumaCartasPorSobre, tareaCountCromosPosesion).addOnSuccessListener(new OnSuccessListener<List<Object>>() {
             @Override
             public void onSuccess(List<Object> objects) {
                 AggregateQuerySnapshot snapshot0 = (AggregateQuerySnapshot) objects.get(0);
@@ -87,7 +91,7 @@ public class Estadisticas_vm extends ViewModel {
                 Long cartasPorSobre = (Long) snapshot1.get(sum("cartasPorSobre"));
                 Long cromosPosesion = (Long) snapshot2.getCount();
 
-           precioPorCarta.setValue((precio/cartasPorSobre)*cromosPosesion);
+                precioPorCarta.setValue((precio / cartasPorSobre) * cromosPosesion);
             }
         });
 
@@ -96,21 +100,25 @@ public class Estadisticas_vm extends ViewModel {
             @Override
             public void onSuccess(AggregateQuerySnapshot aggregateQuerySnapshot) {
                 countUsuarios.setValue(aggregateQuerySnapshot.getCount());
-        }});
+            }
+        });
+
         conteo_Coleccioens.get(AggregateSource.SERVER).addOnSuccessListener(new OnSuccessListener<AggregateQuerySnapshot>() {
             @Override
             public void onSuccess(AggregateQuerySnapshot aggregateQuerySnapshot) {
                 countColecciones.setValue(aggregateQuerySnapshot.getCount());
-            }});
+            }
+        });
         conteo_Users_Colecciones.get(AggregateSource.SERVER).addOnSuccessListener(new OnSuccessListener<AggregateQuerySnapshot>() {
             @Override
             public void onSuccess(AggregateQuerySnapshot aggregateQuerySnapshot) {
                 countUsers_Colecciones.setValue(aggregateQuerySnapshot.getCount());
-            }});
+            }
+        });
         suma_precio.get(AggregateSource.SERVER).addOnSuccessListener(new OnSuccessListener<AggregateQuerySnapshot>() {
             @Override
             public void onSuccess(AggregateQuerySnapshot aggregateQuerySnapshot) {
-                    sumPrecio.setValue((Double)aggregateQuerySnapshot.get(sum("coste")));
+                sumPrecio.setValue((Double) aggregateQuerySnapshot.get(sum("coste")));
             }
         });
 
@@ -123,7 +131,7 @@ public class Estadisticas_vm extends ViewModel {
         suma_cartasPorSobre.get(AggregateSource.SERVER).addOnSuccessListener(new OnSuccessListener<AggregateQuerySnapshot>() {
             @Override
             public void onSuccess(AggregateQuerySnapshot aggregateQuerySnapshot) {
-                sum_cartasPorSobre.setValue((Long)aggregateQuerySnapshot.get(sum("cartasPorSobre")));
+                sum_cartasPorSobre.setValue((Long) aggregateQuerySnapshot.get(sum("cartasPorSobre")));
             }
         });
     }

@@ -1,31 +1,35 @@
 package com.example.proyecto_dam_202510.Dash.Adapters;
 
-import android.app.appsearch.PackageIdentifier;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.proyecto_dam_202510.data.pojo.Cromo;
 import com.example.proyecto_dam_202510.databinding.CromoLayoutBinding;
 import com.squareup.picasso.Picasso;
-
 import java.util.ArrayList;
 import java.util.List;
 
+
+/**
+ * la clase CromosAdapter es la encargada de enlazar (bind) los cromos con la vista de datos el RecicledView del Fragment.
+ * Su función es de actuar de intermediaria entre el ModelView y Recycled. En esta clase se inflan los
+ * view individuales de cada uno de los cromos
+ */
 public class CromosAdapter extends RecyclerView.Adapter<CromosAdapter.MiViewHolder> {
 
     private List<Cromo> listaCromos = new ArrayList<>();
     private onItemClickListener listener;
-    public interface onItemClickListener{
+
+    public interface onItemClickListener {
         void onItemClick(Cromo cromo);
     }
+
     public void setOnItemClickListener(onItemClickListener listener) {
         this.listener = listener;
     }
-
 
 
     @NonNull
@@ -44,7 +48,7 @@ public class CromosAdapter extends RecyclerView.Adapter<CromosAdapter.MiViewHold
     public void onBindViewHolder(@NonNull CromosAdapter.MiViewHolder holder, int position) {
         Cromo itemActual = listaCromos.get(position);
         holder.bind(itemActual);
-            }
+    }
 
     @Override
     public int getItemCount() {
@@ -56,15 +60,11 @@ public class CromosAdapter extends RecyclerView.Adapter<CromosAdapter.MiViewHold
         notifyDataSetChanged();
     }
 
-        public class MiViewHolder extends RecyclerView.ViewHolder {
-
+    public class MiViewHolder extends RecyclerView.ViewHolder {
         private CromoLayoutBinding binding;
-
         public MiViewHolder(@NonNull CromoLayoutBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
-
-
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -75,6 +75,10 @@ public class CromosAdapter extends RecyclerView.Adapter<CromosAdapter.MiViewHold
 
         }
 
+        /**
+         * El metodo bind se encarga de enlazar los cromos con la vista de datos.
+         * @param item Cada uno de los item's individuales.
+         */
         public void bind(Cromo item) {
 
             binding.tvCromoTitulo.setText(item.getNombre());

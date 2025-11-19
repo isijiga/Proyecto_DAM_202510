@@ -1,10 +1,14 @@
 package com.example.proyecto_dam_202510.data.pojo;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
+
+/**
+ * Clase POJO de un CromoPosesionAgrupadoIntercambio. Se diferencia de las otras clases Pojos en que se utiliza para
+ * la pantalla de Intercambio.
+ */
 public class CromoPosesionAgrupadoIntercambio {
 
     private String id;
@@ -45,7 +49,6 @@ public class CromoPosesionAgrupadoIntercambio {
     }
 
 
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -60,12 +63,9 @@ public class CromoPosesionAgrupadoIntercambio {
     }
 
 
-
-
-
     public CromoPosesionAgrupadoIntercambio(String fechaAdquisicion,
                                             String id, String imagen, String nombre,
-                                            String numero, int repetida, String tipo, int valor,String usuarioPoseedor) {
+                                            String numero, int repetida, String tipo, int valor, String usuarioPoseedor) {
 
         this.fechaAdquisicion = fechaAdquisicion;
         this.id = id;
@@ -77,7 +77,6 @@ public class CromoPosesionAgrupadoIntercambio {
         this.valor = valor;
 
     }
-
 
 
     public int getRepetida() {

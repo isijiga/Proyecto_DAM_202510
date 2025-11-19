@@ -3,28 +3,31 @@ package com.example.proyecto_dam_202510.Dash.Adapters;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.proyecto_dam_202510.data.pojo.Coleccion;
 import com.example.proyecto_dam_202510.databinding.ColeccionLayoutBinding;
 import com.squareup.picasso.Picasso;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class MisColeccionesAdapter extends  RecyclerView.Adapter<MisColeccionesAdapter.MiViewHolder>{
 
+/**
+ * la clase MisColeccionesAdapter es la encargada de enlazar las colecciones
+ * propias de cada usuario con la vista de datos el RecicledView del Fragment.
+ */
+public class MisColeccionesAdapter extends RecyclerView.Adapter<MisColeccionesAdapter.MiViewHolder> {
     private List<Coleccion> listaColecciones = new ArrayList<>();
     private OnItemClickListener listener;
 
-    public interface OnItemClickListener{
+    public interface OnItemClickListener {
         void onItemClick(Coleccion coleccion);
     }
+
     public void setOnItemClickListener(OnItemClickListener listener) {
         this.listener = listener;
     }
+
     @NonNull
     @Override
     public MisColeccionesAdapter.MiViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -35,9 +38,8 @@ public class MisColeccionesAdapter extends  RecyclerView.Adapter<MisColeccionesA
 
     @Override
     public void onBindViewHolder(@NonNull MisColeccionesAdapter.MiViewHolder holder, int position) {
-    Coleccion itemActual = listaColecciones.get(position);
-    holder.bind(itemActual);
-
+        Coleccion itemActual = listaColecciones.get(position);
+        holder.bind(itemActual);
 
 
     }
@@ -52,7 +54,7 @@ public class MisColeccionesAdapter extends  RecyclerView.Adapter<MisColeccionesA
         notifyDataSetChanged();
     }
 
-    public class MiViewHolder extends RecyclerView.ViewHolder{
+    public class MiViewHolder extends RecyclerView.ViewHolder {
 
         private ColeccionLayoutBinding binding;
 
@@ -67,12 +69,12 @@ public class MisColeccionesAdapter extends  RecyclerView.Adapter<MisColeccionesA
                 }
             });
         }
-        public void bind (Coleccion coleccion){
+
+        public void bind(Coleccion coleccion) {
             binding.tvColeccionTitulo.setText(coleccion.getNombre());
             binding.tvColeccionSubtitulo.setText(coleccion.getId());
             binding.tvColeccionEstado.setText(String.valueOf(coleccion.getTotalCartas()));
             Picasso.get().load(coleccion.getImagenPortada()).fit().into(binding.ivColeccionImagen);
-
 
 
         }

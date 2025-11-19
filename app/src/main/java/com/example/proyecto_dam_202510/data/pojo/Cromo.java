@@ -1,7 +1,9 @@
 package com.example.proyecto_dam_202510.data.pojo;
 
-import java.util.List;
 
+/**
+ * Clase POJO de la estrucura que tiene un Cromo en la base de datos .
+ */
 public class Cromo {
 
     private String id;

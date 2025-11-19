@@ -1,33 +1,31 @@
 package com.example.proyecto_dam_202510.Guia;
 
 
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.AttributeSet;
 import android.view.View;
-import android.widget.TableLayout;
-
-import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-
 import com.example.proyecto_dam_202510.MainActivity;
-import com.example.proyecto_dam_202510.R;
 import com.example.proyecto_dam_202510.databinding.ActivityGuiaBinding;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
+/**
+ * @author Isidoro Jiménez García
+ * Actividad principal para la guia de uso de la app. En el metodo onCreate un TabLayoutMediator para seguir el
+ * avance de la guia y un boton para cerrarla durante la ejecucion. En este momento se establece el valor 'false'
+ * a la key 'primera_vez' del SharedPreferences guardado en el dispositivo del usuario, de tal manera
+ * que solo aparezca solamente la primera vez de uso.
+ *
+ */
 public class GuiaActivity extends AppCompatActivity {
     private static final String PREFERENCES_NAME = "LauncherActivity";
     ActivityGuiaBinding binding;
     GuiaAdapter adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +40,7 @@ public class GuiaActivity extends AppCompatActivity {
             public void onClick(View v) {
                 SharedPreferences sharedPreferences = getSharedPreferences(PREFERENCES_NAME, Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putBoolean("primera_vez",false);
+                editor.putBoolean("primera_vez", false);
                 editor.apply();
                 Intent intent = new Intent(GuiaActivity.this, MainActivity.class);
                 startActivity(intent);

@@ -2,10 +2,14 @@ package com.example.proyecto_dam_202510.data.pojo;
 
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.Exclude;
-
 import java.util.List;
 
-public class Coleccion{
+
+/**
+ * Clase POJO que hace de 'molde' para la clase Coleccion.
+ * Se establecen las propiedades que se van a guardar en la base de datos.
+ */
+public class Coleccion {
 
     private int cartasporSobre;
     private String imagenPortada;

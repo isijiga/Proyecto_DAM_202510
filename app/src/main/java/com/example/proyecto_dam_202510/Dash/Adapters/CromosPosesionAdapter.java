@@ -16,6 +16,11 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/**
+ * la clase CromosAdapter enlaza cromos
+ * que un usario posee con la vista de datos el RecicledView del Fragment.
+ */
 public class CromosPosesionAdapter extends RecyclerView.Adapter<CromosPosesionAdapter.MiViewHolder> {
 
     private List<CromoPosesion> listaCromosPosesion = new ArrayList<>();
@@ -23,10 +28,11 @@ public class CromosPosesionAdapter extends RecyclerView.Adapter<CromosPosesionAd
     private onItemClickListener listener;
     private borrarListener borrarListener;
 
-    public interface onItemClickListener{
+    public interface onItemClickListener {
         void onItemClick(CromoPosesionAgrupado CromoPosesionAgrupado);
     }
-    public interface borrarListener{
+
+    public interface borrarListener {
         void borrar(CromoPosesionAgrupado CromoPosesionAgrupado);
     }
 
@@ -39,11 +45,9 @@ public class CromosPosesionAdapter extends RecyclerView.Adapter<CromosPosesionAd
     }
 
 
-
     @NonNull
     @Override
     public CromosPosesionAdapter.MiViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
 
         CromoposesionLayoutBinding binding = CromoposesionLayoutBinding.inflate(
                 LayoutInflater.from(parent.getContext()),
@@ -57,7 +61,7 @@ public class CromosPosesionAdapter extends RecyclerView.Adapter<CromosPosesionAd
     public void onBindViewHolder(@NonNull CromosPosesionAdapter.MiViewHolder holder, int position) {
         CromoPosesionAgrupado itemActual = listaCromosPosesionAgrupado.get(position);
         holder.bind(itemActual);
-            }
+    }
 
     @Override
     public int getItemCount() {
@@ -69,7 +73,7 @@ public class CromosPosesionAdapter extends RecyclerView.Adapter<CromosPosesionAd
         notifyDataSetChanged();
     }
 
-        public class MiViewHolder extends RecyclerView.ViewHolder {
+    public class MiViewHolder extends RecyclerView.ViewHolder {
 
         private com.example.proyecto_dam_202510.databinding.CromoposesionLayoutBinding binding;
 
@@ -77,10 +81,14 @@ public class CromosPosesionAdapter extends RecyclerView.Adapter<CromosPosesionAd
             super(binding.getRoot());
             this.binding = binding;
 
+            /**
+             * Escuchador para borrar un item de la lista. Cuando el usuario deja un cromo pulsado
+             * se lanza el metodo borrar del listener.
+             */
             itemView.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View v) {
-                   borrarListener.borrar(listaCromosPosesionAgrupado.get(getBindingAdapterPosition()));
+                    borrarListener.borrar(listaCromosPosesionAgrupado.get(getBindingAdapterPosition()));
                     return true;
                 }
             });
@@ -96,17 +104,11 @@ public class CromosPosesionAdapter extends RecyclerView.Adapter<CromosPosesionAd
         }
 
         public void bind(CromoPosesionAgrupado item) {
-
             binding.tvCromoTitulo.setText(item.getNombre());
             binding.tvCartaSubtitulo.setText(String.valueOf(item.getNumero()));
             binding.tvCartaEstado.setText(String.valueOf(item.getFechaAdquisicion()));
             binding.tvCantidadRepetidas.setText(String.valueOf(item.getRepetida()));
             Picasso.get().load(item.getImagen()).into(binding.ivCromoImagen);
-
-
-
         }
-
-
     }
 }

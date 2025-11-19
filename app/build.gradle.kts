@@ -1,7 +1,12 @@
+import com.android.build.gradle.internal.dsl.decorator.SupportedPropertyType.Collection.List.type
+
+
 plugins {
     alias(libs.plugins.android.application)
     id("com.google.gms.google-services")
+
 }
+
 
 android {
     namespace = "com.example.proyecto_dam_202510"
@@ -53,10 +58,11 @@ dependencies {
     implementation(libs.lifecycle.viewmodel.ktx)
     implementation(libs.navigation.fragment)
     implementation(libs.navigation.ui)
+
+
     implementation("androidx.recyclerview:recyclerview:1.4.0")
-    testImplementation(libs.junit)
+testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
-
-
 }
+

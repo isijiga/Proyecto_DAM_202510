@@ -1,8 +1,8 @@
 package com.example.proyecto_dam_202510.data.pojo;
 
-import java.util.Date;
-import java.util.List;
-
+/**
+ * Clase POJO de un CromoPosesionAgrupado donde se agrupan los cromos en posesion por numero y tipo.
+ */
 public class CromoPosesionAgrupado {
 
     private String id;
@@ -24,11 +24,10 @@ public class CromoPosesionAgrupado {
     }
 
 
-
     public CromoPosesionAgrupado(String fechaAdquisicion,
                                  String id, String imagen,
                                  String nombre, String numero, int repetida,
-                                 String tipo, int valor,String coleccionId) {
+                                 String tipo, int valor, String coleccionId) {
         this.fechaAdquisicion = fechaAdquisicion;
         this.id = id;
         this.imagen = imagen;
@@ -39,7 +38,6 @@ public class CromoPosesionAgrupado {
         this.valor = valor;
         this.coleccionId = coleccionId;
     }
-
 
 
     public String getFechaAdquisicion() {

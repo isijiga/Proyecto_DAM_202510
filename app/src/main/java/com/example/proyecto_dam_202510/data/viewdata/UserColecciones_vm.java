@@ -1,26 +1,24 @@
 package com.example.proyecto_dam_202510.data.viewdata;
 
-import android.util.Log;
 
-import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
-
 import com.example.proyecto_dam_202510.data.pojo.UsersColecciones;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.ListenerRegistration;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
-
 import java.util.ArrayList;
 import java.util.List;
 
+
+/**
+ * Clase que sirve para obtener de la base de datos
+ * datos de las colecciones que tiene cada usuario.
+ */
 public class UserColecciones_vm extends ViewModel {
 
     private final FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -45,19 +43,19 @@ public class UserColecciones_vm extends ViewModel {
         userRef = db.collection("users").document(uid);
 
         userscoleccionesListener = db.collection("users_colecciones")
-                .whereEqualTo("user", userRef) .addSnapshotListener((dato, error) -> {
+                .whereEqualTo("user", userRef).addSnapshotListener((dato, error) -> {
 
-            List<UsersColecciones> listaTemporal = new ArrayList<>();
-            for (QueryDocumentSnapshot document : dato) {
-                UsersColecciones usercoleccion = (UsersColecciones) document.toObject(UsersColecciones.class);
-                usercoleccion.setId(document.getId());
-                colecRef = document.getDocumentReference("coleccion");
+                    List<UsersColecciones> listaTemporal = new ArrayList<>();
+                    for (QueryDocumentSnapshot document : dato) {
+                        UsersColecciones usercoleccion = (UsersColecciones) document.toObject(UsersColecciones.class);
+                        usercoleccion.setId(document.getId());
+                        colecRef = document.getDocumentReference("coleccion");
 
-            listaTemporal.add(usercoleccion);
-            }
-            listaUsersColeccionesLiveData.setValue(listaTemporal);
-        });
+                        listaTemporal.add(usercoleccion);
+                    }
+                    listaUsersColeccionesLiveData.setValue(listaTemporal);
+                });
     }
 
 
-    }
+}
