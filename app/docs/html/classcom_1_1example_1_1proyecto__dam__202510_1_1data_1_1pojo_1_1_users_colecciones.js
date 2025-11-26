@@ -1,0 +1,28 @@
+var classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_users_colecciones =
+[
+    [ "UsersColecciones", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_users_colecciones.html#a87a9a8efcab6261d83b0cb388da86ecb", null ],
+    [ "getColeccion", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_users_colecciones.html#a8d64ec6ac6b655749b4893327bd28350", null ],
+    [ "getId", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_users_colecciones.html#a6500e075258ee51763bae6b9d5a137d0", null ],
+    [ "getImagen", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_users_colecciones.html#a57db295eaf7577ee967d8236d1d3d134", null ],
+    [ "getInicioColeccion", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_users_colecciones.html#a12cb9e90850918dd553c22c1d5ec8777", null ],
+    [ "getNombreColeccion", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_users_colecciones.html#abe320f54821b32207b7761aee4f6fc80", null ],
+    [ "getProgreso", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_users_colecciones.html#a46e0633653dd764ea4e03c4e1f4bcfc1", null ],
+    [ "getTotalCromos", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_users_colecciones.html#a3a07e7810709c5b3ad3dbf87b6043a6b", null ],
+    [ "getUser", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_users_colecciones.html#afa1936c3cf9649df7c96999c67972f9a", null ],
+    [ "setColeccion", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_users_colecciones.html#ad831faa8d4badda3c64fd036b7bcd223", null ],
+    [ "setId", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_users_colecciones.html#a8c5e27b630bce6c65e39d380337a31e4", null ],
+    [ "setImagen", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_users_colecciones.html#afb46f02927ee2c7577a2a2b5b2a12d05", null ],
+    [ "setInicioColeccion", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_users_colecciones.html#ae0650acc3a8a4aeaae351fb678d66c5a", null ],
+    [ "setNombreColeccion", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_users_colecciones.html#a34de3544dfd9fa8fb6d39617b4cfedee", null ],
+    [ "setProgreso", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_users_colecciones.html#a7a9ec4586fee11298929b8f65a0c7d67", null ],
+    [ "setTotalCromos", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_users_colecciones.html#ac24a53720e4b4d680212eb474f071ec1", null ],
+    [ "setUsuario", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_users_colecciones.html#ae3afa9c98a057d6c8457034d50967e7d", null ],
+    [ "coleccion", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_users_colecciones.html#a2eab920de62788c4bf2898c6c3d2b3de", null ],
+    [ "id", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_users_colecciones.html#a459df0ca5cc8caeb719aaa9bd7ee8515", null ],
+    [ "imagen", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_users_colecciones.html#a1666d4fc0d84c242ae01dd27e08414f5", null ],
+    [ "inicioColeccion", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_users_colecciones.html#a079039226b8af77484e776c405bee3f1", null ],
+    [ "nombreColeccion", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_users_colecciones.html#aa5df0633c60523683f9636e66626d913", null ],
+    [ "progreso", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_users_colecciones.html#a3654198d5f001e171be380ed348a50d7", null ],
+    [ "totalCromos", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_users_colecciones.html#a0333f67f12bcbbe47265a0f128ada3d5", null ],
+    [ "user", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_users_colecciones.html#a1f64f39f7735bdb544bd0dcc5180ddc4", null ]
+];

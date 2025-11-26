@@ -1,0 +1,6 @@
+var searchData=
+[
+  ['onitemclicklistener_0',['OnItemClickListener',['../interfacecom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_mis_colecciones_adapter_1_1_on_item_click_listener.html',1,'com::example::proyecto_dam_202510::Dash::Adapters::MisColeccionesAdapter']]],
+  ['onitemclicklistener_1',['onItemClickListener',['../interfacecom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_cromos_adapter_1_1on_item_click_listener.html',1,'com.example.proyecto_dam_202510.Dash.Adapters.CromosAdapter.onItemClickListener'],['../interfacecom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_cromos_posesion_adapter_1_1on_item_click_listener.html',1,'com.example.proyecto_dam_202510.Dash.Adapters.CromosPosesionAdapter.onItemClickListener'],['../interfacecom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_user_colecciones_adapter_1_1on_item_click_listener.html',1,'com.example.proyecto_dam_202510.Dash.Adapters.UserColeccionesAdapter.onItemClickListener']]],
+  ['onuploadcallback_2',['OnUploadCallback',['../interfacecom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_anadir_cromo_fragment_1_1_on_upload_callback.html',1,'com::example::proyecto_dam_202510::Dash::Fragments::AnadirCromoFragment']]]
+];

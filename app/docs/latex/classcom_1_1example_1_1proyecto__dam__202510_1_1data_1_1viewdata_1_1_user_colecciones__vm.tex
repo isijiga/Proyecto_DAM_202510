@@ -1,0 +1,125 @@
+\doxysection{com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+User\+Colecciones\+\_\+vm Class Reference}
+\hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_user_colecciones__vm}{}\label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_user_colecciones__vm}\index{com.example.proyecto\_dam\_202510.data.viewdata.UserColecciones\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.UserColecciones\_vm}}
+
+
+Clase que sirve para obtener de la base de datos datos de las colecciones que tiene cada usuario.  
+
+
+Inheritance diagram for com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+User\+Colecciones\+\_\+vm\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_user_colecciones__vm}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Live\+Data$<$ List$<$ \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_users_colecciones}{Users\+Colecciones}} $>$ $>$ \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_user_colecciones__vm_a60db03868cea05573196c4a99229f3ab}{get\+Users\+Colecciones}} ()
+\item 
+\mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_user_colecciones__vm_af51d36ea0e86b9ccab2e1525df681bd2}{User\+Colecciones\+\_\+vm}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_user_colecciones__vm_adb4511bb01665ba2caa7cef9c6436200}{carga\+Colecciones}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+final Firebase\+Firestore \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_user_colecciones__vm_a40aec41f45df70ab5201fe1b04f2a6ed}{db}} = Firebase\+Firestore.\+get\+Instance()
+\item 
+final Firebase\+User \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_user_colecciones__vm_ac2d974829f542a1b81aa8360525bb8a8}{user}} = Firebase\+Auth.\+get\+Instance().get\+Current\+User()
+\item 
+final Mutable\+Live\+Data$<$ List$<$ \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_users_colecciones}{Users\+Colecciones}} $>$ $>$ \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_user_colecciones__vm_ae3e8bf1db2a08148aca92b41d4c9abc7}{lista\+Users\+Colecciones\+Live\+Data}} = new Mutable\+Live\+Data$<$$>$()
+\item 
+String \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_user_colecciones__vm_ac13d277bfdd1e6c6475c0cf294514397}{uid}}
+\item 
+Document\+Reference \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_user_colecciones__vm_ad6c4f0d2ef0ab6c78b2d57fc59722d7f}{user\+Ref}}
+\item 
+Document\+Reference \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_user_colecciones__vm_a3e2f76a2d942500aa2fb68b7da5ffa63}{colec\+Ref}}
+\item 
+Listener\+Registration \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_user_colecciones__vm_ad9efbef910544b82e7a6a559e2049d88}{userscolecciones\+Listener}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Clase que sirve para obtener de la base de datos datos de las colecciones que tiene cada usuario. 
+
+\label{doc-constructors}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_user_colecciones__vm_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_user_colecciones__vm_af51d36ea0e86b9ccab2e1525df681bd2}\index{com.example.proyecto\_dam\_202510.data.viewdata.UserColecciones\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.UserColecciones\_vm}!UserColecciones\_vm@{UserColecciones\_vm}}
+\index{UserColecciones\_vm@{UserColecciones\_vm}!com.example.proyecto\_dam\_202510.data.viewdata.UserColecciones\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.UserColecciones\_vm}}
+\doxysubsubsection{\texorpdfstring{UserColecciones\_vm()}{UserColecciones\_vm()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_user_colecciones__vm_af51d36ea0e86b9ccab2e1525df681bd2} 
+com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+User\+Colecciones\+\_\+vm.\+User\+Colecciones\+\_\+vm (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_user_colecciones__vm_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_user_colecciones__vm_adb4511bb01665ba2caa7cef9c6436200}\index{com.example.proyecto\_dam\_202510.data.viewdata.UserColecciones\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.UserColecciones\_vm}!cargaColecciones@{cargaColecciones}}
+\index{cargaColecciones@{cargaColecciones}!com.example.proyecto\_dam\_202510.data.viewdata.UserColecciones\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.UserColecciones\_vm}}
+\doxysubsubsection{\texorpdfstring{cargaColecciones()}{cargaColecciones()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_user_colecciones__vm_adb4511bb01665ba2caa7cef9c6436200} 
+void com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+User\+Colecciones\+\_\+vm.\+carga\+Colecciones (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_user_colecciones__vm_a60db03868cea05573196c4a99229f3ab}\index{com.example.proyecto\_dam\_202510.data.viewdata.UserColecciones\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.UserColecciones\_vm}!getUsersColecciones@{getUsersColecciones}}
+\index{getUsersColecciones@{getUsersColecciones}!com.example.proyecto\_dam\_202510.data.viewdata.UserColecciones\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.UserColecciones\_vm}}
+\doxysubsubsection{\texorpdfstring{getUsersColecciones()}{getUsersColecciones()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_user_colecciones__vm_a60db03868cea05573196c4a99229f3ab} 
+Live\+Data$<$ List$<$ \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_users_colecciones}{Users\+Colecciones}} $>$ $>$ com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+User\+Colecciones\+\_\+vm.\+get\+Users\+Colecciones (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-variable-members}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_user_colecciones__vm_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_user_colecciones__vm_a3e2f76a2d942500aa2fb68b7da5ffa63}\index{com.example.proyecto\_dam\_202510.data.viewdata.UserColecciones\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.UserColecciones\_vm}!colecRef@{colecRef}}
+\index{colecRef@{colecRef}!com.example.proyecto\_dam\_202510.data.viewdata.UserColecciones\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.UserColecciones\_vm}}
+\doxysubsubsection{\texorpdfstring{colecRef}{colecRef}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_user_colecciones__vm_a3e2f76a2d942500aa2fb68b7da5ffa63} 
+Document\+Reference com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+User\+Colecciones\+\_\+vm.\+colec\+Ref\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_user_colecciones__vm_a40aec41f45df70ab5201fe1b04f2a6ed}\index{com.example.proyecto\_dam\_202510.data.viewdata.UserColecciones\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.UserColecciones\_vm}!db@{db}}
+\index{db@{db}!com.example.proyecto\_dam\_202510.data.viewdata.UserColecciones\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.UserColecciones\_vm}}
+\doxysubsubsection{\texorpdfstring{db}{db}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_user_colecciones__vm_a40aec41f45df70ab5201fe1b04f2a6ed} 
+final Firebase\+Firestore com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+User\+Colecciones\+\_\+vm.\+db = Firebase\+Firestore.\+get\+Instance()\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_user_colecciones__vm_ae3e8bf1db2a08148aca92b41d4c9abc7}\index{com.example.proyecto\_dam\_202510.data.viewdata.UserColecciones\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.UserColecciones\_vm}!listaUsersColeccionesLiveData@{listaUsersColeccionesLiveData}}
+\index{listaUsersColeccionesLiveData@{listaUsersColeccionesLiveData}!com.example.proyecto\_dam\_202510.data.viewdata.UserColecciones\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.UserColecciones\_vm}}
+\doxysubsubsection{\texorpdfstring{listaUsersColeccionesLiveData}{listaUsersColeccionesLiveData}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_user_colecciones__vm_ae3e8bf1db2a08148aca92b41d4c9abc7} 
+final Mutable\+Live\+Data$<$List$<$\mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_users_colecciones}{Users\+Colecciones}}$>$ $>$ com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+User\+Colecciones\+\_\+vm.\+lista\+Users\+Colecciones\+Live\+Data = new Mutable\+Live\+Data$<$$>$()\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_user_colecciones__vm_ac13d277bfdd1e6c6475c0cf294514397}\index{com.example.proyecto\_dam\_202510.data.viewdata.UserColecciones\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.UserColecciones\_vm}!uid@{uid}}
+\index{uid@{uid}!com.example.proyecto\_dam\_202510.data.viewdata.UserColecciones\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.UserColecciones\_vm}}
+\doxysubsubsection{\texorpdfstring{uid}{uid}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_user_colecciones__vm_ac13d277bfdd1e6c6475c0cf294514397} 
+String com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+User\+Colecciones\+\_\+vm.\+uid\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_user_colecciones__vm_ac2d974829f542a1b81aa8360525bb8a8}\index{com.example.proyecto\_dam\_202510.data.viewdata.UserColecciones\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.UserColecciones\_vm}!user@{user}}
+\index{user@{user}!com.example.proyecto\_dam\_202510.data.viewdata.UserColecciones\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.UserColecciones\_vm}}
+\doxysubsubsection{\texorpdfstring{user}{user}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_user_colecciones__vm_ac2d974829f542a1b81aa8360525bb8a8} 
+final Firebase\+User com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+User\+Colecciones\+\_\+vm.\+user = Firebase\+Auth.\+get\+Instance().get\+Current\+User()\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_user_colecciones__vm_ad6c4f0d2ef0ab6c78b2d57fc59722d7f}\index{com.example.proyecto\_dam\_202510.data.viewdata.UserColecciones\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.UserColecciones\_vm}!userRef@{userRef}}
+\index{userRef@{userRef}!com.example.proyecto\_dam\_202510.data.viewdata.UserColecciones\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.UserColecciones\_vm}}
+\doxysubsubsection{\texorpdfstring{userRef}{userRef}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_user_colecciones__vm_ad6c4f0d2ef0ab6c78b2d57fc59722d7f} 
+Document\+Reference com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+User\+Colecciones\+\_\+vm.\+user\+Ref\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_user_colecciones__vm_ad9efbef910544b82e7a6a559e2049d88}\index{com.example.proyecto\_dam\_202510.data.viewdata.UserColecciones\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.UserColecciones\_vm}!userscoleccionesListener@{userscoleccionesListener}}
+\index{userscoleccionesListener@{userscoleccionesListener}!com.example.proyecto\_dam\_202510.data.viewdata.UserColecciones\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.UserColecciones\_vm}}
+\doxysubsubsection{\texorpdfstring{userscoleccionesListener}{userscoleccionesListener}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_user_colecciones__vm_ad9efbef910544b82e7a6a559e2049d88} 
+Listener\+Registration com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+User\+Colecciones\+\_\+vm.\+userscolecciones\+Listener\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+app/src/main/java/com/example/proyecto\+\_\+dam\+\_\+202510/data/viewdata/\mbox{\hyperlink{_user_colecciones__vm_8java}{User\+Colecciones\+\_\+vm.\+java}}\end{DoxyCompactItemize}

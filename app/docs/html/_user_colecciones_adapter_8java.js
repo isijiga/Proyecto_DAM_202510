@@ -1,0 +1,6 @@
+var _user_colecciones_adapter_8java =
+[
+    [ "com.example.proyecto_dam_202510.Dash.Adapters.UserColeccionesAdapter", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_user_colecciones_adapter.html", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_user_colecciones_adapter" ],
+    [ "com.example.proyecto_dam_202510.Dash.Adapters.UserColeccionesAdapter.onItemClickListener", "interfacecom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_user_colecciones_adapter_1_1on_item_click_listener.html", "interfacecom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_user_colecciones_adapter_1_1on_item_click_listener" ],
+    [ "com.example.proyecto_dam_202510.Dash.Adapters.UserColeccionesAdapter.MiViewHolder", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_user_colecciones_adapter_1_1_mi_view_holder.html", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_user_colecciones_adapter_1_1_mi_view_holder" ]
+];

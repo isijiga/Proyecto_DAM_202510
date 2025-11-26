@@ -1,0 +1,143 @@
+\doxysection{com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+Auth Class Reference}
+\hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1_auth}{}\label{classcom_1_1example_1_1proyecto__dam__202510_1_1_auth}\index{com.example.proyecto\_dam\_202510.Auth@{com.example.proyecto\_dam\_202510.Auth}}
+Inheritance diagram for com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+Auth\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcom_1_1example_1_1proyecto__dam__202510_1_1_auth}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+interface \mbox{\hyperlink{interfacecom_1_1example_1_1proyecto__dam__202510_1_1_auth_1_1_auth_listener}{Auth\+Listener}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1_auth_af1c5de88f33bf6c98ee78fdd27378cc5}{Auth}} (Firebase\+Auth \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1_auth_a32f0a01d4ca89aebdc3502773b2d1d2d}{m\+Auth}})
+\item 
+void \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1_auth_aee17794f4e78ec96d2c10dc4a93e7c86}{crear\+Cuenta}} (String mail, String pass, Context context)
+\begin{DoxyCompactList}\small\item\em Este metodo es el encargado de recibir los datos del usuario y pasarlo por el metodo crear\+Usuario de {\ttfamily \doxylink{classcom_1_1example_1_1proyecto__dam__202510_1_1_funciones}{Funciones}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1_auth_a73d03ccf2ce7cbad2d786197eeaf550d}{signin}} (String mail, String pass, \mbox{\hyperlink{interfacecom_1_1example_1_1proyecto__dam__202510_1_1_auth_1_1_auth_listener}{Auth\+Listener}} listener, Context context)
+\begin{DoxyCompactList}\small\item\em Metodo para loguear al usuario en el sistema. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1_auth_a25d2ef9c3d7e76c0b8371fcf23cad5f9}{on\+Create}} (@Nullable Bundle saved\+Instance\+State)
+\item 
+void \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1_auth_af3be0c9ab6e0cd647cb05ce6465764ec}{on\+Start}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1_auth_aedb6a2b66a867e424ad0ea81c1ba3264}{reload}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Firebase\+Auth \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1_auth_a32f0a01d4ca89aebdc3502773b2d1d2d}{m\+Auth}}
+\item 
+Firebase\+Firestore \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1_auth_a1356f2fa4ff456c922624cd9773901b1}{db}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Isidoro Jiménez García Clase encargada de gestionar la autenticación de usuarios en la aplicación. Todas las operaciones relacionadas con Firebase\+Firestore son asíncronas, y se utiliza el metodo {\ttfamily on\+Complete} para manejar las respuestas de la base de datos. 
+\end{DoxyAuthor}
+
+
+\label{doc-constructors}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1_auth_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1_auth_af1c5de88f33bf6c98ee78fdd27378cc5}\index{com.example.proyecto\_dam\_202510.Auth@{com.example.proyecto\_dam\_202510.Auth}!Auth@{Auth}}
+\index{Auth@{Auth}!com.example.proyecto\_dam\_202510.Auth@{com.example.proyecto\_dam\_202510.Auth}}
+\doxysubsubsection{\texorpdfstring{Auth()}{Auth()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1_auth_af1c5de88f33bf6c98ee78fdd27378cc5} 
+com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+Auth.\+Auth (\begin{DoxyParamCaption}\item[{Firebase\+Auth}]{m\+Auth}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1_auth_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1_auth_aee17794f4e78ec96d2c10dc4a93e7c86}\index{com.example.proyecto\_dam\_202510.Auth@{com.example.proyecto\_dam\_202510.Auth}!crearCuenta@{crearCuenta}}
+\index{crearCuenta@{crearCuenta}!com.example.proyecto\_dam\_202510.Auth@{com.example.proyecto\_dam\_202510.Auth}}
+\doxysubsubsection{\texorpdfstring{crearCuenta()}{crearCuenta()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1_auth_aee17794f4e78ec96d2c10dc4a93e7c86} 
+void com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+Auth.\+crear\+Cuenta (\begin{DoxyParamCaption}\item[{String}]{mail}{, }\item[{String}]{pass}{, }\item[{Context}]{context}{}\end{DoxyParamCaption})}
+
+
+
+Este metodo es el encargado de recibir los datos del usuario y pasarlo por el metodo crear\+Usuario de {\ttfamily \doxylink{classcom_1_1example_1_1proyecto__dam__202510_1_1_funciones}{Funciones}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mail} & Correo del usuario \\
+\hline
+{\em pass} & Contraseña del usuario \\
+\hline
+{\em context} & Contexto de la aplicación para lanzar Toast \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1_auth_a25d2ef9c3d7e76c0b8371fcf23cad5f9}\index{com.example.proyecto\_dam\_202510.Auth@{com.example.proyecto\_dam\_202510.Auth}!onCreate@{onCreate}}
+\index{onCreate@{onCreate}!com.example.proyecto\_dam\_202510.Auth@{com.example.proyecto\_dam\_202510.Auth}}
+\doxysubsubsection{\texorpdfstring{onCreate()}{onCreate()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1_auth_a25d2ef9c3d7e76c0b8371fcf23cad5f9} 
+void com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+Auth.\+on\+Create (\begin{DoxyParamCaption}\item[{@Nullable Bundle}]{saved\+Instance\+State}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1_auth_af3be0c9ab6e0cd647cb05ce6465764ec}\index{com.example.proyecto\_dam\_202510.Auth@{com.example.proyecto\_dam\_202510.Auth}!onStart@{onStart}}
+\index{onStart@{onStart}!com.example.proyecto\_dam\_202510.Auth@{com.example.proyecto\_dam\_202510.Auth}}
+\doxysubsubsection{\texorpdfstring{onStart()}{onStart()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1_auth_af3be0c9ab6e0cd647cb05ce6465764ec} 
+void com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+Auth.\+on\+Start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1_auth_aedb6a2b66a867e424ad0ea81c1ba3264}\index{com.example.proyecto\_dam\_202510.Auth@{com.example.proyecto\_dam\_202510.Auth}!reload@{reload}}
+\index{reload@{reload}!com.example.proyecto\_dam\_202510.Auth@{com.example.proyecto\_dam\_202510.Auth}}
+\doxysubsubsection{\texorpdfstring{reload()}{reload()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1_auth_aedb6a2b66a867e424ad0ea81c1ba3264} 
+void com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+Auth.\+reload (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1_auth_a73d03ccf2ce7cbad2d786197eeaf550d}\index{com.example.proyecto\_dam\_202510.Auth@{com.example.proyecto\_dam\_202510.Auth}!signin@{signin}}
+\index{signin@{signin}!com.example.proyecto\_dam\_202510.Auth@{com.example.proyecto\_dam\_202510.Auth}}
+\doxysubsubsection{\texorpdfstring{signin()}{signin()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1_auth_a73d03ccf2ce7cbad2d786197eeaf550d} 
+void com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+Auth.\+signin (\begin{DoxyParamCaption}\item[{String}]{mail}{, }\item[{String}]{pass}{, }\item[{\mbox{\hyperlink{interfacecom_1_1example_1_1proyecto__dam__202510_1_1_auth_1_1_auth_listener}{Auth\+Listener}}}]{listener}{, }\item[{Context}]{context}{}\end{DoxyParamCaption})}
+
+
+
+Metodo para loguear al usuario en el sistema. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mail} & correo electronico utilizado en la pantalla de Registro \\
+\hline
+{\em pass} & pass facilitada por el usuario \\
+\hline
+{\em listener} & escuchador de eventos de autenticación para notificar al Fragment registrado de los resultados. \\
+\hline
+{\em context} & se pasa como parametro el contexto de la aplicación para lanzar Toast \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-variable-members}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1_auth_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1_auth_a1356f2fa4ff456c922624cd9773901b1}\index{com.example.proyecto\_dam\_202510.Auth@{com.example.proyecto\_dam\_202510.Auth}!db@{db}}
+\index{db@{db}!com.example.proyecto\_dam\_202510.Auth@{com.example.proyecto\_dam\_202510.Auth}}
+\doxysubsubsection{\texorpdfstring{db}{db}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1_auth_a1356f2fa4ff456c922624cd9773901b1} 
+Firebase\+Firestore com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+Auth.\+db\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1_auth_a32f0a01d4ca89aebdc3502773b2d1d2d}\index{com.example.proyecto\_dam\_202510.Auth@{com.example.proyecto\_dam\_202510.Auth}!mAuth@{mAuth}}
+\index{mAuth@{mAuth}!com.example.proyecto\_dam\_202510.Auth@{com.example.proyecto\_dam\_202510.Auth}}
+\doxysubsubsection{\texorpdfstring{mAuth}{mAuth}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1_auth_a32f0a01d4ca89aebdc3502773b2d1d2d} 
+Firebase\+Auth com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+Auth.\+m\+Auth\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+app/src/main/java/com/example/proyecto\+\_\+dam\+\_\+202510/\mbox{\hyperlink{_auth_8java}{Auth.\+java}}\end{DoxyCompactItemize}

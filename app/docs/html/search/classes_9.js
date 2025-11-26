@@ -1,0 +1,7 @@
+var searchData=
+[
+  ['mainactivity_0',['MainActivity',['../classcom_1_1example_1_1proyecto__dam__202510_1_1_main_activity.html',1,'com::example::proyecto_dam_202510']]],
+  ['miscoleccionesadapter_1',['MisColeccionesAdapter',['../classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_mis_colecciones_adapter.html',1,'com::example::proyecto_dam_202510::Dash::Adapters']]],
+  ['miscoleccionesfragment_2',['MisColeccionesFragment',['../classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_mis_colecciones_fragment.html',1,'com::example::proyecto_dam_202510::Dash::Fragments']]],
+  ['miviewholder_3',['MiViewHolder',['../classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_cromos_adapter_1_1_mi_view_holder.html',1,'com.example.proyecto_dam_202510.Dash.Adapters.CromosAdapter.MiViewHolder'],['../classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_cromos_posesion_adapter_1_1_mi_view_holder.html',1,'com.example.proyecto_dam_202510.Dash.Adapters.CromosPosesionAdapter.MiViewHolder'],['../classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_mis_colecciones_adapter_1_1_mi_view_holder.html',1,'com.example.proyecto_dam_202510.Dash.Adapters.MisColeccionesAdapter.MiViewHolder'],['../classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_user_colecciones_adapter_1_1_mi_view_holder.html',1,'com.example.proyecto_dam_202510.Dash.Adapters.UserColeccionesAdapter.MiViewHolder']]]
+];

@@ -1,0 +1,128 @@
+\doxysection{com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+Cromo\+Posesion\+\_\+vm Class Reference}
+\hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_cromo_posesion__vm}{}\label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_cromo_posesion__vm}\index{com.example.proyecto\_dam\_202510.data.viewdata.CromoPosesion\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.CromoPosesion\_vm}}
+
+
+VM para obtener datos que son instanciados a partir de la clase \doxylink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_cromo_posesion}{Cromo\+Posesion}.  
+
+
+Inheritance diagram for com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+Cromo\+Posesion\+\_\+vm\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_cromo_posesion__vm}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Live\+Data$<$ List$<$ \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_cromo_posesion_agrupado}{Cromo\+Posesion\+Agrupado}} $>$ $>$ \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_cromo_posesion__vm_a11a03c94dfaf56c31e73785c4090cff9}{get\+Lista\+Cromo\+Posesion\+Agrupado}} ()
+\item 
+Live\+Data$<$ List$<$ \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_cromo_posesion}{Cromo\+Posesion}} $>$ $>$ \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_cromo_posesion__vm_a81f250138700c2435a667a0d54a62ca8}{get\+Cromos\+Posesion}} ()
+\item 
+\mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_cromo_posesion__vm_ad028de38bb47791c3602ef14be3a2bda}{Cromo\+Posesion\+\_\+vm}} (String user\+Coleccion)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_cromo_posesion__vm_aaef5e1cc10f42a02c24f31e85f675d68}{carga\+Cromos\+Posesion}} (String user\+Coleccion)
+\begin{DoxyCompactList}\small\item\em Para obtener los cromos especificos del usuario logueado se hace uso de este metodo que contacta con la base de datos y se le pasa por parametro la concatenacion del usuario y el id de la coleccion Como los cromos pueden estar repetidos, se crea una unica lista a partir de la lista original. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+final Firebase\+Firestore \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_cromo_posesion__vm_afb1e332460ad9f5cec2b0288ae075273}{db}} = Firebase\+Firestore.\+get\+Instance()
+\item 
+final Mutable\+Live\+Data$<$ List$<$ \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_cromo_posesion}{Cromo\+Posesion}} $>$ $>$ \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_cromo_posesion__vm_a75b3a9ff86afca3b3c42906371dc34a0}{lista\+Cromo\+Posesion\+Live\+Data}} = new Mutable\+Live\+Data$<$$>$()
+\item 
+Mutable\+Live\+Data$<$ List$<$ \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_cromo_posesion_agrupado}{Cromo\+Posesion\+Agrupado}} $>$ $>$ \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_cromo_posesion__vm_a9067adbe7f2c4207cb820c1c275ce597}{lista\+Cromo\+Posesion\+Agrupado\+Live\+Data}} = new Mutable\+Live\+Data$<$$>$()
+\item 
+Listener\+Registration \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_cromo_posesion__vm_aedd418a75f7a623370854fa4d771140e}{cromo\+Posesion\+Listener}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+VM para obtener datos que son instanciados a partir de la clase \doxylink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_cromo_posesion}{Cromo\+Posesion}. 
+
+\label{doc-constructors}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_cromo_posesion__vm_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_cromo_posesion__vm_ad028de38bb47791c3602ef14be3a2bda}\index{com.example.proyecto\_dam\_202510.data.viewdata.CromoPosesion\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.CromoPosesion\_vm}!CromoPosesion\_vm@{CromoPosesion\_vm}}
+\index{CromoPosesion\_vm@{CromoPosesion\_vm}!com.example.proyecto\_dam\_202510.data.viewdata.CromoPosesion\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.CromoPosesion\_vm}}
+\doxysubsubsection{\texorpdfstring{CromoPosesion\_vm()}{CromoPosesion\_vm()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_cromo_posesion__vm_ad028de38bb47791c3602ef14be3a2bda} 
+com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+Cromo\+Posesion\+\_\+vm.\+Cromo\+Posesion\+\_\+vm (\begin{DoxyParamCaption}\item[{String}]{user\+Coleccion}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_cromo_posesion__vm_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_cromo_posesion__vm_aaef5e1cc10f42a02c24f31e85f675d68}\index{com.example.proyecto\_dam\_202510.data.viewdata.CromoPosesion\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.CromoPosesion\_vm}!cargaCromosPosesion@{cargaCromosPosesion}}
+\index{cargaCromosPosesion@{cargaCromosPosesion}!com.example.proyecto\_dam\_202510.data.viewdata.CromoPosesion\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.CromoPosesion\_vm}}
+\doxysubsubsection{\texorpdfstring{cargaCromosPosesion()}{cargaCromosPosesion()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_cromo_posesion__vm_aaef5e1cc10f42a02c24f31e85f675d68} 
+void com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+Cromo\+Posesion\+\_\+vm.\+carga\+Cromos\+Posesion (\begin{DoxyParamCaption}\item[{String}]{user\+Coleccion}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Para obtener los cromos especificos del usuario logueado se hace uso de este metodo que contacta con la base de datos y se le pasa por parametro la concatenacion del usuario y el id de la coleccion Como los cromos pueden estar repetidos, se crea una unica lista a partir de la lista original. 
+
+La lista agrupada contiene los cromos agrupados por numero y el numero de repeticiones.
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Coleccion} & concatenacion del usuario y el id de la coleccion \\
+\hline
+\end{DoxyParams}
+añade cada cromo a la lista temporal y actualiza la lista de cromos.
+
+Mapa hashmap para contar cada cromo individualmente
+
+se itera por cada carta de lista\+Temporal y se cuenta el numero de veces que se repite
+
+se ordenan por el campo numero
+
+actualiza el progreso de la coleccion\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_cromo_posesion__vm_a81f250138700c2435a667a0d54a62ca8}\index{com.example.proyecto\_dam\_202510.data.viewdata.CromoPosesion\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.CromoPosesion\_vm}!getCromosPosesion@{getCromosPosesion}}
+\index{getCromosPosesion@{getCromosPosesion}!com.example.proyecto\_dam\_202510.data.viewdata.CromoPosesion\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.CromoPosesion\_vm}}
+\doxysubsubsection{\texorpdfstring{getCromosPosesion()}{getCromosPosesion()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_cromo_posesion__vm_a81f250138700c2435a667a0d54a62ca8} 
+Live\+Data$<$ List$<$ \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_cromo_posesion}{Cromo\+Posesion}} $>$ $>$ com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+Cromo\+Posesion\+\_\+vm.\+get\+Cromos\+Posesion (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_cromo_posesion__vm_a11a03c94dfaf56c31e73785c4090cff9}\index{com.example.proyecto\_dam\_202510.data.viewdata.CromoPosesion\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.CromoPosesion\_vm}!getListaCromoPosesionAgrupado@{getListaCromoPosesionAgrupado}}
+\index{getListaCromoPosesionAgrupado@{getListaCromoPosesionAgrupado}!com.example.proyecto\_dam\_202510.data.viewdata.CromoPosesion\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.CromoPosesion\_vm}}
+\doxysubsubsection{\texorpdfstring{getListaCromoPosesionAgrupado()}{getListaCromoPosesionAgrupado()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_cromo_posesion__vm_a11a03c94dfaf56c31e73785c4090cff9} 
+Live\+Data$<$ List$<$ \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_cromo_posesion_agrupado}{Cromo\+Posesion\+Agrupado}} $>$ $>$ com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+Cromo\+Posesion\+\_\+vm.\+get\+Lista\+Cromo\+Posesion\+Agrupado (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-variable-members}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_cromo_posesion__vm_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_cromo_posesion__vm_aedd418a75f7a623370854fa4d771140e}\index{com.example.proyecto\_dam\_202510.data.viewdata.CromoPosesion\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.CromoPosesion\_vm}!cromoPosesionListener@{cromoPosesionListener}}
+\index{cromoPosesionListener@{cromoPosesionListener}!com.example.proyecto\_dam\_202510.data.viewdata.CromoPosesion\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.CromoPosesion\_vm}}
+\doxysubsubsection{\texorpdfstring{cromoPosesionListener}{cromoPosesionListener}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_cromo_posesion__vm_aedd418a75f7a623370854fa4d771140e} 
+Listener\+Registration com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+Cromo\+Posesion\+\_\+vm.\+cromo\+Posesion\+Listener\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_cromo_posesion__vm_afb1e332460ad9f5cec2b0288ae075273}\index{com.example.proyecto\_dam\_202510.data.viewdata.CromoPosesion\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.CromoPosesion\_vm}!db@{db}}
+\index{db@{db}!com.example.proyecto\_dam\_202510.data.viewdata.CromoPosesion\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.CromoPosesion\_vm}}
+\doxysubsubsection{\texorpdfstring{db}{db}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_cromo_posesion__vm_afb1e332460ad9f5cec2b0288ae075273} 
+final Firebase\+Firestore com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+Cromo\+Posesion\+\_\+vm.\+db = Firebase\+Firestore.\+get\+Instance()\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_cromo_posesion__vm_a9067adbe7f2c4207cb820c1c275ce597}\index{com.example.proyecto\_dam\_202510.data.viewdata.CromoPosesion\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.CromoPosesion\_vm}!listaCromoPosesionAgrupadoLiveData@{listaCromoPosesionAgrupadoLiveData}}
+\index{listaCromoPosesionAgrupadoLiveData@{listaCromoPosesionAgrupadoLiveData}!com.example.proyecto\_dam\_202510.data.viewdata.CromoPosesion\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.CromoPosesion\_vm}}
+\doxysubsubsection{\texorpdfstring{listaCromoPosesionAgrupadoLiveData}{listaCromoPosesionAgrupadoLiveData}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_cromo_posesion__vm_a9067adbe7f2c4207cb820c1c275ce597} 
+Mutable\+Live\+Data$<$List$<$\mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_cromo_posesion_agrupado}{Cromo\+Posesion\+Agrupado}}$>$ $>$ com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+Cromo\+Posesion\+\_\+vm.\+lista\+Cromo\+Posesion\+Agrupado\+Live\+Data = new Mutable\+Live\+Data$<$$>$()\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_cromo_posesion__vm_a75b3a9ff86afca3b3c42906371dc34a0}\index{com.example.proyecto\_dam\_202510.data.viewdata.CromoPosesion\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.CromoPosesion\_vm}!listaCromoPosesionLiveData@{listaCromoPosesionLiveData}}
+\index{listaCromoPosesionLiveData@{listaCromoPosesionLiveData}!com.example.proyecto\_dam\_202510.data.viewdata.CromoPosesion\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.CromoPosesion\_vm}}
+\doxysubsubsection{\texorpdfstring{listaCromoPosesionLiveData}{listaCromoPosesionLiveData}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_cromo_posesion__vm_a75b3a9ff86afca3b3c42906371dc34a0} 
+final Mutable\+Live\+Data$<$List$<$\mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_cromo_posesion}{Cromo\+Posesion}}$>$ $>$ com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+Cromo\+Posesion\+\_\+vm.\+lista\+Cromo\+Posesion\+Live\+Data = new Mutable\+Live\+Data$<$$>$()\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+app/src/main/java/com/example/proyecto\+\_\+dam\+\_\+202510/data/viewdata/\mbox{\hyperlink{_cromo_posesion__vm_8java}{Cromo\+Posesion\+\_\+vm.\+java}}\end{DoxyCompactItemize}

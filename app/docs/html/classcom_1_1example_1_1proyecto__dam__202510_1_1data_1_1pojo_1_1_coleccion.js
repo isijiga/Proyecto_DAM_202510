@@ -1,0 +1,25 @@
+var classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_coleccion =
+[
+    [ "Coleccion", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_coleccion.html#a91b9fb7c2c72502491f655776203a2e8", null ],
+    [ "getCartasporSobre", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_coleccion.html#af69dc17be16c7d9208b7ac05bd473063", null ],
+    [ "getCromos", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_coleccion.html#abb5e7937fa0ec5ba9c25146e93021916", null ],
+    [ "getId", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_coleccion.html#a5282386620856ae6d5d18699e696a6c7", null ],
+    [ "getImagenPortada", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_coleccion.html#a68498d560f2284d41a2457a51e087e08", null ],
+    [ "getNombre", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_coleccion.html#a266073ad13ea9aa29855edfa420589ce", null ],
+    [ "getTotalCartas", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_coleccion.html#ac3c6e9d4f75ca38ce88cf49043ab97eb", null ],
+    [ "getUsuarioCreador", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_coleccion.html#a8ca3d55c237bb99ce93328ffc9fafa2b", null ],
+    [ "setCartasporSobre", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_coleccion.html#a4837c78b8d24a53ea259fbc651a2091a", null ],
+    [ "setCromos", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_coleccion.html#ab9454d128728e3d8dfe7aa15b2e43b76", null ],
+    [ "setId", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_coleccion.html#ab68d230d2570d4026f065dc92ad4bb46", null ],
+    [ "setImagenPortada", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_coleccion.html#aeb68b9d2ed7a00197f09a8f905adb5e0", null ],
+    [ "setNombre", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_coleccion.html#aed08dc97eb64e7e6fb35aefc87752937", null ],
+    [ "setTotalCartas", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_coleccion.html#ae41b7f5003ade2a332e30a62b1222f65", null ],
+    [ "setUsuarioCreador", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_coleccion.html#a40764d245a86110690b6d21466f941be", null ],
+    [ "cartasporSobre", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_coleccion.html#a870f3d194556a6d5ee05d9c5fae74272", null ],
+    [ "cromos", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_coleccion.html#a7618303bd9b123da990c95a3b137681a", null ],
+    [ "id", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_coleccion.html#a08adb9cdef2796d524319415edade832", null ],
+    [ "imagenPortada", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_coleccion.html#afa23d4645ccd4df9f5e065a18bda8548", null ],
+    [ "nombre", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_coleccion.html#a8fa9f4a5e715d399ca9f95642e838b24", null ],
+    [ "totalCartas", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_coleccion.html#af952b0d9c4103bccd3991dd2958c82af", null ],
+    [ "usuarioCreador", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_coleccion.html#ac7e91f595a778d17bf108120f82ee215", null ]
+];

@@ -1,0 +1,167 @@
+\doxysection{com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+Estadisticas\+\_\+vm Class Reference}
+\hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_estadisticas__vm}{}\label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_estadisticas__vm}\index{com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm}}
+
+
+Clase que sirve para obtener de la base de datos los datos globales de la applicación para la pantalla de estadistica Esta clase cuando contacta con la base de datos lo hace por la clase especial de Firebase Aggregate\+Query.  
+
+
+Inheritance diagram for com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+Estadisticas\+\_\+vm\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_estadisticas__vm}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Mutable\+Live\+Data$<$ Long $>$ \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_estadisticas__vm_adafb8f9f7c4cfd823f2f671bd877cfc7}{get\+Count\+Cromos\+Posesion}} ()
+\item 
+Mutable\+Live\+Data$<$ Long $>$ \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_estadisticas__vm_a18242e8c4cb8bf3b9f1c09ef0c5eec51}{get\+Sum\+\_\+cartas\+Por\+Sobre}} ()
+\item 
+Mutable\+Live\+Data$<$ Double $>$ \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_estadisticas__vm_a09add67b2967bfb3d2d5113515e6cf11}{get\+Precio\+Por\+Carta}} ()
+\item 
+Mutable\+Live\+Data$<$ Double $>$ \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_estadisticas__vm_a5009f3217e197b10f9ce501fd7778f38}{get\+Sum\+Precio}} ()
+\item 
+Mutable\+Live\+Data$<$ Long $>$ \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_estadisticas__vm_aff88cd19ca2e5dba4723f639e1f51493}{get\+Count\+Usuarios}} ()
+\item 
+Mutable\+Live\+Data$<$ Long $>$ \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_estadisticas__vm_a04e57f695a26120f2749dc347c792742}{get\+Count\+Users\+\_\+\+Colecciones}} ()
+\item 
+Mutable\+Live\+Data$<$ Long $>$ \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_estadisticas__vm_a14bba5901d93887586c6a325cae915bc}{get\+Count\+Colecciones}} ()
+\item 
+void \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_estadisticas__vm_a506008b4deafdc1c2c77e0c145d6d779}{cargar\+Estadisticas}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Firebase\+Firestore \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_estadisticas__vm_a864a3ed3bc22cf709246943953c10882}{db}}
+\item 
+Mutable\+Live\+Data$<$ Long $>$ \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_estadisticas__vm_a6c9dfc81b52cf571b0b2730bf54be7d0}{count\+Colecciones}} = new Mutable\+Live\+Data$<$$>$(0L)
+\item 
+Mutable\+Live\+Data$<$ Long $>$ \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_estadisticas__vm_a5a48665a588ac729d709369b019d95cd}{count\+Usuarios}} = new Mutable\+Live\+Data$<$$>$(0L)
+\item 
+Mutable\+Live\+Data$<$ Long $>$ \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_estadisticas__vm_af43a96bdc978f49f664f1d3cd12026e6}{count\+Users\+\_\+\+Colecciones}} = new Mutable\+Live\+Data$<$$>$(0L)
+\item 
+Mutable\+Live\+Data$<$ Double $>$ \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_estadisticas__vm_a678d889e3760e4ffbaa0ca3cd153d227}{sum\+Precio}} = new Mutable\+Live\+Data$<$$>$()
+\item 
+Mutable\+Live\+Data$<$ Long $>$ \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_estadisticas__vm_a52f6378cf625ff3ad55e05d5bb1e4ec6}{sum\+\_\+cartas\+Por\+Sobre}} = new Mutable\+Live\+Data$<$$>$(0L)
+\item 
+Mutable\+Live\+Data$<$ Long $>$ \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_estadisticas__vm_a54edb6a077255e7e85589bf16c9e0f31}{count\+Cromos\+Posesion}} = new Mutable\+Live\+Data$<$$>$(0L)
+\item 
+Mutable\+Live\+Data$<$ Double $>$ \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_estadisticas__vm_a6b1f1cacce04f01ae5e22b21d787f9fd}{precio\+Por\+Carta}} = new Mutable\+Live\+Data$<$$>$()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Clase que sirve para obtener de la base de datos los datos globales de la applicación para la pantalla de estadistica Esta clase cuando contacta con la base de datos lo hace por la clase especial de Firebase Aggregate\+Query. 
+
+El motivo es eficiencia y el coste de procesamiento es menor que si se hace por get(). 
+
+\label{doc-func-members}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_estadisticas__vm_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_estadisticas__vm_a506008b4deafdc1c2c77e0c145d6d779}\index{com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm}!cargarEstadisticas@{cargarEstadisticas}}
+\index{cargarEstadisticas@{cargarEstadisticas}!com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm}}
+\doxysubsubsection{\texorpdfstring{cargarEstadisticas()}{cargarEstadisticas()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_estadisticas__vm_a506008b4deafdc1c2c77e0c145d6d779} 
+void com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+Estadisticas\+\_\+vm.\+cargar\+Estadisticas (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+para que no se solapen las tareas y lleguen unas antes que otras (provoca errores al dividir) se hace uso de Tasks.\+when\+All\+Success espera a que todas las tareas terminen y ejecuta el metodo on\+Success.\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_estadisticas__vm_a14bba5901d93887586c6a325cae915bc}\index{com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm}!getCountColecciones@{getCountColecciones}}
+\index{getCountColecciones@{getCountColecciones}!com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm}}
+\doxysubsubsection{\texorpdfstring{getCountColecciones()}{getCountColecciones()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_estadisticas__vm_a14bba5901d93887586c6a325cae915bc} 
+Mutable\+Live\+Data$<$ Long $>$ com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+Estadisticas\+\_\+vm.\+get\+Count\+Colecciones (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_estadisticas__vm_adafb8f9f7c4cfd823f2f671bd877cfc7}\index{com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm}!getCountCromosPosesion@{getCountCromosPosesion}}
+\index{getCountCromosPosesion@{getCountCromosPosesion}!com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm}}
+\doxysubsubsection{\texorpdfstring{getCountCromosPosesion()}{getCountCromosPosesion()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_estadisticas__vm_adafb8f9f7c4cfd823f2f671bd877cfc7} 
+Mutable\+Live\+Data$<$ Long $>$ com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+Estadisticas\+\_\+vm.\+get\+Count\+Cromos\+Posesion (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_estadisticas__vm_a04e57f695a26120f2749dc347c792742}\index{com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm}!getCountUsers\_Colecciones@{getCountUsers\_Colecciones}}
+\index{getCountUsers\_Colecciones@{getCountUsers\_Colecciones}!com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm}}
+\doxysubsubsection{\texorpdfstring{getCountUsers\_Colecciones()}{getCountUsers\_Colecciones()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_estadisticas__vm_a04e57f695a26120f2749dc347c792742} 
+Mutable\+Live\+Data$<$ Long $>$ com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+Estadisticas\+\_\+vm.\+get\+Count\+Users\+\_\+\+Colecciones (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_estadisticas__vm_aff88cd19ca2e5dba4723f639e1f51493}\index{com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm}!getCountUsuarios@{getCountUsuarios}}
+\index{getCountUsuarios@{getCountUsuarios}!com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm}}
+\doxysubsubsection{\texorpdfstring{getCountUsuarios()}{getCountUsuarios()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_estadisticas__vm_aff88cd19ca2e5dba4723f639e1f51493} 
+Mutable\+Live\+Data$<$ Long $>$ com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+Estadisticas\+\_\+vm.\+get\+Count\+Usuarios (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_estadisticas__vm_a09add67b2967bfb3d2d5113515e6cf11}\index{com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm}!getPrecioPorCarta@{getPrecioPorCarta}}
+\index{getPrecioPorCarta@{getPrecioPorCarta}!com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm}}
+\doxysubsubsection{\texorpdfstring{getPrecioPorCarta()}{getPrecioPorCarta()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_estadisticas__vm_a09add67b2967bfb3d2d5113515e6cf11} 
+Mutable\+Live\+Data$<$ Double $>$ com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+Estadisticas\+\_\+vm.\+get\+Precio\+Por\+Carta (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_estadisticas__vm_a18242e8c4cb8bf3b9f1c09ef0c5eec51}\index{com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm}!getSum\_cartasPorSobre@{getSum\_cartasPorSobre}}
+\index{getSum\_cartasPorSobre@{getSum\_cartasPorSobre}!com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm}}
+\doxysubsubsection{\texorpdfstring{getSum\_cartasPorSobre()}{getSum\_cartasPorSobre()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_estadisticas__vm_a18242e8c4cb8bf3b9f1c09ef0c5eec51} 
+Mutable\+Live\+Data$<$ Long $>$ com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+Estadisticas\+\_\+vm.\+get\+Sum\+\_\+cartas\+Por\+Sobre (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_estadisticas__vm_a5009f3217e197b10f9ce501fd7778f38}\index{com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm}!getSumPrecio@{getSumPrecio}}
+\index{getSumPrecio@{getSumPrecio}!com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm}}
+\doxysubsubsection{\texorpdfstring{getSumPrecio()}{getSumPrecio()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_estadisticas__vm_a5009f3217e197b10f9ce501fd7778f38} 
+Mutable\+Live\+Data$<$ Double $>$ com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+Estadisticas\+\_\+vm.\+get\+Sum\+Precio (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-variable-members}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_estadisticas__vm_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_estadisticas__vm_a6c9dfc81b52cf571b0b2730bf54be7d0}\index{com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm}!countColecciones@{countColecciones}}
+\index{countColecciones@{countColecciones}!com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm}}
+\doxysubsubsection{\texorpdfstring{countColecciones}{countColecciones}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_estadisticas__vm_a6c9dfc81b52cf571b0b2730bf54be7d0} 
+Mutable\+Live\+Data$<$Long$>$ com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+Estadisticas\+\_\+vm.\+count\+Colecciones = new Mutable\+Live\+Data$<$$>$(0L)\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_estadisticas__vm_a54edb6a077255e7e85589bf16c9e0f31}\index{com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm}!countCromosPosesion@{countCromosPosesion}}
+\index{countCromosPosesion@{countCromosPosesion}!com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm}}
+\doxysubsubsection{\texorpdfstring{countCromosPosesion}{countCromosPosesion}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_estadisticas__vm_a54edb6a077255e7e85589bf16c9e0f31} 
+Mutable\+Live\+Data$<$Long$>$ com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+Estadisticas\+\_\+vm.\+count\+Cromos\+Posesion = new Mutable\+Live\+Data$<$$>$(0L)\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_estadisticas__vm_af43a96bdc978f49f664f1d3cd12026e6}\index{com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm}!countUsers\_Colecciones@{countUsers\_Colecciones}}
+\index{countUsers\_Colecciones@{countUsers\_Colecciones}!com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm}}
+\doxysubsubsection{\texorpdfstring{countUsers\_Colecciones}{countUsers\_Colecciones}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_estadisticas__vm_af43a96bdc978f49f664f1d3cd12026e6} 
+Mutable\+Live\+Data$<$Long$>$ com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+Estadisticas\+\_\+vm.\+count\+Users\+\_\+\+Colecciones = new Mutable\+Live\+Data$<$$>$(0L)\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_estadisticas__vm_a5a48665a588ac729d709369b019d95cd}\index{com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm}!countUsuarios@{countUsuarios}}
+\index{countUsuarios@{countUsuarios}!com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm}}
+\doxysubsubsection{\texorpdfstring{countUsuarios}{countUsuarios}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_estadisticas__vm_a5a48665a588ac729d709369b019d95cd} 
+Mutable\+Live\+Data$<$Long$>$ com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+Estadisticas\+\_\+vm.\+count\+Usuarios = new Mutable\+Live\+Data$<$$>$(0L)\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_estadisticas__vm_a864a3ed3bc22cf709246943953c10882}\index{com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm}!db@{db}}
+\index{db@{db}!com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm}}
+\doxysubsubsection{\texorpdfstring{db}{db}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_estadisticas__vm_a864a3ed3bc22cf709246943953c10882} 
+Firebase\+Firestore com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+Estadisticas\+\_\+vm.\+db\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_estadisticas__vm_a6b1f1cacce04f01ae5e22b21d787f9fd}\index{com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm}!precioPorCarta@{precioPorCarta}}
+\index{precioPorCarta@{precioPorCarta}!com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm}}
+\doxysubsubsection{\texorpdfstring{precioPorCarta}{precioPorCarta}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_estadisticas__vm_a6b1f1cacce04f01ae5e22b21d787f9fd} 
+Mutable\+Live\+Data$<$Double$>$ com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+Estadisticas\+\_\+vm.\+precio\+Por\+Carta = new Mutable\+Live\+Data$<$$>$()\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_estadisticas__vm_a52f6378cf625ff3ad55e05d5bb1e4ec6}\index{com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm}!sum\_cartasPorSobre@{sum\_cartasPorSobre}}
+\index{sum\_cartasPorSobre@{sum\_cartasPorSobre}!com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm}}
+\doxysubsubsection{\texorpdfstring{sum\_cartasPorSobre}{sum\_cartasPorSobre}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_estadisticas__vm_a52f6378cf625ff3ad55e05d5bb1e4ec6} 
+Mutable\+Live\+Data$<$Long$>$ com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+Estadisticas\+\_\+vm.\+sum\+\_\+cartas\+Por\+Sobre = new Mutable\+Live\+Data$<$$>$(0L)\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_estadisticas__vm_a678d889e3760e4ffbaa0ca3cd153d227}\index{com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm}!sumPrecio@{sumPrecio}}
+\index{sumPrecio@{sumPrecio}!com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Estadisticas\_vm}}
+\doxysubsubsection{\texorpdfstring{sumPrecio}{sumPrecio}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_estadisticas__vm_a678d889e3760e4ffbaa0ca3cd153d227} 
+Mutable\+Live\+Data$<$Double$>$ com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+Estadisticas\+\_\+vm.\+sum\+Precio = new Mutable\+Live\+Data$<$$>$()\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+app/src/main/java/com/example/proyecto\+\_\+dam\+\_\+202510/data/viewdata/\mbox{\hyperlink{_estadisticas__vm_8java}{Estadisticas\+\_\+vm.\+java}}\end{DoxyCompactItemize}

@@ -1,0 +1,103 @@
+\doxysection{com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+Coleccion\+\_\+vm Class Reference}
+\hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_coleccion__vm}{}\label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_coleccion__vm}\index{com.example.proyecto\_dam\_202510.data.viewdata.Coleccion\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Coleccion\_vm}}
+
+
+Para seguir el patron MVVM recomendado por Google es necesario crear una clase que herede de View\+Model.  
+
+
+Inheritance diagram for com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+Coleccion\+\_\+vm\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_coleccion__vm}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Live\+Data$<$ List$<$ \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_coleccion}{Coleccion}} $>$ $>$ \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_coleccion__vm_a51004ebb4e1af074585596dcdf20bb91}{get\+Colecciones}} ()
+\item 
+\mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_coleccion__vm_abb866e68c1ea3ea87fe3a65dee98b18b}{Coleccion\+\_\+vm}} ()
+\begin{DoxyCompactList}\small\item\em Constructor que cuando es instanciado desde el Adapter llama directamente al metodo que carga las colecciones. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_coleccion__vm_ad4f57ec496d1072dd5edaa44eed6a587}{carga\+Colecciones}} ()
+\begin{DoxyCompactList}\small\item\em metodo principal del View model donde se conecta con la base de datos de firebase y actualiza la lista de colecciones. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+final Firebase\+Firestore \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_coleccion__vm_acb13dce3e6b312e4b57a1448426678b9}{db}} = Firebase\+Firestore.\+get\+Instance()
+\item 
+final Mutable\+Live\+Data$<$ List$<$ \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_coleccion}{Coleccion}} $>$ $>$ \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_coleccion__vm_a6af65904c4f6728ee552ac11f2996cfd}{lista\+Colecciones\+Live\+Data}} = new Mutable\+Live\+Data$<$$>$()
+\item 
+Listener\+Registration \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_coleccion__vm_a998f284b6251ca1d8e83c0fd3dcd012d}{coleccion\+Listener}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Para seguir el patron MVVM recomendado por Google es necesario crear una clase que herede de View\+Model. 
+
+Esta clase es la encargada de llamar a la base de datos y crear una lista de instancias de la clase \doxylink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_coleccion}{Coleccion} 
+
+\label{doc-constructors}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_coleccion__vm_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_coleccion__vm_abb866e68c1ea3ea87fe3a65dee98b18b}\index{com.example.proyecto\_dam\_202510.data.viewdata.Coleccion\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Coleccion\_vm}!Coleccion\_vm@{Coleccion\_vm}}
+\index{Coleccion\_vm@{Coleccion\_vm}!com.example.proyecto\_dam\_202510.data.viewdata.Coleccion\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Coleccion\_vm}}
+\doxysubsubsection{\texorpdfstring{Coleccion\_vm()}{Coleccion\_vm()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_coleccion__vm_abb866e68c1ea3ea87fe3a65dee98b18b} 
+com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+Coleccion\+\_\+vm.\+Coleccion\+\_\+vm (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Constructor que cuando es instanciado desde el Adapter llama directamente al metodo que carga las colecciones. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_coleccion__vm_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_coleccion__vm_ad4f57ec496d1072dd5edaa44eed6a587}\index{com.example.proyecto\_dam\_202510.data.viewdata.Coleccion\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Coleccion\_vm}!cargaColecciones@{cargaColecciones}}
+\index{cargaColecciones@{cargaColecciones}!com.example.proyecto\_dam\_202510.data.viewdata.Coleccion\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Coleccion\_vm}}
+\doxysubsubsection{\texorpdfstring{cargaColecciones()}{cargaColecciones()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_coleccion__vm_ad4f57ec496d1072dd5edaa44eed6a587} 
+void com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+Coleccion\+\_\+vm.\+carga\+Colecciones (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+metodo principal del View model donde se conecta con la base de datos de firebase y actualiza la lista de colecciones. 
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_coleccion__vm_a51004ebb4e1af074585596dcdf20bb91}\index{com.example.proyecto\_dam\_202510.data.viewdata.Coleccion\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Coleccion\_vm}!getColecciones@{getColecciones}}
+\index{getColecciones@{getColecciones}!com.example.proyecto\_dam\_202510.data.viewdata.Coleccion\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Coleccion\_vm}}
+\doxysubsubsection{\texorpdfstring{getColecciones()}{getColecciones()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_coleccion__vm_a51004ebb4e1af074585596dcdf20bb91} 
+Live\+Data$<$ List$<$ \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_coleccion}{Coleccion}} $>$ $>$ com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+Coleccion\+\_\+vm.\+get\+Colecciones (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-variable-members}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_coleccion__vm_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_coleccion__vm_a998f284b6251ca1d8e83c0fd3dcd012d}\index{com.example.proyecto\_dam\_202510.data.viewdata.Coleccion\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Coleccion\_vm}!coleccionListener@{coleccionListener}}
+\index{coleccionListener@{coleccionListener}!com.example.proyecto\_dam\_202510.data.viewdata.Coleccion\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Coleccion\_vm}}
+\doxysubsubsection{\texorpdfstring{coleccionListener}{coleccionListener}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_coleccion__vm_a998f284b6251ca1d8e83c0fd3dcd012d} 
+Listener\+Registration com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+Coleccion\+\_\+vm.\+coleccion\+Listener\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_coleccion__vm_acb13dce3e6b312e4b57a1448426678b9}\index{com.example.proyecto\_dam\_202510.data.viewdata.Coleccion\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Coleccion\_vm}!db@{db}}
+\index{db@{db}!com.example.proyecto\_dam\_202510.data.viewdata.Coleccion\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Coleccion\_vm}}
+\doxysubsubsection{\texorpdfstring{db}{db}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_coleccion__vm_acb13dce3e6b312e4b57a1448426678b9} 
+final Firebase\+Firestore com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+Coleccion\+\_\+vm.\+db = Firebase\+Firestore.\+get\+Instance()\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_coleccion__vm_a6af65904c4f6728ee552ac11f2996cfd}\index{com.example.proyecto\_dam\_202510.data.viewdata.Coleccion\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Coleccion\_vm}!listaColeccionesLiveData@{listaColeccionesLiveData}}
+\index{listaColeccionesLiveData@{listaColeccionesLiveData}!com.example.proyecto\_dam\_202510.data.viewdata.Coleccion\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Coleccion\_vm}}
+\doxysubsubsection{\texorpdfstring{listaColeccionesLiveData}{listaColeccionesLiveData}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_coleccion__vm_a6af65904c4f6728ee552ac11f2996cfd} 
+final Mutable\+Live\+Data$<$List$<$\mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_coleccion}{Coleccion}}$>$ $>$ com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+Coleccion\+\_\+vm.\+lista\+Colecciones\+Live\+Data = new Mutable\+Live\+Data$<$$>$()\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+app/src/main/java/com/example/proyecto\+\_\+dam\+\_\+202510/data/viewdata/\mbox{\hyperlink{_coleccion__vm_8java}{Coleccion\+\_\+vm.\+java}}\end{DoxyCompactItemize}

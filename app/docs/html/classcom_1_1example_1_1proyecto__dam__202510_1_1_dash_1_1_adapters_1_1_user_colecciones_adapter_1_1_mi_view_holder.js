@@ -1,0 +1,6 @@
+var classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_user_colecciones_adapter_1_1_mi_view_holder =
+[
+    [ "MiViewHolder", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_user_colecciones_adapter_1_1_mi_view_holder.html#a4af6784b406eb703b04586e3d29677ef", null ],
+    [ "bind", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_user_colecciones_adapter_1_1_mi_view_holder.html#ac8984f3a467c91d99ccbae0df505fe79", null ],
+    [ "binding", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_user_colecciones_adapter_1_1_mi_view_holder.html#abbcae05d5d5e28974b9cb891fa4a9d71", null ]
+];

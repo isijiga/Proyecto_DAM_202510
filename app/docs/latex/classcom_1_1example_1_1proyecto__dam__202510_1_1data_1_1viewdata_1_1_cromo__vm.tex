@@ -1,0 +1,113 @@
+\doxysection{com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+Cromo\+\_\+vm Class Reference}
+\hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_cromo__vm}{}\label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_cromo__vm}\index{com.example.proyecto\_dam\_202510.data.viewdata.Cromo\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Cromo\_vm}}
+
+
+View\+Model de la clase \doxylink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_cromo}{Cromo}.  
+
+
+Inheritance diagram for com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+Cromo\+\_\+vm\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_cromo__vm}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Live\+Data$<$ List$<$ \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_cromo}{Cromo}} $>$ $>$ \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_cromo__vm_ab4edbdec9cd1ce1da4c4ef4517d4206b}{get\+Cromos}} ()
+\item 
+\mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_cromo__vm_ab933a0ddc6996d7b801061a473695bd1}{Cromo\+\_\+vm}} (String coleccion)
+\begin{DoxyCompactList}\small\item\em Constructor que cuando es instanciado desde el Adapter llama directamente al metodo que carga las colecciones. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_cromo__vm_a1c279ae1594f4a6c451aeb64a000f363}{carga\+Colecciones}} (String coleccion)
+\begin{DoxyCompactList}\small\item\em Metodo principal del VM donde se contacta con la base de datos y actualiza la lista de cromos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+final Firebase\+Firestore \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_cromo__vm_a9f5cd3f4ad2528db182bc1255537367b}{db}} = Firebase\+Firestore.\+get\+Instance()
+\item 
+final Mutable\+Live\+Data$<$ List$<$ \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_cromo}{Cromo}} $>$ $>$ \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_cromo__vm_a9562674b489ae37b3767f74fe8e33d72}{lista\+Cromo\+Live\+Data}} = new Mutable\+Live\+Data$<$$>$()
+\item 
+Listener\+Registration \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_cromo__vm_a8fc1fdfbcbd7102291ea7f6e180f49c0}{cromo\+Listener}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+View\+Model de la clase \doxylink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_cromo}{Cromo}. 
+
+Contacta con la base de datos y los añade a una lsita del tipo Mutable\+Live\+Data. 
+
+\label{doc-constructors}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_cromo__vm_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_cromo__vm_ab933a0ddc6996d7b801061a473695bd1}\index{com.example.proyecto\_dam\_202510.data.viewdata.Cromo\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Cromo\_vm}!Cromo\_vm@{Cromo\_vm}}
+\index{Cromo\_vm@{Cromo\_vm}!com.example.proyecto\_dam\_202510.data.viewdata.Cromo\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Cromo\_vm}}
+\doxysubsubsection{\texorpdfstring{Cromo\_vm()}{Cromo\_vm()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_cromo__vm_ab933a0ddc6996d7b801061a473695bd1} 
+com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+Cromo\+\_\+vm.\+Cromo\+\_\+vm (\begin{DoxyParamCaption}\item[{String}]{coleccion}{}\end{DoxyParamCaption})}
+
+
+
+Constructor que cuando es instanciado desde el Adapter llama directamente al metodo que carga las colecciones. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em coleccion} & el nombre de la colección para pasarselo por metodo a la base de datos. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_cromo__vm_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_cromo__vm_a1c279ae1594f4a6c451aeb64a000f363}\index{com.example.proyecto\_dam\_202510.data.viewdata.Cromo\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Cromo\_vm}!cargaColecciones@{cargaColecciones}}
+\index{cargaColecciones@{cargaColecciones}!com.example.proyecto\_dam\_202510.data.viewdata.Cromo\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Cromo\_vm}}
+\doxysubsubsection{\texorpdfstring{cargaColecciones()}{cargaColecciones()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_cromo__vm_a1c279ae1594f4a6c451aeb64a000f363} 
+void com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+Cromo\+\_\+vm.\+carga\+Colecciones (\begin{DoxyParamCaption}\item[{String}]{coleccion}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Metodo principal del VM donde se contacta con la base de datos y actualiza la lista de cromos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em coleccion} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_cromo__vm_ab4edbdec9cd1ce1da4c4ef4517d4206b}\index{com.example.proyecto\_dam\_202510.data.viewdata.Cromo\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Cromo\_vm}!getCromos@{getCromos}}
+\index{getCromos@{getCromos}!com.example.proyecto\_dam\_202510.data.viewdata.Cromo\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Cromo\_vm}}
+\doxysubsubsection{\texorpdfstring{getCromos()}{getCromos()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_cromo__vm_ab4edbdec9cd1ce1da4c4ef4517d4206b} 
+Live\+Data$<$ List$<$ \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_cromo}{Cromo}} $>$ $>$ com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+Cromo\+\_\+vm.\+get\+Cromos (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-variable-members}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_cromo__vm_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_cromo__vm_a8fc1fdfbcbd7102291ea7f6e180f49c0}\index{com.example.proyecto\_dam\_202510.data.viewdata.Cromo\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Cromo\_vm}!cromoListener@{cromoListener}}
+\index{cromoListener@{cromoListener}!com.example.proyecto\_dam\_202510.data.viewdata.Cromo\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Cromo\_vm}}
+\doxysubsubsection{\texorpdfstring{cromoListener}{cromoListener}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_cromo__vm_a8fc1fdfbcbd7102291ea7f6e180f49c0} 
+Listener\+Registration com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+Cromo\+\_\+vm.\+cromo\+Listener\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_cromo__vm_a9f5cd3f4ad2528db182bc1255537367b}\index{com.example.proyecto\_dam\_202510.data.viewdata.Cromo\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Cromo\_vm}!db@{db}}
+\index{db@{db}!com.example.proyecto\_dam\_202510.data.viewdata.Cromo\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Cromo\_vm}}
+\doxysubsubsection{\texorpdfstring{db}{db}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_cromo__vm_a9f5cd3f4ad2528db182bc1255537367b} 
+final Firebase\+Firestore com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+Cromo\+\_\+vm.\+db = Firebase\+Firestore.\+get\+Instance()\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_cromo__vm_a9562674b489ae37b3767f74fe8e33d72}\index{com.example.proyecto\_dam\_202510.data.viewdata.Cromo\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Cromo\_vm}!listaCromoLiveData@{listaCromoLiveData}}
+\index{listaCromoLiveData@{listaCromoLiveData}!com.example.proyecto\_dam\_202510.data.viewdata.Cromo\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Cromo\_vm}}
+\doxysubsubsection{\texorpdfstring{listaCromoLiveData}{listaCromoLiveData}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_cromo__vm_a9562674b489ae37b3767f74fe8e33d72} 
+final Mutable\+Live\+Data$<$List$<$\mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_cromo}{Cromo}}$>$ $>$ com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+Cromo\+\_\+vm.\+lista\+Cromo\+Live\+Data = new Mutable\+Live\+Data$<$$>$()\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+app/src/main/java/com/example/proyecto\+\_\+dam\+\_\+202510/data/viewdata/\mbox{\hyperlink{_cromo__vm_8java}{Cromo\+\_\+vm.\+java}}\end{DoxyCompactItemize}

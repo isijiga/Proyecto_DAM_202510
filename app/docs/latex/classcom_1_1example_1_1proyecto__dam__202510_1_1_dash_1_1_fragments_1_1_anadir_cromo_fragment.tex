@@ -1,0 +1,183 @@
+\doxysection{com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+Dash.\+Fragments.\+Anadir\+Cromo\+Fragment Class Reference}
+\hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_anadir_cromo_fragment}{}\label{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_anadir_cromo_fragment}\index{com.example.proyecto\_dam\_202510.Dash.Fragments.AnadirCromoFragment@{com.example.proyecto\_dam\_202510.Dash.Fragments.AnadirCromoFragment}}
+
+
+Fragmento que muestra el alta de Carta en una colección.  
+
+
+Inheritance diagram for com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+Dash.\+Fragments.\+Anadir\+Cromo\+Fragment\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_anadir_cromo_fragment}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+interface \mbox{\hyperlink{interfacecom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_anadir_cromo_fragment_1_1_on_upload_callback}{On\+Upload\+Callback}}
+\begin{DoxyCompactList}\small\item\em Interfaz que maneja el resultado de la subida de la foto. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_anadir_cromo_fragment_a33cb7a437f07fbac9bec9b924847d871}{Anadir\+Cromo\+Fragment}} ()
+\item 
+void \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_anadir_cromo_fragment_a5d37e761c5eca71404b182f8b4c516ba}{on\+Create}} (Bundle saved\+Instance\+State)
+\item 
+View \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_anadir_cromo_fragment_a35a1991b8ad4c0da3e05daa9ddde7e9c}{on\+Create\+View}} (Layout\+Inflater inflater, View\+Group container, Bundle saved\+Instance\+State)
+\item 
+void \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_anadir_cromo_fragment_a1feba427cd44269feb94ec1e6d378f1d}{on\+View\+Created}} (@Non\+Null View view, @Nullable Bundle saved\+Instance\+State)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_anadir_cromo_fragment_a104fc767ebd89c856b22a7f178ff69e3}{subirfoto}} (Bitmap \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_anadir_cromo_fragment_a507651332d6c21a97cb180962f70ad56}{image\+Bitmap}}, \mbox{\hyperlink{interfacecom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_anadir_cromo_fragment_1_1_on_upload_callback}{On\+Upload\+Callback}} callback)
+\begin{DoxyCompactList}\small\item\em Este metodo sube la foto a Firebase Storage y devuelve la URL de la imagen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Activity\+Result\+Launcher$<$ Intent $>$ \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_anadir_cromo_fragment_aef7a892500719a363a39922ef5a318c9}{camera\+Launcher}}
+\begin{DoxyCompactList}\small\item\em Launcher para capturar la imagen. \end{DoxyCompactList}\item 
+Activity\+Result\+Launcher$<$ String $>$ \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_anadir_cromo_fragment_a59d3bdb899064b012f1e2315ea762863}{request\+Permission\+Launcher}}
+\begin{DoxyCompactList}\small\item\em Launcher para solicitar permisos de la camara. \end{DoxyCompactList}\item 
+Fragment\+Anadir\+Cromo\+Binding \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_anadir_cromo_fragment_a78865edcece2b2143685db9efcf3c984}{binding}}
+\item 
+Firebase\+Auth \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_anadir_cromo_fragment_ab07227b083438250eb51d9105317effb}{m\+Auth}}
+\item 
+Firebase\+Firestore \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_anadir_cromo_fragment_acc866a2b0689bcb93f3c1847d7bb04d3}{db}}
+\item 
+Firebase\+User \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_anadir_cromo_fragment_aa18af4ae4033413bef1ffc8317bd9dd2}{user}}
+\item 
+Firebase\+Storage \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_anadir_cromo_fragment_a51b7046d27a0825cb21d78fd4c43dd8d}{storage}}
+\item 
+String \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_anadir_cromo_fragment_aa5807ca02fc61900c577381cba2b9ec5}{coleccion\+Id}}
+\item 
+Bitmap \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_anadir_cromo_fragment_a507651332d6c21a97cb180962f70ad56}{image\+Bitmap}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Fragmento que muestra el alta de Carta en una colección. 
+
+Tiene la particularidad de poder tomar una foto de la carta y guardarla en la base de datos. Esta carta estara accesible a todos los usuarios de la app. Para poder realizar la foto, Android solicita permisos de la camara. Es necesario tener los permisos concedidos para poder acceder al servicio. 
+
+\label{doc-constructors}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_anadir_cromo_fragment_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_anadir_cromo_fragment_a33cb7a437f07fbac9bec9b924847d871}\index{com.example.proyecto\_dam\_202510.Dash.Fragments.AnadirCromoFragment@{com.example.proyecto\_dam\_202510.Dash.Fragments.AnadirCromoFragment}!AnadirCromoFragment@{AnadirCromoFragment}}
+\index{AnadirCromoFragment@{AnadirCromoFragment}!com.example.proyecto\_dam\_202510.Dash.Fragments.AnadirCromoFragment@{com.example.proyecto\_dam\_202510.Dash.Fragments.AnadirCromoFragment}}
+\doxysubsubsection{\texorpdfstring{AnadirCromoFragment()}{AnadirCromoFragment()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_anadir_cromo_fragment_a33cb7a437f07fbac9bec9b924847d871} 
+com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+Dash.\+Fragments.\+Anadir\+Cromo\+Fragment.\+Anadir\+Cromo\+Fragment (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_anadir_cromo_fragment_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_anadir_cromo_fragment_a5d37e761c5eca71404b182f8b4c516ba}\index{com.example.proyecto\_dam\_202510.Dash.Fragments.AnadirCromoFragment@{com.example.proyecto\_dam\_202510.Dash.Fragments.AnadirCromoFragment}!onCreate@{onCreate}}
+\index{onCreate@{onCreate}!com.example.proyecto\_dam\_202510.Dash.Fragments.AnadirCromoFragment@{com.example.proyecto\_dam\_202510.Dash.Fragments.AnadirCromoFragment}}
+\doxysubsubsection{\texorpdfstring{onCreate()}{onCreate()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_anadir_cromo_fragment_a5d37e761c5eca71404b182f8b4c516ba} 
+void com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+Dash.\+Fragments.\+Anadir\+Cromo\+Fragment.\+on\+Create (\begin{DoxyParamCaption}\item[{Bundle}]{saved\+Instance\+State}{}\end{DoxyParamCaption})}
+
+Launcher para capturar la imagen. Para poder tomar la foto es necesario tener los permisos concedidos.\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_anadir_cromo_fragment_a35a1991b8ad4c0da3e05daa9ddde7e9c}\index{com.example.proyecto\_dam\_202510.Dash.Fragments.AnadirCromoFragment@{com.example.proyecto\_dam\_202510.Dash.Fragments.AnadirCromoFragment}!onCreateView@{onCreateView}}
+\index{onCreateView@{onCreateView}!com.example.proyecto\_dam\_202510.Dash.Fragments.AnadirCromoFragment@{com.example.proyecto\_dam\_202510.Dash.Fragments.AnadirCromoFragment}}
+\doxysubsubsection{\texorpdfstring{onCreateView()}{onCreateView()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_anadir_cromo_fragment_a35a1991b8ad4c0da3e05daa9ddde7e9c} 
+View com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+Dash.\+Fragments.\+Anadir\+Cromo\+Fragment.\+on\+Create\+View (\begin{DoxyParamCaption}\item[{Layout\+Inflater}]{inflater}{, }\item[{View\+Group}]{container}{, }\item[{Bundle}]{saved\+Instance\+State}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_anadir_cromo_fragment_a1feba427cd44269feb94ec1e6d378f1d}\index{com.example.proyecto\_dam\_202510.Dash.Fragments.AnadirCromoFragment@{com.example.proyecto\_dam\_202510.Dash.Fragments.AnadirCromoFragment}!onViewCreated@{onViewCreated}}
+\index{onViewCreated@{onViewCreated}!com.example.proyecto\_dam\_202510.Dash.Fragments.AnadirCromoFragment@{com.example.proyecto\_dam\_202510.Dash.Fragments.AnadirCromoFragment}}
+\doxysubsubsection{\texorpdfstring{onViewCreated()}{onViewCreated()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_anadir_cromo_fragment_a1feba427cd44269feb94ec1e6d378f1d} 
+void com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+Dash.\+Fragments.\+Anadir\+Cromo\+Fragment.\+on\+View\+Created (\begin{DoxyParamCaption}\item[{@Non\+Null View}]{view}{, }\item[{@Nullable Bundle}]{saved\+Instance\+State}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_anadir_cromo_fragment_a104fc767ebd89c856b22a7f178ff69e3}\index{com.example.proyecto\_dam\_202510.Dash.Fragments.AnadirCromoFragment@{com.example.proyecto\_dam\_202510.Dash.Fragments.AnadirCromoFragment}!subirfoto@{subirfoto}}
+\index{subirfoto@{subirfoto}!com.example.proyecto\_dam\_202510.Dash.Fragments.AnadirCromoFragment@{com.example.proyecto\_dam\_202510.Dash.Fragments.AnadirCromoFragment}}
+\doxysubsubsection{\texorpdfstring{subirfoto()}{subirfoto()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_anadir_cromo_fragment_a104fc767ebd89c856b22a7f178ff69e3} 
+void com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+Dash.\+Fragments.\+Anadir\+Cromo\+Fragment.\+subirfoto (\begin{DoxyParamCaption}\item[{Bitmap}]{image\+Bitmap}{, }\item[{\mbox{\hyperlink{interfacecom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_anadir_cromo_fragment_1_1_on_upload_callback}{On\+Upload\+Callback}}}]{callback}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Este metodo sube la foto a Firebase Storage y devuelve la URL de la imagen. 
+
+Ya que Firebase trabaja de manera asincrona, es necesario utilizar el callback on\+Success, en caso contrario llama al callback on\+Failure. El callback se encarga de notificar al fragmento que se ha completado la tarea. 
+\begin{DoxyParams}{Parameters}
+{\em image\+Bitmap} & imagen tomada de la camara del usuario. Se reducirá a un 50\% de su tamaño original. \\
+\hline
+{\em callback} & interfaz que maneja el resultado de la subida de la foto. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-variable-members}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_anadir_cromo_fragment_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_anadir_cromo_fragment_a78865edcece2b2143685db9efcf3c984}\index{com.example.proyecto\_dam\_202510.Dash.Fragments.AnadirCromoFragment@{com.example.proyecto\_dam\_202510.Dash.Fragments.AnadirCromoFragment}!binding@{binding}}
+\index{binding@{binding}!com.example.proyecto\_dam\_202510.Dash.Fragments.AnadirCromoFragment@{com.example.proyecto\_dam\_202510.Dash.Fragments.AnadirCromoFragment}}
+\doxysubsubsection{\texorpdfstring{binding}{binding}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_anadir_cromo_fragment_a78865edcece2b2143685db9efcf3c984} 
+Fragment\+Anadir\+Cromo\+Binding com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+Dash.\+Fragments.\+Anadir\+Cromo\+Fragment.\+binding\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_anadir_cromo_fragment_aef7a892500719a363a39922ef5a318c9}\index{com.example.proyecto\_dam\_202510.Dash.Fragments.AnadirCromoFragment@{com.example.proyecto\_dam\_202510.Dash.Fragments.AnadirCromoFragment}!cameraLauncher@{cameraLauncher}}
+\index{cameraLauncher@{cameraLauncher}!com.example.proyecto\_dam\_202510.Dash.Fragments.AnadirCromoFragment@{com.example.proyecto\_dam\_202510.Dash.Fragments.AnadirCromoFragment}}
+\doxysubsubsection{\texorpdfstring{cameraLauncher}{cameraLauncher}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_anadir_cromo_fragment_aef7a892500719a363a39922ef5a318c9} 
+Activity\+Result\+Launcher$<$Intent$>$ com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+Dash.\+Fragments.\+Anadir\+Cromo\+Fragment.\+camera\+Launcher\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Launcher para capturar la imagen. 
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_anadir_cromo_fragment_aa5807ca02fc61900c577381cba2b9ec5}\index{com.example.proyecto\_dam\_202510.Dash.Fragments.AnadirCromoFragment@{com.example.proyecto\_dam\_202510.Dash.Fragments.AnadirCromoFragment}!coleccionId@{coleccionId}}
+\index{coleccionId@{coleccionId}!com.example.proyecto\_dam\_202510.Dash.Fragments.AnadirCromoFragment@{com.example.proyecto\_dam\_202510.Dash.Fragments.AnadirCromoFragment}}
+\doxysubsubsection{\texorpdfstring{coleccionId}{coleccionId}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_anadir_cromo_fragment_aa5807ca02fc61900c577381cba2b9ec5} 
+String com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+Dash.\+Fragments.\+Anadir\+Cromo\+Fragment.\+coleccion\+Id\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_anadir_cromo_fragment_acc866a2b0689bcb93f3c1847d7bb04d3}\index{com.example.proyecto\_dam\_202510.Dash.Fragments.AnadirCromoFragment@{com.example.proyecto\_dam\_202510.Dash.Fragments.AnadirCromoFragment}!db@{db}}
+\index{db@{db}!com.example.proyecto\_dam\_202510.Dash.Fragments.AnadirCromoFragment@{com.example.proyecto\_dam\_202510.Dash.Fragments.AnadirCromoFragment}}
+\doxysubsubsection{\texorpdfstring{db}{db}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_anadir_cromo_fragment_acc866a2b0689bcb93f3c1847d7bb04d3} 
+Firebase\+Firestore com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+Dash.\+Fragments.\+Anadir\+Cromo\+Fragment.\+db\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_anadir_cromo_fragment_a507651332d6c21a97cb180962f70ad56}\index{com.example.proyecto\_dam\_202510.Dash.Fragments.AnadirCromoFragment@{com.example.proyecto\_dam\_202510.Dash.Fragments.AnadirCromoFragment}!imageBitmap@{imageBitmap}}
+\index{imageBitmap@{imageBitmap}!com.example.proyecto\_dam\_202510.Dash.Fragments.AnadirCromoFragment@{com.example.proyecto\_dam\_202510.Dash.Fragments.AnadirCromoFragment}}
+\doxysubsubsection{\texorpdfstring{imageBitmap}{imageBitmap}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_anadir_cromo_fragment_a507651332d6c21a97cb180962f70ad56} 
+Bitmap com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+Dash.\+Fragments.\+Anadir\+Cromo\+Fragment.\+image\+Bitmap\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_anadir_cromo_fragment_ab07227b083438250eb51d9105317effb}\index{com.example.proyecto\_dam\_202510.Dash.Fragments.AnadirCromoFragment@{com.example.proyecto\_dam\_202510.Dash.Fragments.AnadirCromoFragment}!mAuth@{mAuth}}
+\index{mAuth@{mAuth}!com.example.proyecto\_dam\_202510.Dash.Fragments.AnadirCromoFragment@{com.example.proyecto\_dam\_202510.Dash.Fragments.AnadirCromoFragment}}
+\doxysubsubsection{\texorpdfstring{mAuth}{mAuth}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_anadir_cromo_fragment_ab07227b083438250eb51d9105317effb} 
+Firebase\+Auth com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+Dash.\+Fragments.\+Anadir\+Cromo\+Fragment.\+m\+Auth\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_anadir_cromo_fragment_a59d3bdb899064b012f1e2315ea762863}\index{com.example.proyecto\_dam\_202510.Dash.Fragments.AnadirCromoFragment@{com.example.proyecto\_dam\_202510.Dash.Fragments.AnadirCromoFragment}!requestPermissionLauncher@{requestPermissionLauncher}}
+\index{requestPermissionLauncher@{requestPermissionLauncher}!com.example.proyecto\_dam\_202510.Dash.Fragments.AnadirCromoFragment@{com.example.proyecto\_dam\_202510.Dash.Fragments.AnadirCromoFragment}}
+\doxysubsubsection{\texorpdfstring{requestPermissionLauncher}{requestPermissionLauncher}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_anadir_cromo_fragment_a59d3bdb899064b012f1e2315ea762863} 
+Activity\+Result\+Launcher$<$String$>$ com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+Dash.\+Fragments.\+Anadir\+Cromo\+Fragment.\+request\+Permission\+Launcher\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Launcher para solicitar permisos de la camara. 
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_anadir_cromo_fragment_a51b7046d27a0825cb21d78fd4c43dd8d}\index{com.example.proyecto\_dam\_202510.Dash.Fragments.AnadirCromoFragment@{com.example.proyecto\_dam\_202510.Dash.Fragments.AnadirCromoFragment}!storage@{storage}}
+\index{storage@{storage}!com.example.proyecto\_dam\_202510.Dash.Fragments.AnadirCromoFragment@{com.example.proyecto\_dam\_202510.Dash.Fragments.AnadirCromoFragment}}
+\doxysubsubsection{\texorpdfstring{storage}{storage}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_anadir_cromo_fragment_a51b7046d27a0825cb21d78fd4c43dd8d} 
+Firebase\+Storage com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+Dash.\+Fragments.\+Anadir\+Cromo\+Fragment.\+storage\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_anadir_cromo_fragment_aa18af4ae4033413bef1ffc8317bd9dd2}\index{com.example.proyecto\_dam\_202510.Dash.Fragments.AnadirCromoFragment@{com.example.proyecto\_dam\_202510.Dash.Fragments.AnadirCromoFragment}!user@{user}}
+\index{user@{user}!com.example.proyecto\_dam\_202510.Dash.Fragments.AnadirCromoFragment@{com.example.proyecto\_dam\_202510.Dash.Fragments.AnadirCromoFragment}}
+\doxysubsubsection{\texorpdfstring{user}{user}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_anadir_cromo_fragment_aa18af4ae4033413bef1ffc8317bd9dd2} 
+Firebase\+User com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+Dash.\+Fragments.\+Anadir\+Cromo\+Fragment.\+user\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+app/src/main/java/com/example/proyecto\+\_\+dam\+\_\+202510/\+Dash/\+Fragments/\mbox{\hyperlink{_anadir_cromo_fragment_8java}{Anadir\+Cromo\+Fragment.\+java}}\end{DoxyCompactItemize}

@@ -1,0 +1,209 @@
+\doxysection{com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+Funciones Class Reference}
+\hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1_funciones}{}\label{classcom_1_1example_1_1proyecto__dam__202510_1_1_funciones}\index{com.example.proyecto\_dam\_202510.Funciones@{com.example.proyecto\_dam\_202510.Funciones}}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1_funciones_a51ad6b39027ead309073e8b209a9bb8b}{crear\+Usuario}} (Firebase\+User user, Context context, Firebase\+Firestore db)
+\begin{DoxyCompactList}\small\item\em Metodo para crear usuario en la coleccion /users de Firebase. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1_funciones_a18ba755851bcf08c9079e621e4134268}{crear\+Coleccion}} (String id\+Coleccion, String nombre, int total\+Cartas, int cartas\+Por\+Sobre, double coste, String imagen\+Portada, String usuario\+Creador)
+\begin{DoxyCompactList}\small\item\em Este metodo es el encargado de crear la coleccion dentro de la bd. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1_funciones_a4e5cb4c45bdd22e7da1ed8615fe3997a}{agregar\+Cromo}} (String id\+Coleccion, String id\+Cromo, String nombre, String numero, String tipo, double valor, String imagen)
+\begin{DoxyCompactList}\small\item\em Metodo para añadir un cromo de una coleccion especifica a la base de datos. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1_funciones_a7c36369e75d8432e25a594bf84334731}{agregar\+Cromo\+Posesion}} (String id\+Coleccion, String id\+Cromo, String nombre, String numero, String tipo, double valor, String imagen, String fecha\+Adquisicion)
+\begin{DoxyCompactList}\small\item\em Metodo para añadir un cromo especifico de una coleccion especifica a la coleccion users\+\_\+colecciones. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1_funciones_aaf2e72e616d3600d50b4a2092e92ef3d}{añadir\+Coleccion}} (\mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_coleccion}{Coleccion}} coleccion)
+\begin{DoxyCompactList}\small\item\em Metodo para añadir una coleccion a users\+\_\+colecciones, el user será el id del usuario en sistema. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1_funciones_acd48717d82c1472add9ec5d9db7bd2e9}{borrar\+Carta}} (String documento, String coleccion, Context contexto)
+\begin{DoxyCompactList}\small\item\em Metodo para borrar un cromo de la base de datos. \end{DoxyCompactList}\item 
+static String \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1_funciones_a49518c5222116797c087a7a10af55abe}{ahora}} ()
+\begin{DoxyCompactList}\small\item\em Metodo para obtener la fecha actual en formato especifico (dd/\+MM/\+YY HH\+:mm). \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1_funciones_a435c590f2879308d1540927cf51751da}{actualizar\+Carta}} (String coleccion\+Index, String numero, String nombre, int repetida, String cromo\+Coleccion\+Id)
+\begin{DoxyCompactList}\small\item\em Metodo para actualizar el tipo de un cromo en la base de datos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Isidoro Jiménez García Clase que se encarga haacer de intermediario con la grabación de Firebase. De esta manera está centralizado todas las operaciones de escritura en esta clase. 
+\end{DoxyAuthor}
+
+
+\label{doc-func-members}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1_funciones_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1_funciones_aaf2e72e616d3600d50b4a2092e92ef3d}\index{com.example.proyecto\_dam\_202510.Funciones@{com.example.proyecto\_dam\_202510.Funciones}!añadirColeccion@{añadirColeccion}}
+\index{añadirColeccion@{añadirColeccion}!com.example.proyecto\_dam\_202510.Funciones@{com.example.proyecto\_dam\_202510.Funciones}}
+\doxysubsubsection{\texorpdfstring{añadirColeccion()}{añadirColeccion()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1_funciones_aaf2e72e616d3600d50b4a2092e92ef3d} 
+void com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+Funciones.\+añadir\+Coleccion (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_coleccion}{Coleccion}}}]{coleccion}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Metodo para añadir una coleccion a users\+\_\+colecciones, el user será el id del usuario en sistema. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em coleccion} & es el id de la coleccion que se va a añadir. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1_funciones_a435c590f2879308d1540927cf51751da}\index{com.example.proyecto\_dam\_202510.Funciones@{com.example.proyecto\_dam\_202510.Funciones}!actualizarCarta@{actualizarCarta}}
+\index{actualizarCarta@{actualizarCarta}!com.example.proyecto\_dam\_202510.Funciones@{com.example.proyecto\_dam\_202510.Funciones}}
+\doxysubsubsection{\texorpdfstring{actualizarCarta()}{actualizarCarta()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1_funciones_a435c590f2879308d1540927cf51751da} 
+void com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+Funciones.\+actualizar\+Carta (\begin{DoxyParamCaption}\item[{String}]{coleccion\+Index}{, }\item[{String}]{numero}{, }\item[{String}]{nombre}{, }\item[{int}]{repetida}{, }\item[{String}]{cromo\+Coleccion\+Id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Metodo para actualizar el tipo de un cromo en la base de datos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em coleccion\+Index} & id de la coleccion \\
+\hline
+{\em numero} & numero del cromo \\
+\hline
+{\em nombre} & nombre del cromo \\
+\hline
+{\em repetida} & numero de veces que se repite el cromo \\
+\hline
+{\em cromo\+Coleccion\+Id} & id del cromo en la coleccion. \\
+\hline
+\end{DoxyParams}
+actualizamos tanto en coleccion, como en users\+\_\+colecciones\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1_funciones_a4e5cb4c45bdd22e7da1ed8615fe3997a}\index{com.example.proyecto\_dam\_202510.Funciones@{com.example.proyecto\_dam\_202510.Funciones}!agregarCromo@{agregarCromo}}
+\index{agregarCromo@{agregarCromo}!com.example.proyecto\_dam\_202510.Funciones@{com.example.proyecto\_dam\_202510.Funciones}}
+\doxysubsubsection{\texorpdfstring{agregarCromo()}{agregarCromo()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1_funciones_a4e5cb4c45bdd22e7da1ed8615fe3997a} 
+void com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+Funciones.\+agregar\+Cromo (\begin{DoxyParamCaption}\item[{String}]{id\+Coleccion}{, }\item[{String}]{id\+Cromo}{, }\item[{String}]{nombre}{, }\item[{String}]{numero}{, }\item[{String}]{tipo}{, }\item[{double}]{valor}{, }\item[{String}]{imagen}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Metodo para añadir un cromo de una coleccion especifica a la base de datos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Coleccion} & id unico de la coleccion \\
+\hline
+{\em id\+Cromo} & id unico del cromo \\
+\hline
+{\em nombre} & nombre del cromo \\
+\hline
+{\em numero} & numero del cromo, siendo por defecto el nº de cromo seguido de los 3 primeros caracteres del equipo en caso de que no tengan numeros consecutivos. \\
+\hline
+{\em tipo} & el tipo de cromo siendo las posibilidaddes\+: "{}Único"{}, "{}\+Muy raro"{}, "{}\+Raro"{}, "{}\+Poco común"{}, "{}\+Común"{}. \\
+\hline
+{\em valor} & el valor del cromo en euros. \\
+\hline
+{\em imagen} & Ruta de Firestore de la imagen del cromo Jpg . \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1_funciones_a7c36369e75d8432e25a594bf84334731}\index{com.example.proyecto\_dam\_202510.Funciones@{com.example.proyecto\_dam\_202510.Funciones}!agregarCromoPosesion@{agregarCromoPosesion}}
+\index{agregarCromoPosesion@{agregarCromoPosesion}!com.example.proyecto\_dam\_202510.Funciones@{com.example.proyecto\_dam\_202510.Funciones}}
+\doxysubsubsection{\texorpdfstring{agregarCromoPosesion()}{agregarCromoPosesion()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1_funciones_a7c36369e75d8432e25a594bf84334731} 
+void com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+Funciones.\+agregar\+Cromo\+Posesion (\begin{DoxyParamCaption}\item[{String}]{id\+Coleccion}{, }\item[{String}]{id\+Cromo}{, }\item[{String}]{nombre}{, }\item[{String}]{numero}{, }\item[{String}]{tipo}{, }\item[{double}]{valor}{, }\item[{String}]{imagen}{, }\item[{String}]{fecha\+Adquisicion}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Metodo para añadir un cromo especifico de una coleccion especifica a la coleccion users\+\_\+colecciones. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Coleccion} & id unico de la coleccion \\
+\hline
+{\em id\+Cromo} & id unico del cromo \\
+\hline
+{\em nombre} & nombre del cromo \\
+\hline
+{\em numero} & numero del cromo \\
+\hline
+{\em tipo} & tipo del cromo \\
+\hline
+{\em valor} & valor del cromo \\
+\hline
+{\em imagen} & ruta de la imagen del cromo \\
+\hline
+{\em fecha\+Adquisicion} & fecha de adquisicion del cromo \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1_funciones_a49518c5222116797c087a7a10af55abe}\index{com.example.proyecto\_dam\_202510.Funciones@{com.example.proyecto\_dam\_202510.Funciones}!ahora@{ahora}}
+\index{ahora@{ahora}!com.example.proyecto\_dam\_202510.Funciones@{com.example.proyecto\_dam\_202510.Funciones}}
+\doxysubsubsection{\texorpdfstring{ahora()}{ahora()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1_funciones_a49518c5222116797c087a7a10af55abe} 
+String com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+Funciones.\+ahora (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Metodo para obtener la fecha actual en formato especifico (dd/\+MM/\+YY HH\+:mm). 
+
+\begin{DoxyReturn}{Returns}
+fecha y hora actual en formato String. 
+\end{DoxyReturn}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1_funciones_acd48717d82c1472add9ec5d9db7bd2e9}\index{com.example.proyecto\_dam\_202510.Funciones@{com.example.proyecto\_dam\_202510.Funciones}!borrarCarta@{borrarCarta}}
+\index{borrarCarta@{borrarCarta}!com.example.proyecto\_dam\_202510.Funciones@{com.example.proyecto\_dam\_202510.Funciones}}
+\doxysubsubsection{\texorpdfstring{borrarCarta()}{borrarCarta()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1_funciones_acd48717d82c1472add9ec5d9db7bd2e9} 
+void com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+Funciones.\+borrar\+Carta (\begin{DoxyParamCaption}\item[{String}]{documento}{, }\item[{String}]{coleccion}{, }\item[{Context}]{contexto}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Metodo para borrar un cromo de la base de datos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em documento} & id unico del cromo \\
+\hline
+{\em coleccion} & is de la coleccion \\
+\hline
+{\em contexto} & recibimos el contexto para mostrar pantalla Toast. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1_funciones_a18ba755851bcf08c9079e621e4134268}\index{com.example.proyecto\_dam\_202510.Funciones@{com.example.proyecto\_dam\_202510.Funciones}!crearColeccion@{crearColeccion}}
+\index{crearColeccion@{crearColeccion}!com.example.proyecto\_dam\_202510.Funciones@{com.example.proyecto\_dam\_202510.Funciones}}
+\doxysubsubsection{\texorpdfstring{crearColeccion()}{crearColeccion()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1_funciones_a18ba755851bcf08c9079e621e4134268} 
+void com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+Funciones.\+crear\+Coleccion (\begin{DoxyParamCaption}\item[{String}]{id\+Coleccion}{, }\item[{String}]{nombre}{, }\item[{int}]{total\+Cartas}{, }\item[{int}]{cartas\+Por\+Sobre}{, }\item[{double}]{coste}{, }\item[{String}]{imagen\+Portada}{, }\item[{String}]{usuario\+Creador}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Este metodo es el encargado de crear la coleccion dentro de la bd. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Coleccion} & id unico de la coleccion \\
+\hline
+{\em nombre} & nombre de la coleccion \\
+\hline
+{\em total\+Cartas} & El numero total de cartas para efectos estadisticos. \\
+\hline
+{\em cartas\+Por\+Sobre} & El numero de cartas por sobre para calcular el valor todal. \\
+\hline
+{\em coste} & Coste del sobre para calcular el precio / unitario. \\
+\hline
+{\em imagen\+Portada} & Imagen de portada de la coleccion. \\
+\hline
+{\em usuario\+Creador} & Referencia a la ruta del user creador. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1_funciones_a51ad6b39027ead309073e8b209a9bb8b}\index{com.example.proyecto\_dam\_202510.Funciones@{com.example.proyecto\_dam\_202510.Funciones}!crearUsuario@{crearUsuario}}
+\index{crearUsuario@{crearUsuario}!com.example.proyecto\_dam\_202510.Funciones@{com.example.proyecto\_dam\_202510.Funciones}}
+\doxysubsubsection{\texorpdfstring{crearUsuario()}{crearUsuario()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1_funciones_a51ad6b39027ead309073e8b209a9bb8b} 
+void com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+Funciones.\+crear\+Usuario (\begin{DoxyParamCaption}\item[{Firebase\+User}]{user}{, }\item[{Context}]{context}{, }\item[{Firebase\+Firestore}]{db}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Metodo para crear usuario en la coleccion /users de Firebase. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & Firebase\+User con el email del usuario. \\
+\hline
+{\em context} & Contexto de la aplicación para lanzar Toast. \\
+\hline
+{\em db} & Instancia de Firebase\+Firestore para establecer la conexion con la base de datos. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+app/src/main/java/com/example/proyecto\+\_\+dam\+\_\+202510/\mbox{\hyperlink{_funciones_8java}{Funciones.\+java}}\end{DoxyCompactItemize}

@@ -1,0 +1,4 @@
+var interfacecom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_mis_colecciones_adapter_1_1_on_item_click_listener =
+[
+    [ "onItemClick", "interfacecom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_mis_colecciones_adapter_1_1_on_item_click_listener.html#a4db85f926aeb5013c3e4b78f0da1939d", null ]
+];

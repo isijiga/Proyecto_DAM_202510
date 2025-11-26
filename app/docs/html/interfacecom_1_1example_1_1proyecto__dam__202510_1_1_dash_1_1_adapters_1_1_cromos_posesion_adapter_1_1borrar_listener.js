@@ -1,0 +1,4 @@
+var interfacecom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_cromos_posesion_adapter_1_1borrar_listener =
+[
+    [ "borrar", "interfacecom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_cromos_posesion_adapter_1_1borrar_listener.html#aabd87ad30ba6f7f5519a2e130695a34c", null ]
+];

@@ -1,0 +1,89 @@
+\doxysection{com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+login.\+Login\+Fragment Class Reference}
+\hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1login_1_1_login_fragment}{}\label{classcom_1_1example_1_1proyecto__dam__202510_1_1login_1_1_login_fragment}\index{com.example.proyecto\_dam\_202510.login.LoginFragment@{com.example.proyecto\_dam\_202510.login.LoginFragment}}
+
+
+Fragmento que recibe los datos del view y los procesa mediante el metodo signin de la clase \doxylink{classcom_1_1example_1_1proyecto__dam__202510_1_1_auth}{Auth}.  
+
+
+Inheritance diagram for com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+login.\+Login\+Fragment\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.623188cm]{classcom_1_1example_1_1proyecto__dam__202510_1_1login_1_1_login_fragment}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+View \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1login_1_1_login_fragment_a81f62421c1e40dd21a382a5d1d6f6f50}{on\+Create\+View}} (Layout\+Inflater inflater, View\+Group container, Bundle saved\+Instance\+State)
+\item 
+void \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1login_1_1_login_fragment_aad680c05c6cb64fe8e8d5eec749d4816}{on\+View\+Created}} (@Non\+Null View view, @Nullable Bundle saved\+Instance\+State)
+\item 
+void \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1login_1_1_login_fragment_ab3c40597db6720a87f151c08599fc68a}{on\+Auth\+Success}} ()
+\begin{DoxyCompactList}\small\item\em implemetancion del evento on\+Auth\+Success de la interfaz Auth\+Listener, donde le decimos que si el login ha sido correcto se lanzará el Intent \doxylink{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_dashboard_activity}{Dashboard\+Activity}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1login_1_1_login_fragment_a681983fa4bb7ed25a1794bc5468c108d}{on\+Auth\+Failure}} (String error\+Message)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1_auth}{Auth}} \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1login_1_1_login_fragment_ad5d805154997eb77b15864d08e35db8a}{firebase\+Auth}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Fragmento que recibe los datos del view y los procesa mediante el metodo signin de la clase \doxylink{classcom_1_1example_1_1proyecto__dam__202510_1_1_auth}{Auth}. 
+
+\label{doc-func-members}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1login_1_1_login_fragment_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1login_1_1_login_fragment_a681983fa4bb7ed25a1794bc5468c108d}\index{com.example.proyecto\_dam\_202510.login.LoginFragment@{com.example.proyecto\_dam\_202510.login.LoginFragment}!onAuthFailure@{onAuthFailure}}
+\index{onAuthFailure@{onAuthFailure}!com.example.proyecto\_dam\_202510.login.LoginFragment@{com.example.proyecto\_dam\_202510.login.LoginFragment}}
+\doxysubsubsection{\texorpdfstring{onAuthFailure()}{onAuthFailure()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1login_1_1_login_fragment_a681983fa4bb7ed25a1794bc5468c108d} 
+void com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+login.\+Login\+Fragment.\+on\+Auth\+Failure (\begin{DoxyParamCaption}\item[{String}]{error\+Message}{}\end{DoxyParamCaption})}
+
+
+
+Implements \mbox{\hyperlink{interfacecom_1_1example_1_1proyecto__dam__202510_1_1_auth_1_1_auth_listener_a7cd79dda9e6a0442def3e4c426cc17e2}{com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+Auth.\+Auth\+Listener}}.
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1login_1_1_login_fragment_ab3c40597db6720a87f151c08599fc68a}\index{com.example.proyecto\_dam\_202510.login.LoginFragment@{com.example.proyecto\_dam\_202510.login.LoginFragment}!onAuthSuccess@{onAuthSuccess}}
+\index{onAuthSuccess@{onAuthSuccess}!com.example.proyecto\_dam\_202510.login.LoginFragment@{com.example.proyecto\_dam\_202510.login.LoginFragment}}
+\doxysubsubsection{\texorpdfstring{onAuthSuccess()}{onAuthSuccess()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1login_1_1_login_fragment_ab3c40597db6720a87f151c08599fc68a} 
+void com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+login.\+Login\+Fragment.\+on\+Auth\+Success (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+implemetancion del evento on\+Auth\+Success de la interfaz Auth\+Listener, donde le decimos que si el login ha sido correcto se lanzará el Intent \doxylink{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_dashboard_activity}{Dashboard\+Activity}. 
+
+
+
+Implements \mbox{\hyperlink{interfacecom_1_1example_1_1proyecto__dam__202510_1_1_auth_1_1_auth_listener_a27cb5683093d0a23b4e52573b8fab470}{com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+Auth.\+Auth\+Listener}}.
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1login_1_1_login_fragment_a81f62421c1e40dd21a382a5d1d6f6f50}\index{com.example.proyecto\_dam\_202510.login.LoginFragment@{com.example.proyecto\_dam\_202510.login.LoginFragment}!onCreateView@{onCreateView}}
+\index{onCreateView@{onCreateView}!com.example.proyecto\_dam\_202510.login.LoginFragment@{com.example.proyecto\_dam\_202510.login.LoginFragment}}
+\doxysubsubsection{\texorpdfstring{onCreateView()}{onCreateView()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1login_1_1_login_fragment_a81f62421c1e40dd21a382a5d1d6f6f50} 
+View com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+login.\+Login\+Fragment.\+on\+Create\+View (\begin{DoxyParamCaption}\item[{Layout\+Inflater}]{inflater}{, }\item[{View\+Group}]{container}{, }\item[{Bundle}]{saved\+Instance\+State}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1login_1_1_login_fragment_aad680c05c6cb64fe8e8d5eec749d4816}\index{com.example.proyecto\_dam\_202510.login.LoginFragment@{com.example.proyecto\_dam\_202510.login.LoginFragment}!onViewCreated@{onViewCreated}}
+\index{onViewCreated@{onViewCreated}!com.example.proyecto\_dam\_202510.login.LoginFragment@{com.example.proyecto\_dam\_202510.login.LoginFragment}}
+\doxysubsubsection{\texorpdfstring{onViewCreated()}{onViewCreated()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1login_1_1_login_fragment_aad680c05c6cb64fe8e8d5eec749d4816} 
+void com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+login.\+Login\+Fragment.\+on\+View\+Created (\begin{DoxyParamCaption}\item[{@Non\+Null View}]{view}{, }\item[{@Nullable Bundle}]{saved\+Instance\+State}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-variable-members}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1login_1_1_login_fragment_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1login_1_1_login_fragment_ad5d805154997eb77b15864d08e35db8a}\index{com.example.proyecto\_dam\_202510.login.LoginFragment@{com.example.proyecto\_dam\_202510.login.LoginFragment}!firebaseAuth@{firebaseAuth}}
+\index{firebaseAuth@{firebaseAuth}!com.example.proyecto\_dam\_202510.login.LoginFragment@{com.example.proyecto\_dam\_202510.login.LoginFragment}}
+\doxysubsubsection{\texorpdfstring{firebaseAuth}{firebaseAuth}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1login_1_1_login_fragment_ad5d805154997eb77b15864d08e35db8a} 
+\mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1_auth}{Auth}} com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+login.\+Login\+Fragment.\+firebase\+Auth\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+app/src/main/java/com/example/proyecto\+\_\+dam\+\_\+202510/login/\mbox{\hyperlink{_login_fragment_8java}{Login\+Fragment.\+java}}\end{DoxyCompactItemize}

@@ -1,0 +1,102 @@
+\doxysection{com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+Dash.\+Adapters.\+Cromos\+Adapter Class Reference}
+\hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_cromos_adapter}{}\label{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_cromos_adapter}\index{com.example.proyecto\_dam\_202510.Dash.Adapters.CromosAdapter@{com.example.proyecto\_dam\_202510.Dash.Adapters.CromosAdapter}}
+
+
+la clase \doxylink{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_cromos_adapter}{Cromos\+Adapter} es la encargada de enlazar (bind) los cromos con la vista de datos el Recicled\+View del Fragment.  
+
+
+Inheritance diagram for com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+Dash.\+Adapters.\+Cromos\+Adapter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_cromos_adapter}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+interface \mbox{\hyperlink{interfacecom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_cromos_adapter_1_1on_item_click_listener}{on\+Item\+Click\+Listener}}
+\item 
+class \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_cromos_adapter_1_1_mi_view_holder}{Mi\+View\+Holder}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_cromos_adapter_af0e2baaad6f8e903871f7fc4b4e50a74}{set\+On\+Item\+Click\+Listener}} (\mbox{\hyperlink{interfacecom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_cromos_adapter_1_1on_item_click_listener}{on\+Item\+Click\+Listener}} \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_cromos_adapter_a07d6dcc25f05e9e6e0942f300f10870e}{listener}})
+\item 
+\mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_cromos_adapter_1_1_mi_view_holder}{Cromos\+Adapter.\+Mi\+View\+Holder}} \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_cromos_adapter_a5e8932989ea8685faed22e2196c5f70a}{on\+Create\+View\+Holder}} (@Non\+Null View\+Group parent, int view\+Type)
+\item 
+void \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_cromos_adapter_a1578447aef75ca0e1c75ee1217359ab1}{on\+Bind\+View\+Holder}} (@Non\+Null \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_cromos_adapter_1_1_mi_view_holder}{Cromos\+Adapter.\+Mi\+View\+Holder}} holder, int position)
+\item 
+int \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_cromos_adapter_a9a622816fcfe2c56c777c7f423c87b2e}{get\+Item\+Count}} ()
+\item 
+void \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_cromos_adapter_ae0ef8b01851dde152f613869dd5e9aad}{set\+Datos}} (List$<$ \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_cromo}{Cromo}} $>$ cromos)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_cromo}{Cromo}} $>$ \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_cromos_adapter_ad1fdb4a0201ebdbb0dbb60f63159e2a6}{lista\+Cromos}} = new Array\+List$<$$>$()
+\item 
+\mbox{\hyperlink{interfacecom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_cromos_adapter_1_1on_item_click_listener}{on\+Item\+Click\+Listener}} \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_cromos_adapter_a07d6dcc25f05e9e6e0942f300f10870e}{listener}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+la clase \doxylink{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_cromos_adapter}{Cromos\+Adapter} es la encargada de enlazar (bind) los cromos con la vista de datos el Recicled\+View del Fragment. 
+
+Su función es de actuar de intermediaria entre el Model\+View y Recycled. En esta clase se inflan los view individuales de cada uno de los cromos 
+
+\label{doc-func-members}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_cromos_adapter_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_cromos_adapter_a9a622816fcfe2c56c777c7f423c87b2e}\index{com.example.proyecto\_dam\_202510.Dash.Adapters.CromosAdapter@{com.example.proyecto\_dam\_202510.Dash.Adapters.CromosAdapter}!getItemCount@{getItemCount}}
+\index{getItemCount@{getItemCount}!com.example.proyecto\_dam\_202510.Dash.Adapters.CromosAdapter@{com.example.proyecto\_dam\_202510.Dash.Adapters.CromosAdapter}}
+\doxysubsubsection{\texorpdfstring{getItemCount()}{getItemCount()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_cromos_adapter_a9a622816fcfe2c56c777c7f423c87b2e} 
+int com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+Dash.\+Adapters.\+Cromos\+Adapter.\+get\+Item\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_cromos_adapter_a1578447aef75ca0e1c75ee1217359ab1}\index{com.example.proyecto\_dam\_202510.Dash.Adapters.CromosAdapter@{com.example.proyecto\_dam\_202510.Dash.Adapters.CromosAdapter}!onBindViewHolder@{onBindViewHolder}}
+\index{onBindViewHolder@{onBindViewHolder}!com.example.proyecto\_dam\_202510.Dash.Adapters.CromosAdapter@{com.example.proyecto\_dam\_202510.Dash.Adapters.CromosAdapter}}
+\doxysubsubsection{\texorpdfstring{onBindViewHolder()}{onBindViewHolder()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_cromos_adapter_a1578447aef75ca0e1c75ee1217359ab1} 
+void com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+Dash.\+Adapters.\+Cromos\+Adapter.\+on\+Bind\+View\+Holder (\begin{DoxyParamCaption}\item[{@Non\+Null \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_cromos_adapter_1_1_mi_view_holder}{Cromos\+Adapter.\+Mi\+View\+Holder}}}]{holder}{, }\item[{int}]{position}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_cromos_adapter_a5e8932989ea8685faed22e2196c5f70a}\index{com.example.proyecto\_dam\_202510.Dash.Adapters.CromosAdapter@{com.example.proyecto\_dam\_202510.Dash.Adapters.CromosAdapter}!onCreateViewHolder@{onCreateViewHolder}}
+\index{onCreateViewHolder@{onCreateViewHolder}!com.example.proyecto\_dam\_202510.Dash.Adapters.CromosAdapter@{com.example.proyecto\_dam\_202510.Dash.Adapters.CromosAdapter}}
+\doxysubsubsection{\texorpdfstring{onCreateViewHolder()}{onCreateViewHolder()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_cromos_adapter_a5e8932989ea8685faed22e2196c5f70a} 
+\mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_cromos_adapter_1_1_mi_view_holder}{Cromos\+Adapter.\+Mi\+View\+Holder}} com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+Dash.\+Adapters.\+Cromos\+Adapter.\+on\+Create\+View\+Holder (\begin{DoxyParamCaption}\item[{@Non\+Null View\+Group}]{parent}{, }\item[{int}]{view\+Type}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_cromos_adapter_ae0ef8b01851dde152f613869dd5e9aad}\index{com.example.proyecto\_dam\_202510.Dash.Adapters.CromosAdapter@{com.example.proyecto\_dam\_202510.Dash.Adapters.CromosAdapter}!setDatos@{setDatos}}
+\index{setDatos@{setDatos}!com.example.proyecto\_dam\_202510.Dash.Adapters.CromosAdapter@{com.example.proyecto\_dam\_202510.Dash.Adapters.CromosAdapter}}
+\doxysubsubsection{\texorpdfstring{setDatos()}{setDatos()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_cromos_adapter_ae0ef8b01851dde152f613869dd5e9aad} 
+void com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+Dash.\+Adapters.\+Cromos\+Adapter.\+set\+Datos (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_cromo}{Cromo}} $>$}]{cromos}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_cromos_adapter_af0e2baaad6f8e903871f7fc4b4e50a74}\index{com.example.proyecto\_dam\_202510.Dash.Adapters.CromosAdapter@{com.example.proyecto\_dam\_202510.Dash.Adapters.CromosAdapter}!setOnItemClickListener@{setOnItemClickListener}}
+\index{setOnItemClickListener@{setOnItemClickListener}!com.example.proyecto\_dam\_202510.Dash.Adapters.CromosAdapter@{com.example.proyecto\_dam\_202510.Dash.Adapters.CromosAdapter}}
+\doxysubsubsection{\texorpdfstring{setOnItemClickListener()}{setOnItemClickListener()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_cromos_adapter_af0e2baaad6f8e903871f7fc4b4e50a74} 
+void com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+Dash.\+Adapters.\+Cromos\+Adapter.\+set\+On\+Item\+Click\+Listener (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interfacecom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_cromos_adapter_1_1on_item_click_listener}{on\+Item\+Click\+Listener}}}]{listener}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-variable-members}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_cromos_adapter_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_cromos_adapter_ad1fdb4a0201ebdbb0dbb60f63159e2a6}\index{com.example.proyecto\_dam\_202510.Dash.Adapters.CromosAdapter@{com.example.proyecto\_dam\_202510.Dash.Adapters.CromosAdapter}!listaCromos@{listaCromos}}
+\index{listaCromos@{listaCromos}!com.example.proyecto\_dam\_202510.Dash.Adapters.CromosAdapter@{com.example.proyecto\_dam\_202510.Dash.Adapters.CromosAdapter}}
+\doxysubsubsection{\texorpdfstring{listaCromos}{listaCromos}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_cromos_adapter_ad1fdb4a0201ebdbb0dbb60f63159e2a6} 
+List$<$\mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_cromo}{Cromo}}$>$ com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+Dash.\+Adapters.\+Cromos\+Adapter.\+lista\+Cromos = new Array\+List$<$$>$()\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_cromos_adapter_a07d6dcc25f05e9e6e0942f300f10870e}\index{com.example.proyecto\_dam\_202510.Dash.Adapters.CromosAdapter@{com.example.proyecto\_dam\_202510.Dash.Adapters.CromosAdapter}!listener@{listener}}
+\index{listener@{listener}!com.example.proyecto\_dam\_202510.Dash.Adapters.CromosAdapter@{com.example.proyecto\_dam\_202510.Dash.Adapters.CromosAdapter}}
+\doxysubsubsection{\texorpdfstring{listener}{listener}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_cromos_adapter_a07d6dcc25f05e9e6e0942f300f10870e} 
+\mbox{\hyperlink{interfacecom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_cromos_adapter_1_1on_item_click_listener}{on\+Item\+Click\+Listener}} com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+Dash.\+Adapters.\+Cromos\+Adapter.\+listener\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+app/src/main/java/com/example/proyecto\+\_\+dam\+\_\+202510/\+Dash/\+Adapters/\mbox{\hyperlink{_cromos_adapter_8java}{Cromos\+Adapter.\+java}}\end{DoxyCompactItemize}

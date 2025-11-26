@@ -1,0 +1,105 @@
+\doxysection{com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+Main\+Activity Class Reference}
+\hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1_main_activity}{}\label{classcom_1_1example_1_1proyecto__dam__202510_1_1_main_activity}\index{com.example.proyecto\_dam\_202510.MainActivity@{com.example.proyecto\_dam\_202510.MainActivity}}
+Inheritance diagram for com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+Main\+Activity\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcom_1_1example_1_1proyecto__dam__202510_1_1_main_activity}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1_main_activity_a5ca99714e48bf3f35cbea5dec156d475}{registro\+Usuario}} ()
+\begin{DoxyCompactList}\small\item\em Metodo que redirige al usuario a la pantalla de \doxylink{classcom_1_1example_1_1proyecto__dam__202510_1_1login_1_1_registro_fragment}{Registro\+Fragment}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1_main_activity_a00a41e34b20c21416dcf0f9777d05577}{recordar\+Contraseña}} ()
+\begin{DoxyCompactList}\small\item\em Metodo que redirige al usuario a la pantalla de \doxylink{classcom_1_1example_1_1proyecto__dam__202510_1_1login_1_1_recordar_contrasena_fragment}{Recordar\+Contrasena\+Fragment}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1_main_activity_a087079f95c04252136ee7b64ec230567}{on\+Create}} (Bundle saved\+Instance\+State)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1_main_activity_a17c426b71cbf8492b5b9d412d6d181bd}{check\+Estado}} ()
+\begin{DoxyCompactList}\small\item\em Este metodo se encarga de comprobar si existe algun usuario logado en la aplicación si hay un usuario logado lo envia al metodo navegar\+Dash y muestra bienvenida, sino lo redirigia la pantalla de Login. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1_main_activity_a91a87770793c34bab2f79580e33efec1}{navegar\+Dash}} ()
+\begin{DoxyCompactList}\small\item\em Metodo que redirige al usuario al comienzo de la actividad \doxylink{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_dashboard_activity}{Dashboard\+Activity} limpia la pila de pantallas y a traves del metodo finish() se impide al usuario que pueda volver hacia atras. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Firebase\+Auth \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1_main_activity_a40b08c81f008a472e8467c9887ec0bc4}{m\+Auth}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Isidoro\+Jiménez\+Garcia
+\end{DoxyAuthor}
+Esta clase principal se encarga de gestionar el acceso al usuario a la app. 
+
+\label{doc-func-members}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1_main_activity_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1_main_activity_a17c426b71cbf8492b5b9d412d6d181bd}\index{com.example.proyecto\_dam\_202510.MainActivity@{com.example.proyecto\_dam\_202510.MainActivity}!checkEstado@{checkEstado}}
+\index{checkEstado@{checkEstado}!com.example.proyecto\_dam\_202510.MainActivity@{com.example.proyecto\_dam\_202510.MainActivity}}
+\doxysubsubsection{\texorpdfstring{checkEstado()}{checkEstado()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1_main_activity_a17c426b71cbf8492b5b9d412d6d181bd} 
+void com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+Main\+Activity.\+check\+Estado (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Este metodo se encarga de comprobar si existe algun usuario logado en la aplicación si hay un usuario logado lo envia al metodo navegar\+Dash y muestra bienvenida, sino lo redirigia la pantalla de Login. 
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1_main_activity_a91a87770793c34bab2f79580e33efec1}\index{com.example.proyecto\_dam\_202510.MainActivity@{com.example.proyecto\_dam\_202510.MainActivity}!navegarDash@{navegarDash}}
+\index{navegarDash@{navegarDash}!com.example.proyecto\_dam\_202510.MainActivity@{com.example.proyecto\_dam\_202510.MainActivity}}
+\doxysubsubsection{\texorpdfstring{navegarDash()}{navegarDash()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1_main_activity_a91a87770793c34bab2f79580e33efec1} 
+void com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+Main\+Activity.\+navegar\+Dash (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Metodo que redirige al usuario al comienzo de la actividad \doxylink{classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_dashboard_activity}{Dashboard\+Activity} limpia la pila de pantallas y a traves del metodo finish() se impide al usuario que pueda volver hacia atras. 
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1_main_activity_a087079f95c04252136ee7b64ec230567}\index{com.example.proyecto\_dam\_202510.MainActivity@{com.example.proyecto\_dam\_202510.MainActivity}!onCreate@{onCreate}}
+\index{onCreate@{onCreate}!com.example.proyecto\_dam\_202510.MainActivity@{com.example.proyecto\_dam\_202510.MainActivity}}
+\doxysubsubsection{\texorpdfstring{onCreate()}{onCreate()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1_main_activity_a087079f95c04252136ee7b64ec230567} 
+void com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+Main\+Activity.\+on\+Create (\begin{DoxyParamCaption}\item[{Bundle}]{saved\+Instance\+State}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1_main_activity_a00a41e34b20c21416dcf0f9777d05577}\index{com.example.proyecto\_dam\_202510.MainActivity@{com.example.proyecto\_dam\_202510.MainActivity}!recordarContraseña@{recordarContraseña}}
+\index{recordarContraseña@{recordarContraseña}!com.example.proyecto\_dam\_202510.MainActivity@{com.example.proyecto\_dam\_202510.MainActivity}}
+\doxysubsubsection{\texorpdfstring{recordarContraseña()}{recordarContraseña()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1_main_activity_a00a41e34b20c21416dcf0f9777d05577} 
+void com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+Main\+Activity.\+recordar\+Contraseña (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Metodo que redirige al usuario a la pantalla de \doxylink{classcom_1_1example_1_1proyecto__dam__202510_1_1login_1_1_recordar_contrasena_fragment}{Recordar\+Contrasena\+Fragment}. 
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1_main_activity_a5ca99714e48bf3f35cbea5dec156d475}\index{com.example.proyecto\_dam\_202510.MainActivity@{com.example.proyecto\_dam\_202510.MainActivity}!registroUsuario@{registroUsuario}}
+\index{registroUsuario@{registroUsuario}!com.example.proyecto\_dam\_202510.MainActivity@{com.example.proyecto\_dam\_202510.MainActivity}}
+\doxysubsubsection{\texorpdfstring{registroUsuario()}{registroUsuario()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1_main_activity_a5ca99714e48bf3f35cbea5dec156d475} 
+void com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+Main\+Activity.\+registro\+Usuario (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Metodo que redirige al usuario a la pantalla de \doxylink{classcom_1_1example_1_1proyecto__dam__202510_1_1login_1_1_registro_fragment}{Registro\+Fragment}. 
+
+
+
+\label{doc-variable-members}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1_main_activity_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1_main_activity_a40b08c81f008a472e8467c9887ec0bc4}\index{com.example.proyecto\_dam\_202510.MainActivity@{com.example.proyecto\_dam\_202510.MainActivity}!mAuth@{mAuth}}
+\index{mAuth@{mAuth}!com.example.proyecto\_dam\_202510.MainActivity@{com.example.proyecto\_dam\_202510.MainActivity}}
+\doxysubsubsection{\texorpdfstring{mAuth}{mAuth}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1_main_activity_a40b08c81f008a472e8467c9887ec0bc4} 
+Firebase\+Auth com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+Main\+Activity.\+m\+Auth\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+app/src/main/java/com/example/proyecto\+\_\+dam\+\_\+202510/\mbox{\hyperlink{_main_activity_8java}{Main\+Activity.\+java}}\end{DoxyCompactItemize}
