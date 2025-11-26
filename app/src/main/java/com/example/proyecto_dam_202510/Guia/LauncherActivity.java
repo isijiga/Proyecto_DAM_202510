@@ -14,6 +14,12 @@ import androidx.core.view.WindowInsetsCompat;
 import com.example.proyecto_dam_202510.MainActivity;
 import com.example.proyecto_dam_202510.R;
 
+
+/**
+ * Actividad que gestiona el primer uso de la app para lanzar o no la guia de usuario.
+ * Dispone solo del metodo onCreate que comprueba si es la primera vez que se ejecuta la app.
+ * si es así, lanza la actividad GuiaActivity, si no, lanza la actividad MainActivity.
+ */
 public class LauncherActivity extends AppCompatActivity {
 
     private static final String PREFERENCES_NAME = "LauncherActivity";
@@ -26,11 +32,10 @@ public class LauncherActivity extends AppCompatActivity {
 
         SharedPreferences sharedPreferences = getSharedPreferences(PREFERENCES_NAME, Context.MODE_PRIVATE);
 
-        boolean primeravez = sharedPreferences.getBoolean(KEY_FIRST_LAUNCH,true);
-        if (primeravez){
-            startActivity(new Intent(LauncherActivity.this,GuiaActivity.class));
-        }
-        else{
+        boolean primeravez = sharedPreferences.getBoolean(KEY_FIRST_LAUNCH, true);
+        if (primeravez) {
+            startActivity(new Intent(LauncherActivity.this, GuiaActivity.class));
+        } else {
             startActivity(new Intent(LauncherActivity.this, MainActivity.class));
         }
 

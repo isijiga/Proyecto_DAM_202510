@@ -1,5 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
+
+
 }
 
 android {
@@ -34,6 +36,7 @@ android {
 dependencies {
 
     implementation(libs.appcompat)
+    implementation("io.github.javaeden.orchid:OrchidCore:0.21.0")
     implementation(libs.material)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)

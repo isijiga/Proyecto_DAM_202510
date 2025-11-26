@@ -13,9 +13,11 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 
@@ -25,9 +27,10 @@ import java.util.Map;
  * las operaciones de escritura en esta clase.
  */
 public class Funciones {
-
+    private static final String CORREO_EXP =
+            "^[^@]+@[^@]+\\.[a-zA-Z]{2,}$";
     /**
-     * Metodo para crear usuario en la coleccion /users de Firebase.
+     * @brief Metodo para crear usuario en la coleccion /users de Firebase.
      *
      * @param user    FirebaseUser con el email del usuario.
      * @param context Contexto de la aplicación para lanzar Toast.
@@ -284,6 +287,32 @@ public class Funciones {
                 .document(cromoColeccionId)
                 .update("tipo", tipo);
     }
+    /**
+     * comprueba si el correo es valido
+     * @param correo correo electronico
+     * @return
+     */
+    public static boolean comprobarCorreoValido(String correo){
 
+                    if (correo == null) {
+                return false;
+            }
+            return correo.matches(CORREO_EXP);
+
+
+    }
+    public static Map<String,Object> difDias(@NonNull Date fechaInicio) throws ParseException {
+        Map<String,Object> mapa = new HashMap<>();
+        SimpleDateFormat formatoSalida = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+        String fechaFormateada = formatoSalida.format(fechaInicio);
+        String hoyFormateada = new SimpleDateFormat("dd/MM/yyyy").format(new Date());
+        Date fechaIni = formatoSalida.parse(fechaFormateada);
+        Date fechaHoy = formatoSalida.parse(hoyFormateada);
+        long diffMillis = fechaHoy.getTime() - fechaIni.getTime();
+        long diffDias = diffMillis / (24 * 60 * 60 * 1000);
+        mapa.put("fechaInicio",fechaIni.getTime());
+        mapa.put("diffDias",diffDias);
+        return mapa;
+    }
 
 }

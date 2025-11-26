@@ -58,7 +58,7 @@ public class RegistroFragment extends Fragment {
     /**
      * Metodo que permite registgrar a un usuario en el sistema.
      */
-    private void registrarUsuario() {
+    public void registrarUsuario() {
         String mail = inputMail.getText().toString();
         String pass = inputPass.getText().toString();
         String repPass = inputRepPass.getText().toString();

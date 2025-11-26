@@ -5,9 +5,14 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
+
+/**
+ * Adaptador de la guia donde se establecen las pantallas de la guia .
+ */
 public class GuiaAdapter extends FragmentStateAdapter {
 
     private static final int NUM_PANTALLAS = 8;
+
     public GuiaAdapter(@NonNull FragmentActivity fragmentActivity) {
         super(fragmentActivity);
     }
@@ -15,7 +20,7 @@ public class GuiaAdapter extends FragmentStateAdapter {
     @NonNull
     @Override
     public Fragment createFragment(int position) {
-        switch (position){
+        switch (position) {
             case 0:
                 return new GuiaPantalla1Fragment();
             case 1:
@@ -32,8 +37,8 @@ public class GuiaAdapter extends FragmentStateAdapter {
                 return new GuiaPantalla7Fragment();
             case 7:
                 return new GuiaPantalla8Fragment();
-
-            default: return  new GuiaPantalla1Fragment();
+            default:
+                return new GuiaPantalla1Fragment();
         }
 
     }

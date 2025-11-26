@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
+
+import com.example.proyecto_dam_202510.Funciones;
 import com.example.proyecto_dam_202510.R;
 import com.example.proyecto_dam_202510.databinding.FragmentRecordarContrasenaBinding;
 import com.google.firebase.auth.FirebaseAuth;
@@ -17,6 +19,7 @@ import com.google.firebase.auth.FirebaseAuth;
  * electronico con un enlace para poder cambiar la pass.
  */
 public class RecordarContrasenaFragment extends Fragment {
+
     FragmentRecordarContrasenaBinding binding;
     public RecordarContrasenaFragment() {
     }
@@ -51,11 +54,20 @@ public class RecordarContrasenaFragment extends Fragment {
      binding.button2.setOnClickListener(new View.OnClickListener() {
          @Override
          public void onClick(View v) {
-             FirebaseAuth.getInstance().sendPasswordResetEmail(binding.etUsuario.getText().toString());
-             binding.tvUsuario.setText("Correo enviado");
-             binding.etUsuario.setEnabled(false);
+             String correo = binding.etUsuario.getText().toString();
+             boolean valido = Funciones.comprobarCorreoValido(correo);
+            if(valido){
+                FirebaseAuth.getInstance().sendPasswordResetEmail(binding.etUsuario.getText().toString());
+                binding.tvUsuario.setText("Correo enviado");
+                binding.etUsuario.setEnabled(false);
+                Toast.makeText(getContext(),"Correo enviado", Toast.LENGTH_LONG).show();
+            }
+            else{
+                Toast.makeText(getContext(),"Correo no valido", Toast.LENGTH_LONG).show();
+            }
 
-             Toast.makeText(getContext(),"Correo enviado", Toast.LENGTH_LONG).show();
+
+
 /**
  * se vuelve al fragmento LoginFragment
  */
@@ -66,4 +78,6 @@ public class RecordarContrasenaFragment extends Fragment {
          }
      });
     }
+
+
 }

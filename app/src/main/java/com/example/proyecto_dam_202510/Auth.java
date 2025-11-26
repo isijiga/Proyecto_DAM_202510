@@ -21,6 +21,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 
 /**
+ * @brief
  * @author Isidoro Jiménez García
  * Clase encargada de gestionar la autenticación de usuarios en la aplicación.
  * Todas las operaciones relacionadas con FirebaseFirestore son asíncronas,
@@ -68,7 +69,7 @@ public class Auth extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             Log.d(TAG, "UsuarioCreado!");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            Funciones.crearUsuario(user, context, db);
+                            Funciones.  crearUsuario(user, context, db);
                         } else {
                             Log.w(TAG, "Fallo al crear el usuario", task.getException());
                             Toast.makeText(context, "Fallo al crear el usuario :" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();

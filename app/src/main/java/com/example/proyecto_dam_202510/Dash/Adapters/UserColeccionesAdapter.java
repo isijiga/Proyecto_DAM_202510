@@ -5,6 +5,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.proyecto_dam_202510.Funciones;
 import com.example.proyecto_dam_202510.data.pojo.UsersColecciones;
 import com.example.proyecto_dam_202510.databinding.UserscoleccionLayoutBinding;
 import com.squareup.picasso.Picasso;
@@ -12,8 +14,10 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 /**
  * Clase que facilita los datos necesario al RecyclerView de las colecciones que está siguiendo cada
@@ -91,15 +95,14 @@ public class UserColeccionesAdapter extends RecyclerView.Adapter<UserColecciones
             binding.tvColeccionSubtitulo.setText("Total cartas:" + item.getProgreso() + "/" + item.getTotalCromos());
 
             /*paso a formato local dd/MM/aaaa hh:mm*/
-
+            Map<String,Object> mapa = new HashMap<>();
+            mapa =  Funciones.difDias(item.getInicioColeccion());
+            long tiempoInicio = (Long) mapa.get("fechaInicio");
+            long diffDias = (Long) mapa.get("diffDias");
+            Date fecha = new Date(tiempoInicio);
             SimpleDateFormat formatoSalida = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
-            String fechaFormateada = formatoSalida.format(item.getInicioColeccion());
-            String hoyFormateada = new SimpleDateFormat("dd/MM/yyyy").format(new Date());
-            Date fechaInicio = formatoSalida.parse(fechaFormateada);
-            Date fechaHoy = formatoSalida.parse(hoyFormateada);
-            long diffMillis = fechaHoy.getTime() - fechaInicio.getTime();
-            long diffDias = diffMillis / (24 * 60 * 60 * 1000);
-            binding.tvColeccionEstado.setText(fechaFormateada + "(Hace: " + diffDias + " dias)");
+            String fechaInicioFormateada = formatoSalida.format(fecha);
+            binding.tvColeccionEstado.setText(fechaInicioFormateada + "(Hace: " + diffDias + " dias)");
             Picasso.get().load(item.getImagen())
                     .fit()
                     .into(binding.ivColeccionImagen);

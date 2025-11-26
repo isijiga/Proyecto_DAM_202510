@@ -63,9 +63,6 @@ public class ConfigFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         binding = FragmentConfigBinding.inflate(inflater, container, false);
-        // Inflate the layout for this fragment
-
-
         return binding.getRoot();
 
     }

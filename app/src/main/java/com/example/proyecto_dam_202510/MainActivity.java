@@ -11,6 +11,7 @@ import com.example.proyecto_dam_202510.login.RegistroFragment;
 import com.google.firebase.auth.FirebaseAuth;
 
 /**
+ * @brief
  * @author IsidoroJiménezGarcia
  *
  * Esta clase principal se encarga de gestionar el acceso al usuario a la app.

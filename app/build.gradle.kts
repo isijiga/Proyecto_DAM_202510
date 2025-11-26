@@ -58,10 +58,15 @@ dependencies {
     implementation(libs.lifecycle.viewmodel.ktx)
     implementation(libs.navigation.fragment)
     implementation(libs.navigation.ui)
-
-
     implementation("androidx.recyclerview:recyclerview:1.4.0")
-testImplementation(libs.junit)
+    testImplementation(libs.junit)
+
+        testImplementation("junit:junit")
+
+        testImplementation("androidx.test:core:1.7.+")
+        testImplementation("org.mockito:mockito-core:5.+")
+
+
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
 }
