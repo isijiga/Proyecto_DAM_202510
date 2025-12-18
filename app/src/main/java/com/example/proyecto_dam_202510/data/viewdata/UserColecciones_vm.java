@@ -1,6 +1,8 @@
 package com.example.proyecto_dam_202510.data.viewdata;
 
 
+import android.util.Log;
+
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
@@ -46,13 +48,20 @@ public class UserColecciones_vm extends ViewModel {
                 .whereEqualTo("user", userRef).addSnapshotListener((dato, error) -> {
 
                     List<UsersColecciones> listaTemporal = new ArrayList<>();
+                    if (error != null) {
+                        Log.e("Firestore", "Error al escuchar cambios", error);
+                        return;
+                    }
+                    if (dato != null) {
                     for (QueryDocumentSnapshot document : dato) {
+
+
                         UsersColecciones usercoleccion = (UsersColecciones) document.toObject(UsersColecciones.class);
                         usercoleccion.setId(document.getId());
                         colecRef = document.getDocumentReference("coleccion");
 
                         listaTemporal.add(usercoleccion);
-                    }
+                    }}
                     listaUsersColeccionesLiveData.setValue(listaTemporal);
                 });
     }

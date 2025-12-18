@@ -18,6 +18,9 @@
         <action
             android:id="@+id/action_intercambioFragment_to_perfilFragment"
             app:destination="@id/nav_perfil" />
+        <action
+            android:id="@+id/action_nav_intercambio_to_transaccionFragment"
+            app:destination="@id/nav_transacciones" />
     </fragment>
     <fragment
         android:id="@+id/nav_perfil"
@@ -110,4 +113,9 @@
         android:name="com.example.proyecto_dam_202510.Dash.Fragments.DetalleCromoPosesionFragment"
         android:label="fragment_detalle_cromo_posesion"
         tools:layout="@layout/fragment_detalle_cromo_posesion" />
+    <fragment
+        android:id="@+id/nav_transacciones"
+        android:name="com.example.proyecto_dam_202510.Dash.Fragments.GestionTransaccionFragment"
+        android:label="fragment_transaccion"
+        tools:layout="@layout/fragment_gestion_transaccion" />
 </navigation>

@@ -1,5 +1,7 @@
 package com.example.proyecto_dam_202510.data.viewdata;
 
+import android.util.Log;
+
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
@@ -41,13 +43,19 @@ public class Coleccion_vm extends ViewModel {
 
         coleccionListener = db.collection("colecciones")
                 .addSnapshotListener((dato, error) -> {
-                    List<Coleccion> listaTemporal = new ArrayList<>();
-                    for (QueryDocumentSnapshot document : dato) {
-                        Coleccion coleccion = (Coleccion) document.toObject(Coleccion.class);
-                        coleccion.setId(document.getId());
-                        listaTemporal.add(coleccion);
+                    if (error != null) {
+                        Log.e("Firestore", "Error al escuchar cambios", error);
+                        return;
                     }
-                    listaColeccionesLiveData.setValue(listaTemporal);
+                    List<Coleccion> listaTemporal = new ArrayList<>();
+                    if (dato != null) {
+                        for (QueryDocumentSnapshot document : dato) {
+                            Coleccion coleccion = (Coleccion) document.toObject(Coleccion.class);
+                            coleccion.setId(document.getId());
+                            listaTemporal.add(coleccion);
+                        }
+                        listaColeccionesLiveData.setValue(listaTemporal);
+                    }
                 });
     }
 

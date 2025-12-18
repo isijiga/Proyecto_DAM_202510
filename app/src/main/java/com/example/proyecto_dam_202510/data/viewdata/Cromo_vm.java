@@ -1,5 +1,7 @@
 package com.example.proyecto_dam_202510.data.viewdata;
 
+import android.util.Log;
+
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
@@ -48,14 +50,20 @@ public class Cromo_vm extends ViewModel {
                 collection("cromos")
 
                 .addSnapshotListener((dato, error) -> {
-
-                    List<Cromo> listaTemporal = new ArrayList<>();
-                    for (QueryDocumentSnapshot document : dato) {
-                        Cromo cromo = (Cromo) document.toObject(Cromo.class);
-                        cromo.setId(document.getId());
-                        listaTemporal.add(cromo);
+                    if (error != null) {
+                        Log.e("Firestore", "Error al escuchar cambios", error);
+                        return;
                     }
-                    listaCromoLiveData.setValue(listaTemporal);
+                    if (dato != null) {
+                        List<Cromo> listaTemporal = new ArrayList<>();
+                        for (QueryDocumentSnapshot document : dato) {
+                            Cromo cromo = (Cromo) document.toObject(Cromo.class);
+                            cromo.setId(document.getId());
+                            listaTemporal.add(cromo);
+                        }
+                        listaCromoLiveData.setValue(listaTemporal);
+                    }
+
                 });
     }
 

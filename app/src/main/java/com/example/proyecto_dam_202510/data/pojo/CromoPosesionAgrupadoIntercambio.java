@@ -1,8 +1,11 @@
 package com.example.proyecto_dam_202510.data.pojo;
 
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
 
 /**
@@ -20,6 +23,8 @@ public class CromoPosesionAgrupadoIntercambio {
     private int valor;
     private String coleccionId;
 
+    private Date fechaAdquisicion;
+    private Set<String> usuarioPoseedor;
     public String getColeccionId() {
         return coleccionId;
     }
@@ -28,23 +33,21 @@ public class CromoPosesionAgrupadoIntercambio {
         this.coleccionId = coleccionId;
     }
 
-    public String getFechaAdquisicion() {
+    public Date getFechaAdquisicion() {
         return fechaAdquisicion;
     }
 
-    public void setFechaAdquisicion(String fechaAdquisicion) {
+    public void setFechaAdquisicion(Date fechaAdquisicion) {
         this.fechaAdquisicion = fechaAdquisicion;
     }
 
-    private String fechaAdquisicion;
-    private List<String> usuarioPoseedor;
 
 
-    public List<String> getUsuarioPoseedor() {
+    public Set<String> getUsuarioPoseedor() {
         return usuarioPoseedor;
     }
 
-    public void setUsuarioPoseedor(List<String> usuarioPoseedor) {
+    public void setUsuarioPoseedor(Set<String> usuarioPoseedor) {
         this.usuarioPoseedor = usuarioPoseedor;
     }
 
@@ -63,7 +66,7 @@ public class CromoPosesionAgrupadoIntercambio {
     }
 
 
-    public CromoPosesionAgrupadoIntercambio(String fechaAdquisicion,
+    public CromoPosesionAgrupadoIntercambio(Date fechaAdquisicion,
                                             String id, String imagen, String nombre,
                                             String numero, int repetida, String tipo, int valor, String usuarioPoseedor) {
 
@@ -88,7 +91,7 @@ public class CromoPosesionAgrupadoIntercambio {
     }
 
     public CromoPosesionAgrupadoIntercambio() {
-        usuarioPoseedor = new ArrayList<>();
+        usuarioPoseedor = new HashSet<>();
     }
 
     public String getId() {

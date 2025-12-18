@@ -9,9 +9,13 @@ import com.example.proyecto_dam_202510.data.pojo.CromoPosesionAgrupado;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.ListenerRegistration;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
+
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 
@@ -55,17 +59,22 @@ public class CromoPosesion_vm extends ViewModel {
                 .document(userColeccion).
                 collection("cromosPosesion")
                 .addSnapshotListener((dato, error) -> {
+                    if (error != null) {
+                        Log.e("Firestore", "Error al escuchar cambios", error);
+                        return;
+                    }
                     List<CromoPosesion> listaTemporal = new ArrayList<>();
                     /**
                      *añade cada cromo a la lista temporal y actualiza la lista de cromos.
                      */
-                    for (QueryDocumentSnapshot document : dato) {
-                        CromoPosesion cromo = (CromoPosesion) document.toObject(CromoPosesion.class);
-                        cromo.setId(document.getId());
-                        listaTemporal.add(cromo);
+                    if (dato != null) {
+                        for (QueryDocumentSnapshot document : dato) {
+                            CromoPosesion cromo = (CromoPosesion) document.toObject(CromoPosesion.class);
+                            cromo.setId(document.getId());
+                            listaTemporal.add(cromo);
+                        }
+                        //listaCromoPosesionLiveData.setValue(listaTemporal);
                     }
-                    //listaCromoPosesionLiveData.setValue(listaTemporal);
-
                     /**
                      * Mapa hashmap para contar cada cromo individualmente
                      */
@@ -90,7 +99,9 @@ public class CromoPosesion_vm extends ViewModel {
                         String numero = name.getNumero();
                         String tipo = name.getTipo();
                         int valor = name.getValor();
-                        String fechaAdquisicion = name.getFechaAdquisicion();
+                        //SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.getDefault());
+                        //String fechaAdquisicion = sdf.format(name.getFechaAdquisicion());
+                        Date fechaAdquisicion = name.getFechaAdquisicion();
                         String coleccionId = name.getColeccionId();
 
 

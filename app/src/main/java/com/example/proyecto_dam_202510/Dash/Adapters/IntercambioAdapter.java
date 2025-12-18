@@ -16,7 +16,7 @@ import java.util.List;
  */
 public class IntercambioAdapter extends RecyclerView.Adapter<IntercambioAdapter.CromoViewHolder> {
     private List<CromoPosesionAgrupadoIntercambio> listaCromos = new ArrayList<>();
-
+    private OnItemClickListener listener;
     public static class CromoViewHolder extends RecyclerView.ViewHolder {
         TextView tv_numero;
         TextView tvNombre;
@@ -60,6 +60,15 @@ public class IntercambioAdapter extends RecyclerView.Adapter<IntercambioAdapter.
         } else {
             holder.tvOwners.setText("Dueños: (vacío)");
         }
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(listener!=null){
+                    listener.onItemClick(cromo);
+
+                }
+            }
+        });
     }
 
 
@@ -72,4 +81,11 @@ public class IntercambioAdapter extends RecyclerView.Adapter<IntercambioAdapter.
         this.listaCromos = nuevaLista;
         notifyDataSetChanged();
     }
+    public interface OnItemClickListener{
+        void onItemClick(CromoPosesionAgrupadoIntercambio cromo);
+    }
+    public void setOnItemClickListener(OnItemClickListener listener){
+        this.listener = listener;
+    }
+
 }

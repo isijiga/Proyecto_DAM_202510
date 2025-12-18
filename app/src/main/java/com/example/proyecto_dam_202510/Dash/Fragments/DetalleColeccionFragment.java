@@ -139,7 +139,7 @@ public class DetalleColeccionFragment extends Fragment {
                 bundle.putString("id", cromoPosesionAgrupado.getId());
                 bundle.putString("coleccion", cromoPosesionAgrupado.getColeccionId());
                 bundle.putInt("repetida", cromoPosesionAgrupado.getRepetida());
-                bundle.putString("fechaAdquisicion", cromoPosesionAgrupado.getFechaAdquisicion());
+                bundle.putLong("fechaAdquisicion", cromoPosesionAgrupado.getFechaAdquisicion().getTime());
                 bundle.putString("tipo", cromoPosesionAgrupado.getTipo());
 
                 NavController navController = Navigation.findNavController(view);

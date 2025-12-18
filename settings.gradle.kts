@@ -22,4 +22,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Proyecto_DAM_202510"
 include(":app")
-include(":app:docs")
+

@@ -5,20 +5,29 @@ import android.util.Log;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import com.example.proyecto_dam_202510.data.pojo.Coleccion;
+import com.example.proyecto_dam_202510.data.pojo.CromoPosesionAgrupadoIntercambio;
+import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.Timestamp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Set;
 
 
 /**
@@ -149,14 +158,20 @@ public class Funciones {
             String tipo,
             double valor,
             String imagen,
-            String fechaAdquisicion
+            Date fechaAdquisicion
     ) {
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
         Map<String, Object> cromo = new HashMap<>();
+        CollectionReference coleccionRef = db.collection("users_colecciones")
+                .document(user.getUid() + idColeccion)
+                .collection("cromosPosesion");
+        DocumentReference cromoPosesionRef = coleccionRef.document();
+        String idcromoPosesion = cromoPosesionRef.getId();
 
+        cromo.put("id", idcromoPosesion);
         cromo.put("coleccionId", idColeccion);
         cromo.put("nombre", nombre);
         cromo.put("numero", numero);
@@ -165,13 +180,11 @@ public class Funciones {
         cromo.put("imagen", imagen);
         cromo.put("fechaAdquisicion", fechaAdquisicion);
 
-        db.collection("users_colecciones").document(user.getUid() + idColeccion)
-                .collection("cromosPosesion")
-                .add(cromo)
-                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+        cromoPosesionRef.set(cromo)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
-                    public void onSuccess(DocumentReference documentReference) {
-                        Log.d("ColecTrade", "Escritura correcta con  ID: " + documentReference.getId());
+                    public void onSuccess(Void aVoid) {
+                        Log.d("cromoPosesion", "Escritura correcta con  ID: " + idcromoPosesion);
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
@@ -315,4 +328,62 @@ public class Funciones {
         return mapa;
     }
 
+    public static void pedirCarta(CromoPosesionAgrupadoIntercambio cromo, Context context) {
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+        FirebaseUser user = mAuth.getCurrentUser();
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+        final String emailPedidoPor = user.getEmail();
+        final String refPedidoPor = user.getUid();
+        CollectionReference transacionRef = db.collection("transacciones");
+
+        Map<String,Object> cromoPedidoMap = new HashMap<>();
+        cromoPedidoMap.put("imagen",cromo.getImagen());
+        cromoPedidoMap.put("nombre",cromo.getNombre());
+        cromoPedidoMap.put("numero",cromo.getNumero());
+        cromoPedidoMap.put("coleccionId",cromo.getColeccionId());
+        cromoPedidoMap.put("pedidoPor",refPedidoPor);
+        cromoPedidoMap.put("fechaAdquisicion",Timestamp.now());
+        cromoPedidoMap.put("estado","pendiente");
+        cromoPedidoMap.put("emailPedidoPor", emailPedidoPor);
+        cromoPedidoMap.put("id",cromo.getId());
+        List<Task<Void>> tasks = new ArrayList<>();
+
+        //for(int i=0;i<cromo.getUsuarioPoseedor().size();i++){
+        Set<String> poseedoresUnicos = cromo.getUsuarioPoseedor();
+        for(final String userIdPedidoA : poseedoresUnicos){
+//            final String userIdPedidoA = cromo.getUsuarioPoseedor().get(i);
+            Task<DocumentSnapshot> mailTask = db.collection("users").document(userIdPedidoA).get();
+
+            Task<Void> transaccionTask = mailTask.continueWithTask(new Continuation<DocumentSnapshot, Task<Void>>() {
+                @Override
+                public Task<Void> then(@NonNull Task<DocumentSnapshot> task) throws Exception {
+                    DocumentSnapshot documentSnapshot = task.getResult();
+
+                    String emailPedidoPor = (String) documentSnapshot.get("username");
+                    Log.d("transaccion", "Email Receptor Obtenido: " + emailPedidoPor);
+                    Map<String, Object> cromoPedido = new HashMap<>(cromoPedidoMap);
+                    cromoPedido.put("pedidoA",userIdPedidoA);
+                    cromoPedido.put("emailPedidoA",emailPedidoPor);
+                    DocumentReference nuevaTransaccionRef = transacionRef.document();
+                    String idTransaccion = nuevaTransaccionRef.getId();
+                    cromoPedido.put("idTransaccion", idTransaccion);
+                    return transacionRef.document(idTransaccion).set(cromoPedido);
+
+                }
+            });
+
+            tasks.add(transaccionTask);
+
+        }
+        Tasks.whenAll(tasks).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void unused) {
+                Toast.makeText(context, "Todas las cartas han sido pedidas con éxito.", Toast.LENGTH_LONG).show();
+            }
+        });
+
+
+
+    }
 }

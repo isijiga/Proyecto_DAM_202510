@@ -1,65 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="16dp"
-    android:elevation="4dp"
-    android:layout_marginVertical="8dp"
     android:layout_marginHorizontal="12dp"
-    android:background="@drawable/carta_intercambio_fondo"
-    >
+    android:layout_marginVertical="6dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp"
+    app:cardBackgroundColor="@android:color/white">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
-    <TextView
-        android:id="@+id/tv_numero"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="15"
-        android:textSize="18sp"
-        android:textStyle="bold"
+        android:padding="16dp">
 
-        />
-    <TextView
-        android:id="@+id/tv_nombre"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nombre del Cromo"
-        android:textSize="18sp"
-        android:textStyle="bold"
+        <TextView
+            android:id="@+id/tv_numero"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="#15"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#3F51B5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="#15" />
 
-         />
-    </LinearLayout>
-    <TextView
-        android:id="@+id/tv_coleccion"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Colección"
-        android:textSize="16sp"
-        android:layout_marginTop="4dp"
-         />
+        <TextView
+            android:id="@+id/tv_conteo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/fondo_degradado"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="4dp"
+            android:text="x2"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_numero"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_numero"
+            tools:text="Repetidos: 2" />
 
-    <TextView
-        android:id="@+id/tv_conteo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Repetidos: 0"
-        android:textSize="14sp"
-        android:layout_marginTop="6dp"
-        />
+        <TextView
+            android:id="@+id/tv_nombre"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Nombre del Cromo"
+            android:textSize="18sp"
+            android:textColor="#212121"
+            android:textStyle="bold"
+            android:ellipsize="end"
+            android:maxLines="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_numero"
+            tools:text="Charizard Holo" />
 
-    <TextView
-        android:id="@+id/tv_owners"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Dueños: []"
-        android:textSize="13sp"
-        android:layout_marginTop="4dp"
-         />
+        <TextView
+            android:id="@+id/tv_coleccion"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Colección 2024"
+            android:textSize="14sp"
+            android:textColor="#757575"
+            app:layout_constraintTop_toBottomOf="@+id/tv_nombre"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="Nombre del cromo" />
 
-</LinearLayout>
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="12dp"
+            android:background="#E0E0E0"
+            app:layout_constraintTop_toBottomOf="@+id/tv_coleccion" />
+
+        <TextView
+            android:id="@+id/tv_owners"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:textSize="12sp"
+            android:textColor="#616161"
+            android:drawablePadding="8dp"
+            app:drawableStartCompat="@android:drawable/ic_menu_my_calendar"
+            app:drawableTint="#757575"
+            app:layout_constraintTop_toBottomOf="@+id/divider"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="Disponible en: Juan, Maria" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

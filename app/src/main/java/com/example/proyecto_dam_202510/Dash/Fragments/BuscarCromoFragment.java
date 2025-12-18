@@ -20,6 +20,7 @@ import com.example.proyecto_dam_202510.data.pojo.Cromo;
 import com.example.proyecto_dam_202510.data.viewdata.Cromo_vm;
 import com.example.proyecto_dam_202510.databinding.FragmentBuscarCromoBinding;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 
@@ -70,7 +71,7 @@ public class BuscarCromoFragment extends Fragment {
             public void onItemClick(Cromo cromo) {
                 Log.d("Cromo", cromo.getNombre());
                 Funciones.agregarCromoPosesion(idColeccion, cromo.getId(), cromo.getNombre(), cromo.getNumero(),
-                        null, cromo.getValor(), cromo.getImagen(), Funciones.ahora());
+                        null, cromo.getValor(), cromo.getImagen(), new Date());
 
                 NavController navController = Navigation.findNavController(view);
                 navController.popBackStack();

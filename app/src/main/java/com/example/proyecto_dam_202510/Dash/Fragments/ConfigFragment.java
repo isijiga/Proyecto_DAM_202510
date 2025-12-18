@@ -75,7 +75,7 @@ public class ConfigFragment extends Fragment {
             public void onChanged(List<CromoPosesionAgrupadoIntercambio> cromoPosesionAgrupadoIntercambios) {
                 cromoPosesionAgrupadoList.addAll(cromoPosesionAgrupadoIntercambios);
                 cromoPosesionAgrupadoList.sort(Comparator.comparing(CromoPosesionAgrupadoIntercambio::getRepetida).reversed());
-                binding.tvMasRepetida.setText(cromoPosesionAgrupadoList.get(0).getNombre() + " - " + cromoPosesionAgrupadoList.get(0).getRepetida());
+               /* binding.tvMasRepetida.setText(cromoPosesionAgrupadoList.get(0).getNombre() + " - " + cromoPosesionAgrupadoList.get(0).getRepetida());*/
             }
         });
 

@@ -30,6 +30,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import java.io.ByteArrayOutputStream;
+import java.util.Date;
 
 /**
  * Fragmento que muestra el alta de Carta en una colección. Tiene la particularidad
@@ -123,7 +124,7 @@ public class AnadirCromoFragment extends Fragment {
                     public void onSuccess(String imageUrl) {
                         Log.d("AnadirCromo", "Foto subida, URL: " + imageUrl);
                         Funciones.agregarCromo(coleccionId, nombre, nombre, numero + "", null, 0, imageUrl);
-                        Funciones.agregarCromoPosesion(coleccionId, nombre, nombre, numero + "", null, 0, imageUrl, Funciones.ahora());
+                        Funciones.agregarCromoPosesion(coleccionId, nombre, nombre, numero + "", null, 0, imageUrl, new Date());
                         Toast.makeText(requireContext(), "Cromo Añadida a la coleccion!", Toast.LENGTH_LONG).show();
                         NavController navController = Navigation.findNavController(requireView());
                         navController.popBackStack();
@@ -141,7 +142,7 @@ public class AnadirCromoFragment extends Fragment {
             } else {
                 Log.d("AnadirCromo", "No se tomó foto, guardando sin imagen.");
                 Funciones.agregarCromo(coleccionId, nombre, nombre, numero, null, 0, null);
-                Funciones.agregarCromoPosesion(coleccionId, nombre, nombre, numero, null, 0, null, Funciones.ahora());
+                Funciones.agregarCromoPosesion(coleccionId, nombre, nombre, numero, null, 0, null, new Date());
                 NavController navController = Navigation.findNavController(requireView());
                 navController.popBackStack();
                 navController.navigate(R.id.nav_userColecciones);

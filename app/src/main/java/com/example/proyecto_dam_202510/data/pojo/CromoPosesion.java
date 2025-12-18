@@ -1,5 +1,6 @@
 package com.example.proyecto_dam_202510.data.pojo;
 
+import java.util.Date;
 import java.util.Objects;
 
 
@@ -17,7 +18,7 @@ public class CromoPosesion {
     private String tipo;
     private int valor;
     private int repetida;
-    private String fechaAdquisicion;
+    private Date fechaAdquisicion;
     private String coleccionId;
 
     public String getColeccionId() {
@@ -29,11 +30,11 @@ public class CromoPosesion {
     }
 
 
-    public String getFechaAdquisicion() {
+    public Date getFechaAdquisicion() {
         return fechaAdquisicion;
     }
 
-    public void setFechaAdquisicion(String fechaAdquisicion) {
+    public void setFechaAdquisicion(Date fechaAdquisicion) {
         this.fechaAdquisicion = fechaAdquisicion;
     }
 

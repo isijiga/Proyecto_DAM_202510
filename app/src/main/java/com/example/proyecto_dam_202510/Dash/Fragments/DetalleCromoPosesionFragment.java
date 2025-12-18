@@ -17,6 +17,8 @@ import com.example.proyecto_dam_202510.databinding.FragmentDetalleColeccionBindi
 import com.example.proyecto_dam_202510.databinding.FragmentDetalleCromoPosesionBinding;
 import com.squareup.picasso.Picasso;
 
+import java.util.Date;
+
 
 /**
  * Fragmento que muestra el detalle de una carta.
@@ -30,7 +32,7 @@ public class DetalleCromoPosesionFragment extends Fragment {
     private String id;
     private String coleccion;
     private int repetida;
-    private String fechaAdquisicion;
+    private Date fechaAdquisicion;
     private String tipo;
 
 
@@ -57,7 +59,7 @@ public class DetalleCromoPosesionFragment extends Fragment {
         id = getArguments().getString("id");
         coleccion = getArguments().getString("coleccion");
         repetida = getArguments().getInt("repetida");
-        fechaAdquisicion = getArguments().getString("fechaAdquisicion");
+        fechaAdquisicion = new Date(getArguments().getLong("fechaAdquisicion"));
         tipo = getArguments().getString("tipo");
 
 
@@ -76,7 +78,8 @@ public class DetalleCromoPosesionFragment extends Fragment {
         Picasso.get().load(imagen).into(binding.imageView);
         binding.tvNombre.setText(nombre);
         binding.tvColeccion.setText(coleccion);
-        binding.tvFechaAdquisision.setText(fechaAdquisicion);
+
+        binding.tvFechaAdquisision.setText(fechaAdquisicion.toString());
         binding.tvRepetidas.setText(repetida + " Repetida");
         binding.tvTipo.setText(tipo);
         binding.btnAtrasManual.setOnClickListener(new View.OnClickListener() {
