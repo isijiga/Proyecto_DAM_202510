@@ -66,6 +66,23 @@ public class CrearColeccionFragment extends Fragment {
                 String nombre = binding.etNombreColeccion.getText().toString();
                 String anno = binding.etAO.getText().toString();
                 String num = binding.etNumeroCromos.getText().toString();
+
+                /*Validaciones*/
+                if(nombre.isEmpty()){
+                    binding.etNombreColeccion.setError("El nombre de la colección no puede estar vacío");
+                    return;
+                }
+                if(anno.isEmpty()) {
+                    binding.etAO.setError("El año de creación no puede estar vacío");
+                    return;
+                }
+                if(num.isEmpty()){
+                    binding.etNumeroCromos.setError("El número de cartas no puede estar vacío");
+                    return;
+
+                }
+
+
                 float costeInput = binding.sliderCosteSobre.getValues().get(0);
                 int cartas = Math.round(binding.sliderCartasSobre.getValues().get(0));
                 /**

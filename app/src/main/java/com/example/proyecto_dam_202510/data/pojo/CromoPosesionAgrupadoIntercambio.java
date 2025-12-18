@@ -42,7 +42,6 @@ public class CromoPosesionAgrupadoIntercambio {
     }
 
 
-
     public Set<String> getUsuarioPoseedor() {
         return usuarioPoseedor;
     }

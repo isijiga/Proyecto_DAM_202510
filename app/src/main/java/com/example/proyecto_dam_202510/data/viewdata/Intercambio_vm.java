@@ -131,10 +131,12 @@ public class Intercambio_vm extends ViewModel {
                             String userPosesion = document.getReference().getParent().getParent().getId();
                             CromoPosesionAgrupadoIntercambio cromoActual = document.toObject(CromoPosesionAgrupadoIntercambio.class);
                             String cromoPosesionId = document.getId();
-                            String claveCromo = cromoActual.getNombre() + cromoActual.getNumero();
                             /*desnormalizo y añado para luego poder buscar facilmete*/
                             String coleccionIndex = userPosesion.substring(28, userPosesion.length());
                             String usuario = userPosesion.substring(0, 28);
+                            /*clave unica para crear la lista de cromos, de esta manera los cromos repetidos se agrupan*/
+                            String claveCromo = usuario+cromoActual.getNombre() + cromoActual.getNumero();
+
                            if(user!=null && user.getUid().equals(usuario)){
                                clavesCromosUsuarioActual.add(claveCromo);
 
@@ -146,19 +148,21 @@ public class Intercambio_vm extends ViewModel {
                                 cromoExistente.setRepetida(cromoExistente.getRepetida() + 1);
 
                                 /*aplicar el tipo dependiendo de las cartas repetidas. lo idel es usar percentiles*/
-                                Funciones.actualizarCarta(coleccionIndex, cromoExistente.getNumero(), cromoExistente.getNombre(), cromoExistente.getRepetida(), cromoPosesionId);
+                               // Funciones.actualizarCarta(coleccionIndex, cromoExistente.getNumero(), cromoExistente.getNombre(), cromoExistente.getRepetida(), cromoPosesionId);
 
 
                             } else {
 
                                 cromoActual.getUsuarioPoseedor().clear();
                                 /*desnormalizo y añado para luego poder buscar facilmete*/
-                                /*String coleccionIndex = userPosesion.substring(28, userPosesion.length());
-                                String usuario = userPosesion.substring(0, 28);*/
+                                //String coleccionIndex = userPosesion.substring(28, userPosesion.length());
+                                //String usuario = userPosesion.substring(0, 28);
+
                                 cromoActual.getUsuarioPoseedor().add(usuario);
                                 cromoActual.setColeccionId(coleccionIndex);
                                 cromoActual.setRepetida(1);
-                                Funciones.actualizarCarta(coleccionIndex, cromoActual.getNumero(), cromoActual.getNombre(), cromoActual.getRepetida(), cromoPosesionId);
+
+                                //Funciones.actualizarCarta(coleccionIndex, cromoActual.getNumero(), cromoActual.getNombre(), cromoActual.getRepetida(), cromoPosesionId);
                                 mapaAgrupacion.put(claveCromo, cromoActual);
 
                             }
@@ -169,18 +173,20 @@ public class Intercambio_vm extends ViewModel {
                         List<CromoPosesionAgrupadoIntercambio> listaFinalFiltrada = new ArrayList<>();
 
 
+
                         for (CromoPosesionAgrupadoIntercambio cromo : listaFinal) {
 
-                            if(cromo.getColeccionId().equals(coleccionid)){
-                                String claveCromo = cromo.getNombre() + cromo.getNumero();
-                                if (!clavesCromosUsuarioActual.contains(claveCromo)) {
-                                    listaFinalFiltrada.add(cromo);
-                                }
-
+                                if (cromo.getColeccionId().equals(coleccionid)) {
+                                    if (cromo.getRepetida()>1) {
+                                        String claveCromo = user.getUid()+cromo.getNombre() + cromo.getNumero();
+                                        if (!clavesCromosUsuarioActual.contains(claveCromo)) {
+                                            listaFinalFiltrada.add(cromo);
+                                        }
+                                    }
                             }
 
-
                         }
+
                         cromoPosesionAgrupadoList.setValue(listaFinalFiltrada);
 
                     }

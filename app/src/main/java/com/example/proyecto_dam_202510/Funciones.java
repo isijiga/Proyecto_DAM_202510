@@ -328,7 +328,7 @@ public class Funciones {
         return mapa;
     }
 
-    public static void pedirCarta(CromoPosesionAgrupadoIntercambio cromo, Context context) {
+    public static void pedirCarta(CromoPosesionAgrupadoIntercambio cromo, Context context, String mensaje) {
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
         FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -347,6 +347,8 @@ public class Funciones {
         cromoPedidoMap.put("estado","pendiente");
         cromoPedidoMap.put("emailPedidoPor", emailPedidoPor);
         cromoPedidoMap.put("id",cromo.getId());
+        cromoPedidoMap.put("mensaje",mensaje);
+
         List<Task<Void>> tasks = new ArrayList<>();
 
         //for(int i=0;i<cromo.getUsuarioPoseedor().size();i++){

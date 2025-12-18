@@ -1,4 +1,6 @@
 package com.example.proyecto_dam_202510.Dash.Fragments;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -11,9 +13,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.proyecto_dam_202510.Dash.Adapters.IntercambioAdapter;
+import com.example.proyecto_dam_202510.R;
 import com.example.proyecto_dam_202510.data.pojo.CromoPosesionAgrupadoIntercambio;
 import com.example.proyecto_dam_202510.data.viewdata.Intercambio_vm;
 import com.example.proyecto_dam_202510.databinding.FragmentIntercambioBinding;
@@ -21,6 +25,7 @@ import com.example.proyecto_dam_202510.databinding.FragmentIntercambioBinding;
 import java.util.ArrayList;
 import java.util.List;
 import com.example.proyecto_dam_202510.Funciones;
+import com.google.android.material.textfield.TextInputEditText;
 
 /**
  * Fragmento que muestra la seccion de Intercambio de cromos.
@@ -32,6 +37,7 @@ public class IntercambioFragment extends Fragment implements IntercambioAdapter.
     private List<String> coleccionLista = new ArrayList<>();
     private ArrayAdapter<String> coleccionAdapter;
     private String seleccion;
+
     public IntercambioFragment() {
     }
 
@@ -63,6 +69,8 @@ public class IntercambioFragment extends Fragment implements IntercambioAdapter.
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         binding.recyclerView.setAdapter(adapter);
         adapter.setOnItemClickListener(this);
+
+
         viewModel.getCromoPosesionAgrupadoList().observe(getViewLifecycleOwner(), new Observer<List<CromoPosesionAgrupadoIntercambio>>() {
             @Override
             public void onChanged(List<CromoPosesionAgrupadoIntercambio> listaCromos) {
@@ -80,21 +88,15 @@ public class IntercambioFragment extends Fragment implements IntercambioAdapter.
                 .observe(getViewLifecycleOwner(), listaColecciones -> {
             if (listaColecciones != null && !listaColecciones.isEmpty()) {
 
-                // 1. Limpiamos la lista interna del Adapter
                 coleccionLista.clear();
-
-                // 2. Añadimos los nuevos datos de Firebase
                 coleccionLista.addAll(listaColecciones);
-
-                // 3. Notificamos al Adapter del ListView que los datos han cambiado
                 coleccionAdapter.notifyDataSetChanged();
 
-                // 4. Cargamos la primera colección por defecto (Solo si es la primera carga)
                 if (viewModel.getCromoPosesionAgrupadoList().getValue() == null) {
                     viewModel.setColeccionRecarga(listaColecciones.get(0));
                 }
             } else {
-                // Si la lista está vacía o nula, limpiamos el adapter
+
                 coleccionLista.clear();
                 coleccionAdapter.notifyDataSetChanged();
             }
@@ -119,8 +121,34 @@ public class IntercambioFragment extends Fragment implements IntercambioAdapter.
 
     @Override
     public void onItemClick(CromoPosesionAgrupadoIntercambio cromo) {
+        LayoutInflater inflater = requireActivity().getLayoutInflater();
+        View dialogView = inflater.inflate(R.layout.dialog_mensaje_intercambio, null);
+        TextInputEditText inputMensaje = dialogView.findViewById(R.id.etMensaje);
+         AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
+                builder.setTitle("Pedir Carta")
+                .setView(dialogView)
+                .setMessage("¿Quieres pedir esta carta?")
+                        .setCancelable(false)
+                                .setPositiveButton("Confirmar Petición", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        String mensaje = inputMensaje.getText().toString();
 
-        Funciones.pedirCarta(cromo,requireContext());
+                                        Funciones.pedirCarta(cromo,requireContext(),mensaje);
+                                    }
+                                })
+                                        .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialog, int which) {
+                                                dialog.dismiss();
+                                            }
+                                        })
+                .show();
+
+
+
+
+
 
     }
 }

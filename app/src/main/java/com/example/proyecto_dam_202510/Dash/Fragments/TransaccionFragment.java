@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.proyecto_dam_202510.Dash.Adapters.TransaccionAdapter;
 import com.example.proyecto_dam_202510.R;
@@ -20,6 +21,7 @@ import com.example.proyecto_dam_202510.data.pojo.Transaccion;
 import com.example.proyecto_dam_202510.data.viewdata.Intercambio_vm;
 import com.example.proyecto_dam_202510.data.viewdata.Transaccion_vm;
 import com.example.proyecto_dam_202510.databinding.FragmentTransaccionBinding;
+import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.List;
 
@@ -81,10 +83,20 @@ public class TransaccionFragment extends Fragment implements TransaccionAdapter.
     }
 
     private void mostrarDialogo(Transaccion transaccion) {
+        LayoutInflater inflater = requireActivity().getLayoutInflater();
+        View dialogView = inflater.inflate(R.layout.dialog_mensaje_intercambio, null);
+
+        TextView tvMensajeRecibido = dialogView.findViewById(R.id.tvMensajeRecibido);
         AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
 
         if(transaccion.getEstado().equals("pendiente")) {
             builder.setTitle("Cambiar Cromo");
+            builder.setView(dialogView);
+            String mensajeEntrante = transaccion.getMensaje();
+            if (mensajeEntrante != null && !mensajeEntrante.isEmpty()) {
+                tvMensajeRecibido.setVisibility(View.VISIBLE);
+                tvMensajeRecibido.setText(mensajeEntrante);
+            }
             builder.setMessage("¿Quieres aceptar la transacción?");
             builder.setPositiveButton("Aceptar Petición", new DialogInterface.OnClickListener() {
                 @Override

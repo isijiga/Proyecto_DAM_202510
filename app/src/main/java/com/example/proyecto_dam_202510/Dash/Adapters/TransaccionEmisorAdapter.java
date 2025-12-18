@@ -37,6 +37,8 @@ public class TransaccionEmisorAdapter extends RecyclerView.Adapter<TransaccionEm
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.getDefault());
         String fechaAdquision = sdf.format(transaccion.getFechaAdquisicion());
 
+
+        holder.binding.tvItemNumero.setText(transaccion.getNumero());
         holder.binding.tvItemNombre.setText(transaccion.getNombre());
         holder.binding.tvItemEstado.setText(transaccion.getEstado());
         holder.binding.tvItemFecha.setText(fechaAdquision);

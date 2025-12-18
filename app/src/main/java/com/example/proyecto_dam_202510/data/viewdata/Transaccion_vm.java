@@ -7,6 +7,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.example.proyecto_dam_202510.data.pojo.Transaccion;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.EventListener;
@@ -17,6 +18,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class Transaccion_vm extends ViewModel {
@@ -106,6 +108,7 @@ public class Transaccion_vm extends ViewModel {
 
        /*por ultimo borrar la transacion.*/
         db.collection("transacciones").document(transaccion.getIdTransaccion()).delete();
+
 
 
 

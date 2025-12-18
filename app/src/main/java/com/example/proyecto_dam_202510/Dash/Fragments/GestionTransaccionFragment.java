@@ -56,10 +56,10 @@ public class GestionTransaccionFragment extends Fragment {
             @Override
             public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
                 if (position==0){
-                    tab.setText("RECIBIDAS");
+                    tab.setText("Peticiones Recibidas");
 
                 }else{
-                    tab.setText("ENVIADAS");
+                    tab.setText("Peticiones Enviadas");
                 }
             }
         }).attach();
