@@ -388,4 +388,10 @@ public class Funciones {
 
 
     }
+
+    public static String FormatoFecha(Date fechaAdquisicion) {
+        SimpleDateFormat formatoSalida = new SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.getDefault());
+        return formatoSalida.format(fechaAdquisicion);
+
+    }
 }

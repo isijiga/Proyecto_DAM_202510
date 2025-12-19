@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
+import com.example.proyecto_dam_202510.Funciones;
 import com.example.proyecto_dam_202510.data.pojo.CromoPosesion;
 import com.example.proyecto_dam_202510.data.pojo.CromoPosesionAgrupado;
 import com.example.proyecto_dam_202510.databinding.CromoposesionLayoutBinding;
@@ -106,7 +106,10 @@ public class CromosPosesionAdapter extends RecyclerView.Adapter<CromosPosesionAd
         public void bind(CromoPosesionAgrupado item) {
             binding.tvCromoTitulo.setText(item.getNombre());
             binding.tvCartaSubtitulo.setText(String.valueOf(item.getNumero()));
-            binding.tvCartaEstado.setText(String.valueOf(item.getFechaAdquisicion()));
+
+            //binding.tvCartaEstado.setText(String.valueOf(item.getFechaAdquisicion()));
+            binding.tvCartaEstado.setText(Funciones.FormatoFecha(item.getFechaAdquisicion()));
+
             binding.tvCantidadRepetidas.setText(String.valueOf(item.getRepetida()));
             Picasso.get().load(item.getImagen()).into(binding.ivCromoImagen);
         }

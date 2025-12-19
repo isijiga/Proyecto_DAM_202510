@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.proyecto_dam_202510.Funciones;
 import com.example.proyecto_dam_202510.R;
 import com.example.proyecto_dam_202510.databinding.FragmentDetalleColeccionBinding;
 import com.example.proyecto_dam_202510.databinding.FragmentDetalleCromoPosesionBinding;
@@ -79,7 +80,8 @@ public class DetalleCromoPosesionFragment extends Fragment {
         binding.tvNombre.setText(nombre);
         binding.tvColeccion.setText(coleccion);
 
-        binding.tvFechaAdquisision.setText(fechaAdquisicion.toString());
+        //binding.tvFechaAdquisision.setText(fechaAdquisicion.toString());
+        binding.tvFechaAdquisision.setText(Funciones.FormatoFecha(fechaAdquisicion));
         binding.tvRepetidas.setText(repetida + " Repetida");
         binding.tvTipo.setText(tipo);
         binding.btnAtrasManual.setOnClickListener(new View.OnClickListener() {
