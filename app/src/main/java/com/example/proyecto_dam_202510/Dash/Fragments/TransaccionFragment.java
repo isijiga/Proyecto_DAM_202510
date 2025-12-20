@@ -14,8 +14,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.proyecto_dam_202510.Dash.Adapters.TransaccionAdapter;
+import com.example.proyecto_dam_202510.Funciones;
 import com.example.proyecto_dam_202510.R;
 import com.example.proyecto_dam_202510.data.pojo.Transaccion;
 import com.example.proyecto_dam_202510.data.viewdata.Intercambio_vm;
@@ -31,6 +33,7 @@ public class TransaccionFragment extends Fragment implements TransaccionAdapter.
     FragmentTransaccionBinding binding;
     Transaccion_vm transacion_vm;
     TransaccionAdapter adapter;
+
     public TransaccionFragment() {
     }
 
@@ -58,7 +61,7 @@ public class TransaccionFragment extends Fragment implements TransaccionAdapter.
     }
 
     @Override
-    public void onViewCreated(View view, Bundle savedInstanceState){
+    public void onViewCreated(View view, Bundle savedInstanceState) {
 
         super.onViewCreated(view, savedInstanceState);
         binding.recyclerView.setAdapter(adapter);
@@ -69,7 +72,9 @@ public class TransaccionFragment extends Fragment implements TransaccionAdapter.
             @Override
             public void onChanged(List<Transaccion> transaccion) {
 
-            adapter.setListaTransacciones(transaccion);
+                adapter.setListaTransacciones(transaccion);
+
+
 
             }
         });
@@ -78,7 +83,7 @@ public class TransaccionFragment extends Fragment implements TransaccionAdapter.
 
     @Override
     public void onItemClick(Transaccion transaccion) {
-        Log.d("Prueba", "Se ha seleccionado la transaccion "+ transaccion.getIdTransaccion());
+        Log.d("Prueba", "Se ha seleccionado la transaccion " + transaccion.getIdTransaccion());
         mostrarDialogo(transaccion);
     }
 
@@ -87,9 +92,11 @@ public class TransaccionFragment extends Fragment implements TransaccionAdapter.
         View dialogView = inflater.inflate(R.layout.dialog_mensaje_intercambio, null);
 
         TextView tvMensajeRecibido = dialogView.findViewById(R.id.tvMensajeRecibido);
+        TextInputEditText etMensaje = dialogView.findViewById(R.id.etMensaje);
+
         AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
 
-        if(transaccion.getEstado().equals("pendiente")) {
+        if (transaccion.getEstado().equals("pendiente")) {
             builder.setTitle("Cambiar Cromo");
             builder.setView(dialogView);
             String mensajeEntrante = transaccion.getMensaje();
@@ -101,26 +108,55 @@ public class TransaccionFragment extends Fragment implements TransaccionAdapter.
             builder.setPositiveButton("Aceptar Petición", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    transacion_vm.aceptarPeticion(transaccion);
+                    String mensaje = etMensaje.getText().toString();
+                    transacion_vm.aceptarPeticion(transaccion, mensaje);
                 }
             });
-            builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+            builder.setNeutralButton("Cancelar", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     dialog.dismiss();
                 }
             });
+            builder.setNegativeButton("Rechazar Transaccion", new DialogInterface.OnClickListener() {
+
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    if(Funciones.eliminarTransaccion(transaccion)){
+                        Toast.makeText(requireContext(),"Transaccion Rechazada",Toast.LENGTH_LONG).show();
+
+                    };
+                    dialog.dismiss();
+
+                }
+
+            });
             builder.show();
         }
-        if(transaccion.getEstado().equals("ACEPTADA. Pdte Envio")) {
+        if (transaccion.getEstado().equals("ACEPTADA. Pdte Envio")) {
             builder.setTitle("Cambiar Cromo");
-            builder.setMessage("¿Quieres enviar el cromo a "+transaccion.getEmailPedidoPor()+ "?\n"+"Cuando lo envie se eliminará de su lista de cromos.");
+            builder.setMessage("¿Quieres enviar el cromo a " + transaccion.getEmailPedidoPor() + "?\n" + "Cuando lo envie se eliminará de su lista de cromos.");
             builder.setPositiveButton("Aceptar Petición", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     transacion_vm.enviarPeticion(transaccion);
                 }
             });
+            builder.setNeutralButton("Rechazar Transaccion", new DialogInterface.OnClickListener() {
+
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    if(Funciones.eliminarTransaccion(transaccion)){
+                        Toast.makeText(requireContext(),"Transaccion Rechazada",Toast.LENGTH_LONG).show();
+
+                    };
+                    dialog.dismiss();
+
+                }
+
+            });
+
+
             builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
@@ -130,9 +166,9 @@ public class TransaccionFragment extends Fragment implements TransaccionAdapter.
             builder.show();
 
 
-
         }
 
 
     }
+
 }

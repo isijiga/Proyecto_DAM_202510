@@ -6,6 +6,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import com.example.proyecto_dam_202510.data.pojo.Coleccion;
 import com.example.proyecto_dam_202510.data.pojo.CromoPosesionAgrupadoIntercambio;
+import com.example.proyecto_dam_202510.data.pojo.Transaccion;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -17,6 +18,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -348,6 +350,8 @@ public class Funciones {
         cromoPedidoMap.put("emailPedidoPor", emailPedidoPor);
         cromoPedidoMap.put("id",cromo.getId());
         cromoPedidoMap.put("mensaje",mensaje);
+        cromoPedidoMap.put("mensajeRespuesta","");
+
 
         List<Task<Void>> tasks = new ArrayList<>();
 
@@ -381,7 +385,8 @@ public class Funciones {
         Tasks.whenAll(tasks).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void unused) {
-                Toast.makeText(context, "Todas las cartas han sido pedidas con éxito.", Toast.LENGTH_LONG).show();
+                Toast.makeText(context, "Se ha pedido la carta de "+cromo.getNombre(), Toast.LENGTH_LONG).show();
+                db.collection("estadisticas").document("num_transacciones").update("num", FieldValue.increment(1));
             }
         });
 
@@ -393,5 +398,18 @@ public class Funciones {
         SimpleDateFormat formatoSalida = new SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.getDefault());
         return formatoSalida.format(fechaAdquisicion);
 
+    }
+
+    public static boolean eliminarTransaccion(Transaccion transaccion){
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        db.collection("transacciones").document(transaccion.getIdTransaccion()).delete();
+
+        return true;
+    }
+
+    public static boolean borrarUserColecciones(String idColeccion) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        db.collection("users_colecciones").document(idColeccion).delete();
+        return true;
     }
 }

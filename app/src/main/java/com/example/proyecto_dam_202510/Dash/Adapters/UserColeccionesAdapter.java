@@ -27,15 +27,21 @@ public class UserColeccionesAdapter extends RecyclerView.Adapter<UserColecciones
 
     private List<UsersColecciones> listaColecciones = new ArrayList<>();
     private onItemClickListener listener;
+    private OnItemLongClickListener longClickListener;
 
     public interface onItemClickListener {
         void onItemClick(UsersColecciones userColeccion);
+    }
+
+    public interface OnItemLongClickListener{
+       void onItemLongClick(UsersColecciones userColeccion);
     }
 
     public void setOnItemClickListener(onItemClickListener listener) {
         this.listener = listener;
     }
 
+    public void setLongClickListener(OnItemLongClickListener listener){this.longClickListener = listener;}
 
     @NonNull
     @Override
@@ -84,6 +90,13 @@ public class UserColeccionesAdapter extends RecyclerView.Adapter<UserColecciones
                 public void onClick(View v) {
 
                     listener.onItemClick(listaColecciones.get(getBindingAdapterPosition()));
+                }
+            });
+            itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    longClickListener.onItemLongClick(listaColecciones.get(getBindingAdapterPosition()));
+                    return true;
                 }
             });
 

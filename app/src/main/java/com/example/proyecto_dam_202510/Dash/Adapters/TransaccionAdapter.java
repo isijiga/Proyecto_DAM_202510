@@ -22,12 +22,14 @@ public class TransaccionAdapter extends RecyclerView.Adapter<TransaccionAdapter.
     private List<Transaccion> listaTransacciones = new ArrayList<>();
 
     public TransaccionAdapter(OnItemClickListener listener) {
+
         this.listener = listener;
     }
 
     public interface OnItemClickListener{
        void onItemClick(Transaccion transaccion);
     }
+
     private final OnItemClickListener listener;
 
 
@@ -44,6 +46,7 @@ public class TransaccionAdapter extends RecyclerView.Adapter<TransaccionAdapter.
         Transaccion transaccion = listaTransacciones.get(position);
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.getDefault());
         String fechaAdquision = sdf.format(transaccion.getFechaAdquisicion());
+        holder.binding.tvItemNumero.setText(transaccion.getNumero());
         holder.binding.tvItemNombre.setText(transaccion.getNombre());
         holder.binding.tvItemEstado.setText(transaccion.getEstado());
         holder.binding.tvItemFecha.setText(fechaAdquision);
@@ -56,8 +59,6 @@ public class TransaccionAdapter extends RecyclerView.Adapter<TransaccionAdapter.
                 listener.onItemClick(transaccion);
             }
         });
-
-
 
 
     }

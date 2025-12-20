@@ -30,6 +30,17 @@ public class Estadisticas_vm extends ViewModel {
     private MutableLiveData<Long> countCromosPosesion = new MutableLiveData<>(0L);
     private MutableLiveData<Double> precioPorCarta = new MutableLiveData<>();
 
+    public MutableLiveData<Long> getSumTransacciones() {
+        return sumTransacciones;
+    }
+
+    public void setSumTransacciones(MutableLiveData<Long> sumTransacciones) {
+        this.sumTransacciones = sumTransacciones;
+    }
+
+    private MutableLiveData<Long> sumTransacciones = new MutableLiveData<>(0L);
+
+
     public MutableLiveData<Long> getCountCromosPosesion() {
         return countCromosPosesion;
     }
@@ -68,6 +79,10 @@ public class Estadisticas_vm extends ViewModel {
                 count();
         AggregateQuery conteo_Users_Colecciones = db.collection("users_colecciones").
                 count();
+
+        AggregateQuery suma_Transacciones = db.collection("estadisticas").aggregate(sum("num"));
+
+
         AggregateQuery suma_precio = db.collection("colecciones").aggregate(sum("coste"));
         Task<AggregateQuerySnapshot> tareaSumaPrecio = suma_precio.get(AggregateSource.SERVER);
 
@@ -77,24 +92,41 @@ public class Estadisticas_vm extends ViewModel {
         AggregateQuery count_cromosPosesion = db.collectionGroup("cromosPosesion").count();
         Task<AggregateQuerySnapshot> tareaCountCromosPosesion = count_cromosPosesion.get(AggregateSource.SERVER);
 
+
+
+
+
+
+
         /**
          * para que no se solapen las tareas y lleguen unas antes que otras (provoca errores al dividir) se hace uso de Tasks.whenAllSuccess
          * espera a que todas las tareas terminen y ejecuta el metodo onSuccess.
          */
-        Tasks.whenAllSuccess(tareaSumaPrecio, tareaSumaCartasPorSobre, tareaCountCromosPosesion).addOnSuccessListener(new OnSuccessListener<List<Object>>() {
+        Tasks.whenAllSuccess(tareaSumaPrecio, tareaSumaCartasPorSobre, tareaCountCromosPosesion ).addOnSuccessListener(new OnSuccessListener<List<Object>>() {
             @Override
             public void onSuccess(List<Object> objects) {
                 AggregateQuerySnapshot snapshot0 = (AggregateQuerySnapshot) objects.get(0);
                 AggregateQuerySnapshot snapshot1 = (AggregateQuerySnapshot) objects.get(1);
                 AggregateQuerySnapshot snapshot2 = (AggregateQuerySnapshot) objects.get(2);
+
+
                 Double precio = (Double) snapshot0.get(sum("coste"));
                 Long cartasPorSobre = (Long) snapshot1.get(sum("cartasPorSobre"));
                 Long cromosPosesion = (Long) snapshot2.getCount();
+
 
                 precioPorCarta.setValue((precio / cartasPorSobre) * cromosPosesion);
             }
         });
 
+
+        suma_Transacciones.get(AggregateSource.SERVER).addOnSuccessListener(new OnSuccessListener<AggregateQuerySnapshot>() {
+            @Override
+            public void onSuccess(AggregateQuerySnapshot aggregateQuerySnapshot) {
+                sumTransacciones.setValue((Long) aggregateQuerySnapshot.get(sum("num")));
+
+            }
+        });
 
         conteo_Users.get(AggregateSource.SERVER).addOnSuccessListener(new OnSuccessListener<AggregateQuerySnapshot>() {
             @Override

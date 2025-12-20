@@ -7,7 +7,6 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.example.proyecto_dam_202510.data.pojo.Transaccion;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.EventListener;
@@ -18,7 +17,6 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 public class Transaccion_vm extends ViewModel {
@@ -72,16 +70,20 @@ public class Transaccion_vm extends ViewModel {
                         Log.d("transaccion", "has enviado una peticion a :" + transaccion.getPedidoA() + " por la carta " + document.get("nombre"));
 
                     }
-                    listaTransaccionesEmisor.setValue(listaTemporalEmisor);
-                    listaTransacciones.setValue(listaTemporal);
-                }}
+
+                }
+
+                }
+                listaTransaccionesEmisor.setValue(listaTemporalEmisor);
+                listaTransacciones.setValue(listaTemporal);
             }
         });
 
     }
 
-    public void aceptarPeticion(Transaccion transaccion) {
+    public void aceptarPeticion(Transaccion transaccion, String mensaje) {
         String idTransaccion = transaccion.getIdTransaccion();
+        db.collection("transacciones").document(idTransaccion).update("mensajeRespuesta", mensaje);
         db.collection("transacciones").document(idTransaccion).update("estado", "ACEPTADA. Pdte Envio");
 
 

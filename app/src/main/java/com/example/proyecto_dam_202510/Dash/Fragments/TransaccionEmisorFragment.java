@@ -1,7 +1,10 @@
 package com.example.proyecto_dam_202510.Dash.Fragments;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
-
+import com.example.proyecto_dam_202510.Funciones;
+import androidx.appcompat.app.AlertDialog;
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -11,9 +14,11 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.proyecto_dam_202510.Dash.Adapters.TransaccionAdapter;
 import com.example.proyecto_dam_202510.Dash.Adapters.TransaccionEmisorAdapter;
+
 import com.example.proyecto_dam_202510.R;
 import com.example.proyecto_dam_202510.data.pojo.Transaccion;
 import com.example.proyecto_dam_202510.data.viewdata.Intercambio_vm;
@@ -24,11 +29,12 @@ import com.example.proyecto_dam_202510.databinding.FragmentTransaccionEmisorBind
 import java.util.List;
 
 
-public class TransaccionEmisorFragment extends Fragment {
+public class TransaccionEmisorFragment extends Fragment implements TransaccionEmisorAdapter.OnItemClickListener, TransaccionEmisorAdapter.OnItemLongClickListener {
 
     FragmentTransaccionEmisorBinding binding;
     Transaccion_vm transacion_vm;
     TransaccionEmisorAdapter adapter;
+
     public TransaccionEmisorFragment() {
     }
 
@@ -45,6 +51,8 @@ public class TransaccionEmisorFragment extends Fragment {
         super.onCreate(savedInstanceState);
         transacion_vm = new ViewModelProvider(this).get(Transaccion_vm.class);
         adapter = new TransaccionEmisorAdapter();
+        adapter.setOnItemClickListener(this);
+        adapter.setOnItemLongClickListener(this);
 
     }
 
@@ -56,7 +64,7 @@ public class TransaccionEmisorFragment extends Fragment {
     }
 
     @Override
-    public void onViewCreated(View view, Bundle savedInstanceState){
+    public void onViewCreated(View view, Bundle savedInstanceState) {
 
         super.onViewCreated(view, savedInstanceState);
         binding.recyclerView.setAdapter(adapter);
@@ -66,11 +74,42 @@ public class TransaccionEmisorFragment extends Fragment {
         transacion_vm.getListaTransaccionesEmisor().observe(getViewLifecycleOwner(), new Observer<List<Transaccion>>() {
             @Override
             public void onChanged(List<Transaccion> transaccion) {
-
                 adapter.setListaTransacciones(transaccion);
+
+
 
             }
         });
 
+    }
+
+    @Override
+    public void onItemClick(Transaccion transaccion) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(requireContext())
+                .setTitle("Mensaje")
+                .setMessage("Mensaje de " + transaccion.getEmailPedidoA() + ":\n")
+                .setMessage(transaccion.getMensajeRespuesta());
+        AlertDialog dialog = builder.show();
+        Log.d("transaccion", "Mensaje de respuesta: " + transaccion.getMensajeRespuesta());
+
+
+    }
+
+    @Override
+    public void onItemLongClick(Transaccion transaccion) {
+
+        android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(requireContext())
+                .setMessage("¿Quieres eliminar la transacción")
+                .setTitle("Eliminar Transacción")
+                .setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        if(Funciones.eliminarTransaccion(transaccion)){
+                            Toast.makeText(requireContext(),"Transaccion "+transaccion.getIdTransaccion()+" cancelada correctamente",Toast.LENGTH_LONG).show();
+                        };
+                    }
+
+                });
+        builder.show();
     }
 }

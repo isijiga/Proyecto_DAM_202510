@@ -1,9 +1,12 @@
 package com.example.proyecto_dam_202510.Dash.Fragments;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,6 +17,7 @@ import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.example.proyecto_dam_202510.Dash.Adapters.UserColeccionesAdapter;
+import com.example.proyecto_dam_202510.Funciones;
 import com.example.proyecto_dam_202510.R;
 import com.example.proyecto_dam_202510.data.pojo.UsersColecciones;
 import com.example.proyecto_dam_202510.data.viewdata.UserColecciones_vm;
@@ -29,7 +33,7 @@ import java.util.Locale;
  * Fragmento principal de la app, muestra las colecciones que un usuario logueado posee.
  * Posee un recycledView al que se le configura un Adapter para mostrar las colecciones.
  */
-public class UsersColeccionesFragment extends Fragment {
+public class UsersColeccionesFragment extends Fragment implements UserColeccionesAdapter.OnItemLongClickListener {
     private UserColecciones_vm userColeccionVm;
     private UserColeccionesAdapter adapter;
     private FragmentUsersColeccionesBinding binding;
@@ -96,16 +100,42 @@ public class UsersColeccionesFragment extends Fragment {
                 bundle.putString("idColeccion", item.getColeccion().getId());
                 bundle.putString("idUsuario", doc.getId());
                 bundle.putString("imagen", item.getImagen());
-
-
                 NavController navController = Navigation.findNavController(view);
                 navController.navigate(R.id.action_nav_userColecciones_to_detalleColeccionFragment, bundle);
-
-
             }
         });
+        adapter.setLongClickListener(this);
 
     }
 
 
+    @Override
+    public void onItemLongClick(UsersColecciones userColeccion) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
+        builder.setTitle("Eliminar Coleccion");
+        builder.setMessage("¿Quieres eliminar la coleccion " + userColeccion.getNombreColeccion() + "?");
+        builder.setPositiveButton("ELiminar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        AlertDialog.Builder alert = new AlertDialog.Builder(requireContext());
+                        alert.setMessage("ADVERTENCIA: NO PODRÁ REVERTIR LOS CAMBIOS. ¿SEGURO?");
+                        alert.setPositiveButton("ELIMINAR", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                String idColeccion = userColeccion.getUser().getId() + userColeccion.getColeccion().getId();
+                                if(Funciones.borrarUserColecciones(idColeccion)){
+                                    Toast.makeText(requireContext(), "Coleccion Borrada", Toast.LENGTH_SHORT).show();
+
+                                };
+                            }
+                        });
+                        alert.show();
+                    }
+                });
+        builder.show();
+
+
+
+
+    }
 }

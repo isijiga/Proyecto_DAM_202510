@@ -18,9 +18,9 @@
         android:visibility="gone" />
 
     <TextView
+        android:id="@+id/tvMensaje"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tu respuesta (opcional):"
         android:layout_marginBottom="4dp"/>
     <TextView
         android:id="@+id/tvTituloDialogo"

@@ -17,6 +17,7 @@ import java.util.List;
 public class IntercambioAdapter extends RecyclerView.Adapter<IntercambioAdapter.CromoViewHolder> {
     private List<CromoPosesionAgrupadoIntercambio> listaCromos = new ArrayList<>();
     private OnItemClickListener listener;
+
     public static class CromoViewHolder extends RecyclerView.ViewHolder {
         TextView tv_numero;
         TextView tvNombre;

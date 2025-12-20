@@ -15,6 +15,15 @@ private String pedidoPor;
 private String id;
 private String imagen;
 private String mensaje;
+private String mensajeRespuesta;
+
+    public String getMensajeRespuesta() {
+        return mensajeRespuesta;
+    }
+
+    public void setMensajeRespuesta(String mensajeRespuesta) {
+        this.mensajeRespuesta = mensajeRespuesta;
+    }
 
     public String getMensaje() {
         return mensaje;

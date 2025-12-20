@@ -70,14 +70,15 @@ public class ConfigFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        intercambio_vm.getCromoPosesionAgrupadoList().observe(getViewLifecycleOwner(), new Observer<List<CromoPosesionAgrupadoIntercambio>>() {
+
+        estadisticas_vm.getSumTransacciones().observe(getViewLifecycleOwner(), new Observer<Long>() {
             @Override
-            public void onChanged(List<CromoPosesionAgrupadoIntercambio> cromoPosesionAgrupadoIntercambios) {
-                cromoPosesionAgrupadoList.addAll(cromoPosesionAgrupadoIntercambios);
-                cromoPosesionAgrupadoList.sort(Comparator.comparing(CromoPosesionAgrupadoIntercambio::getRepetida).reversed());
-               /* binding.tvMasRepetida.setText(cromoPosesionAgrupadoList.get(0).getNombre() + " - " + cromoPosesionAgrupadoList.get(0).getRepetida());*/
+            public void onChanged(Long aLong) {
+                binding.tvMasRepetida.setText(String.format("%d",aLong));
             }
         });
+
+
 
 
         estadisticas_vm.getPrecioPorCarta().observe(getViewLifecycleOwner(), new Observer<Double>() {
