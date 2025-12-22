@@ -86,9 +86,18 @@ public class TransaccionEmisorFragment extends Fragment implements TransaccionEm
     @Override
     public void onItemClick(Transaccion transaccion) {
         AlertDialog.Builder builder = new AlertDialog.Builder(requireContext())
-                .setTitle("Mensaje")
-                .setMessage("Mensaje de " + transaccion.getEmailPedidoA() + ":\n")
-                .setMessage(transaccion.getMensajeRespuesta());
+                .setTitle("Mensaje");
+
+
+        if(!transaccion.getMensajeRespuesta().isEmpty()){
+                builder.setMessage("Mensaje de " + transaccion.getEmailPedidoA() + ":\n");
+                builder.setMessage(transaccion.getMensajeRespuesta());
+                }else {
+            builder.setMessage(("Estado: "+transaccion.getEstado())+"\n"+"Sin respuesta");
+
+
+        }
+
         AlertDialog dialog = builder.show();
         Log.d("transaccion", "Mensaje de respuesta: " + transaccion.getMensajeRespuesta());
 

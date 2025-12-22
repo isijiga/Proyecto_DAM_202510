@@ -119,6 +119,7 @@ public class UserColeccionesAdapter extends RecyclerView.Adapter<UserColecciones
             Picasso.get().load(item.getImagen())
                     .fit()
                     .into(binding.ivColeccionImagen);
+            binding.tvColeccionProgreso.setMax(item.getTotalCromos());
             binding.tvColeccionProgreso.setProgress(item.getProgreso());
         }
 

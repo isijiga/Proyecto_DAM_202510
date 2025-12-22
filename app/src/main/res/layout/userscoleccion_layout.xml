@@ -62,7 +62,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                android:progress="30"
+
                 android:progressBackgroundTint="#9575CD"
                 android:progressTint="@android:color/black"
 

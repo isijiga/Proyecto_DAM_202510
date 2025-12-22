@@ -148,7 +148,7 @@ public class Intercambio_vm extends ViewModel {
                                 cromoExistente.setRepetida(cromoExistente.getRepetida() + 1);
 
                                 /*aplicar el tipo dependiendo de las cartas repetidas. lo idel es usar percentiles*/
-                               // Funciones.actualizarCarta(coleccionIndex, cromoExistente.getNumero(), cromoExistente.getNombre(), cromoExistente.getRepetida(), cromoPosesionId);
+                              // Funciones.actualizarCarta(coleccionIndex, cromoExistente.getNumero(), cromoExistente.getNombre(), cromoExistente.getRepetida(), cromoPosesionId);
 
 
                             } else {
@@ -162,7 +162,7 @@ public class Intercambio_vm extends ViewModel {
                                 cromoActual.setColeccionId(coleccionIndex);
                                 cromoActual.setRepetida(1);
 
-                                //Funciones.actualizarCarta(coleccionIndex, cromoActual.getNumero(), cromoActual.getNombre(), cromoActual.getRepetida(), cromoPosesionId);
+                               //Funciones.actualizarCarta(coleccionIndex, cromoActual.getNumero(), cromoActual.getNombre(), cromoActual.getRepetida(), cromoPosesionId);
                                 mapaAgrupacion.put(claveCromo, cromoActual);
 
                             }

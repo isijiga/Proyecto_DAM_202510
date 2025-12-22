@@ -47,9 +47,9 @@ public class GuiaPantalla6Fragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        binding.textoGuia.setTranslationY(500);
+        binding.textoGuia.setTranslationY(0);
         binding.textoGuia.animate()
-                .translationY(0f)
+                .translationY(500f)
                 .setDuration(2000)
                 .setInterpolator(new AccelerateDecelerateInterpolator())
                 .start();

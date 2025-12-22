@@ -37,7 +37,13 @@
             app:layout_constraintEnd_toStartOf="@id/iv_cromo_flecha"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent">
-
+            <TextView
+                android:id="@+id/tv_cromo_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="101ALA"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tv_cromo_titulo"

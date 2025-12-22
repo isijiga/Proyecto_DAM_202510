@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateDecelerateInterpolator;
+import android.view.animation.AnticipateInterpolator;
 import android.view.animation.BounceInterpolator;
 
 import androidx.annotation.NonNull;
@@ -58,7 +59,7 @@ public class GuiaPantalla7Fragment extends Fragment {
         binding.textoGuia.animate()
                 .translationY(0f)
                 .setDuration(2000)
-                .setInterpolator(new BounceInterpolator())
+                .setInterpolator(new AnticipateInterpolator())
                 .start();
     }
 }

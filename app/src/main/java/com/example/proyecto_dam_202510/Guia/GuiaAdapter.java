@@ -11,7 +11,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
  */
 public class GuiaAdapter extends FragmentStateAdapter {
 
-    private static final int NUM_PANTALLAS = 8;
+    private static final int NUM_PANTALLAS = 9;
 
     public GuiaAdapter(@NonNull FragmentActivity fragmentActivity) {
         super(fragmentActivity);
@@ -34,8 +34,10 @@ public class GuiaAdapter extends FragmentStateAdapter {
             case 5:
                 return new GuiaPantalla6Fragment();
             case 6:
-                return new GuiaPantalla7Fragment();
+                return new GuiaPantalla6_5Fragment();
             case 7:
+                return new GuiaPantalla7Fragment();
+            case 8:
                 return new GuiaPantalla8Fragment();
             default:
                 return new GuiaPantalla1Fragment();
