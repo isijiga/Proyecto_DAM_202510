@@ -1,0 +1,5 @@
+var classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_transaccion_emisor_adapte3ba1734d0db8468a715517ef88afd6cc =
+[
+    [ "TransaccionEmisorViewHolder", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_transaccion_emisor_adapte3ba1734d0db8468a715517ef88afd6cc.html#a3d1b052d2bfca8cbd5caf82a7ea82e99", null ],
+    [ "binding", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_transaccion_emisor_adapte3ba1734d0db8468a715517ef88afd6cc.html#a73fb9ef586cf1e3a0cd3b2fb5e3fcd25", null ]
+];

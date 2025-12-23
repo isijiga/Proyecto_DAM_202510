@@ -1,0 +1,144 @@
+\doxysection{com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+Transaccion\+\_\+vm Class Reference}
+\hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_transaccion__vm}{}\label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_transaccion__vm}\index{com.example.proyecto\_dam\_202510.data.viewdata.Transaccion\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Transaccion\_vm}}
+Inheritance diagram for com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+Transaccion\+\_\+vm\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_transaccion__vm}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Mutable\+Live\+Data$<$ List$<$ \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_transaccion}{Transaccion}} $>$ $>$ \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_transaccion__vm_ae32e167a80ffd13305719ce8fbeededd}{get\+Lista\+Transacciones}} ()
+\item 
+Mutable\+Live\+Data$<$ List$<$ \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_transaccion}{Transaccion}} $>$ $>$ \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_transaccion__vm_a48fe0b935fae13c6023bba8d54a85f35}{get\+Lista\+Transacciones\+Emisor}} ()
+\item 
+\mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_transaccion__vm_a966eef11fd0886aad24bcf1d6e252bac}{Transaccion\+\_\+vm}} ()
+\item 
+void \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_transaccion__vm_a442adfe5e877664c68165f32e41330ab}{aceptar\+Peticion}} (\mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_transaccion}{Transaccion}} transaccion, String mensaje)
+\item 
+void \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_transaccion__vm_a3ff0bf86d5229a2ea1ab042f2c9ab6b4}{enviar\+Peticion}} (\mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_transaccion}{Transaccion}} transaccion)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_transaccion__vm_a46dee8b1116fa715433e9317925f841e}{on\+Cleared}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_transaccion__vm_a57c85a88aae39e9d4d47d505ead3b1ac}{cargardatos}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+final Firebase\+Firestore \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_transaccion__vm_a969de3f1aceb98732483fa9ea65422f4}{db}} = Firebase\+Firestore.\+get\+Instance()
+\item 
+final Firebase\+Auth \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_transaccion__vm_aa3af582bfad0f55a9582afec1c88b6d7}{m\+Auth}} = Firebase\+Auth.\+get\+Instance()
+\item 
+final Firebase\+User \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_transaccion__vm_a64dc555b66a61295b390ed7409db5bc8}{user}} = m\+Auth.\+get\+Current\+User()
+\item 
+final Mutable\+Live\+Data$<$ List$<$ \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_transaccion}{Transaccion}} $>$ $>$ \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_transaccion__vm_a2d5bbffbc376e0b7a38299bb9e92aa1b}{lista\+Transacciones}} = new Mutable\+Live\+Data$<$$>$()
+\item 
+final Mutable\+Live\+Data$<$ List$<$ \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_transaccion}{Transaccion}} $>$ $>$ \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_transaccion__vm_a1c63e72db4e751feda54fef62c31ad75}{lista\+Transacciones\+Emisor}} = new Mutable\+Live\+Data$<$$>$()
+\item 
+Listener\+Registration \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_transaccion__vm_a1386b6f02809671c6914fb2616316e31}{transaccion\+Listener}}
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_transaccion__vm_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_transaccion__vm_a966eef11fd0886aad24bcf1d6e252bac}\index{com.example.proyecto\_dam\_202510.data.viewdata.Transaccion\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Transaccion\_vm}!Transaccion\_vm@{Transaccion\_vm}}
+\index{Transaccion\_vm@{Transaccion\_vm}!com.example.proyecto\_dam\_202510.data.viewdata.Transaccion\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Transaccion\_vm}}
+\doxysubsubsection{\texorpdfstring{Transaccion\_vm()}{Transaccion\_vm()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_transaccion__vm_a966eef11fd0886aad24bcf1d6e252bac} 
+com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+Transaccion\+\_\+vm.\+Transaccion\+\_\+vm (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_transaccion__vm_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_transaccion__vm_a442adfe5e877664c68165f32e41330ab}\index{com.example.proyecto\_dam\_202510.data.viewdata.Transaccion\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Transaccion\_vm}!aceptarPeticion@{aceptarPeticion}}
+\index{aceptarPeticion@{aceptarPeticion}!com.example.proyecto\_dam\_202510.data.viewdata.Transaccion\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Transaccion\_vm}}
+\doxysubsubsection{\texorpdfstring{aceptarPeticion()}{aceptarPeticion()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_transaccion__vm_a442adfe5e877664c68165f32e41330ab} 
+void com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+Transaccion\+\_\+vm.\+aceptar\+Peticion (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_transaccion}{Transaccion}}}]{transaccion}{, }\item[{String}]{mensaje}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_transaccion__vm_a57c85a88aae39e9d4d47d505ead3b1ac}\index{com.example.proyecto\_dam\_202510.data.viewdata.Transaccion\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Transaccion\_vm}!cargardatos@{cargardatos}}
+\index{cargardatos@{cargardatos}!com.example.proyecto\_dam\_202510.data.viewdata.Transaccion\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Transaccion\_vm}}
+\doxysubsubsection{\texorpdfstring{cargardatos()}{cargardatos()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_transaccion__vm_a57c85a88aae39e9d4d47d505ead3b1ac} 
+void com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+Transaccion\+\_\+vm.\+cargardatos (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_transaccion__vm_a3ff0bf86d5229a2ea1ab042f2c9ab6b4}\index{com.example.proyecto\_dam\_202510.data.viewdata.Transaccion\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Transaccion\_vm}!enviarPeticion@{enviarPeticion}}
+\index{enviarPeticion@{enviarPeticion}!com.example.proyecto\_dam\_202510.data.viewdata.Transaccion\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Transaccion\_vm}}
+\doxysubsubsection{\texorpdfstring{enviarPeticion()}{enviarPeticion()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_transaccion__vm_a3ff0bf86d5229a2ea1ab042f2c9ab6b4} 
+void com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+Transaccion\+\_\+vm.\+enviar\+Peticion (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_transaccion}{Transaccion}}}]{transaccion}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_transaccion__vm_ae32e167a80ffd13305719ce8fbeededd}\index{com.example.proyecto\_dam\_202510.data.viewdata.Transaccion\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Transaccion\_vm}!getListaTransacciones@{getListaTransacciones}}
+\index{getListaTransacciones@{getListaTransacciones}!com.example.proyecto\_dam\_202510.data.viewdata.Transaccion\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Transaccion\_vm}}
+\doxysubsubsection{\texorpdfstring{getListaTransacciones()}{getListaTransacciones()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_transaccion__vm_ae32e167a80ffd13305719ce8fbeededd} 
+Mutable\+Live\+Data$<$ List$<$ \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_transaccion}{Transaccion}} $>$ $>$ com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+Transaccion\+\_\+vm.\+get\+Lista\+Transacciones (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_transaccion__vm_a48fe0b935fae13c6023bba8d54a85f35}\index{com.example.proyecto\_dam\_202510.data.viewdata.Transaccion\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Transaccion\_vm}!getListaTransaccionesEmisor@{getListaTransaccionesEmisor}}
+\index{getListaTransaccionesEmisor@{getListaTransaccionesEmisor}!com.example.proyecto\_dam\_202510.data.viewdata.Transaccion\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Transaccion\_vm}}
+\doxysubsubsection{\texorpdfstring{getListaTransaccionesEmisor()}{getListaTransaccionesEmisor()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_transaccion__vm_a48fe0b935fae13c6023bba8d54a85f35} 
+Mutable\+Live\+Data$<$ List$<$ \mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_transaccion}{Transaccion}} $>$ $>$ com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+Transaccion\+\_\+vm.\+get\+Lista\+Transacciones\+Emisor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_transaccion__vm_a46dee8b1116fa715433e9317925f841e}\index{com.example.proyecto\_dam\_202510.data.viewdata.Transaccion\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Transaccion\_vm}!onCleared@{onCleared}}
+\index{onCleared@{onCleared}!com.example.proyecto\_dam\_202510.data.viewdata.Transaccion\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Transaccion\_vm}}
+\doxysubsubsection{\texorpdfstring{onCleared()}{onCleared()}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_transaccion__vm_a46dee8b1116fa715433e9317925f841e} 
+void com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+Transaccion\+\_\+vm.\+on\+Cleared (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\label{doc-variable-members}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_transaccion__vm_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_transaccion__vm_a969de3f1aceb98732483fa9ea65422f4}\index{com.example.proyecto\_dam\_202510.data.viewdata.Transaccion\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Transaccion\_vm}!db@{db}}
+\index{db@{db}!com.example.proyecto\_dam\_202510.data.viewdata.Transaccion\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Transaccion\_vm}}
+\doxysubsubsection{\texorpdfstring{db}{db}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_transaccion__vm_a969de3f1aceb98732483fa9ea65422f4} 
+final Firebase\+Firestore com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+Transaccion\+\_\+vm.\+db = Firebase\+Firestore.\+get\+Instance()\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_transaccion__vm_a2d5bbffbc376e0b7a38299bb9e92aa1b}\index{com.example.proyecto\_dam\_202510.data.viewdata.Transaccion\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Transaccion\_vm}!listaTransacciones@{listaTransacciones}}
+\index{listaTransacciones@{listaTransacciones}!com.example.proyecto\_dam\_202510.data.viewdata.Transaccion\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Transaccion\_vm}}
+\doxysubsubsection{\texorpdfstring{listaTransacciones}{listaTransacciones}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_transaccion__vm_a2d5bbffbc376e0b7a38299bb9e92aa1b} 
+final Mutable\+Live\+Data$<$List$<$\mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_transaccion}{Transaccion}}$>$ $>$ com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+Transaccion\+\_\+vm.\+lista\+Transacciones = new Mutable\+Live\+Data$<$$>$()\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_transaccion__vm_a1c63e72db4e751feda54fef62c31ad75}\index{com.example.proyecto\_dam\_202510.data.viewdata.Transaccion\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Transaccion\_vm}!listaTransaccionesEmisor@{listaTransaccionesEmisor}}
+\index{listaTransaccionesEmisor@{listaTransaccionesEmisor}!com.example.proyecto\_dam\_202510.data.viewdata.Transaccion\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Transaccion\_vm}}
+\doxysubsubsection{\texorpdfstring{listaTransaccionesEmisor}{listaTransaccionesEmisor}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_transaccion__vm_a1c63e72db4e751feda54fef62c31ad75} 
+final Mutable\+Live\+Data$<$List$<$\mbox{\hyperlink{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_transaccion}{Transaccion}}$>$ $>$ com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+Transaccion\+\_\+vm.\+lista\+Transacciones\+Emisor = new Mutable\+Live\+Data$<$$>$()\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_transaccion__vm_aa3af582bfad0f55a9582afec1c88b6d7}\index{com.example.proyecto\_dam\_202510.data.viewdata.Transaccion\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Transaccion\_vm}!mAuth@{mAuth}}
+\index{mAuth@{mAuth}!com.example.proyecto\_dam\_202510.data.viewdata.Transaccion\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Transaccion\_vm}}
+\doxysubsubsection{\texorpdfstring{mAuth}{mAuth}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_transaccion__vm_aa3af582bfad0f55a9582afec1c88b6d7} 
+final Firebase\+Auth com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+Transaccion\+\_\+vm.\+m\+Auth = Firebase\+Auth.\+get\+Instance()\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_transaccion__vm_a1386b6f02809671c6914fb2616316e31}\index{com.example.proyecto\_dam\_202510.data.viewdata.Transaccion\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Transaccion\_vm}!transaccionListener@{transaccionListener}}
+\index{transaccionListener@{transaccionListener}!com.example.proyecto\_dam\_202510.data.viewdata.Transaccion\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Transaccion\_vm}}
+\doxysubsubsection{\texorpdfstring{transaccionListener}{transaccionListener}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_transaccion__vm_a1386b6f02809671c6914fb2616316e31} 
+Listener\+Registration com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+Transaccion\+\_\+vm.\+transaccion\+Listener\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_transaccion__vm_a64dc555b66a61295b390ed7409db5bc8}\index{com.example.proyecto\_dam\_202510.data.viewdata.Transaccion\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Transaccion\_vm}!user@{user}}
+\index{user@{user}!com.example.proyecto\_dam\_202510.data.viewdata.Transaccion\_vm@{com.example.proyecto\_dam\_202510.data.viewdata.Transaccion\_vm}}
+\doxysubsubsection{\texorpdfstring{user}{user}}
+{\footnotesize\ttfamily \label{classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_transaccion__vm_a64dc555b66a61295b390ed7409db5bc8} 
+final Firebase\+User com.\+example.\+proyecto\+\_\+dam\+\_\+202510.\+data.\+viewdata.\+Transaccion\+\_\+vm.\+user = m\+Auth.\+get\+Current\+User()\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+app/src/main/java/com/example/proyecto\+\_\+dam\+\_\+202510/data/viewdata/\mbox{\hyperlink{_transaccion__vm_8java}{Transaccion\+\_\+vm.\+java}}\end{DoxyCompactItemize}

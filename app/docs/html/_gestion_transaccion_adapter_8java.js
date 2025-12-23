@@ -1,0 +1,4 @@
+var _gestion_transaccion_adapter_8java =
+[
+    [ "com.example.proyecto_dam_202510.Dash.Adapters.GestionTransaccionAdapter", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_gestion_transaccion_adapter.html", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_gestion_transaccion_adapter" ]
+];

@@ -1,0 +1,16 @@
+var classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_transaccion_emisor_adapter =
+[
+    [ "OnItemLongClickListener", "interfacecom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_transaccion_emisor_adc55ad09859fd470c4b19f2aa2494cf14.html", "interfacecom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_transaccion_emisor_adc55ad09859fd470c4b19f2aa2494cf14" ],
+    [ "OnItemClickListener", "interfacecom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_transaccion_emisor_ad60d7ee1b0813a461425caa999f9b0d57.html", "interfacecom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_transaccion_emisor_ad60d7ee1b0813a461425caa999f9b0d57" ],
+    [ "TransaccionEmisorViewHolder", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_transaccion_emisor_adapte3ba1734d0db8468a715517ef88afd6cc.html", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_transaccion_emisor_adapte3ba1734d0db8468a715517ef88afd6cc" ],
+    [ "TransaccionEmisorAdapter", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_transaccion_emisor_adapter.html#a22118c325c4601de268436b030a80827", null ],
+    [ "getItemCount", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_transaccion_emisor_adapter.html#a290ccbce61df34ac582a4627a36f3ec5", null ],
+    [ "onBindViewHolder", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_transaccion_emisor_adapter.html#a25ebe0775e61b4336a7c462401cadd7d", null ],
+    [ "onCreateViewHolder", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_transaccion_emisor_adapter.html#a78b28cbc8ca5eb3fe9339d5eed2b1538", null ],
+    [ "setListaTransacciones", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_transaccion_emisor_adapter.html#a2c70c3d9796219def974162470521cb7", null ],
+    [ "setOnItemClickListener", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_transaccion_emisor_adapter.html#a16f7309817428a570b36537ce9589845", null ],
+    [ "setOnItemLongClickListener", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_transaccion_emisor_adapter.html#a4f9e592aaf4615beb3d9639e4e596f5c", null ],
+    [ "listaTransacciones", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_transaccion_emisor_adapter.html#a7c1d0553e30a3e0828c37a838a39d2fc", null ],
+    [ "listener", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_transaccion_emisor_adapter.html#ab5a7b3fcb70cd357c785e2665198446e", null ],
+    [ "longClickListener", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_transaccion_emisor_adapter.html#a4def9f69dcab98c5ea6e8a1bffac9c60", null ]
+];

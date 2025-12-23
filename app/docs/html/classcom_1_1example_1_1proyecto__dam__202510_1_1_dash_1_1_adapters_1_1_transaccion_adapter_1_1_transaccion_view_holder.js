@@ -1,0 +1,5 @@
+var classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_transaccion_adapter_1_1_transaccion_view_holder =
+[
+    [ "TransaccionViewHolder", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_transaccion_adapter_1_1_transaccion_view_holder.html#a8c03f2a76f6b00b5eab3e7742376db5a", null ],
+    [ "binding", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_transaccion_adapter_1_1_transaccion_view_holder.html#a86fd3f67a5cf9042251cc121b7a39f49", null ]
+];

@@ -1,0 +1,4 @@
+var interfacecom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_user_colecciones_adap69c5ae3ce5b769bdf16c995ea1185cd0 =
+[
+    [ "onItemLongClick", "interfacecom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_user_colecciones_adap69c5ae3ce5b769bdf16c995ea1185cd0.html#a09461691c6b0ad96cadd4b38869ab68c", null ]
+];
