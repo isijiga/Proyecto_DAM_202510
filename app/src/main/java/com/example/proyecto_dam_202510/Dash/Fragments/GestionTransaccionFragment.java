@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.proyecto_dam_202510.Dash.Adapters.GestionColeccionAdapter;
 import com.example.proyecto_dam_202510.Dash.Adapters.GestionTransaccionAdapter;
+import com.example.proyecto_dam_202510.R;
 import com.example.proyecto_dam_202510.databinding.FragmentGestionColeccionBinding;
 import com.example.proyecto_dam_202510.databinding.FragmentGestionTransaccionBinding;
 import com.google.android.material.tabs.TabLayout;
@@ -56,9 +57,11 @@ public class GestionTransaccionFragment extends Fragment {
             @Override
             public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
                 if (position==0){
+                    tab.setIcon(R.drawable.move_to_inbox);
                     tab.setText("Peticiones Recibidas");
 
                 }else{
+                    tab.setIcon(R.drawable.outbox);
                     tab.setText("Peticiones Enviadas");
                 }
             }

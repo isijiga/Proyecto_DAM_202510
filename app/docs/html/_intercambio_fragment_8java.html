@@ -91,7 +91,9 @@ $(function(){initNavTree('_intercambio_fragment_8java.html','',''); });
   <div class="headertitle"><div class="title">IntercambioFragment.java File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>import android.os.Bundle;</code><br />
+<div class="textblock"><code>import android.app.AlertDialog;</code><br />
+<code>import android.content.DialogInterface;</code><br />
+<code>import android.os.Bundle;</code><br />
 <code>import androidx.annotation.NonNull;</code><br />
 <code>import androidx.annotation.Nullable;</code><br />
 <code>import androidx.fragment.app.Fragment;</code><br />
@@ -101,11 +103,19 @@ $(function(){initNavTree('_intercambio_fragment_8java.html','',''); });
 <code>import android.view.LayoutInflater;</code><br />
 <code>import android.view.View;</code><br />
 <code>import android.view.ViewGroup;</code><br />
+<code>import android.widget.AdapterView;</code><br />
+<code>import android.widget.ArrayAdapter;</code><br />
+<code>import android.widget.TextView;</code><br />
+<code>import android.widget.Toast;</code><br />
 <code>import com.example.proyecto_dam_202510.Dash.Adapters.IntercambioAdapter;</code><br />
+<code>import com.example.proyecto_dam_202510.R;</code><br />
 <code>import com.example.proyecto_dam_202510.data.pojo.CromoPosesionAgrupadoIntercambio;</code><br />
 <code>import com.example.proyecto_dam_202510.data.viewdata.Intercambio_vm;</code><br />
 <code>import com.example.proyecto_dam_202510.databinding.FragmentIntercambioBinding;</code><br />
+<code>import java.util.ArrayList;</code><br />
 <code>import java.util.List;</code><br />
+<code>import com.example.proyecto_dam_202510.Funciones;</code><br />
+<code>import com.google.android.material.textfield.TextInputEditText;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>

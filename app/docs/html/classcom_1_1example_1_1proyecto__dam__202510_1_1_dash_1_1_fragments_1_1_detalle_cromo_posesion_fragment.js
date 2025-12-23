@@ -7,7 +7,7 @@ var classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_deta
     [ "onViewCreated", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_detalle_cromo_posesion_fragment.html#acc6494c9b6c35fa9423d4ac586861580", null ],
     [ "binding", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_detalle_cromo_posesion_fragment.html#ab76bb4a8d5107c1b04ebf5cca3542ad9", null ],
     [ "coleccion", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_detalle_cromo_posesion_fragment.html#a2d2b28fb8495c7f98c222f5fc5da595a", null ],
-    [ "fechaAdquisicion", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_detalle_cromo_posesion_fragment.html#af610404082c69bf3f8d326e1be5de096", null ],
+    [ "fechaAdquisicion", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_detalle_cromo_posesion_fragment.html#a9081bd88853cba2f8f099f70fc4e3c3f", null ],
     [ "id", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_detalle_cromo_posesion_fragment.html#aff63f5fa05d096cbc34f13c6e12d6e6a", null ],
     [ "imagen", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_detalle_cromo_posesion_fragment.html#aa7f67d7cde13598af02ea85b087c12c8", null ],
     [ "nombre", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_detalle_cromo_posesion_fragment.html#a875b8aa3602281851a2eab4af25724dd", null ],

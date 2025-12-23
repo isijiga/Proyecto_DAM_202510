@@ -9,6 +9,9 @@ import com.example.proyecto_dam_202510.Dash.Fragments.MisColeccionesFragment;
 import com.example.proyecto_dam_202510.Dash.Fragments.TransaccionEmisorFragment;
 import com.example.proyecto_dam_202510.Dash.Fragments.TransaccionFragment;
 
+/**
+ * Adaptador para gestionar los dos fragments de las pantallas de transacciones.
+ */
 public class GestionTransaccionAdapter extends FragmentStateAdapter {
 
     public GestionTransaccionAdapter(@NonNull Fragment fragment) {

@@ -103,14 +103,17 @@ public class Transaccion_vm extends ViewModel {
                document(user.getUid()+transaccion.getColeccionId()).
                collection("cromosPosesion").document(transaccion.getId())
                .delete();
+
         /*insertar en la coleccion de la transaccion*/
-       db.collection("users_colecciones").document(transaccion.getPedidoPor()+transaccion.getColeccionId()).
+
+        /*insertar en la coleccion de la transaccion
+        db.collection("users_colecciones").document(transaccion.getPedidoPor()+transaccion.getColeccionId()).
                 collection("cromosPosesion").document()
                .set(transaccion);
 
-       /*por ultimo borrar la transacion.*/
+       /*por ultimo borrar la transacion.
         db.collection("transacciones").document(transaccion.getIdTransaccion()).delete();
-
+        */
 
 
 

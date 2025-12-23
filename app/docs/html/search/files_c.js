@@ -1,7 +1,9 @@
 var searchData=
 [
-  ['usercolecciones_5fvm_2ejava_0',['UserColecciones_vm.java',['../_user_colecciones__vm_8java.html',1,'']]],
-  ['usercoleccionesadapter_2ejava_1',['UserColeccionesAdapter.java',['../_user_colecciones_adapter_8java.html',1,'']]],
-  ['userscolecciones_2ejava_2',['UsersColecciones.java',['../_users_colecciones_8java.html',1,'']]],
-  ['userscoleccionesfragment_2ejava_3',['UsersColeccionesFragment.java',['../_users_colecciones_fragment_8java.html',1,'']]]
+  ['transaccion_2ejava_0',['Transaccion.java',['../_transaccion_8java.html',1,'']]],
+  ['transaccion_5fvm_2ejava_1',['Transaccion_vm.java',['../_transaccion__vm_8java.html',1,'']]],
+  ['transaccionadapter_2ejava_2',['TransaccionAdapter.java',['../_transaccion_adapter_8java.html',1,'']]],
+  ['transaccionemisoradapter_2ejava_3',['TransaccionEmisorAdapter.java',['../_transaccion_emisor_adapter_8java.html',1,'']]],
+  ['transaccionemisorfragment_2ejava_4',['TransaccionEmisorFragment.java',['../_transaccion_emisor_fragment_8java.html',1,'']]],
+  ['transaccionfragment_2ejava_5',['TransaccionFragment.java',['../_transaccion_fragment_8java.html',1,'']]]
 ];

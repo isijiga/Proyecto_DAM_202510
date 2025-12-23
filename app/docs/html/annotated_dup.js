@@ -8,8 +8,11 @@ var annotated_dup =
               [ "CromosAdapter", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_cromos_adapter.html", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_cromos_adapter" ],
               [ "CromosPosesionAdapter", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_cromos_posesion_adapter.html", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_cromos_posesion_adapter" ],
               [ "GestionColeccionAdapter", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_gestion_coleccion_adapter.html", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_gestion_coleccion_adapter" ],
+              [ "GestionTransaccionAdapter", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_gestion_transaccion_adapter.html", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_gestion_transaccion_adapter" ],
               [ "IntercambioAdapter", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_intercambio_adapter.html", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_intercambio_adapter" ],
               [ "MisColeccionesAdapter", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_mis_colecciones_adapter.html", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_mis_colecciones_adapter" ],
+              [ "TransaccionAdapter", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_transaccion_adapter.html", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_transaccion_adapter" ],
+              [ "TransaccionEmisorAdapter", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_transaccion_emisor_adapter.html", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_transaccion_emisor_adapter" ],
               [ "UserColeccionesAdapter", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_user_colecciones_adapter.html", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_user_colecciones_adapter" ]
             ] ],
             [ "Fragments", "namespacecom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments.html", [
@@ -20,9 +23,12 @@ var annotated_dup =
               [ "DetalleColeccionFragment", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_detalle_coleccion_fragment.html", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_detalle_coleccion_fragment" ],
               [ "DetalleCromoPosesionFragment", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_detalle_cromo_posesion_fragment.html", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_detalle_cromo_posesion_fragment" ],
               [ "GestionColeccionFragment", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_gestion_coleccion_fragment.html", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_gestion_coleccion_fragment" ],
+              [ "GestionTransaccionFragment", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_gestion_transaccion_fragment.html", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_gestion_transaccion_fragment" ],
               [ "IntercambioFragment", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_intercambio_fragment.html", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_intercambio_fragment" ],
               [ "MisColeccionesFragment", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_mis_colecciones_fragment.html", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_mis_colecciones_fragment" ],
               [ "PerfilFragment", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_perfil_fragment.html", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_perfil_fragment" ],
+              [ "TransaccionEmisorFragment", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_transaccion_emisor_fragment.html", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_transaccion_emisor_fragment" ],
+              [ "TransaccionFragment", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_transaccion_fragment.html", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_transaccion_fragment" ],
               [ "UsersColeccionesFragment", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_users_colecciones_fragment.html", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_fragments_1_1_users_colecciones_fragment" ]
             ] ],
             [ "DashboardActivity", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_dashboard_activity.html", "classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_dashboard_activity" ]
@@ -34,6 +40,7 @@ var annotated_dup =
               [ "CromoPosesion", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_cromo_posesion.html", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_cromo_posesion" ],
               [ "CromoPosesionAgrupado", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_cromo_posesion_agrupado.html", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_cromo_posesion_agrupado" ],
               [ "CromoPosesionAgrupadoIntercambio", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_cromo_posesion_agrupado_intercambio.html", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_cromo_posesion_agrupado_intercambio" ],
+              [ "Transaccion", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_transaccion.html", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_transaccion" ],
               [ "UsersColecciones", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_users_colecciones.html", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_users_colecciones" ]
             ] ],
             [ "viewdata", "namespacecom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata.html", [
@@ -42,6 +49,7 @@ var annotated_dup =
               [ "CromoPosesion_vm", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_cromo_posesion__vm.html", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_cromo_posesion__vm" ],
               [ "Estadisticas_vm", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_estadisticas__vm.html", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_estadisticas__vm" ],
               [ "Intercambio_vm", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_intercambio__vm.html", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_intercambio__vm" ],
+              [ "Transaccion_vm", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_transaccion__vm.html", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_transaccion__vm" ],
               [ "UserColecciones_vm", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_user_colecciones__vm.html", "classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1viewdata_1_1_user_colecciones__vm" ]
             ] ]
           ] ],
@@ -53,6 +61,7 @@ var annotated_dup =
             [ "GuiaPantalla3Fragment", "classcom_1_1example_1_1proyecto__dam__202510_1_1_guia_1_1_guia_pantalla3_fragment.html", "classcom_1_1example_1_1proyecto__dam__202510_1_1_guia_1_1_guia_pantalla3_fragment" ],
             [ "GuiaPantalla4Fragment", "classcom_1_1example_1_1proyecto__dam__202510_1_1_guia_1_1_guia_pantalla4_fragment.html", "classcom_1_1example_1_1proyecto__dam__202510_1_1_guia_1_1_guia_pantalla4_fragment" ],
             [ "GuiaPantalla5Fragment", "classcom_1_1example_1_1proyecto__dam__202510_1_1_guia_1_1_guia_pantalla5_fragment.html", "classcom_1_1example_1_1proyecto__dam__202510_1_1_guia_1_1_guia_pantalla5_fragment" ],
+            [ "GuiaPantalla6_5Fragment", "classcom_1_1example_1_1proyecto__dam__202510_1_1_guia_1_1_guia_pantalla6__5_fragment.html", "classcom_1_1example_1_1proyecto__dam__202510_1_1_guia_1_1_guia_pantalla6__5_fragment" ],
             [ "GuiaPantalla6Fragment", "classcom_1_1example_1_1proyecto__dam__202510_1_1_guia_1_1_guia_pantalla6_fragment.html", "classcom_1_1example_1_1proyecto__dam__202510_1_1_guia_1_1_guia_pantalla6_fragment" ],
             [ "GuiaPantalla7Fragment", "classcom_1_1example_1_1proyecto__dam__202510_1_1_guia_1_1_guia_pantalla7_fragment.html", "classcom_1_1example_1_1proyecto__dam__202510_1_1_guia_1_1_guia_pantalla7_fragment" ],
             [ "GuiaPantalla8Fragment", "classcom_1_1example_1_1proyecto__dam__202510_1_1_guia_1_1_guia_pantalla8_fragment.html", "classcom_1_1example_1_1proyecto__dam__202510_1_1_guia_1_1_guia_pantalla8_fragment" ],

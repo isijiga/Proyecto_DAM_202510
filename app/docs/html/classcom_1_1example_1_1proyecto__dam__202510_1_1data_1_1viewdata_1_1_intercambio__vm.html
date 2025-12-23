@@ -109,6 +109,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0ce97f9cb9dbc7b8a49dbe41b2f9d93b" id="r_a0ce97f9cb9dbc7b8a49dbe41b2f9d93b"><td class="memItemLeft" align="right" valign="top">List&lt; String &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ce97f9cb9dbc7b8a49dbe41b2f9d93b">getUsuariosColecciones</a> ()</td></tr>
 <tr class="memitem:adbbb34b225041114ce65a3c7e9ff36b7" id="r_adbbb34b225041114ce65a3c7e9ff36b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adbbb34b225041114ce65a3c7e9ff36b7">setUsuariosColecciones</a> (List&lt; String &gt; <a class="el" href="#a61e26ea1a53d3a631b5720b5613f8cb9">listaUsuariosColecciones</a>)</td></tr>
 <tr class="memitem:a3d9639a41248c69f96954422313d3e14" id="r_a3d9639a41248c69f96954422313d3e14"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3d9639a41248c69f96954422313d3e14">Intercambio_vm</a> ()</td></tr>
+<tr class="memitem:a9a63cf7c70fa7e90032d3edb21cb5ec1" id="r_a9a63cf7c70fa7e90032d3edb21cb5ec1"><td class="memItemLeft" align="right" valign="top">MutableLiveData&lt; List&lt; String &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9a63cf7c70fa7e90032d3edb21cb5ec1">getListaColecciones</a> ()</td></tr>
+<tr class="memitem:a7b30682f8dba211eaf4535ae4c0c836c" id="r_a7b30682f8dba211eaf4535ae4c0c836c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b30682f8dba211eaf4535ae4c0c836c">setColeccionRecarga</a> (String seleccion)</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pac-attribs" class="groupheader"><a id="pac-attribs" name="pac-attribs"></a>
 Package Attributes</h2></td></tr>
@@ -117,15 +119,22 @@ Package Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
+<tr class="memitem:ac172d3fdb4626453a38f26c91e01a68f" id="r_ac172d3fdb4626453a38f26c91e01a68f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac172d3fdb4626453a38f26c91e01a68f">cargaListaColecciones</a> ()</td></tr>
 <tr class="memitem:a9b3c0e2ba8ea75915283856cdc90835b" id="r_a9b3c0e2ba8ea75915283856cdc90835b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b3c0e2ba8ea75915283856cdc90835b">cargaCartas</a> ()</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a286746404675041e046b8492468db925" id="r_a286746404675041e046b8492468db925"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a286746404675041e046b8492468db925">totalCromosSistema</a></td></tr>
+<tr class="memitem:a18060717bdb4e692c306c92927457e75" id="r_a18060717bdb4e692c306c92927457e75"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a18060717bdb4e692c306c92927457e75">coleccionid</a></td></tr>
+<tr class="memitem:af270155e68d65da242620217bd92c961" id="r_af270155e68d65da242620217bd92c961"><td class="memItemLeft" align="right" valign="top">final MutableLiveData&lt; List&lt; String &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af270155e68d65da242620217bd92c961">listaColecciones</a> = new MutableLiveData&lt;&gt;()</td></tr>
 <tr class="memitem:aea332c74c54f5f13118c902925750592" id="r_aea332c74c54f5f13118c902925750592"><td class="memItemLeft" align="right" valign="top">final MutableLiveData&lt; List&lt; <a class="el" href="classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_cromo_posesion_agrupado_intercambio.html">CromoPosesionAgrupadoIntercambio</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea332c74c54f5f13118c902925750592">cromoPosesionAgrupadoList</a> = new MutableLiveData&lt;&gt;()</td></tr>
+<tr class="memitem:afcf77ab889e6dc8702a8484659e25eaf" id="r_afcf77ab889e6dc8702a8484659e25eaf"><td class="memItemLeft" align="right" valign="top">final Set&lt; String &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afcf77ab889e6dc8702a8484659e25eaf">clavesCromosUsuarioActual</a> = new HashSet&lt;&gt;()</td></tr>
 <tr class="memitem:a597ee58f494eab36493964fb39f67028" id="r_a597ee58f494eab36493964fb39f67028"><td class="memItemLeft" align="right" valign="top">final FirebaseFirestore&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a597ee58f494eab36493964fb39f67028">db</a> = FirebaseFirestore.getInstance()</td></tr>
+<tr class="memitem:ab5222d37212e8c32a68fe7b338bbeba2" id="r_ab5222d37212e8c32a68fe7b338bbeba2"><td class="memItemLeft" align="right" valign="top">final FirebaseAuth&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab5222d37212e8c32a68fe7b338bbeba2">mAuth</a> = FirebaseAuth.getInstance()</td></tr>
+<tr class="memitem:ade221c6d27ead6c1a42714a3fd04b6bd" id="r_ade221c6d27ead6c1a42714a3fd04b6bd"><td class="memItemLeft" align="right" valign="top">final FirebaseUser&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ade221c6d27ead6c1a42714a3fd04b6bd">user</a> = mAuth.getCurrentUser()</td></tr>
 <tr class="memitem:a6b44a88fd8f20c70ae32bf51f174b511" id="r_a6b44a88fd8f20c70ae32bf51f174b511"><td class="memItemLeft" align="right" valign="top">final MutableLiveData&lt; List&lt; <a class="el" href="classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_cromo_posesion.html">CromoPosesion</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6b44a88fd8f20c70ae32bf51f174b511">listaIntercambiosLiveData</a> = new MutableLiveData&lt;&gt;()</td></tr>
 <tr class="memitem:abc7e8ce2ea88ac0d96c2ad932c7f88db" id="r_abc7e8ce2ea88ac0d96c2ad932c7f88db"><td class="memItemLeft" align="right" valign="top">ListenerRegistration&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc7e8ce2ea88ac0d96c2ad932c7f88db">intercambiosListener</a></td></tr>
+<tr class="memitem:acfcb52b449b249179a15f96cfaa7e43c" id="r_acfcb52b449b249179a15f96cfaa7e43c"><td class="memItemLeft" align="right" valign="top">ListenerRegistration&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acfcb52b449b249179a15f96cfaa7e43c">coleccionesListener</a></td></tr>
 <tr class="memitem:a61e26ea1a53d3a631b5720b5613f8cb9" id="r_a61e26ea1a53d3a631b5720b5613f8cb9"><td class="memItemLeft" align="right" valign="top">List&lt; String &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a61e26ea1a53d3a631b5720b5613f8cb9">listaUsuariosColecciones</a> = new ArrayList&lt;&gt;()</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
@@ -174,6 +183,31 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ac172d3fdb4626453a38f26c91e01a68f" name="ac172d3fdb4626453a38f26c91e01a68f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac172d3fdb4626453a38f26c91e01a68f">&#9670;&#160;</a></span>cargaListaColecciones()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.example.proyecto_dam_202510.data.viewdata.Intercambio_vm.cargaListaColecciones </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a7a6a29f0c604330903947cc53357bfcc" name="a7a6a29f0c604330903947cc53357bfcc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7a6a29f0c604330903947cc53357bfcc">&#9670;&#160;</a></span>getCromoPosesionAgrupadoList()</h2>
 
@@ -182,6 +216,23 @@ Private Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">MutableLiveData&lt; List&lt; <a class="el" href="classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_cromo_posesion_agrupado_intercambio.html">CromoPosesionAgrupadoIntercambio</a> &gt; &gt; com.example.proyecto_dam_202510.data.viewdata.Intercambio_vm.getCromoPosesionAgrupadoList </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9a63cf7c70fa7e90032d3edb21cb5ec1" name="a9a63cf7c70fa7e90032d3edb21cb5ec1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a63cf7c70fa7e90032d3edb21cb5ec1">&#9670;&#160;</a></span>getListaColecciones()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MutableLiveData&lt; List&lt; String &gt; &gt; com.example.proyecto_dam_202510.data.viewdata.Intercambio_vm.getListaColecciones </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -225,6 +276,23 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a7b30682f8dba211eaf4535ae4c0c836c" name="a7b30682f8dba211eaf4535ae4c0c836c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b30682f8dba211eaf4535ae4c0c836c">&#9670;&#160;</a></span>setColeccionRecarga()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.example.proyecto_dam_202510.data.viewdata.Intercambio_vm.setColeccionRecarga </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>seleccion</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ade2a40d2d9c47c7bc8bdfdc5650c4138" name="ade2a40d2d9c47c7bc8bdfdc5650c4138"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ade2a40d2d9c47c7bc8bdfdc5650c4138">&#9670;&#160;</a></span>setTotalCromosSistema()</h2>
 
@@ -260,6 +328,72 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="afcf77ab889e6dc8702a8484659e25eaf" name="afcf77ab889e6dc8702a8484659e25eaf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcf77ab889e6dc8702a8484659e25eaf">&#9670;&#160;</a></span>clavesCromosUsuarioActual</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final Set&lt;String&gt; com.example.proyecto_dam_202510.data.viewdata.Intercambio_vm.clavesCromosUsuarioActual = new HashSet&lt;&gt;()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acfcb52b449b249179a15f96cfaa7e43c" name="acfcb52b449b249179a15f96cfaa7e43c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfcb52b449b249179a15f96cfaa7e43c">&#9670;&#160;</a></span>coleccionesListener</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ListenerRegistration com.example.proyecto_dam_202510.data.viewdata.Intercambio_vm.coleccionesListener</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a18060717bdb4e692c306c92927457e75" name="a18060717bdb4e692c306c92927457e75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18060717bdb4e692c306c92927457e75">&#9670;&#160;</a></span>coleccionid</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String com.example.proyecto_dam_202510.data.viewdata.Intercambio_vm.coleccionid</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="aea332c74c54f5f13118c902925750592" name="aea332c74c54f5f13118c902925750592"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aea332c74c54f5f13118c902925750592">&#9670;&#160;</a></span>cromoPosesionAgrupadoList</h2>
 
@@ -348,6 +482,28 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="af270155e68d65da242620217bd92c961" name="af270155e68d65da242620217bd92c961"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af270155e68d65da242620217bd92c961">&#9670;&#160;</a></span>listaColecciones</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final MutableLiveData&lt;List&lt;String&gt; &gt; com.example.proyecto_dam_202510.data.viewdata.Intercambio_vm.listaColecciones = new MutableLiveData&lt;&gt;()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a6b44a88fd8f20c70ae32bf51f174b511" name="a6b44a88fd8f20c70ae32bf51f174b511"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6b44a88fd8f20c70ae32bf51f174b511">&#9670;&#160;</a></span>listaIntercambiosLiveData</h2>
 
@@ -414,6 +570,28 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ab5222d37212e8c32a68fe7b338bbeba2" name="ab5222d37212e8c32a68fe7b338bbeba2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5222d37212e8c32a68fe7b338bbeba2">&#9670;&#160;</a></span>mAuth</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final FirebaseAuth com.example.proyecto_dam_202510.data.viewdata.Intercambio_vm.mAuth = FirebaseAuth.getInstance()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a286746404675041e046b8492468db925" name="a286746404675041e046b8492468db925"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a286746404675041e046b8492468db925">&#9670;&#160;</a></span>totalCromosSistema</h2>
 
@@ -425,6 +603,28 @@ Private Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">int com.example.proyecto_dam_202510.data.viewdata.Intercambio_vm.totalCromosSistema</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ade221c6d27ead6c1a42714a3fd04b6bd" name="ade221c6d27ead6c1a42714a3fd04b6bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade221c6d27ead6c1a42714a3fd04b6bd">&#9670;&#160;</a></span>user</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final FirebaseUser com.example.proyecto_dam_202510.data.viewdata.Intercambio_vm.user = mAuth.getCurrentUser()</td>
         </tr>
       </table>
   </td>

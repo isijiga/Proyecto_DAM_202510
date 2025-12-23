@@ -29,6 +29,9 @@ import com.example.proyecto_dam_202510.databinding.FragmentTransaccionEmisorBind
 import java.util.List;
 
 
+/**
+ * Clase fragment para la lista de transacciones de peticiones enviadas.
+ */
 public class TransaccionEmisorFragment extends Fragment implements TransaccionEmisorAdapter.OnItemClickListener, TransaccionEmisorAdapter.OnItemLongClickListener {
 
     FragmentTransaccionEmisorBinding binding;
@@ -85,21 +88,32 @@ public class TransaccionEmisorFragment extends Fragment implements TransaccionEm
 
     @Override
     public void onItemClick(Transaccion transaccion) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(requireContext())
-                .setTitle("Mensaje");
 
-
-        if(!transaccion.getMensajeRespuesta().isEmpty()){
-                builder.setMessage("Mensaje de " + transaccion.getEmailPedidoA() + ":\n");
-                builder.setMessage(transaccion.getMensajeRespuesta());
-                }else {
-            builder.setMessage(("Estado: "+transaccion.getEstado())+"\n"+"Sin respuesta");
+        if(transaccion.getEstado().equals("ACEPTADA. Pdte Envio")) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(requireContext())
+                    .setTitle("Mensaje");
+            if (!transaccion.getMensajeRespuesta().isEmpty()) {
+                builder.setMessage(transaccion.getEmailPedidoA() + ":\n"+"\""+transaccion.getMensajeRespuesta()+"\"");
+                builder.setIcon(R.drawable.message);
+            } else {
+                builder.setMessage(("Estado: " + transaccion.getEstado()) + "\n"+ "Sin respuesta");
+ }
+            AlertDialog dialog = builder.show();
+        }
+        else if(transaccion.getEstado().equals("ENVIADA")){
+            AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
+            builder.setTitle("La carta ha sido enviada por "+transaccion.getEmailPedidoA());
+            builder.setIcon(R.drawable.send);
+            builder.setPositiveButton("Carta Recibida",new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    Funciones.cartaRecibida(transaccion,requireContext());
+                }
+            });
+            AlertDialog dialog = builder.show();
 
 
         }
-
-        AlertDialog dialog = builder.show();
-        Log.d("transaccion", "Mensaje de respuesta: " + transaccion.getMensajeRespuesta());
 
 
     }

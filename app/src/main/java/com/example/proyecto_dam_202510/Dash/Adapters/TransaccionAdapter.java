@@ -17,9 +17,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
+/**
+ * Clase Adapter para la lista de transacciones de peticiones recibidas.
+ */
 public class TransaccionAdapter extends RecyclerView.Adapter<TransaccionAdapter.TransaccionViewHolder> {
 
     private List<Transaccion> listaTransacciones = new ArrayList<>();
+
 
     public TransaccionAdapter(OnItemClickListener listener) {
 
@@ -52,6 +56,23 @@ public class TransaccionAdapter extends RecyclerView.Adapter<TransaccionAdapter.
         holder.binding.tvItemFecha.setText(fechaAdquision);
         holder.binding.tvItemColeccion.setText(transaccion.getColeccionId());
         holder.binding.tvItemPedidoA.setText(transaccion.getEmailPedidoPor());
+        switch (transaccion.getEstado()){
+            case "pendiente":
+                holder.binding.EstadoIco.setImageResource(R.drawable.pending);
+                break;
+            case "ACEPTADA. Pdte Envio":
+                holder.binding.EstadoIco.setImageResource(R.drawable.accept);
+                break;
+            case "ENVIADA":
+                holder.binding.EstadoIco.setImageResource(R.drawable.send);
+                break;
+        }
+        if(transaccion.getMensajeRespuesta()!=null && !transaccion.getMensaje().isEmpty() ){
+            holder.binding.message.setVisibility(View.VISIBLE);
+        }
+        else {
+            holder.binding.message.setVisibility(View.GONE);
+        }
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

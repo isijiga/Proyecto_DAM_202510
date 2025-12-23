@@ -25,98 +25,20 @@
             android:src="@drawable/entrega"
             app:tint="#3F51B5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="@+id/barrierMeta"
-            app:layout_constraintVertical_bias="0.0"/>
-
-        <TextView
-            android:id="@+id/tv_item_estado"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/carta_intercambio_fondo"
-            android:paddingHorizontal="10dp"
-            android:paddingVertical="4dp"
-            android:text="PENDIENTE"
-            android:textSize="11sp"
-            android:textStyle="bold"
-            android:textColor="#F57F17"
-            android:textAllCaps="true"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="PENDIENTE" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tv_item_numero"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Nume"
-            android:textSize="16sp"
-            android:textStyle="bold"
+            android:text="19"
+            android:textSize="14sp"
+
             android:textColor="#212121"
             app:layout_constraintStart_toEndOf="@+id/imgAvatar"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="@+id/imgAvatar"/>
-        <TextView
-            android:id="@+id/tv_item_nombre"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="8dp"
-            android:text="Nombre de la carta"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:textColor="#212121"
-            app:layout_constraintStart_toEndOf="@+id/tv_item_numero"
-            app:layout_constraintEnd_toStartOf="@+id/tv_item_estado"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/tv_item_pedidoPor"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="usuario@usuario.com"
-            android:textSize="14sp"
-            android:textColor="#555555"
-            android:gravity="center_vertical"
-            app:layout_constraintStart_toStartOf="@+id/tv_item_nombre"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_item_nombre"
-            tools:text="usuario@ejemplo.com" />
-
-        <androidx.constraintlayout.widget.Barrier
-            android:id="@+id/barrierMeta"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:barrierDirection="bottom"
-            app:constraint_referenced_ids="tv_item_pedidoA,imgAvatar" />
-
-        <View
-            android:id="@+id/dividerMeta"
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:layout_marginTop="12dp"
-            android:background="#F0F0F0"
-            app:layout_constraintTop_toBottomOf="@+id/barrierMeta"
-            app:layout_constraintStart_toStartOf="@+id/tv_item_nombre"
-            app:layout_constraintEnd_toEndOf="parent" />
-
-        <TextView
-            android:id="@+id/tv_item_coleccion"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:text="Laliga 2025-26"
-            android:textSize="12sp"
-            android:textColor="#757575"
-            android:ellipsize="end"
-            android:maxLines="1"
-            app:layout_constraintStart_toStartOf="@+id/tv_item_numero"
-            app:layout_constraintEnd_toStartOf="@+id/tv_item_fecha"
-            app:layout_constraintTop_toBottomOf="@+id/dividerMeta"
-            tools:text="Laliga 2025-26 C.Este" />
 
         <TextView
             android:id="@+id/tv_item_fecha"
@@ -127,8 +49,104 @@
             android:textStyle="italic"
             android:textColor="#9E9E9E"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBaseline_toBaselineOf="@+id/tv_item_coleccion"
-            tools:text="13 dic 2025" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="13 dic" />
+
+        <TextView
+            android:id="@+id/tv_item_nombre"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="Nombre de la carta"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#212121"
+            android:maxLines="1"
+            android:ellipsize="end"
+            app:layout_constraintStart_toEndOf="@+id/tv_item_numero"
+            app:layout_constraintEnd_toStartOf="@+id/tv_item_fecha"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_item_pedidoPor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            android:text="usuario@usuario.com"
+            android:textSize="14sp"
+            android:textColor="#555555"
+            app:layout_constraintStart_toStartOf="@+id/tv_item_nombre"
+            app:layout_constraintEnd_toStartOf="@+id/message"
+            app:layout_constraintTop_toBottomOf="@+id/tv_item_nombre"
+            />
+
+        <ImageView
+            android:id="@+id/message"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/message"
+            app:layout_constraintStart_toEndOf="@id/tv_item_pedidoPor"
+
+            app:layout_constraintTop_toTopOf="@+id/tv_item_pedidoPor"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_item_pedidoPor"
+            android:visibility="gone"
+            />
+
+        <View
+            android:id="@+id/dividerMeta"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="12dp"
+            android:background="#F0F0F0"
+            app:layout_constraintTop_toBottomOf="@+id/tv_item_pedidoPor"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_item_estado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/carta_intercambio_fondo"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="4dp"
+            android:layout_marginTop="8dp"
+            android:text="PENDIENTE"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:textColor="#F57F17"
+            android:textAllCaps="true"
+            app:layout_constraintTop_toBottomOf="@id/dividerMeta"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="PENDIENTE" />
+
+        <ImageView
+            android:id="@+id/EstadoIco"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="4dp"
+            android:src="@drawable/arrowizq"
+            app:tint="@color/back"
+            app:layout_constraintEnd_toStartOf="@id/tv_item_estado"
+            app:layout_constraintTop_toTopOf="@id/tv_item_estado"
+            app:layout_constraintBottom_toBottomOf="@id/tv_item_estado"/>
+
+        <TextView
+            android:id="@+id/tv_item_coleccion"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="Laliga 2025-26"
+            android:textSize="12sp"
+            android:textColor="#757575"
+            android:ellipsize="end"
+            android:maxLines="1"
+            app:layout_constraintStart_toStartOf="@id/imgAvatar"
+            app:layout_constraintEnd_toStartOf="@+id/EstadoIco"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tv_item_estado"
+            tools:text="Laliga 2025-26 C.Este" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

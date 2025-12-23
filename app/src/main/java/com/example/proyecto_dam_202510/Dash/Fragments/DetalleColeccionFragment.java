@@ -154,6 +154,7 @@ public class DetalleColeccionFragment extends Fragment {
                 AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
                 builder.setTitle("Atención: Eliminar Cromo");
                 builder.setMessage("¿Seguro que desea eliminar el cromo?");
+                builder.setIcon(R.drawable.delete);
                 builder.setPositiveButton("Eliminar", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {

@@ -27,7 +27,9 @@ import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.List;
 
-
+/**
+ * Clase fragment para la lista de transacciones de peticiones recibidas.
+ */
 public class TransaccionFragment extends Fragment implements TransaccionAdapter.OnItemClickListener {
 
     FragmentTransaccionBinding binding;
@@ -99,6 +101,7 @@ public class TransaccionFragment extends Fragment implements TransaccionAdapter.
         if (transaccion.getEstado().equals("pendiente")) {
             builder.setTitle("Cambiar Cromo");
             builder.setView(dialogView);
+            builder.setIcon(R.drawable.pending);
             String mensajeEntrante = transaccion.getMensaje();
             if (mensajeEntrante != null && !mensajeEntrante.isEmpty()) {
                 tvMensajeRecibido.setVisibility(View.VISIBLE);
@@ -135,8 +138,9 @@ public class TransaccionFragment extends Fragment implements TransaccionAdapter.
         }
         if (transaccion.getEstado().equals("ACEPTADA. Pdte Envio")) {
             builder.setTitle("Cambiar Cromo");
-            builder.setMessage("¿Quieres enviar el cromo a " + transaccion.getEmailPedidoPor() + "?\n" + "Cuando lo envie se eliminará de su lista de cromos.");
-            builder.setPositiveButton("Aceptar Petición", new DialogInterface.OnClickListener() {
+            builder.setMessage("¿Quieres enviar el cromo a " + transaccion.getEmailPedidoPor() + "?\n" + "Cuando lo envie se eliminará de la colección.");
+            builder.setIcon(R.drawable.send);
+            builder.setPositiveButton("Enviar Carta", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     transacion_vm.enviarPeticion(transaccion);

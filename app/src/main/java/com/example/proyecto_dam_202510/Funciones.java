@@ -412,4 +412,19 @@ public class Funciones {
         db.collection("users_colecciones").document(idColeccion).delete();
         return true;
     }
+
+    public static void cartaRecibida(Transaccion transaccion, Context context) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+        /*insertar en la coleccion de la transaccion*/
+
+        db.collection("users_colecciones").document(transaccion.getPedidoPor()+transaccion.getColeccionId()).
+                collection("cromosPosesion").document()
+               .set(transaccion);
+
+        /*por ultimo borrar la transacion.*/
+        db.collection("transacciones").document(transaccion.getIdTransaccion()).delete();
+        Toast.makeText(context,"Carta nº"+transaccion.getNumero()+" añadida a la Coleccion!",Toast.LENGTH_LONG).show();
+
+    }
 }

@@ -100,8 +100,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:a18ba755851bcf08c9079e621e4134268"><td class="mdescLeft">&#160;</td><td class="mdescRight">Este metodo es el encargado de crear la coleccion dentro de la bd.  <br /></td></tr>
 <tr class="memitem:a4e5cb4c45bdd22e7da1ed8615fe3997a" id="r_a4e5cb4c45bdd22e7da1ed8615fe3997a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4e5cb4c45bdd22e7da1ed8615fe3997a">agregarCromo</a> (String idColeccion, String idCromo, String nombre, String numero, String tipo, double valor, String imagen)</td></tr>
 <tr class="memdesc:a4e5cb4c45bdd22e7da1ed8615fe3997a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo para añadir un cromo de una coleccion especifica a la base de datos.  <br /></td></tr>
-<tr class="memitem:a7c36369e75d8432e25a594bf84334731" id="r_a7c36369e75d8432e25a594bf84334731"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7c36369e75d8432e25a594bf84334731">agregarCromoPosesion</a> (String idColeccion, String idCromo, String nombre, String numero, String tipo, double valor, String imagen, String fechaAdquisicion)</td></tr>
-<tr class="memdesc:a7c36369e75d8432e25a594bf84334731"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo para añadir un cromo especifico de una coleccion especifica a la coleccion users_colecciones.  <br /></td></tr>
+<tr class="memitem:a48662eb82e432b984069d824ea28d7af" id="r_a48662eb82e432b984069d824ea28d7af"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a48662eb82e432b984069d824ea28d7af">agregarCromoPosesion</a> (String idColeccion, String idCromo, String nombre, String numero, String tipo, double valor, String imagen, Date fechaAdquisicion)</td></tr>
+<tr class="memdesc:a48662eb82e432b984069d824ea28d7af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo para añadir un cromo especifico de una coleccion especifica a la coleccion users_colecciones.  <br /></td></tr>
 <tr class="memitem:aaf2e72e616d3600d50b4a2092e92ef3d" id="r_aaf2e72e616d3600d50b4a2092e92ef3d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaf2e72e616d3600d50b4a2092e92ef3d">añadirColeccion</a> (<a class="el" href="classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_coleccion.html">Coleccion</a> coleccion)</td></tr>
 <tr class="memdesc:aaf2e72e616d3600d50b4a2092e92ef3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo para añadir una coleccion a users_colecciones, el user será el id del usuario en sistema.  <br /></td></tr>
 <tr class="memitem:acd48717d82c1472add9ec5d9db7bd2e9" id="r_acd48717d82c1472add9ec5d9db7bd2e9"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acd48717d82c1472add9ec5d9db7bd2e9">borrarCarta</a> (String documento, String coleccion, Context contexto)</td></tr>
@@ -110,6 +110,17 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:a49518c5222116797c087a7a10af55abe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo para obtener la fecha actual en formato especifico (dd/MM/YY HH:mm).  <br /></td></tr>
 <tr class="memitem:a435c590f2879308d1540927cf51751da" id="r_a435c590f2879308d1540927cf51751da"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a435c590f2879308d1540927cf51751da">actualizarCarta</a> (String coleccionIndex, String numero, String nombre, int repetida, String cromoColeccionId)</td></tr>
 <tr class="memdesc:a435c590f2879308d1540927cf51751da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo para actualizar el tipo de un cromo en la base de datos.  <br /></td></tr>
+<tr class="memitem:aa90cb73fdbe6ac1dc0408e56be6304ce" id="r_aa90cb73fdbe6ac1dc0408e56be6304ce"><td class="memItemLeft" align="right" valign="top">static boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa90cb73fdbe6ac1dc0408e56be6304ce">comprobarCorreoValido</a> (String correo)</td></tr>
+<tr class="memdesc:aa90cb73fdbe6ac1dc0408e56be6304ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">comprueba si el correo es valido  <br /></td></tr>
+<tr class="memitem:af3be34c93b7fdd6ca426dc1033c29156" id="r_af3be34c93b7fdd6ca426dc1033c29156"><td class="memItemLeft" align="right" valign="top">static Map&lt; String, Object &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af3be34c93b7fdd6ca426dc1033c29156">difDias</a> (@NonNull Date fechaInicio)  throws ParseException </td></tr>
+<tr class="memitem:a5882e3d18452ee0dce42467a454bc7dd" id="r_a5882e3d18452ee0dce42467a454bc7dd"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5882e3d18452ee0dce42467a454bc7dd">pedirCarta</a> (<a class="el" href="classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_cromo_posesion_agrupado_intercambio.html">CromoPosesionAgrupadoIntercambio</a> cromo, Context context, String mensaje)</td></tr>
+<tr class="memitem:aef364974ea30b785422828b60632c0ae" id="r_aef364974ea30b785422828b60632c0ae"><td class="memItemLeft" align="right" valign="top">static String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aef364974ea30b785422828b60632c0ae">FormatoFecha</a> (Date fechaAdquisicion)</td></tr>
+<tr class="memitem:acfd77ad3fdf5366a3f87e7d12174c432" id="r_acfd77ad3fdf5366a3f87e7d12174c432"><td class="memItemLeft" align="right" valign="top">static boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acfd77ad3fdf5366a3f87e7d12174c432">eliminarTransaccion</a> (<a class="el" href="classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_transaccion.html">Transaccion</a> transaccion)</td></tr>
+<tr class="memitem:a74106b3b2ad75c1d27abb9b2fc2b3d81" id="r_a74106b3b2ad75c1d27abb9b2fc2b3d81"><td class="memItemLeft" align="right" valign="top">static boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a74106b3b2ad75c1d27abb9b2fc2b3d81">borrarUserColecciones</a> (String idColeccion)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-static-attribs" class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:a7d09bf38e042047d48cb1584d5379114" id="r_a7d09bf38e042047d48cb1584d5379114"><td class="memItemLeft" align="right" valign="top">static final String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7d09bf38e042047d48cb1584d5379114">CORREO_EXP</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Isidoro Jiménez García Clase que se encarga haacer de intermediario con la grabación de Firebase. De esta manera está centralizado todas las operaciones de escritura en esta clase. </dd></dl>
@@ -272,8 +283,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a7c36369e75d8432e25a594bf84334731" name="a7c36369e75d8432e25a594bf84334731"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7c36369e75d8432e25a594bf84334731">&#9670;&#160;</a></span>agregarCromoPosesion()</h2>
+<a id="a48662eb82e432b984069d824ea28d7af" name="a48662eb82e432b984069d824ea28d7af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48662eb82e432b984069d824ea28d7af">&#9670;&#160;</a></span>agregarCromoPosesion()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -319,7 +330,7 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>fechaAdquisicion</em></span>&#160;)</td>
+          <td class="paramtype">Date</td>          <td class="paramname"><span class="paramname"><em>fechaAdquisicion</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -415,6 +426,65 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a74106b3b2ad75c1d27abb9b2fc2b3d81" name="a74106b3b2ad75c1d27abb9b2fc2b3d81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74106b3b2ad75c1d27abb9b2fc2b3d81">&#9670;&#160;</a></span>borrarUserColecciones()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean com.example.proyecto_dam_202510.Funciones.borrarUserColecciones </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>idColeccion</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa90cb73fdbe6ac1dc0408e56be6304ce" name="aa90cb73fdbe6ac1dc0408e56be6304ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa90cb73fdbe6ac1dc0408e56be6304ce">&#9670;&#160;</a></span>comprobarCorreoValido()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean com.example.proyecto_dam_202510.Funciones.comprobarCorreoValido </td>
+          <td>(</td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>correo</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>comprueba si el correo es valido </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">correo</td><td>correo electronico </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 </div>
 </div>
@@ -528,6 +598,140 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
+</div>
+</div>
+<a id="af3be34c93b7fdd6ca426dc1033c29156" name="af3be34c93b7fdd6ca426dc1033c29156"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3be34c93b7fdd6ca426dc1033c29156">&#9670;&#160;</a></span>difDias()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Map&lt; String, Object &gt; com.example.proyecto_dam_202510.Funciones.difDias </td>
+          <td>(</td>
+          <td class="paramtype">@NonNull Date</td>          <td class="paramname"><span class="paramname"><em>fechaInicio</em></span></td><td>)</td>
+          <td> throws ParseException</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acfd77ad3fdf5366a3f87e7d12174c432" name="acfd77ad3fdf5366a3f87e7d12174c432"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfd77ad3fdf5366a3f87e7d12174c432">&#9670;&#160;</a></span>eliminarTransaccion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean com.example.proyecto_dam_202510.Funciones.eliminarTransaccion </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_transaccion.html">Transaccion</a></td>          <td class="paramname"><span class="paramname"><em>transaccion</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aef364974ea30b785422828b60632c0ae" name="aef364974ea30b785422828b60632c0ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef364974ea30b785422828b60632c0ae">&#9670;&#160;</a></span>FormatoFecha()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String com.example.proyecto_dam_202510.Funciones.FormatoFecha </td>
+          <td>(</td>
+          <td class="paramtype">Date</td>          <td class="paramname"><span class="paramname"><em>fechaAdquisicion</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5882e3d18452ee0dce42467a454bc7dd" name="a5882e3d18452ee0dce42467a454bc7dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5882e3d18452ee0dce42467a454bc7dd">&#9670;&#160;</a></span>pedirCarta()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.example.proyecto_dam_202510.Funciones.pedirCarta </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_cromo_posesion_agrupado_intercambio.html">CromoPosesionAgrupadoIntercambio</a></td>          <td class="paramname"><span class="paramname"><em>cromo</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Context</td>          <td class="paramname"><span class="paramname"><em>context</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String</td>          <td class="paramname"><span class="paramname"><em>mensaje</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="a7d09bf38e042047d48cb1584d5379114" name="a7d09bf38e042047d48cb1584d5379114"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d09bf38e042047d48cb1584d5379114">&#9670;&#160;</a></span>CORREO_EXP</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final String com.example.proyecto_dam_202510.Funciones.CORREO_EXP</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">=</div>
+<div class="line">            <span class="stringliteral">&quot;^[^@]+@[^@]+\\.[a-zA-Z]{2,}$&quot;</span></div>
+</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>

@@ -96,18 +96,31 @@ $(function(){initNavTree('_funciones_8java.html','',''); });
 <code>import android.widget.Toast;</code><br />
 <code>import androidx.annotation.NonNull;</code><br />
 <code>import com.example.proyecto_dam_202510.data.pojo.Coleccion;</code><br />
+<code>import com.example.proyecto_dam_202510.data.pojo.CromoPosesionAgrupadoIntercambio;</code><br />
+<code>import com.example.proyecto_dam_202510.data.pojo.Transaccion;</code><br />
+<code>import com.google.android.gms.tasks.Continuation;</code><br />
 <code>import com.google.android.gms.tasks.OnFailureListener;</code><br />
 <code>import com.google.android.gms.tasks.OnSuccessListener;</code><br />
+<code>import com.google.android.gms.tasks.Task;</code><br />
+<code>import com.google.android.gms.tasks.Tasks;</code><br />
 <code>import com.google.firebase.Timestamp;</code><br />
 <code>import com.google.firebase.auth.FirebaseAuth;</code><br />
 <code>import com.google.firebase.auth.FirebaseUser;</code><br />
+<code>import com.google.firebase.firestore.CollectionReference;</code><br />
 <code>import com.google.firebase.firestore.DocumentReference;</code><br />
+<code>import com.google.firebase.firestore.DocumentSnapshot;</code><br />
+<code>import com.google.firebase.firestore.FieldValue;</code><br />
 <code>import com.google.firebase.firestore.FirebaseFirestore;</code><br />
 <code>import java.text.DateFormat;</code><br />
+<code>import java.text.ParseException;</code><br />
 <code>import java.text.SimpleDateFormat;</code><br />
+<code>import java.util.ArrayList;</code><br />
 <code>import java.util.Date;</code><br />
 <code>import java.util.HashMap;</code><br />
+<code>import java.util.List;</code><br />
+<code>import java.util.Locale;</code><br />
 <code>import java.util.Map;</code><br />
+<code>import java.util.Set;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>

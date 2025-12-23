@@ -119,6 +119,7 @@ public class UsersColeccionesFragment extends Fragment implements UserColeccione
                     public void onClick(DialogInterface dialog, int which) {
                         AlertDialog.Builder alert = new AlertDialog.Builder(requireContext());
                         alert.setMessage("ADVERTENCIA: NO PODRÁ REVERTIR LOS CAMBIOS. ¿SEGURO?");
+                        alert.setIcon(R.drawable.delete);
                         alert.setPositiveButton("ELIMINAR", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {

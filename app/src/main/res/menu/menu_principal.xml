@@ -11,7 +11,7 @@
         android:title="Intercambio" />
     <item
         android:id="@+id/nav_transacciones"
-        android:icon="@drawable/peticiones"
+        android:icon="@drawable/import_export"
         android:title="Transacciones" />
 
 

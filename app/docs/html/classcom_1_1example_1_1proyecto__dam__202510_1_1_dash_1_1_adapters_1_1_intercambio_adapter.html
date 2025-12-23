@@ -104,6 +104,7 @@ Inheritance diagram for com.example.proyecto_dam_202510.Dash.Adapters.Intercambi
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:CromoViewHolder" id="r_CromoViewHolder"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_intercambio_adapter_1_1_cromo_view_holder.html">CromoViewHolder</a></td></tr>
+<tr class="memitem:OnItemClickListener" id="r_OnItemClickListener"><td class="memItemLeft" align="right" valign="top">interface &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacecom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_intercambio_adapter_1_1_on_item_click_listener.html">OnItemClickListener</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -111,10 +112,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2088832b9cf8a7d606f0dc067d410d2f" id="r_a2088832b9cf8a7d606f0dc067d410d2f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2088832b9cf8a7d606f0dc067d410d2f">onBindViewHolder</a> (@NonNull <a class="el" href="classcom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_intercambio_adapter_1_1_cromo_view_holder.html">CromoViewHolder</a> holder, int position)</td></tr>
 <tr class="memitem:a177013efcc65d85ad39f1304552af0a0" id="r_a177013efcc65d85ad39f1304552af0a0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a177013efcc65d85ad39f1304552af0a0">getItemCount</a> ()</td></tr>
 <tr class="memitem:a8fba497cf086a4e9cda023724030c5e4" id="r_a8fba497cf086a4e9cda023724030c5e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8fba497cf086a4e9cda023724030c5e4">setCromos</a> (List&lt; <a class="el" href="classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_cromo_posesion_agrupado_intercambio.html">CromoPosesionAgrupadoIntercambio</a> &gt; nuevaLista)</td></tr>
+<tr class="memitem:a778cb174c167c946c5899d53993beaac" id="r_a778cb174c167c946c5899d53993beaac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a778cb174c167c946c5899d53993beaac">setOnItemClickListener</a> (<a class="el" href="interfacecom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_intercambio_adapter_1_1_on_item_click_listener.html">OnItemClickListener</a> <a class="el" href="#acf6a90ca4d242cd9e2b723e781f9b2f7">listener</a>)</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a8afc6c0a1897e5027db10cffb62f2234" id="r_a8afc6c0a1897e5027db10cffb62f2234"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_cromo_posesion_agrupado_intercambio.html">CromoPosesionAgrupadoIntercambio</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8afc6c0a1897e5027db10cffb62f2234">listaCromos</a> = new ArrayList&lt;&gt;()</td></tr>
+<tr class="memitem:acf6a90ca4d242cd9e2b723e781f9b2f7" id="r_acf6a90ca4d242cd9e2b723e781f9b2f7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interfacecom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_intercambio_adapter_1_1_on_item_click_listener.html">OnItemClickListener</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acf6a90ca4d242cd9e2b723e781f9b2f7">listener</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Adaptador para confeccionar la lista de cromo para intercambiar. </p>
@@ -196,6 +199,23 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a778cb174c167c946c5899d53993beaac" name="a778cb174c167c946c5899d53993beaac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a778cb174c167c946c5899d53993beaac">&#9670;&#160;</a></span>setOnItemClickListener()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.example.proyecto_dam_202510.Dash.Adapters.IntercambioAdapter.setOnItemClickListener </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="interfacecom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_intercambio_adapter_1_1_on_item_click_listener.html">OnItemClickListener</a></td>          <td class="paramname"><span class="paramname"><em>listener</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
 <a id="a8afc6c0a1897e5027db10cffb62f2234" name="a8afc6c0a1897e5027db10cffb62f2234"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8afc6c0a1897e5027db10cffb62f2234">&#9670;&#160;</a></span>listaCromos</h2>
@@ -208,6 +228,28 @@ Private Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">List&lt;<a class="el" href="classcom_1_1example_1_1proyecto__dam__202510_1_1data_1_1pojo_1_1_cromo_posesion_agrupado_intercambio.html">CromoPosesionAgrupadoIntercambio</a>&gt; com.example.proyecto_dam_202510.Dash.Adapters.IntercambioAdapter.listaCromos = new ArrayList&lt;&gt;()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acf6a90ca4d242cd9e2b723e781f9b2f7" name="acf6a90ca4d242cd9e2b723e781f9b2f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf6a90ca4d242cd9e2b723e781f9b2f7">&#9670;&#160;</a></span>listener</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="interfacecom_1_1example_1_1proyecto__dam__202510_1_1_dash_1_1_adapters_1_1_intercambio_adapter_1_1_on_item_click_listener.html">OnItemClickListener</a> com.example.proyecto_dam_202510.Dash.Adapters.IntercambioAdapter.listener</td>
         </tr>
       </table>
   </td>
