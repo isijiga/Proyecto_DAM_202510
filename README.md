@@ -24,3 +24,8 @@ Repositorio correspondiente a la entrega de la **Tarea 3**
 * **IDE:** Android Studio
 * **Base de datos:** Firebase (Firestore & Auth)
 * **Documentación:** Doxygen
+* 
+* **Mejoras version:** 
+* 20251224 - Sincronización de coleccion 'cromos' con 'cromosPosesion' para ver las cartas en posesion. 
+* 
+

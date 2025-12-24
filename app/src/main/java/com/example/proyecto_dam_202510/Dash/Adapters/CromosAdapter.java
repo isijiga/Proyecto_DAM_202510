@@ -86,6 +86,11 @@ public class CromosAdapter extends RecyclerView.Adapter<CromosAdapter.MiViewHold
             binding.tvCromoNum.setText(String.valueOf(item.getNumero()));
             binding.tvCartaEstado.setText(String.valueOf(item.getId()));
             Picasso.get().load(item.getImagen()).fit().into(binding.ivCromoImagen);
+            if (item.getLoTengo()) {
+                binding.loTengo.setVisibility(View.VISIBLE);
+            } else
+                binding.loTengo.setVisibility(View.GONE);
+
 
         }
 

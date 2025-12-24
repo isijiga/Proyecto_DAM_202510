@@ -13,6 +13,16 @@ public class Cromo {
     private String tipo;
     private int valor;
 
+    public Boolean getLoTengo() {
+        return loTengo;
+    }
+
+    public void setLoTengo(Boolean loTengo) {
+        this.loTengo = loTengo;
+    }
+
+    private Boolean loTengo;
+
     public Cromo() {
     }
 
