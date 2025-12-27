@@ -1,5 +1,6 @@
 package com.example.proyecto_dam_202510.Dash.Fragments;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -8,6 +9,8 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.StyleRes;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.navigation.NavController;
@@ -70,13 +73,31 @@ public class BuscarCromoFragment extends Fragment {
             @Override
             public void onItemClick(Cromo cromo) {
                 Log.d("Cromo", cromo.getNombre());
-                Funciones.agregarCromoPosesion(idColeccion, cromo.getId(), cromo.getNombre(), cromo.getNumero(),
-                        null, cromo.getValor(), cromo.getImagen(), new Date());
 
+                AlertDialog.Builder builder = new AlertDialog.Builder(requireContext())
+                        .setTitle("Agregar "+ cromo.getNombre()+".")
+                                .setMessage("¿Quieres añadir el cromo a la colección?")
+                        .setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Funciones.agregarCromoPosesion(idColeccion, cromo.getId(), cromo.getNombre(), cromo.getNumero(),
+                               null, cromo.getValor(), cromo.getImagen(), new Date());
+                                Toast.makeText(requireContext(), "Carta añadida a coleccion!", Toast.LENGTH_LONG).show();
+                            }
+                        })
+                        .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        });
+
+                    builder.show();
+                /*
                 NavController navController = Navigation.findNavController(view);
                 navController.popBackStack();
                 navController.navigate(R.id.nav_userColecciones);
-                Toast.makeText(requireContext(), "Carta añadida a coleccion!", Toast.LENGTH_LONG).show();
+                */
 
             }
 
